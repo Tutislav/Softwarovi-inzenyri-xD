@@ -1,0 +1,81 @@
+		.container
+		{
+			padding-left: 20%;
+			padding-right: 20%;
+		}
+		
+		body
+		{
+			margin: 0px;
+			font-family: sans-serif;
+		}
+		#login_register
+		{
+			background-color: darkred;
+			color: white;
+			padding: 5px;
+			padding-right: 10%;
+			text-align: right;
+		}
+		#login a, #register a
+		{
+			padding: 5px;
+		}
+		#login
+		{
+			border-right: 2px solid white;
+			padding-right: 10px;
+		}
+		#register
+		{
+			padding-left: 5px;
+		}
+		#heading
+		{ 
+			text-align: center;
+			vertical-align: center;
+			font-size: 1.2em;
+		}
+		#navigation
+		{
+			border-bottom: 2px solid black;
+			padding-bottom: 5px;
+		}
+		ul
+		{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		li
+		{
+			float: left;
+			border-left: 2px solid black;
+		}
+		li a 
+		{
+			display: block;
+			padding: 0px 8px 0px 8px;
+			color: black;
+			text-decoration: none;
+		}
+		#login_register a
+		{
+			color: white;
+			text-decoration: none;
+		}	
+		.kontakt
+		{
+			border-right: 2px solid black;
+		}	
+		.helpdesk
+		{
+			float: right;
+			border-right: 2px solid black;
+		}
+		#text
+		{
+			padding: 20px 0 0 35%;
+			font-size: 1.1em;
+		}
