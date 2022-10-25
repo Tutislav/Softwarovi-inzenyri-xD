@@ -79,3 +79,27 @@
 			padding: 20px 0 0 35%;
 			font-size: 1.1em;
 		}
+
+		@keyframes hoverNav {
+			0%   {color: black;}
+			100%  {color: red;}
+		}
+		
+		@keyframes hoverLogReg {
+			0%   {color: white;}
+			100%  {color: navajowhite;}
+		}
+		
+		#navigation a:hover
+		{
+			animation-name: hoverNav;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
+		
+		#login_register a:hover
+		{
+			animation-name: hoverLogReg;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
