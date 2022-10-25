@@ -94,12 +94,10 @@
 		
 		#navigation a:hover
 		{
-			animation-name: hoverNav;
-			animation: 0.5s forwards;
+			animation-name: hoverNav 0.5s forwards;
 		}
 		
 		#login_register a:hover
 		{
-			animation-name: hoverLogReg;
-			animation: 0.5s forwards;
+			animation: hoverLogReg 0.5s forwards;
 		}
