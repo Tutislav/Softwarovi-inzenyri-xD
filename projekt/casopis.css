@@ -76,11 +76,6 @@
 			float: right;
 			border-right: 2px solid black;
 		}
-		#text
-		{
-			padding: 20px 0 0 35%;
-			font-size: 1.1em;
-		}
 
 		@keyframes hoverNav {
 			0%   {color: black;}
