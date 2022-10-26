@@ -20,13 +20,13 @@
 
         <div class="registration">
 		    <h2>Registrace uživatele</h2>
-            <form action="" method="POST">
+            <form action="backend/register.php" method="POST">
                 <i class="fa fa-envelope" style="font-size:24px"></i><input type="text" placeholder="Email" id="mail" name="mail"><br>
                 <i class="fa fa-lock" style="font-size:24px"></i><input type="password" placeholder="Heslo" id="password" name="password"><br>
                 <i class="fa fa-lock" style="font-size:24px"></i><input type="password" placeholder="Potvrzení hesla" id="password-confirm"><br>
 				
-                <input type="text" placeholder="Jméno" id="name"><br>
-                <input type="tel"  placeholder="Příjmení" id="lastname"><br>
+                <input type="text" placeholder="Jméno" id="name" name="name"><br>
+                <input type="tel"  placeholder="Příjmení" id="lastname" name="lastname"><br>
 
                 <input type="submit" value="Zaregistrovat   " id="register-submit">
             </form>
