@@ -13,6 +13,7 @@ CREATE TABLE prispevek (
     id_prispevku INT NOT NULL AUTO_INCREMENT,
     id_uzivatele INT NOT NULL,
     tematicke_cislo ENUM ('hardware', 'software', 'gaming', 'ai') NOT NULL,
+    spoluautori TEXT,
     stav VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_prispevku),
     FOREIGN KEY (id_uzivatele) REFERENCES uzivatel(id_uzivatele)

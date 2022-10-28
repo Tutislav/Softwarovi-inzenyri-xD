@@ -243,6 +243,21 @@
 										},
 										{
 											"_type": "ERDColumnView",
+											"_id": "AAAAAAGEFCexCGubi7A=",
+											"_parent": {
+												"$ref": "AAAAAAGD9g6zG6hmQ8Y="
+											},
+											"model": {
+												"$ref": "AAAAAAGEFCbhOWuMw8U="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 217,
+											"width": 134.892578125,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
 											"_id": "AAAAAAGD9hquC6jtLrQ=",
 											"_parent": {
 												"$ref": "AAAAAAGD9g6zG6hmQ8Y="
@@ -252,7 +267,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 469,
-											"top": 217,
+											"top": 232,
 											"width": 134.892578125,
 											"height": 13
 										}
@@ -261,14 +276,14 @@
 									"left": 464,
 									"top": 167,
 									"width": 144.892578125,
-									"height": 68
+									"height": 83
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 464,
 							"top": 144,
 							"width": 144.892578125,
-							"height": 91,
+							"height": 106,
 							"nameLabel": {
 								"$ref": "AAAAAAGD9g6zG6hl59o="
 							},
@@ -1253,7 +1268,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 550,
-									"top": 253,
+									"top": 268,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1287,7 +1302,7 @@
 								"$ref": "AAAAAAGD9g6zG6hkCEc="
 							},
 							"lineStyle": 2,
-							"points": "535:234;535:304;832:304;832:568",
+							"points": "535:249;535:304;832:304;832:568",
 							"nameLabel": {
 								"$ref": "AAAAAAGD9jcGIapf7Gg="
 							},
@@ -1974,6 +1989,15 @@
 								"$ref": "AAAAAAGD9g6zG6hiSqw="
 							},
 							"name": "tematicke_cislo",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGEFCbhOWuMw8U=",
+							"_parent": {
+								"$ref": "AAAAAAGD9g6zG6hiSqw="
+							},
+							"name": "spoluautori",
 							"length": 0
 						},
 						{
