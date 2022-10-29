@@ -12,9 +12,9 @@
 	
 echo $name;
 echo $last_name;
-echo $email
-//echo $password;
-//echo $password_confirm;
+//echo $email
+echo $password;
+echo $password_confirm;
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
