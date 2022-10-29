@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="casopis.css" rel="stylesheet">
 	<link href="register.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-aweso me/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="container">
