@@ -13,11 +13,13 @@
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
-		header("Location: ../registration.html"); 
+		//header("Location: ../registration.html");
+		echo "Vyplňte všechna políčka.";
 	}
 	else if($password != $password_confirm)
 	{
-		header("Location: ../registration.html");
+		//header("Location: ../registration.html");
+		echo "Hesla se neshodují.";
 	}
 	else
 	{
@@ -28,7 +30,8 @@
 		$result = mysqli_query($conn, $insert);
 		if($result) 
 		{
-			header("Location: ../index.html"); 
+			//header("Location: ../index.html");
+			echo "Přihlášení bylo úspěšné.";
 		}
 		else { die("Nepodařilo se přihlásit!"); }
 	}
