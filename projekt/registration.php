@@ -35,8 +35,11 @@
 
 	<?php
 		session_start();
-		echo $_SESSION["error"];
-		unset($_SESSION["error"]);	
+		if(isset($_SESSION["error"]))
+		{
+			echo $_SESSION["error"];
+			unset($_SESSION["error"]);
+		}	
 	?>
     </div>
     

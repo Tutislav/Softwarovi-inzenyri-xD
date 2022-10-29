@@ -30,6 +30,15 @@
             Tato aplikace je výsledkem školního projektu v kurzu Řízení SW projektů na Vysoké škole		<br>
             polytechnické Jihlava. Nejedná se o stránky skutečného odborného časopisu!
         </div>
+	
+	<?php
+		session_start();
+		if(isset($_SESSION["success"]))
+		{
+			echo $_SESSION["success"];
+			unset($_SESSION["success"]);
+		}	
+	?>
     </div>
 </body>
 </html>
