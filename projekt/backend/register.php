@@ -36,7 +36,12 @@
 			$_SESSION["success"] = "Přihlášení bylo úspěšné.";
 			header("Location: ../index.php");
 		}
-		else { die("Nepodařilo se přihlásit!"); }
+		else 
+		{ 
+			session_start();
+			$_SESSION["error"] = "Uživatel se stejnou emailovou adresou je zaregistrován.";
+			header("Location: ../registration.php");
+		}
 	}
 	
 ?>
