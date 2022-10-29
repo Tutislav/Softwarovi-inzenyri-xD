@@ -27,7 +27,7 @@
         </div>
         <div id="navigation">
                 <ul> 
-                    <li><a href="../index.html">ŮVOD</a></li>
+                    <li><a href="../">ŮVOD</a></li>
                     <li><a href="">ČLÁNKY</a></li>
                     <li><a href="">ARCHIV</a></li>
                     <li class="kontakt"><a href="">KONTAKT</a></li>

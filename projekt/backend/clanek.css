@@ -1,13 +1,13 @@
 		#autor
 		{
 			float:right;
-			padding: 10px;
+			padding:10px;
 			background-color:#ffd0d0;
 			border-left: 2px solid black;
 			margin-left: 10px;
 		}
 		
-		h1, #obsah{
+		#obsah{
 			width:80%;
 		}
 		
