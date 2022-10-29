@@ -33,7 +33,7 @@
 		if($result) 
 		{
 			session_start();
-			$_SESSION["success"] = "Přihlášení bylo úspěšné.";
+			$_SESSION["success"] = "Registrace byla úspěšná.";
 			header("Location: ../index.php");
 		}
 		else 
