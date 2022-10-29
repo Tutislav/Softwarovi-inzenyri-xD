@@ -15,11 +15,11 @@
 	{ 
 		session_start();
 		$_SESSION["error"] = "Vyplňte všechna políčka.";
-		header("Location: ../registration.html");
+		header("Location: ../registration.php");
 	}
 	else if($password != $password_confirm)
 	{
-		//header("Location: ../registration.html");
+		//header("Location: ../registration.php");
 		echo "Hesla se neshodují.";
 	}
 	else
