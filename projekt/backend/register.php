@@ -9,17 +9,21 @@
 	$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 	$role = "redaktor";
 	
-	if(empty($name) || empty($last_name)) 
-	{
-		header("Location: ../index.html");
+	//Empty check--------
+	if(empty($name) || empty($last_name) || $email) 
+	{ 
+		header("Location: ../registration.html"); 
 	}
 	else
 	{
 		//Insert--------
 		$insert = "insert into uzivatel (jmeno, prijmeni, email, heslo, role) values('$name', '$last_name', '$email', '$password', '$role')";
 		$result = mysqli_query($conn, $insert);
-		if(!$result) { die("Nepodařilo se přihlásit!"); }
-		else { echo "Registrace byla úspěšná."; }
+		if($result) 
+		{
+			header("Location: ../index.html"); 
+		}
+		else { die("Nepodařilo se přihlásit!"); }
 	}
 	
 ?>
