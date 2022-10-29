@@ -107,7 +107,7 @@ li a {
 input {
 	background-color: #dddddd;
 	border-radius: 8px;
-	padding: 8px 0px 8px 15px;
+	padding: 8px 15px;
 	width: 50%;
 	margin: 8px 15px;
 	font-size: 16px;
@@ -130,7 +130,7 @@ button:hover, input[type=submit]:hover {
 }
 
 .fa {
-	font-size: 24px;
+	font-size: 24px !important;
 }
 
 .home .fa {
