@@ -10,7 +10,7 @@
 	$role = "redaktor";
 	
 	//Empty check--------
-	if(empty($name) || empty($last_name) || empty($email)) 
+	if(empty($name) || empty($last_name) || empty($email) || empty($password)) 
 	{ 
 		header("Location: ../registration.html"); 
 	}
