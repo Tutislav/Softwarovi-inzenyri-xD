@@ -19,8 +19,9 @@
 	}
 	else if($password != $password_confirm)
 	{
-		//header("Location: ../registration.php");
-		echo "Hesla se neshodují.";
+		session_start();
+		$_SESSION["error"] = "Hesla se neshodují.";
+		header("Location: ../registration.php");
 	}
 	else
 	{
@@ -31,8 +32,9 @@
 		$result = mysqli_query($conn, $insert);
 		if($result) 
 		{
-			//header("Location: ../index.html");
-			echo "Přihlášení bylo úspěšné.";
+			session_start();
+			$_SESSION["success"] = "Přihlášení bylo úspěšné.";
+			header("Location: ../index.php");
 		}
 		else { die("Nepodařilo se přihlásit!"); }
 	}
