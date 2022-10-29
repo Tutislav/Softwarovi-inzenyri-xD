@@ -57,7 +57,7 @@
 		$striped_content = html_entity_decode($striped_content);
 		return $striped_content;  
 	}  
-	$filename = "../clanky/logos.docx";
+	$filename = "../" . $_GET["soubor"];
 	$content = read_file_docx($filename);  
 	   
 	if($content)  
