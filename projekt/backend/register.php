@@ -12,7 +12,7 @@
 	
 echo $name;
 echo $last_name;
-//echo $email
+echo $email
 //echo $password;
 //echo $password_confirm;
 	//Empty check--------
