@@ -1,4 +1,5 @@
 <?php
+	//password_hash($_POST["password"], PASSWORD_DEFAULT)
 	//Connect--------
 	require("connect.php");
 	
@@ -6,11 +7,12 @@
 	$name = $_POST["name"];
 	$last_name = $_POST["lastname"];
 	$email = $_POST["mail"];
-	$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+	$password = $_POST["password"];
+	$password_confirm = $_POST["password-confirm"];
 	$role = "redaktor";
 	
 	//Empty check--------
-	if(empty($name) || empty($last_name) || empty($email) || empty($password)) 
+	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
 		header("Location: ../registration.html"); 
 	}
