@@ -19,7 +19,7 @@
             <form action="backend/register.php" method="POST">
                 <label for="mail" class="fa fa-envelope"></label><input type="email" placeholder="Email" id="mail" name="mail"><br>
                 <label for="password" class="fa fa-lock"></label><input type="password" placeholder="Heslo" id="password" name="password"><br>
-                <label for="password_confirm" class="fa fa-lock"></label><input type="password" placeholder="Potvrzení hesla" id="password-confirm" name="password_confirm"><br>
+                <label for="password_confirm" class="fa fa-lock"></label><input type="password" placeholder="Potvrzení hesla" id="password_confirm" name="password_confirm"><br>
                 <input type="text" placeholder="Jméno" id="name" name="name"><br>
                 <input type="tel"  placeholder="Příjmení" id="lastname" name="lastname"><br>
                 <input type="submit" value="Zaregistrovat">
