@@ -1,5 +1,4 @@
 <?php
-	//password_hash($_POST["password"], PASSWORD_DEFAULT)
 	//Connect--------
 	require("connect.php");
 	
@@ -16,8 +15,14 @@
 	{ 
 		header("Location: ../registration.html"); 
 	}
+	else if($password != $password_confirm)
+	{
+		header("Location: ../registration.html");
+	}
 	else
 	{
+		$password = password_hash($password, PASSWORD_DEFAULT);
+
 		//Insert--------
 		$insert = "insert into uzivatel (jmeno, prijmeni, email, heslo, role) values('$name', '$last_name', '$email', '$password', '$role')";
 		$result = mysqli_query($conn, $insert);
