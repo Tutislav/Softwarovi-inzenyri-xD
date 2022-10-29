@@ -10,7 +10,7 @@
 	$role = "redaktor";
 	
 	//Insert--------
-	if(empty($name)) { echo "Jmeno uzivatele je prazdne."; }
+	if(empty($name) || empty($last_name)) { echo "Jmeno uzivatele nebo prijmeni je prazdne."; }
 	$insert = "insert into uzivatel (jmeno, prijmeni, email, heslo, role) values('$name', '$last_name', '$email', '$password', '$role')";
 	$result = mysqli_query($conn, $insert);
 	if(!$result) { die("Nepodařilo se přihlásit!"); }
