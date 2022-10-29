@@ -10,11 +10,7 @@
 	$password_confirm = $_POST["password_confirm"];
 	$role = "redaktor";
 	
-echo $name;
-echo $last_name;
-//echo $email
-echo $password;
-echo $password_confirm;
+	echo $password_confirm;
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
