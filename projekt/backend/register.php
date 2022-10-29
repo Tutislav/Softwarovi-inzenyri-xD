@@ -7,7 +7,7 @@
 	$last_name = $_POST["lastname"];
 	$email = $_POST["mail"];
 	$password = $_POST["password"];
-	$password_confirm = $_POST["password-confirm"];
+	$password_confirm = $_POST["password_confirm"];
 	$role = "redaktor";
 	
 echo $name;
