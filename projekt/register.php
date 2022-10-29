@@ -12,17 +12,17 @@
 <body>
     <div class="container">
         <div id="login_register">
-            <div class="home"><a href="index.html"><i class="fa fa-home" style="font-size:30px"></i></a></div>
+            <div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
         </div>
         <div class="registration">
 		    <h2>Registrace uživatele</h2>
             <form action="backend/register.php" method="POST">
-                <i class="fa fa-envelope" style="font-size:24px"></i><input type="email" placeholder="Email" id="mail" name="mail"><br>
-                <i class="fa fa-lock" style="font-size:24px"></i><input type="password" placeholder="Heslo" id="password" name="password"><br>
-                <i class="fa fa-lock" style="font-size:24px"></i><input type="password" placeholder="Potvrzení hesla" id="password-confirm" name="password_confirm"><br>
+                <label for="mail" class="fa fa-envelope"></label><input type="email" placeholder="Email" id="mail" name="mail"><br>
+                <label for="password" class="fa fa-lock"></label><input type="password" placeholder="Heslo" id="password" name="password"><br>
+                <label for="password_confirm" class="fa fa-lock"></label><input type="password" placeholder="Potvrzení hesla" id="password-confirm" name="password_confirm"><br>
                 <input type="text" placeholder="Jméno" id="name" name="name"><br>
                 <input type="tel"  placeholder="Příjmení" id="lastname" name="lastname"><br>
-                <input type="submit" value="Zaregistrovat   " id="register-submit">
+                <input type="submit" value="Zaregistrovat">
             </form>
         </div>
 
