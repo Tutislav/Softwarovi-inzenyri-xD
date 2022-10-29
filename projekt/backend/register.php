@@ -11,7 +11,7 @@
 	$role = "redaktor";
 	
 echo $name;
-//echo $last_name;
+echo $last_name;
 //echo $email
 //echo $password;
 //echo $password_confirm;
