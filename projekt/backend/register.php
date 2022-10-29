@@ -10,12 +10,12 @@
 	$password_confirm = $_POST["password_confirm"];
 	$role = "redaktor";
 	
-	echo $password_confirm;
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
-		//header("Location: ../registration.html");
-		echo "Vyplňte všechna políčka.";
+		session_start();
+		$_SESSION["error"] = "Vyplňte všechna políčka.";
+		header("Location: ../registration.html");
 	}
 	else if($password != $password_confirm)
 	{
