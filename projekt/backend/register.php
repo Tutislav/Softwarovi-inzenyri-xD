@@ -10,7 +10,7 @@
 	$password_confirm = $_POST["password-confirm"];
 	$role = "redaktor";
 	
-//echo $name;
+echo $name;
 //echo $last_name;
 //echo $email
 //echo $password;
