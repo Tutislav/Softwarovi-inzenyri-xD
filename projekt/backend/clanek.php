@@ -5,22 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Článek</title>
-    <link href="casopis.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="../casopis.css" rel="stylesheet">
 	<link href="clanek.css" rel="stylesheet">
+	
+	<script>
+		$(document).ready(function(){
+			$("#kontakt").appendTo("#autor");
+		});
+	</script>
 	
 </head>
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="login"><a href="login.html">PŘIHLÁŠENÍ</a></span>
-            <span id="register"><a href="registration.html">REGISTRACE</a></span>
+            <span id="login"><a href="../login.html">PŘIHLÁŠENÍ</a></span>
+            <span id="register"><a href="../registration.html">REGISTRACE</a></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
         </div>
         <div id="navigation">
                 <ul> 
-                    <li><a href="">ŮVOD</a></li>
+                    <li><a href="../index.html">ŮVOD</a></li>
                     <li><a href="">ČLÁNKY</a></li>
                     <li><a href="">ARCHIV</a></li>
                     <li class="kontakt"><a href="">KONTAKT</a></li>
@@ -50,7 +57,7 @@
 		$striped_content = html_entity_decode($striped_content);
 		return $striped_content;  
 	}  
-	$filename = "logos.docx";
+	$filename = "../clanky/logos.docx";
 	$content = read_file_docx($filename);  
 	   
 	if($content)  
