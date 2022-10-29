@@ -134,5 +134,5 @@ button:hover, input[type=submit]:hover {
 }
 
 .home .fa {
-	font-size: 30px;
+	font-size: 30px !important;
 }
