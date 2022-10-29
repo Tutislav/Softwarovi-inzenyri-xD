@@ -12,7 +12,7 @@
 	//Insert--------
 	if(empty($name) || empty($last_name)) 
 	{
-		header(../index.html);
+		header("../index.html");
 	}
 	$insert = "insert into uzivatel (jmeno, prijmeni, email, heslo, role) values('$name', '$last_name', '$email', '$password', '$role')";
 	$result = mysqli_query($conn, $insert);
