@@ -21,7 +21,7 @@
 	{
 		session_start();
 		$_SESSION["error"] = "Hesla se neshodují.";
-		header("Location: ../registration.php");
+		header("Location: ../register.php");
 	}
 	else
 	{
@@ -40,7 +40,7 @@
 		{ 
 			session_start();
 			$_SESSION["error"] = "Uživatel se stejnou emailovou adresou je zaregistrován.";
-			header("Location: ../registration.php");
+			header("Location: ../register.php");
 		}
 	}
 	
