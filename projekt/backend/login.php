@@ -26,6 +26,7 @@
 		if($user_exists)
 		{
 			$_SESSION["success"] = "Přihlášení bylo úspěšné.";
+			$_SESSION["email"] = $email;
 			header("Location: ../index.php");
 		}
 		else

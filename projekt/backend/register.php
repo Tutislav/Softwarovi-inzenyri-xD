@@ -11,7 +11,7 @@
 	$email = $_POST["mail"];
 	$password = $_POST["password"];
 	$password_confirm = $_POST["password_confirm"];
-	$role = "redaktor";
+	$role = "autor";
 	
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
@@ -34,6 +34,10 @@
 		if($result) 
 		{
 			$_SESSION["success"] = "Registrace byla úspěšná.";
+			$_SESSION["name"] = $name;
+			$_SESSION["last_name"] = $last_name;
+			$_SESSION["email"] = $email;
+			$_SESSION["role"] = $role;
 			header("Location: ../index.php");
 		}
 		else 
