@@ -7,7 +7,8 @@
 			margin-left: 10px;
 		}
 		
-		#obsah{
+		#obsah
+		{
 			width:80%;
 		}
 		
@@ -18,22 +19,38 @@
 			border-bottom:2px solid black;
 			box-shadow: 0px 5px 4px -4px;
 		}
-		
+
+		#clankyList
+		{
+			height:700px;
+			border:2px solid black;;
+		}
 		.clanekRef
 		{
 			color:black;
 			text-decoration:none;
 			padding:10px;
-			border-bottom:2px solid black;
+			border-bottom:2px solid gray;
+			width:70%
 		}
 		
-		@keyframes hoverClanek {
+		@keyframes hoverClanek 
+		{
+			0%   {background-color: white;}
+			100%  {background-color: #eeeeee;}
+		}
+		@keyframes hoverClanekText
+		{
 			0%   {color: black;}
-			100%  {color: red;}
+			100%  {color: darkred;}
 		}
 		
 		.clanekRef:hover
 		{
 			animation: hoverClanek 0.5s forwards;
+		}
+		.clanekRef:hover a
+		{
+			animation: hoverClanekText 0.5s forwards;
 		}
 	
