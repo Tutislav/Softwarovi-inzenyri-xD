@@ -38,13 +38,11 @@
 		
 		function password_check()
 		{
-			alert("Hovno hjaha");
 			var password = document.getElementById("password");
 			var password_confirm = document.getElementById("password_confirm");
-			alert(password.value);
-			if(password.innerHTML != password_confirm.innerHTML)
+			if(password.value != password_confirm.value)
 			{
-				alert("Hovno hjaha");
+				//alert("Hovno hjaha");
 				password.style.border = "2px solid red";
 				password_confirm.style.border = "2px solid red";
 			}
