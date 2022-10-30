@@ -15,7 +15,7 @@
 	{ 
 		session_start();
 		$_SESSION["error"] = "Vyplňte všechna políčka.";
-		header("Location: ../registration.php");
+		header("Location: ../register.php");
 	}
 	else if($password != $password_confirm)
 	{
