@@ -41,7 +41,7 @@
 			alert("Hovno hjaha");
 			var password = document.getElementById("password");
 			var password_confirm = document.getElementById("password_confirm");
-			alert(password.innerHTML);
+			alert(password.textContent);
 			if(password.innerHTML != password_confirm.innerHTML)
 			{
 				alert("Hovno hjaha");
