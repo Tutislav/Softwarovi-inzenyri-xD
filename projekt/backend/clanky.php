@@ -31,19 +31,27 @@
 	    
         <div id="clankyList">
 		<div id="clankyFilter">
-			<label for="tema">Téma:</label>
-			<select name="tematicke_cislo" id="tema">
-				<option value="vse">Vše</option>
- 				<option value="hardware">Hardware</option>
-  				<option value="software">Software</option>
-  				<option value="gaming">Gaming</option>
-  				<option value="ai">Ai</option>
-			</select>
+			<form action="" method="POST">
+				<label for="tema">Téma:</label>
+				<select name="tematicke_cislo" id="tema">
+					<option value="vse">Vše</option>
+					<option value="hardware">Hardware</option>
+					<option value="software">Software</option>
+					<option value="gaming">Gaming</option>
+					<option value="ai">Ai</option>
+				</select>
+				<input type="submit" value="Submit">
+			</form>
 		</div>
 		<?php		
 			require("connect.php");
 			
-			$sql = "SELECT soubor_cesta FROM soubor";
+			$sql = "SELECT soubor_cesta FROM soubor NATURAL JOIN prispevek WHERE prispevek.stav='Schváleno'";
+			
+			if(isset($_POST['tematicke_cislo'])) {
+				if($_POST['tematicke_cislo'] != 'vse')
+					$sql = $sql . " AND prispevek.tematicke_cislo='" . $_POST['tematicke_cislo'] . "'";
+			}
 			$result = $conn->query($sql);
 			
 			if ($result->num_rows > 0) {				
