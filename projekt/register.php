@@ -42,6 +42,7 @@
 			var password_confirm = document.getElementById("password_confirm");
 			if(password.innerHTML != password_confirm.innerHTML)
 			{
+				alert("Hovno hjaha");
 				password.style.border = "2px solid red";
 				password_confirm.style.border = "2px solid red";
 			}
