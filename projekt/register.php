@@ -38,8 +38,8 @@
 		
 		function password_check()
 		{
-			var password = document.GetElementById("password");
-			var password_confirm = document.GetElementById("password_confirm");
+			var password = document.getElementById("password");
+			var password_confirm = document.getElementById("password_confirm");
 			if(password.innerHTML != password_confirm.innerHTML)
 			{
 				password.style.border = "2px solid red";
