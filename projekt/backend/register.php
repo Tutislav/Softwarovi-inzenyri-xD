@@ -1,4 +1,6 @@
 <?php
+	session_start();
+
 	//Connect--------
 	require("connect.php");
 	
@@ -13,13 +15,11 @@
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
-		session_start();
 		$_SESSION["error"] = "Vyplňte všechna políčka.";
 		header("Location: ../register.php");
 	}
 	else if($password != $password_confirm)
 	{
-		session_start();
 		$_SESSION["error"] = "Hesla se neshodují.";
 		header("Location: ../register.php");
 	}
@@ -32,13 +32,11 @@
 		$result = mysqli_query($conn, $insert);
 		if($result) 
 		{
-			session_start();
 			$_SESSION["success"] = "Registrace byla úspěšná.";
 			header("Location: ../index.php");
 		}
 		else 
 		{ 
-			session_start();
 			$_SESSION["error"] = "Uživatel se stejnou emailovou adresou je zaregistrován.";
 			header("Location: ../register.php");
 		}
