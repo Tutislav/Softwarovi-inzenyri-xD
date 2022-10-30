@@ -39,7 +39,7 @@
 					<option value="software">Software</option>
 					<option value="gaming">Gaming</option>
 					<option value="ai">Ai</option>
-				</select>
+				</select><br>
 				<input type="submit" value="Submit">
 			</form>
 		</div>
