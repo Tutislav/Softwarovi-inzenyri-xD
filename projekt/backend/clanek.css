@@ -23,7 +23,8 @@
 		#clankyFilter
 		{
 			float:right;
-			width:150px;
+			padding-left:10px;
+			width:25%;
 			height:700px;
 			border-left:2px solid black;
 		}
