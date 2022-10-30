@@ -1,4 +1,7 @@
 <?php
+	//Session--------
+	session_start();
+
 	//Connect--------
 	require("connect.php");
 
@@ -22,13 +25,11 @@
 		}
 		if($user_exists)
 		{
-			session_start();
 			$_SESSION["success"] = "Přihlášení bylo úspěšné.";
 			header("Location: ../index.php");
 		}
 		else
 		{
-			session_start();
 			$_SESSION["error"] = "Nepodařilo se přihlásit.";
 			header("Location: ../login.php");	
 		}
