@@ -20,19 +20,15 @@
 			if($email == $item["email"] && password_verify($password, $item["heslo"]))
 			{
 				$user_exists = true;
+				$_SESSION["success"] = "Přihlášení bylo úspěšné.";
+				header("Location: ../index.php");
 				break;
 			}
 		}
-		if($user_exists)
-		{
-			$_SESSION["success"] = "Přihlášení bylo úspěšné.";
-			$_SESSION["email"] = $email;
-			header("Location: ../index.php");
-		}
-		else
+		if(!$user_exists)
 		{
 			$_SESSION["error"] = "Nepodařilo se přihlásit.";
-			header("Location: ../login.php");	
+			header("Location: ../login.php");		
 		}
 	}
 ?>
