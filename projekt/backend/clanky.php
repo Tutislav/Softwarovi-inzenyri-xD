@@ -28,17 +28,18 @@
                     <li class="helpdesk"><a href="">HELPDESK</a></li>
                 </ul>
         </div>
-	<div id="clankyFilter">
-		<label for="tema">Téma:</label>
-		<select name="tematicke_cislo" id="tema">
-			<option value="vse">Vse</option>
- 			<option value="hardware">Hardware</option>
-  			<option value="software">Software</option>
-  			<option value="gaming">Gaming</option>
-  			<option value="ai">Ai</option>
-		</select>
-	</div>
+	    
         <div id="clankyList">
+		<div id="clankyFilter">
+			<label for="tema">Téma:</label>
+			<select name="tematicke_cislo" id="tema">
+				<option value="vse">Vše</option>
+ 				<option value="hardware">Hardware</option>
+  				<option value="software">Software</option>
+  				<option value="gaming">Gaming</option>
+  				<option value="ai">Ai</option>
+			</select>
+		</div>
 		<?php		
 			require("connect.php");
 			
