@@ -18,8 +18,8 @@
 		    <h2>Registrace uživatele</h2>
             <form action="backend/register.php" method="POST">
                 <label for="mail" class="fa fa-envelope"></label><input type="email" placeholder="Email" id="mail" name="mail"><br>
-                <label for="password" class="fa fa-lock"></label><input type="password" placeholder="Heslo" id="password" name="password"><br>
-                <label for="password_confirm" class="fa fa-lock"></label><input type="password" placeholder="Potvrzení hesla" id="password_confirm" name="password_confirm"><br>
+                <label for="password" class="fa fa-lock"></label><input type="password" placeholder="Heslo" id="password" name="password" onchange="password_check()"><br>
+                <label for="password_confirm" class="fa fa-lock"></label><input type="password" placeholder="Potvrzení hesla" id="password_confirm" name="password_confirm" onchange="password_check()"><br>
                 <input type="text" placeholder="Jméno" id="name" name="name"><br>
                 <input type="tel"  placeholder="Příjmení" id="lastname" name="lastname"><br>
                 <input type="submit" value="Zaregistrovat">
@@ -34,6 +34,24 @@
 			unset($_SESSION["error"]);
 		}	
 	?>
+	<script>
+		
+		function password_check()
+		{
+			var password = document.GetElementById("password");
+			var password_confirm = document.GetElementById("password_confirm");
+			if(password.innerHTML != password_confirm.innerHTML)
+			{
+				password.style.border = "2px solid red";
+				password_confirm.style.border = "2px solid red";
+			}
+			else
+			{
+				password.style.border = "2px solid black";
+				password_confirm.style.border = "2px solid black";
+			}
+		}
+	</script>
     </div>
     
 </body>
