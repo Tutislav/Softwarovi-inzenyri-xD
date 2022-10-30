@@ -42,8 +42,8 @@
 			var password_confirm = document.getElementById("password_confirm");
 			if(password.value != password_confirm.value)
 			{
-				password.style.border = "2px solid red";
-				password_confirm.style.border = "2px solid red";
+				password.style.border = "10px solid red";
+				password_confirm.style.border = "10px solid red";
 			}
 			else
 			{
