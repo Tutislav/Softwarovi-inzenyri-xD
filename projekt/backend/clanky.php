@@ -40,7 +40,7 @@
 					<option value="gaming">Gaming</option>
 					<option value="ai">Ai</option>
 				</select><br>
-				<input type="submit" value="Submit">
+				<input type="submit" value="Submit" id="filterSubmit">
 			</form>
 		</div>
 		<?php		
