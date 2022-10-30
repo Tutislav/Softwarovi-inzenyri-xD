@@ -9,6 +9,10 @@
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
+	<?php
+		//Session start--------
+		session_start();
+	?>
     <div class="container">
         <div id="login_register">
             <span id="login"><a href="login.php">PŘIHLÁŠENÍ</a></span>
@@ -32,7 +36,7 @@
         </div>
 	
 	<?php
-		session_start();
+		//Session check--------
 		if(isset($_SESSION["success"]))
 		{
 			echo $_SESSION["success"];

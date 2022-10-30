@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<?php
+		//Session start--------
+		session_start();
+	?>
     <div class="container">
         <div id="login_register">
             <div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
@@ -24,7 +28,7 @@
         </div>
 
 	<?php
-		session_start();
+		//Session check--------
 		if(isset($_SESSION["error"]))
 		{
 			echo $_SESSION["error"];
