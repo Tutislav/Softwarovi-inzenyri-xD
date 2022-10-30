@@ -28,6 +28,12 @@
 			height:700px;
 			border-left:2px solid black;
 		}
+		input
+		{
+			margin-left:25%;
+			width:80px;
+			font-size:12px;
+		}
 		#clankyList
 		{
 			padding-top:40px;
