@@ -38,6 +38,7 @@
 		
 		function password_check()
 		{
+			alert("Hovno hjaha");
 			var password = document.getElementById("password");
 			var password_confirm = document.getElementById("password_confirm");
 			if(password.innerHTML != password_confirm.innerHTML)
