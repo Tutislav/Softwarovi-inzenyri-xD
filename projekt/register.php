@@ -42,8 +42,8 @@
 			var password_confirm = document.getElementById("password_confirm");
 			if(password.value != password_confirm.value)
 			{
-				password.style.background = "darkred";
-				password_confirm.style.background = "darkred";
+				password.style.background = "lightred";
+				password_confirm.style.background = "lightred";
 			}
 			else
 			{
