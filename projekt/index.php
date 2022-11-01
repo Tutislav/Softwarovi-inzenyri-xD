@@ -33,7 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#message").fadeOut(5000);
+            $("#message").fadeOut(10000);
         });
     </script>
 </head>
