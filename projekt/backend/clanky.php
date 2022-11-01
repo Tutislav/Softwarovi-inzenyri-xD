@@ -13,8 +13,8 @@
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="login"><a href="../login.html">PŘIHLÁŠENÍ</a></span>
-            <span id="register"><a href="../registration.html">REGISTRACE</a></span>
+            <span id="login"><a href="../login.php">PŘIHLÁŠENÍ</a></span>
+            <span id="register"><a href="../registration.php">REGISTRACE</a></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
