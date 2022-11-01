@@ -40,9 +40,9 @@
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="message"><?= htmlspecialchars($message) ?></span>
-            <span id="login"><?= htmlspecialchars($login_span) ?></span>
-            <span id="register"><?= htmlspecialchars($register_span) ?></span>
+            <span id="message"><?= $message ?></span>
+            <span id="login"><?= $login_span ?></span>
+            <span id="register"><?= $register_span ?></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
