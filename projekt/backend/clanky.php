@@ -31,7 +31,7 @@
             <span id="register">
                 <?php
                     if (!isset($_SESSION["email"])) echo("<a href='register.php'>REGISTRACE</a>");
-                    else echo("<a href='/?logout'>ODHLÁSIT SE</a>")
+                    else echo("<a href='/backend/clanky.php?logout'>ODHLÁSIT SE</a>")
                 ?>
             </span>
         </div>
