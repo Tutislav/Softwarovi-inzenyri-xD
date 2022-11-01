@@ -76,8 +76,8 @@
 			if ($result->num_rows > 0) {				
 			// Výpis článků
 				while($row = $result->fetch_assoc()) {
-					echo "<a href='clanek.php?soubor=" .$row["soubor_cesta"]."'><div class='clanekRef'><h3 class='clankyTitulek'>".$row["titulek"]. "</h3>
-					<p class='clankyAutor'>Autor: ".$row["jmeno"]." ".$row["prijmeni"]. "</p></div></a>";
+					echo "<a href='clanek.php?soubor=" .$row["soubor_cesta"]."'><div class='clanekRef'><h3 class='clanekTitulek'>".$row["titulek"]. "</h3>
+					<p class='clanekAutor'>Autor: ".$row["jmeno"]." ".$row["prijmeni"]. "</p></div></a>";
 				}
 			} else {
 				echo "0 results";
