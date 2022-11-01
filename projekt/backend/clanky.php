@@ -4,7 +4,7 @@
     //Logout--------
     if (isset($_GET["logout"])) {
         session_destroy();
-        header("Location: /");
+        header("Location: /backend/clanky.php");
     }
 ?>
 <!DOCTYPE html>
