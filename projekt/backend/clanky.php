@@ -65,7 +65,7 @@
 		<?php		
 			require("connect.php");
 			
-			$sql = "SELECT soubor_cesta FROM soubor NATURAL JOIN prispevek WHERE prispevek.stav='Schváleno'";
+			$sql = "SELECT soubor_cesta, titulek FROM soubor NATURAL JOIN prispevek WHERE prispevek.stav='Schváleno'";
 			
 			if(isset($_POST['tematicke_cislo'])) {
 				if($_POST['tematicke_cislo'] != 'vse')
