@@ -1,3 +1,12 @@
+<?php
+	//Session start--------
+	session_start();
+    //Logout--------
+    if (isset($_GET["logout"])) {
+        session_destroy();
+        header("Location: /");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +28,18 @@
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="login"><a href="../login.php">PŘIHLÁŠENÍ</a></span>
-            <span id="register"><a href="../register.php">REGISTRACE</a></span>
+            <span id="login">
+                <?php
+                    if (!isset($_SESSION["email"])) echo("<a href='login.php'>PŘIHLÁŠENÍ</a>");
+                    else echo($_SESSION["email"]);
+                ?>
+            </span>
+            <span id="register">
+                <?php
+                    if (!isset($_SESSION["email"])) echo("<a href='register.php'>REGISTRACE</a>");
+                    else echo("<a href='/?logout'>ODHLÁSIT SE</a>")
+                ?>
+            </span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
