@@ -14,7 +14,7 @@
     <div class="container">
         <div id="login_register">
             <span id="login"><a href="../login.php">PŘIHLÁŠENÍ</a></span>
-            <span id="register"><a href="../registration.php">REGISTRACE</a></span>
+            <span id="register"><a href="../register.php">REGISTRACE</a></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
