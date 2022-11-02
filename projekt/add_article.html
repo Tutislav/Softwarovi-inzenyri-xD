@@ -28,8 +28,8 @@
 	<script>
 		function file_check()
 		{
-			var file = document.getElementById("file").value;
-			alert(file);
+			var file = document.getElementById("file");
+			if(file.value.split(".")[1] == ".html") { alert("Super"); }
 		}
 	</script>
 </body>
