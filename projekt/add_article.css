@@ -1,0 +1,18 @@
+.add_article {
+	padding-left: 25%;
+	padding-bottom: 60px;
+	border-bottom: 2px solid black;
+	box-shadow: 0px 5px 4px -4px black;
+}
+
+h2 {
+	padding: 30px 10px;
+	border-bottom: 2px solid black;
+	box-shadow: 0px 3px 2px -2px black;
+	margin-right: 42%;
+}
+.home {
+	position: absolute;
+	right: 30%;
+	top: 0;
+}
