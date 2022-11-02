@@ -1,38 +1,28 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT World - přidávání článků</title>
-    <link href="casopis.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
+    	<meta charset="UTF-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>IT World - přidávání článků</title>
+    	<link href="casopis.css" rel="stylesheet">
+	<link href="login.css" rel="stylesheet">
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="container">
-        <div id="login_register">
-            <span id="login"><a href="login.php">PŘIHLÁŠENÍ</a></span>
-            <span id="register"><a href="register.php">REGISTRACE</a></span>
-        </div>
-        <div id="heading">
-            <h1>IT WORLD</h1>
-        </div>
-        <div id="navigation">
-            <ul> 
-                <li><a href="/">ÚVOD</a></li>
-                <li><a href="">ČLÁNKY</a></li>
-                <li><a href="">ARCHIV</a></li>
-                <li class="kontakt"><a href="">KONTAKT</a></li>
-                <li class="helpdesk"><a href="">HELPDESK</a></li>
-            </ul>
-        </div>
-	<div>
-		<h2>Přidávání článků</h2>
-		<form action="backend/add_article.php" method="post">
-			<input type="file" name="file" required>
-			<input type>
-		</form>
-	</div>
-    </div>
+	<div class="container">
+        	<div id="login_register">
+        		<div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
+        	</div>
+        	<div>
+			<h2>Přidávání článků</h2>
+            		<form action="backend/login.php" method="POST">
+				<input type="text" id="name" name="name">
+				<input type="text" id="contact" name="contact">
+                		<input type="file" id="file" name="file">
+                		<input type="submit" value="Přidat článek">
+            		</form>
+        	</div>
+    	</div>
 </body>
 </html>
