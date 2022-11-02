@@ -21,7 +21,10 @@
 			{
 				$user_exists = true;
 				$_SESSION["success"] = "Přihlášení bylo úspěšné.";
+				$_SESSION["name"] = $item["jmeno"];
+				$_SESSION["last_name"] = $item["prijmeni"];
 				$_SESSION["email"] = $item["email"];
+				$_SESSION["role"] = $item["role"];
 				header("Location: ../index.php");
 				break;
 			}
