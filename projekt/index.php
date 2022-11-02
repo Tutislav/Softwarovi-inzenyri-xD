@@ -1,10 +1,24 @@
 <?php
-	//Session start--------
-	session_start();
+    //Session start--------
+    session_start();
     //Logout--------
     if (isset($_GET["logout"])) {
         session_destroy();
         header("Location: /");
+    }
+    //Login and register--------
+    if (!isset($_SESSION["email"])) {
+        $login_span = "<a href='login.php'>PŘIHLÁŠENÍ</a>";
+        $register_span = "<a href='register.php'>REGISTRACE</a>";
+    }
+    else {
+        $login_span = $_SESSION["email"];
+        $register_span = "<a href='/?logout'>ODHLÁSIT SE</a>";
+    }
+    //Messages--------
+    if (isset($_SESSION["success"])) {
+        $message = $_SESSION["success"];
+        unset($_SESSION["success"]);
     }
 ?>
 <!DOCTYPE html>
@@ -16,22 +30,19 @@
     <title>IT World</title>
     <link href="casopis.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#message").fadeOut(10000);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="login">
-                <?php
-                    if (!isset($_SESSION["email"])) echo("<a href='login.php'>PŘIHLÁŠENÍ</a>");
-                    else echo($_SESSION["email"]);
-                ?>
-            </span>
-            <span id="register">
-                <?php
-                    if (!isset($_SESSION["email"])) echo("<a href='register.php'>REGISTRACE</a>");
-                    else echo("<a href='/?logout'>ODHLÁSIT SE</a>")
-                ?>
-            </span>
+            <span id="message"><?= $message ?></span>
+            <span id="login"><?= $login_span ?></span>
+            <span id="register"><?= $register_span ?></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
@@ -49,15 +60,6 @@
             Tato aplikace je výsledkem školního projektu v kurzu Řízení SW projektů na Vysoké škole<br>
             polytechnické Jihlava. Nejedná se o stránky skutečného odborného časopisu!
         </div>
-	
-	<?php
-		//Session check--------
-		if(isset($_SESSION["success"]))
-		{
-			echo $_SESSION["success"];
-			unset($_SESSION["success"]);
-		}	
-	?>
     </div>
 </body>
 </html>

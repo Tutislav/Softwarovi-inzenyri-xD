@@ -43,7 +43,6 @@
 		.clanekRef
 		{
 			color:black;
-			text-decoration:none;
 			padding:10px;
 			border-bottom:2px solid gray;
 			width:70%
@@ -52,7 +51,7 @@
 		@keyframes hoverClanek 
 		{
 			0%   {background-color: white;}
-			100%  {background-color: #eeeeee;}
+			100%  {background-color: #f0f0f0;}
 		}
 		@keyframes hoverClanekText
 		{
@@ -64,8 +63,14 @@
 		{
 			animation: hoverClanek 0.5s forwards;
 		}
-		.clanekRef:hover a
+		.clanekRef:hover .clanekTitulek
 		{
 			animation: hoverClanekText 0.5s forwards;
 		}
-	
+		a{
+			text-decoration:none;
+		}
+		.clanekTitulek
+		{
+			margin:0px;
+		}

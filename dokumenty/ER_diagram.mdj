@@ -228,6 +228,21 @@
 										},
 										{
 											"_type": "ERDColumnView",
+											"_id": "AAAAAAGENTONqbH79QI=",
+											"_parent": {
+												"$ref": "AAAAAAGD9g6zG6hmQ8Y="
+											},
+											"model": {
+												"$ref": "AAAAAAGENTLhHLHvfH0="
+											},
+											"font": "Arial;13;0",
+											"left": 469,
+											"top": 202,
+											"width": 134.892578125,
+											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
 											"_id": "AAAAAAGD9hbqLai0sy4=",
 											"_parent": {
 												"$ref": "AAAAAAGD9g6zG6hmQ8Y="
@@ -237,7 +252,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 469,
-											"top": 202,
+											"top": 217,
 											"width": 134.892578125,
 											"height": 13
 										},
@@ -252,7 +267,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 469,
-											"top": 217,
+											"top": 232,
 											"width": 134.892578125,
 											"height": 13
 										},
@@ -267,7 +282,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 469,
-											"top": 232,
+											"top": 247,
 											"width": 134.892578125,
 											"height": 13
 										}
@@ -276,14 +291,14 @@
 									"left": 464,
 									"top": 167,
 									"width": 144.892578125,
-									"height": 83
+									"height": 98
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 464,
 							"top": 144,
 							"width": 144.892578125,
-							"height": 106,
+							"height": 121,
 							"nameLabel": {
 								"$ref": "AAAAAAGD9g6zG6hl59o="
 							},
@@ -1268,7 +1283,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 550,
-									"top": 268,
+									"top": 283,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -1302,7 +1317,7 @@
 								"$ref": "AAAAAAGD9g6zG6hkCEc="
 							},
 							"lineStyle": 2,
-							"points": "535:249;535:304;832:304;832:568",
+							"points": "535:264;535:304;832:304;832:568",
 							"nameLabel": {
 								"$ref": "AAAAAAGD9jcGIapf7Gg="
 							},
@@ -1981,6 +1996,15 @@
 							"name": "id_uzivatele",
 							"length": 0,
 							"foreignKey": true
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAGENTLhHLHvfH0=",
+							"_parent": {
+								"$ref": "AAAAAAGD9g6zG6hiSqw="
+							},
+							"name": "titulek",
+							"length": 0
 						},
 						{
 							"_type": "ERDColumn",

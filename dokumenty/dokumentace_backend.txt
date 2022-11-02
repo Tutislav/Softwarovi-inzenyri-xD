@@ -1,0 +1,27 @@
+//********************************************************
+//********Softwarovi Inzeniri xD - It World **************
+//********************************************************
+
+backend obsahuje stránky s php a databázi
+*********
+login.php
+*********
+slouží k přihlašování do systemu kontroluje zda zadané udaje se shodují se zápisy v databázi a zapamatuje si je pomocí SESSION
+
+heslo se kontroluje pomocí metody password_verify protože heslo tam mít napřímo by bylo suboptimální
+
+**************
+registrace.php
+**************
+slouží k ověřování zadaných údajů a jejich přidávání do databáze
+
+**********
+clanky.php
+**********
+zobrazí všechny časopisy se zadanýma informacema pro role co ještě nejsou? (upraví se asi)
+
+**********
+clanek.php
+**********
+
+zobrazí članek
