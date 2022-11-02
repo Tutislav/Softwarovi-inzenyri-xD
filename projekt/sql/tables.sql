@@ -12,6 +12,7 @@ CREATE TABLE uzivatel (
 CREATE TABLE prispevek (
     id_prispevku INT NOT NULL AUTO_INCREMENT,
     id_uzivatele INT NOT NULL,
+    titulek VARCHAR(255) NOT NULL,
     tematicke_cislo ENUM ('hardware', 'software', 'gaming', 'ai') NOT NULL,
     spoluautori TEXT,
     stav VARCHAR(100) NOT NULL,
