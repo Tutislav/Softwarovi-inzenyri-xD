@@ -14,6 +14,11 @@
     else {
         $login_span = $_SESSION["email"];
         $register_span = "<a href='/?logout'>ODHLÁSIT SE</a>";
+        switch ($_SESSION["role"]) {
+            case "autor":
+                $menu_login = "<li><a href='add_article.php'>PŘIDAT ČLÁNEK</a></li>";
+                break;
+        }
     }
     //Messages--------
     if (isset($_SESSION["success"])) {
@@ -52,6 +57,7 @@
                 <li><a href="/">ÚVOD</a></li>
                 <li><a href="backend/clanky.php">ČLÁNKY</a></li>
                 <li><a href="">ARCHIV</a></li>
+                <?= $menu_login ?>
                 <li class="kontakt"><a href="">KONTAKT</a></li>
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
             </ul>
