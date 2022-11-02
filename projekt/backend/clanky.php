@@ -15,6 +15,13 @@
         $login_span = $_SESSION["email"];
         $register_span = "<a href='/backend/clanky.php?logout'>ODHLÁSIT SE</a>";
     }
+    //clankyFilter--------
+    if (isset($_POST["tematicke_cislo"])) {
+        $tematicke_cislo = $_POST["tematicke_cislo"];
+    }
+    else {
+        $tematicke_cislo = "vse";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -23,10 +30,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT World - Články</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="../casopis.css" rel="stylesheet">
 	<link href="clanek.css" rel="stylesheet">
-	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#tema").change(function(){
+                $("#clankyFilter form").submit();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -52,13 +65,12 @@
 			<form action="" method="POST">
 				<label for="tema">Téma:</label>
 				<select name="tematicke_cislo" id="tema">
-					<option value="vse">Vše</option>
-					<option value="hardware">Hardware</option>
-					<option value="software">Software</option>
-					<option value="gaming">Gaming</option>
-					<option value="ai">Ai</option>
+					<option value="vse"<?= $tematicke_cislo == "vse" ? " selected" : "" ?>>Vše</option>
+					<option value="hardware"<?= $tematicke_cislo == "hardware" ? " selected" : "" ?>>Hardware</option>
+					<option value="software"<?= $tematicke_cislo == "software" ? " selected" : "" ?>>Software</option>
+					<option value="gaming"<?= $tematicke_cislo == "gaming" ? " selected" : "" ?>>Gaming</option>
+					<option value="ai"<?= $tematicke_cislo == "ai" ? " selected" : "" ?>>Ai</option>
 				</select><br>
-				<input type="submit" value="Submit" id="filterSubmit">
 			</form>
 		</div>
 		<?php		
