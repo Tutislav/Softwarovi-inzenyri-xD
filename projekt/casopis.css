@@ -108,7 +108,7 @@ li a {
 	animation: hoverLogReg 0.5s forwards;
 }
 
-input {
+input, textarea {
 	background-color: #dddddd;
 	border-radius: 8px;
 	padding: 8px 15px;
