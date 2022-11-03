@@ -21,7 +21,7 @@
 			{
 				$user_exists = true;
 				$_SESSION["message"] = "Přihlášení bylo úspěšné.";
-				$_SESSION["id"] = $item["id_uzivatele"];
+				$_SESSION["user_id"] = $item["id_uzivatele"];
 				$_SESSION["name"] = $item["jmeno"];
 				$_SESSION["last_name"] = $item["prijmeni"];
 				$_SESSION["email"] = $item["email"];
