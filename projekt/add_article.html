@@ -28,8 +28,9 @@
 	<script>
 		function file_check()
 		{
-			var file = document.getElementById("file");
-			alert(file.value);
+			var file_dir = document.getElementById("file").value;
+			var split_array = file_dir.split("."); 
+			alert(split_array[1]);
 		}
 	</script>
 </body>
