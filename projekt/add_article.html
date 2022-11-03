@@ -19,9 +19,13 @@
         	<div class="add_article">
 			<h2>Přidávání článků</h2>
             		<form action="backend/add_article.php" method="post">
-				<label for="name"></label><input type="text" id="name" name="name" placeholder="Název článku" required>
+				<label for="name"></label><input type="text" id="name" name="name" placeholder="Titulek" required>
 				<label for="contact"></label><input type="text" id="contact" name="contact" placeholder="Kontaktní údaje" required>
                 		<label for="file"></label><input type="file" id="file" name="file" required onchange="file_check()">
+				<label for="theme">Téma:</label>
+				<select id="theme" name="theme">
+					<option >
+				</select>
 				<br>
                 		<input type="submit" value="Přidat článek">
             		</form>
