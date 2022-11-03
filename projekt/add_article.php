@@ -18,7 +18,7 @@
         	</div>
         	<div class="add_article">
 			<h2>Přidávání článků</h2>
-            		<form action="backend/add_article.php" method="post">
+            		<form action="backend/add_article.php" method="post" enctype="multipart/form-data">
 				<label class="fa fa-font" for="title"></label><input type="text" id="title" name="title" placeholder="Titulek" required><br>
 				<label class="fa fa-address-card-o" for="authors"></label><textarea id="authors" name="authors" placeholder="Spoluautoři" required></textarea><br>
                 		<label class="fa fa-file-word-o" for="file"></label><input type="file" id="file" name="file" required onchange="file_check()"><br>
