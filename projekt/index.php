@@ -1,30 +1,5 @@
 <?php
-    //Session start--------
-    session_start();
-    //Logout--------
-    if (isset($_GET["logout"])) {
-        session_destroy();
-        header("Location: /");
-    }
-    //Login and register--------
-    if (!isset($_SESSION["email"])) {
-        $login_span = "<a href='login.php'>PŘIHLÁŠENÍ</a>";
-        $register_span = "<a href='register.php'>REGISTRACE</a>";
-    }
-    else {
-        $login_span = $_SESSION["email"];
-        $register_span = "<a href='/?logout'>ODHLÁSIT SE</a>";
-        switch ($_SESSION["role"]) {
-            case "autor":
-                $menu_login = "<li><a href='add_article.php'>PŘIDAT ČLÁNEK</a></li>";
-                break;
-        }
-    }
-    //Messages--------
-    if (isset($_SESSION["success"])) {
-        $message = $_SESSION["success"];
-        unset($_SESSION["success"]);
-    }
+    require("/backend/common.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
