@@ -33,7 +33,11 @@
 			var file_dir = file.value;
 			var split_array = file_dir.split(".");
 			var file_prefix = split_array[1];
-			if(file_prefix != "doc" && file_prefix != "docx" && file_prefix != "pdf") { file.value = ""; }
+			if(file_prefix != "doc" && file_prefix != "docx" && file_prefix != "pdf") 
+			{ 
+				file.value = "";
+				document.getElementById("message").value = "Soubory mužete přidat pouze s příponami: doc, docx a pdf."; 
+			}
 		}
 	</script>
 </body>
