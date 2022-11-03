@@ -30,7 +30,8 @@
 		function file_check()
 		{
 			var file = document.getElementById("file");
-			var split_array = file_dir.value.split(".");
+			var file_dir = file.value;
+			var split_array = file_dir.split(".");
 			var file_prefix = split_array[1];
 			if(file_prefix != "doc" && file_prefix != "docx" && file_prefix != "pdf") { file.value = ""; }
 		}
