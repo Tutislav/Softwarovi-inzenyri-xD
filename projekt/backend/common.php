@@ -20,7 +20,7 @@
         $register_span = "<a href='?logout'>ODHLÁSIT SE</a>";
         switch ($_SESSION["role"]) {
             case "autor":
-                $menu_login = "<li><a href='/add_article.php'>PŘIDAT ČLÁNEK</a></li>";
+                $menu_login = "<li><a href='backend/add_article.php'>PŘIDAT ČLÁNEK</a></li>";
                 break;
         }
         if (isset($role_restriction) && $role_restriction != $_SESSION["role"]) {
