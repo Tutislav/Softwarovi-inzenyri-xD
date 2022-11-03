@@ -1,5 +1,5 @@
 <?php
-    require("/backend/common.php");
+    require("backend/common.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
