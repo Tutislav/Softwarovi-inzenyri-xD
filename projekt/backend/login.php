@@ -20,7 +20,7 @@
 			if($email == $item["email"] && password_verify($password, $item["heslo"]))
 			{
 				$user_exists = true;
-				$_SESSION["success"] = "Přihlášení bylo úspěšné.";
+				$_SESSION["message"] = "Přihlášení bylo úspěšné.";
 				$_SESSION["name"] = $item["jmeno"];
 				$_SESSION["last_name"] = $item["prijmeni"];
 				$_SESSION["email"] = $item["email"];
@@ -31,7 +31,7 @@
 		}
 		if(!$user_exists)
 		{
-			$_SESSION["error"] = "Nepodařilo se přihlásit.";
+			$_SESSION["message"] = "Nepodařilo se přihlásit.";
 			header("Location: ../login.php");		
 		}
 	}

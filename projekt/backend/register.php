@@ -16,12 +16,12 @@
 	//Empty check--------
 	if(empty($name) || empty($last_name) || empty($email) || empty($password) || empty($password_confirm)) 
 	{ 
-		$_SESSION["error"] = "Vyplňte všechna políčka.";
+		$_SESSION["message"] = "Vyplňte všechna políčka.";
 		header("Location: ../register.php");
 	}
 	else if($password != $password_confirm)
 	{
-		$_SESSION["error"] = "Hesla se neshodují.";
+		$_SESSION["message"] = "Hesla se neshodují.";
 		header("Location: ../register.php");
 	}
 	else
@@ -33,7 +33,7 @@
 		$result = mysqli_query($conn, $insert);
 		if($result) 
 		{
-			$_SESSION["success"] = "Registrace byla úspěšná.";
+			$_SESSION["message"] = "Registrace byla úspěšná.";
 			$_SESSION["name"] = $name;
 			$_SESSION["last_name"] = $last_name;
 			$_SESSION["email"] = $email;
@@ -42,7 +42,7 @@
 		}
 		else 
 		{ 
-			$_SESSION["error"] = "Uživatel se stejnou emailovou adresou je zaregistrován.";
+			$_SESSION["message"] = "Uživatel se stejnou emailovou adresou je zaregistrován.";
 			header("Location: ../register.php");
 		}
 	}
