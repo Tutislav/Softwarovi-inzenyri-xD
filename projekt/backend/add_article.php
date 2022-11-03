@@ -5,14 +5,14 @@
 	//Variables--------
 	$title = $_POST["title"];
 	$authors = $_POST["authors"];
-	$file = $_POST["file"];
 	$theme = $_POST["theme"];
 
-	echo $title;
-	echo $authors;
-	echo $file;
-	echo $theme;
-	
+	//File upload--------
+	$file_name = $_FILE["file"]["name"];
+	$file_loc = "clanky/".$file_name;
+	$file_name_temp = $_FILE["file"]["tmp_name"];
+	move_uploaded_file($file_name_temp, $file_loc);	
+
 	//Connect--------
 	require("connect.php");
 ?>
