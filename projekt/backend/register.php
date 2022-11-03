@@ -34,6 +34,7 @@
 		if($result) 
 		{
 			$_SESSION["message"] = "Registrace byla úspěšná.";
+			echo mysqli_insert_id($conn);
 			$_SESSION["name"] = $name;
 			$_SESSION["last_name"] = $last_name;
 			$_SESSION["email"] = $email;
