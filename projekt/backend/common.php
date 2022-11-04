@@ -4,7 +4,7 @@
     //Logout--------
     if (isset($_GET["logout"])) {
         session_destroy();
-        header("Location: ");
+        header("Location: " . $_GET["logout"]);
     }
     //Roles, login and register--------
     if (!isset($_SESSION["email"])) {
@@ -17,10 +17,10 @@
     }
     else {
         $login_span = $_SESSION["email"];
-        $register_span = "<a href='?logout'>ODHLÁSIT SE</a>";
+        $register_span = "<a href='?logout=" . $_SERVER["REQUEST_URI"] . "'>ODHLÁSIT SE</a>";
         switch ($_SESSION["role"]) {
             case "autor":
-                $menu_login = "<li><a href='add_article.php'>PŘIDAT ČLÁNEK</a></li>";
+                $menu_login = "<li><a href='/add_article.php'>PŘIDAT ČLÁNEK</a></li>";
                 break;
         }
         if (isset($role_restriction) && $role_restriction != $_SESSION["role"]) {
