@@ -13,3 +13,7 @@
 #name, #lastname {
 	margin-left: 40px;
 }
+
+input[type=submit] {
+	margin-top: 30px;
+}
