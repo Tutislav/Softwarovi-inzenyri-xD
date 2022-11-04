@@ -1,15 +1,9 @@
 .registration {
-	padding-left: 25%;
+	padding: 0 25%;
 	padding-bottom: 60px;
 	border-bottom: 2px solid black;
 	box-shadow: 0px 5px 4px -4px black;
-}
-
-h2 {
-	padding: 30px 10px;
-	border-bottom: 2px solid black;
-	box-shadow: 0px 3px 2px -2px black;
-	margin-right: 42%;
+	text-align: center;
 }
 
 #name {
@@ -18,18 +12,4 @@ h2 {
 
 #name, #lastname {
 	margin-left: 40px;
-}
-
-.fa-lock {
-	padding: 0 5px 0 4px;
-}
-
-.fa-lock input {
-	margin-left: 5px;
-}
-
-.home {
-	position: absolute;
-	right: 30%;
-	top: 0;
 }

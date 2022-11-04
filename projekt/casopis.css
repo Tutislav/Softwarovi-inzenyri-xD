@@ -3,6 +3,51 @@ body {
 	font-family: sans-serif;
 }
 
+h2 {
+	padding: 30px 10px;
+	border-bottom: 2px solid black;
+	box-shadow: 0px 3px 2px -2px black;
+}
+
+a {
+	color: black;
+	transition: color 0.5s;
+}
+
+a:hover {
+	color: red;
+}
+
+input, textarea, select {
+	background-color: #dddddd;
+	border-radius: 8px;
+	padding: 8px 15px;
+	width: 70%;
+	margin: 8px 15px;
+	font-size: 16px;
+	box-shadow: 1px 1px 3px black;
+}
+
+textarea {
+	vertical-align: top;
+}
+
+button, input[type=submit] {
+	background-color: #bb0000;
+	color: white;
+	margin: auto;
+	padding: 8px 35px;
+	width: fit-content;
+	display: block;
+	text-align: center;
+	font-size: 20px;
+	transition: background-color 0.5s;
+}
+
+button:hover, input[type=submit]:hover {
+	background-color: darkred;
+}
+
 .container {
 	padding-left: 20%;
 	padding-right: 20%;
@@ -17,8 +62,19 @@ body {
 	box-shadow: 0px 5px 4px -2px black;
 }
 
-#login a, #register a {
+#login_register a {
 	padding: 5px;
+	color: white;
+	text-decoration: none;
+}
+
+#login_register a:hover {
+	color: navajowhite;
+}
+
+#message {
+	float: left;
+	font-weight: bold;
 }
 
 #login {
@@ -28,11 +84,6 @@ body {
 
 #register {
 	padding-left: 5px;
-}
-
-#message {
-	float: left;
-	font-weight: bold;
 }
 
 #heading {
@@ -66,11 +117,6 @@ li a {
 	text-decoration: none;
 }
 
-#login_register a {
-	color: white;
-	text-decoration: none;
-}
-
 .kontakt {
 	border-right: 2px solid black;
 }
@@ -80,62 +126,10 @@ li a {
 	border-right: 2px solid black;
 }
 
-@keyframes hoverNav {
-	0% {
-		color: black;
-	}
-
-	100% {
-		color: red;
-	}
-}
-
-@keyframes hoverLogReg {
-	0% {
-		color: white;
-	}
-
-	100% {
-		color: navajowhite;
-	}
-}
-
-#navigation a:hover {
-	animation: hoverNav 0.5s forwards;
-}
-
-#login_register a:hover {
-	animation: hoverLogReg 0.5s forwards;
-}
-
-input, textarea, select {
-	background-color: #dddddd;
-	border-radius: 8px;
-	padding: 8px 15px;
-	width: 50%;
-	margin: 8px 15px;
-	font-size: 16px;
-	box-shadow: 1px 1px 3px black;
-}
-
-textarea
-{
-	vertical-align: top;
-}
-
-button, input[type=submit] {
-	background-color: #bb0000;
-	color: white;
-	margin-left: 19%;
-	margin-top: 40px;
-	width: 20%;
-	text-align: center;
-	font-size: 20px;
-	transition: background-color 0.5s;
-}
-
-button:hover, input[type=submit]:hover {
-	background-color: darkred;
+.home {
+	position: absolute;
+	right: 30%;
+	top: 0;
 }
 
 .fa {
