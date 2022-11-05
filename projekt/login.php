@@ -1,11 +1,5 @@
 <?php
-    //Session start--------
-    session_start();
-    //Messages--------
-    if (isset($_SESSION["error"])) {
-        $message = $_SESSION["error"];
-        unset($_SESSION["error"]);
-    }
+    require("backend/common.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
