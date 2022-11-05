@@ -2,7 +2,7 @@
 	//Session--------
 	session_start();
 
-	//Connect--------
+	//Connect database--------
 	require("connect.php");
 	
 	//Variables--------
@@ -28,7 +28,7 @@
 	{
 		$password = password_hash($password, PASSWORD_DEFAULT);
 
-		//Insert--------
+		//Insert database--------
 		$insert = "insert into uzivatel (jmeno, prijmeni, email, heslo, role) values('$name', '$last_name', '$email', '$password', '$role')";
 		$result = mysqli_query($conn, $insert);
 		if($result) 
