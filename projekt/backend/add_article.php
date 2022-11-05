@@ -32,8 +32,9 @@
 			if($result)
 			{
 				foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
+				$last_article_id += 1;
 				$insert = "insert into soubor (id_prispevku, soubor_cesta, datum_nahrani)
-					values ('$last_article_id + 1', '$file_loc', '$date')";
+					values ('$last_article_id', '$file_loc', '$date')";
 				$result = mysqli_query($conn, $insert);
 				if($result)
 				{
