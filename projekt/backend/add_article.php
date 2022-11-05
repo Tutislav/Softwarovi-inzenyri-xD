@@ -9,7 +9,7 @@
 
 	//File upload--------
 	$file_name = $_FILES["file"]["name"];
-	$file_loc = "clanky/".$file_name;
+	$file_loc = "/clanky/".$file_name;
 	$file_name_temp = $_FILES["file"]["tmp_name"];
 	echo $file_name . "<br>";
 	echo $file_loc . "<br>";
