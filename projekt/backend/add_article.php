@@ -17,7 +17,11 @@
 	{
 
 	}
-	else { echo "neco chybi"; }
+	else 
+	{ 
+		$_SESSION["massage"] = "Vyplňte všechna políčka.";
+		header("Location: add_article.php");
+	}
 
 	//File upload--------
 	//if(move_uploaded_file($file_name_temp, $file_loc)) { echo "Článek byl úspěšně poslán."; }
