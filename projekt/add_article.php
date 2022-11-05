@@ -1,5 +1,6 @@
 <?php
 	require("backend/common.php");
+	echo $_SESSION["user_id"];
 ?>
 <!DOCTYPE html>
 <html lang="cs">
