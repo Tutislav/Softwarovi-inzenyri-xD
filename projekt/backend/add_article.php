@@ -20,7 +20,7 @@
 	else 
 	{ 
 		$_SESSION["massage"] = "Vyplňte všechna políčka.";
-		header("Location: add_article.php");
+		header("Location: ../add_article.php");
 	}
 
 	//File upload--------
