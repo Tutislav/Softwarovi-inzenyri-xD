@@ -12,10 +12,11 @@
 	$file_name = $_FILES["file"]["name"];
 	
 
-	//Insert--------
+	//Empty check--------
 	if(!empty($title) && !empty($authors) && !empty($file_name) && !empty($theme))
 	{		
-
+		//Insert database
+		
 		//File--------
 		$file_loc = "clanky/".$file_name;
 		$file_name_temp = $_FILES["file"]["tmp_name"];
