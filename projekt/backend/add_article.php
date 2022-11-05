@@ -32,7 +32,14 @@
 			if($result)
 			{
 				foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
-				echo $last_article_id;
+				$insert = "insert into soubor (id_prispevku, soubor_cesta, datum_nahrani)
+					values ($last_article_id + 1, $file_loc, $date)";
+				$result = mysqli_query($conn, $insert);
+				if($result)
+				{
+					echo "Zapsání do databáze bylo úspěšné.";
+				}
+				else { echo mysqli_error($conn); }
 			}	
 		
 			//Insert database prispevek--------	
