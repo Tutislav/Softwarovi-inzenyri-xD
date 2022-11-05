@@ -14,8 +14,13 @@
 
 	//Insert--------
 	if(!empty($title) && !empty($authors) && !empty($file_name) && !empty($theme))
-	{
+	{		
 
+		//File--------
+		$file_loc = "clanky/".$file_name;
+		$file_name_temp = $_FILES["file"]["tmp_name"];
+		if(move_uploaded_file($file_name_temp, $file_loc)) { echo "Článek byl úspěšně poslán."; }
+		else { echo $_FILES["file"]["error"]; }
 	}
 	else 
 	{ 
@@ -23,7 +28,5 @@
 		header("Location: ../add_article.php");
 	}
 
-	//File upload--------
-	//if(move_uploaded_file($file_name_temp, $file_loc)) { echo "Článek byl úspěšně poslán."; }
-	//else { echo $_FILES["file"]["error"]; }	
+		
 ?>

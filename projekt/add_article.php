@@ -1,3 +1,6 @@
+<?php
+	require("backend/common.php");
+?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
