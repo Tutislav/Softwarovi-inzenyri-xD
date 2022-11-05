@@ -76,11 +76,18 @@
 		$striped_content = html_entity_decode($striped_content);
 		return $striped_content;  
 	}  
-	$filename = "../" . $_GET["soubor"];
-	$content = read_file_docx($filename);  
-	   
-	if($content)  
-		print nl2br($content);   
+	$id = $_GET["id"];
+    require("connect.php");
+    $sql = "SELECT soubor_cesta, datum_nahrani FROM prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
+    $result = $conn->query($sql);
+    $conn->close();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $filename = "../" . $row["soubor_cesta"];
+        $content = read_file_docx($filename);
+        if($content)
+            print nl2br($content);
+    }
 ?>
         </div>
     </div>

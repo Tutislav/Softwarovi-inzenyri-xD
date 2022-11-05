@@ -76,7 +76,7 @@
 		<?php		
 			require("connect.php");
 			
-			$sql = "SELECT soubor_cesta, titulek FROM soubor NATURAL JOIN prispevek WHERE prispevek.stav='Schváleno'";
+			$sql = "SELECT id_prispevku, titulek FROM prispevek WHERE prispevek.stav='Schváleno'";
 			
 			if(isset($_POST['tematicke_cislo'])) {
 				if($_POST['tematicke_cislo'] != 'vse')
@@ -87,7 +87,7 @@
 			if ($result->num_rows > 0) {				
 			// Výpis článků
 				while($row = $result->fetch_assoc()) {
-					echo "<a href='clanek.php?soubor=" .$row["soubor_cesta"]."'><div class='clanekRef'><h3 class='clanekTitulek'>".$row["titulek"]. "</h3></div></a>";
+					echo "<a href='clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'><h3 class='clanekTitulek'>".$row["titulek"]. "</h3></div></a>";
 				}
 			} else {
 				echo "0 results";
