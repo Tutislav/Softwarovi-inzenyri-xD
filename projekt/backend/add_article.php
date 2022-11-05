@@ -33,6 +33,6 @@
 		$_SESSION["message"] = "Vyplňte všechna políčka.";
 		header("Location: ../add_article.php");
 	}
-
+	echo $_FILES["file"]["error"];
 		
 ?>
