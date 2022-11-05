@@ -50,8 +50,13 @@
 			if($result)
 			{
 				echo "Zapsání do databáze bylo úspěšné.";
+				
 			}	
-			else { echo mysqli_error($conn); }
+			else 
+			{ 
+				$_SESSION["message"] = "Nepodařilo se zapsat do databáze příspěvků.";
+				header("Location: ../add_article.php");
+			}
 		}
 		else 
 		{
