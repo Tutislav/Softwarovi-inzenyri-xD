@@ -18,8 +18,16 @@
 		//File--------
 		$file_loc = "../clanky/".$file_name;
 		$file_name_temp = $_FILES["file"]["tmp_name"];
-		if(move_uploaded_file($file_name_temp, $file_loc)) { echo "Článek byl úspěšně poslán."; }
-		else { echo "Článek se nepodařilo poslat."; }
+		if(move_uploaded_file($file_name_temp, $file_loc)) 
+		{ 
+			//Insert database soubor--------
+			//Insert database prispevek--------	
+		}
+		else 
+		{
+			$_SESSION["message"] = "Nepodařilo se poslat soubor článku.";
+			header("Location: ../add_article.php");
+		}
 		
 		//Insert database
 		
@@ -28,7 +36,5 @@
 	{ 
 		$_SESSION["message"] = "Vyplňte všechna políčka.";
 		header("Location: ../add_article.php");
-	}
-	echo $_FILES["file"]["error"];
-		
+	}		
 ?>
