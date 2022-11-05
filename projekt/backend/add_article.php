@@ -44,14 +44,14 @@
 			//}	
 		
 			//Insert database prispevek--------
-			$insert = "insert into prispevek (id_uzivatele, tematicke_cislo, spoluautori, stav, titulek) values ($_SESSION[user_id], $theme, $authors, 'Nehodnoceno', $title)";
-			//$result = mysqli_query($conn, $insert);
-			//if($result)
-			//{
-			//	echo "Zapsání do databáze bylo úspěšné.";
-			//}	
-			//else { echo mysqli_error($conn); }
-			
+			$insert = "insert into prispevek (id_uzivatele, tematicke_cislo, spoluautori, stav, titulek)
+					values ($_SESSION[user_id], $theme, $authors, 'Nehodnoceno', $title)";
+			$result = mysqli_query($conn, $insert);
+			if($result)
+			{
+				echo "Zapsání do databáze bylo úspěšné.";
+			}	
+			else { echo mysqli_error($conn); }
 		}
 		else 
 		{
