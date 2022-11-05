@@ -45,7 +45,7 @@
 		
 			//Insert database prispevek--------
 			$insert = "insert into prispevek (id_uzivatele, tematicke_cislo, spoluautori, stav, titulek)
-					values ($_SESSION[user_id], "$theme", $authors, 'Nehodnoceno', $title)";
+					values ($_SESSION[user_id], '$theme', $authors, 'Nehodnoceno', $title)";
 			$result = mysqli_query($conn, $insert);
 			if($result)
 			{
