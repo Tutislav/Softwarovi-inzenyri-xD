@@ -19,7 +19,7 @@
 	}
 	else 
 	{ 
-		$_SESSION["massage"] = "Vyplňte všechna políčka.";
+		$_SESSION["message"] = "Vyplňte všechna políčka.";
 		header("Location: ../add_article.php");
 	}
 
