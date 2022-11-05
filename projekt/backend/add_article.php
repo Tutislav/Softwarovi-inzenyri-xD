@@ -6,7 +6,6 @@
 	$title = $_POST["title"];
 	$authors = $_POST["authors"];
 	$theme = $_POST["theme"];
-	$file	
 
 	//File upload--------
 	$file_name = $_FILES["file"]["name"];
