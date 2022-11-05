@@ -1,6 +1,7 @@
 <?php
 	//Session--------
 	require("common.php");
+	echo $_SESSION["user_id"];
 
 	//Connect--------
 	require("connect.php");
