@@ -11,6 +11,9 @@
 	$file_name = $_FILES["file"]["name"];
 	$file_loc = "clanky/".$file_name;
 	$file_name_temp = $_FILES["file"]["tmp_name"];
+	echo $file_name;
+	echo $file_loc;
+	echo $file_name_temp;
 	if(move_uploaded_file($file_name_temp, $file_loc)) { echo "Článek byl úspěšně poslán."; }
 	else { echo "Nepodařilo se poslat článek."; }	
 
