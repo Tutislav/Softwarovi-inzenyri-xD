@@ -15,10 +15,11 @@
 	if(!empty($title) && !empty($authors) && !empty($file) && !empty($theme))
 	{		
 		//File--------
+		$date = date("y-m-d-h-i-s");
 		$file_array = explode(".", $file);
 		$file_name = $file_array[0];
 		$file_ext = $file_array[1];
-		$file_name = $file_name."_".date("y-m-d-h-i-s").".".$file_ext;
+		$file_name = $file_name."_".$date.".".$file_ext;
 
 		$file_loc = "../clanky/".$file_name;
 		$file_name_temp = $_FILES["file"]["tmp_name"];
