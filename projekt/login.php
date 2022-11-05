@@ -1,5 +1,6 @@
 <?php
-    require("backend/common.php");
+	//Session--------
+    	require("backend/common.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
