@@ -26,7 +26,15 @@
 		if(move_uploaded_file($file_name_temp, $file_loc)) 
 		{ 
 			//Insert database soubor--------
-			
+			$last_article_id;
+			$select = "select id_prispevku from prispevek";
+			$result = mysqli_query($conn, $select);
+			if($result)
+			{
+				foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
+				echo $last_article_id;
+			}	
+		
 			//Insert database prispevek--------	
 		}
 		else 
