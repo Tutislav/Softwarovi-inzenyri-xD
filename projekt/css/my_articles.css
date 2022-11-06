@@ -1,1 +1,23 @@
+.articleRow
+{
+    margin:10px 0px;
+    overflow:hidden;
+    border:2px solid black;
+}
 
+a .clanekRef
+{
+    float:left;
+    width:60%;
+    border-right:2px solid black;
+    padding:2px;
+}
+
+.clanekStav
+{
+    overflow:hidden;
+    width:20%;
+    text-align:center;
+    border-right:2px solid black;
+    padding:2px;
+}
