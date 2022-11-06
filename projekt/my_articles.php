@@ -51,7 +51,7 @@
         <div id="clanekText">
 <?php
 	require("backend/connect.php");
-			
+	require("backend/common.php")		
 	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel WHERE uzivatel.email=" . $_SESSION["email"];
 			
 	$result = $conn->query($sql);
