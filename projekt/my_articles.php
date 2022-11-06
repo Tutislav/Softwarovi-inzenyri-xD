@@ -52,18 +52,18 @@
 <?php
 	require("backend/connect.php");
 			
-			$sql = "SELECT id_prispevku, titulek FROM prispevek WHERE prispevek.stav='Schváleno'";
+	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel WHERE uzivatel.email=" . $_SESSION["email"];
 			
-			$result = $conn->query($sql);
+	$result = $conn->query($sql);
 			
-			if ($result->num_rows > 0) {				
-			// Výpis článků
-				while($row = $result->fetch_assoc()) {
-					echo "<a href='clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'><h3 class='clanekTitulek'>".$row["titulek"]. "</h3></div></a>";
-				}
-			} else {
-				echo "0 results";
-			}
+	if ($result->num_rows > 0) {				
+		// Výpis článků
+		while($row = $result->fetch_assoc()) {
+			echo "<a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a><div class='clanekStav'>" . $row["stav"] . "</div>"
+		}
+	} else {
+		echo "0 results";
+	}
 ?>
         </div>
     </div>
