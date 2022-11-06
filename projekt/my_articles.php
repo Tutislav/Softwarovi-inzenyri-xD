@@ -59,7 +59,7 @@
 	if ($result->num_rows > 0) {				
 			// Výpis článků
 		while($row = $result->fetch_assoc()) {
-			echo "<a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a><div class='clanekStav'>" . $row["stav"] . "</div>";
+			echo "<a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a>";
 		}
 	} else {
 		echo "0 results";
