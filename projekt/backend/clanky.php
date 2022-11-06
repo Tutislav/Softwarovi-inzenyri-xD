@@ -74,7 +74,7 @@
 			</form>
 		</div>
 		<?php		
-			require("connect.php");
+			require("backend/connect.php");
 			
 			$sql = "SELECT id_prispevku, titulek FROM prispevek WHERE prispevek.stav='Schváleno'";
 			
