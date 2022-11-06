@@ -51,7 +51,7 @@
         <div id="clanekText">
 <?php
 	require("backend/connect.php");
-	require("backend/common.php")		
+	require("backend/common.php");	
 	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel WHERE uzivatel.email=" . $_SESSION["email"];
 			
 	$result = $conn->query($sql);
@@ -59,7 +59,7 @@
 	if ($result->num_rows > 0) {				
 		// Výpis článků
 		while($row = $result->fetch_assoc()) {
-			echo "<a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a><div class='clanekStav'>" . $row["stav"] . "</div>"
+			echo "<a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a><div class='clanekStav'>" . $row["stav"] . "</div>";
 		}
 	} else {
 		echo "0 results";
