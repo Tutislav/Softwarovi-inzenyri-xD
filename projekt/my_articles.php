@@ -48,7 +48,7 @@
                 </ul>
         </div>
 
-        <div id="clanekText">
+        <div id="myArticles">
 <?php
 	require("backend/connect.php");
 	require("backend/common.php");	
@@ -59,7 +59,7 @@
 	if ($result->num_rows > 0) {				
 		// Výpis článků
 		while($row = $result->fetch_assoc()) {
-			echo "<a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a><div class='clanekStav'>" . $row["stav"] . "</div>";
+			echo "<div class='articleRow'><a href='backend/clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a><div class='clanekStav'>" . $row["stav"] . "</div></div>";
 		}
 	} else {
 		echo "0 results";
