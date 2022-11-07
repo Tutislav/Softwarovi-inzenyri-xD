@@ -35,7 +35,7 @@
 				
 				$select = "select id_prispevku from prispevek order by id_prispevku desc limit 1";
 				$last_article_id = mysqli_query($conn, $select);
-				echo $last_article_id; 
+				print_r($last_article_id); 
 				//if($last_article_id)
 				//{
 				//	$insert = "insert into soubor (id_prispevku, soubor_cesta)
