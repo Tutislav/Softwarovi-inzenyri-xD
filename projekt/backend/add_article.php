@@ -43,7 +43,8 @@
 					$result = mysqli_query($conn, $insert);
 					if($result)
 					{
-						echo "Zapsání do databáze souborů bylo úspěšné.";
+						$_SESSION["message"] = "Přidání příspěvku bylo úspěšné.";
+						header("Location: ../index.php");
 					}
 					else { echo mysqli_error($conn); }
 				}	
