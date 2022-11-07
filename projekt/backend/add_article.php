@@ -39,7 +39,7 @@
 				{
 					foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
 					$last_article_id += 1;
-					echo $last_article;
+					echo $last_article_id;
 				}	
 			}	
 			else 
