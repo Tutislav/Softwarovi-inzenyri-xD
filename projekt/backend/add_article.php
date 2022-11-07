@@ -31,7 +31,7 @@
 			$result = mysqli_query($conn, $insert);
 			if($result)
 			{
-				Insert database soubor--------
+				//Insert database soubor--------
 				$last_article_id;
 				$select = "select id_prispevku from prispevek";
 				$result = mysqli_query($conn, $select);
