@@ -46,7 +46,7 @@
 					{
 						echo "Zapsání do databáze souborů bylo úspěšné.";
 					}
-					else { mysqli_error($conn); }
+					else { echo mysqli_error($conn); }
 				}	
 			}	
 			else 
