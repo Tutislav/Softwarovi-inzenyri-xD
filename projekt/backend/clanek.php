@@ -1,14 +1,8 @@
 <?php
-	//Session start--------
-	session_start();
-    //Logout--------
-    if (isset($_GET["logout"])) {
-        session_destroy();
-        header("Location: /");
-    }
+    require("backend/common.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,18 +22,9 @@
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="login">
-                <?php
-                    if (!isset($_SESSION["email"])) echo("<a href='login.php'>PŘIHLÁŠENÍ</a>");
-                    else echo($_SESSION["email"]);
-                ?>
-            </span>
-            <span id="register">
-                <?php
-                    if (!isset($_SESSION["email"])) echo("<a href='register.php'>REGISTRACE</a>");
-                    else echo("<a href='/?logout'>ODHLÁSIT SE</a>")
-                ?>
-            </span>
+            <span id="message"><?= $message ?></span>
+            <span id="login"><?= $login_span ?></span>
+            <span id="register"><?= $register_span ?></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
@@ -78,12 +63,13 @@
 	}  
 	$id = $_GET["id"];
     require("connect.php");
-    $sql = "SELECT soubor_cesta, datum_nahrani FROM prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
+    $sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
     $conn->close();
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $filename = "../" . $row["soubor_cesta"];
+        check_restriction($row);
+        $filename = $row["soubor_cesta"];
         $content = read_file_docx($filename);
         if($content)
             print nl2br($content);

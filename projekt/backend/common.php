@@ -33,4 +33,11 @@
         $message = $_SESSION["message"];
         unset($_SESSION["message"]);
     }
+    //User restriction
+    function check_restriction($row) {
+        if ($row["stav"] != "Schváleno" && $row["id_uzivatele"] != $_SESSION["user_id"]) {
+            $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
+            header("Location: /");
+        }
+    }
 ?>

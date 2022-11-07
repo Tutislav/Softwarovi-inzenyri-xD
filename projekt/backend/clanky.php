@@ -1,20 +1,5 @@
 <?php
-    //Session start--------
-    session_start();
-    //Logout--------
-    if (isset($_GET["logout"])) {
-        session_destroy();
-        header("Location: /backend/clanky.php");
-    }
-    //Login and register--------
-    if (!isset($_SESSION["email"])) {
-        $login_span = "<a href='login.php'>PŘIHLÁŠENÍ</a>";
-        $register_span = "<a href='register.php'>REGISTRACE</a>";
-    }
-    else {
-        $login_span = $_SESSION["email"];
-        $register_span = "<a href='/backend/clanky.php?logout'>ODHLÁSIT SE</a>";
-    }
+    require("backend/common.php");
     //clankyFilter--------
     if (isset($_POST["tematicke_cislo"])) {
         $tematicke_cislo = $_POST["tematicke_cislo"];
@@ -44,6 +29,7 @@
 <body>
     <div class="container">
         <div id="login_register">
+            <span id="message"><?= $message ?></span>
             <span id="login"><?= $login_span ?></span>
             <span id="register"><?= $register_span ?></span>
         </div>
