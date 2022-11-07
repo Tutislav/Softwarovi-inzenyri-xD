@@ -30,7 +30,7 @@
         <div id="navigation">
             <ul> 
                 <li><a href="/">ÚVOD</a></li>
-                <li><a href="backend/clanky.php">ČLÁNKY</a></li>
+                <li><a href="clanky.php">ČLÁNKY</a></li>
                 <li><a href="">ARCHIV</a></li>
                 <?= $menu_login ?>
                 <li class="kontakt"><a href="">KONTAKT</a></li>
