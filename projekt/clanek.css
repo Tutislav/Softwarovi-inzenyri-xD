@@ -1,0 +1,76 @@
+		#autor
+		{
+			float:right;
+			padding: 10px;
+			background-color:#ffd0d0;
+			border-left: 2px solid black;
+			margin-left: 10px;
+			width:30%;
+		}
+		
+		#obsah
+		{
+			width:80%;
+		}
+		
+		#clanekText
+		{
+			padding-bottom:50px;
+			margin-bottom:100px;
+			border-bottom:2px solid black;
+			box-shadow: 0px 5px 4px -4px;
+		}
+		#clankyFilter
+		{
+			float:right;
+			padding-left:10px;
+			width:25%;
+			height:700px;
+			border-left:2px solid black;
+		}
+		#filterSubmit
+		{
+			margin-left:25%;
+			width:80px;
+			font-size:12px;
+		}
+		#clankyList
+		{
+			padding-top:40px;
+			height:700px;
+			border:2px solid black;;
+		}
+		.clanekRef
+		{
+			color:black;
+			padding:10px;
+			border-bottom:2px solid gray;
+			width:70%
+		}
+		
+		@keyframes hoverClanek 
+		{
+			0%   {background-color: white;}
+			100%  {background-color: #f0f0f0;}
+		}
+		@keyframes hoverClanekText
+		{
+			0%   {color: black;}
+			100%  {color: darkred;}
+		}
+		
+		.clanekRef:hover
+		{
+			animation: hoverClanek 0.5s forwards;
+		}
+		.clanekRef:hover .clanekTitulek
+		{
+			animation: hoverClanekText 0.5s forwards;
+		}
+		a{
+			text-decoration:none;
+		}
+		.clanekTitulek
+		{
+			margin:0px;
+		}
