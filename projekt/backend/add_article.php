@@ -32,22 +32,21 @@
 			if($result)
 			{
 				//Insert database soubor--------
-				$last_article_id;
-				$select = "select id_prispevku from prispevek";
-				$result = mysqli_query($conn, $select);
-				if($result)
-				{
-					foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
-					$last_article_id += 1;
-					$insert = "insert into soubor (id_prispevku, soubor_cesta)
-							values ($last_article_id, '$file_loc')";
-					$result = mysqli_query($conn, $insert);
-					if($result)
-					{
-						echo "Zapsání do databáze souborů bylo úspěšné.";
-					}
-					else { echo mysqli_error($conn); }
-				}	
+				
+				$select = "select id_prispevku from prispevek order by id_prispevku desc limit 1";
+				$last_article_id = mysqli_query($conn, $select);
+				echo $last_article_id; 
+				//if($last_article_id)
+				//{
+				//	$insert = "insert into soubor (id_prispevku, soubor_cesta)
+				//			values ($last_article_id, '$file_loc')";
+				//	$result = mysqli_query($conn, $insert);
+				//	if($result)
+				//	{
+				//		echo "Zapsání do databáze souborů bylo úspěšné.";
+				//	}
+				//	else { echo mysqli_error($conn); }
+				//}	
 			}	
 			else 
 			{ 
