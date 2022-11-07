@@ -34,10 +34,10 @@
 				//Insert database soubor--------
 				
 				$select = "select id_prispevku from prispevek order by id_prispevku desc limit 1";
-				$last_article_id = mysqli_query($conn, $select);
-				if($last_article_id)
+				$result = mysqli_query($conn, $select);
+				if($result)
 				{
-					$last_article_id = mysqli_fetch_assoc($last_article_id);
+					$last_article_id = mysqli_fetch_assoc($result)["id_prispevku"];
 					$insert = "insert into soubor (id_prispevku, soubor_cesta)
 							values ($last_article_id, '$file_loc')";
 					$result = mysqli_query($conn, $insert);
