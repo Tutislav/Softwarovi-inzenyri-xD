@@ -25,32 +25,22 @@
 		$file_name_temp = $_FILES["file"]["tmp_name"];
 		if(move_uploaded_file($file_name_temp, $file_loc)) 
 		{ 
-			//Insert database soubor--------
-			//$last_article_id;
-			//$select = "select id_prispevku from prispevek";
-			//$result = mysqli_query($conn, $select);
-			//if($result)
-			//{
-			//	foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
-			//	$last_article_id += 1;
-			//	$insert = "insert into soubor (id_prispevku, soubor_cesta, datum_nahrani)
-			//		values ('$last_article_id', '$file_loc', '$date')";
-			//	$result = mysqli_query($conn, $insert);
-			//	if($result)
-			//	{
-			//		echo "Zapsání do databáze bylo úspěšné.";
-			//	}
-			//	else { echo mysqli_error($conn); }
-			//}	
-		
 			//Insert database prispevek--------
 			$insert = "insert into prispevek (id_uzivatele, tematicke_cislo, spoluautori, stav, titulek)
 					values ($_SESSION[user_id], '$theme', '$authors', 'Nehodnoceno', '$title')";
 			$result = mysqli_query($conn, $insert);
 			if($result)
 			{
-				echo "Zapsání do databáze bylo úspěšné.";
-				
+				Insert database soubor--------
+				$last_article_id;
+				$select = "select id_prispevku from prispevek";
+				$result = mysqli_query($conn, $select);
+				if($result)
+				{
+					foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
+					$last_article_id += 1;
+					echo $last_article;
+				}	
 			}	
 			else 
 			{ 
