@@ -39,7 +39,13 @@
 				{
 					foreach($result as $item) { $last_article_id = $item["id_prispevku"]; }
 					$last_article_id += 1;
-					echo $last_article_id;
+					$insert = "insert into soubor (id_prispevku, soubor_cesta)
+							values ($last_article_id, '$file_loc')";
+					$result = mysqli_query($conn, $insert);
+					if($result)
+					{
+						echo "Zapsání do databáze souborů bylo úspěšné.";
+					}
 				}	
 			}	
 			else 
