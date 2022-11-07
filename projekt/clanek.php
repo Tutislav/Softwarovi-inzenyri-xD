@@ -62,7 +62,7 @@
 		return $striped_content;  
 	}  
 	$id = $_GET["id"];
-    require("connect.php");
+    require("backend/connect.php");
     $sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
     $conn->close();
