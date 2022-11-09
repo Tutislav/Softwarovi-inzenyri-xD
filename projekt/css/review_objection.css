@@ -1,0 +1,25 @@
+.objection
+{
+    margin-left:10%;
+    width:75%;
+}
+
+form
+{
+    margin-left:10%;
+}
+
+p i
+{
+    margin-right:15px;    
+}
+
+input[type=submit]
+{
+    margin-left:32%;
+}
+
+textarea
+{
+    resize:none;
+}
