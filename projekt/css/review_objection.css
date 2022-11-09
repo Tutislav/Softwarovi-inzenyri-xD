@@ -23,6 +23,7 @@ p i
 
 input[type=submit]
 {
+    margin-top:30px;
     margin-left:32%;
 }
 
