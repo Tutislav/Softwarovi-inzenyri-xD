@@ -24,7 +24,7 @@
             <form action="" method="POST">
                 <p id="reviewer"><i class="fa fa-user"></i>Recenzent: </p><br>
                 <p id="article_title"><i class="fa fa-commenting"></i>Článek: </p><br>
-		<label for="text" class="fa fa-commenting"></label><textarea rows="5" placeholder="Námitky" id="text" name="text" required><br>
+		<label for="text" class="fa fa-commenting"></label><textarea rows="5" placeholder="Námitky" id="text" name="text" required></textarea><br>
                 <input type="submit" value="Odeslat">
             </form>
         </div>
