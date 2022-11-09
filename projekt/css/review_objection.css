@@ -1,12 +1,19 @@
 .objection
 {
-    margin-left:10%;
+    border-bottom:2px solid black;
+	box-shadow: 0px 5px 4px -4px;
+    padding-bottom:80px;
+}
+
+h2
+{
+	margin-left:10%;
     width:75%;
 }
 
 form
 {
-    margin-left:10%;
+    margin:0 20%;
 }
 
 p i
