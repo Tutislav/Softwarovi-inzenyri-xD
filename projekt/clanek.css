@@ -47,6 +47,17 @@
 			border-bottom:2px solid gray;
 			width:70%
 		}
+		#recenze, #odkaz_recenze
+		{
+			border: 1px solid black;
+			margin-bottom: 100px;
+		}
+		#tlacitko
+		{
+			display:inline-block;
+			border: 1px solid black;
+			padding:10px;
+		}
 		
 		@keyframes hoverClanek 
 		{

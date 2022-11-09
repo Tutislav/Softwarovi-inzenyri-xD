@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Článek</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link href="../casopis.css" rel="stylesheet">
+    <link href="casopis.css" rel="stylesheet">
 	<link href="clanek.css" rel="stylesheet">
 	
 	<script>
@@ -38,7 +38,7 @@
                     <li class="helpdesk"><a href="">HELPDESK</a></li>
                 </ul>
         </div>
-
+		<div id="odkaz_recenze"><h1>RECENZNÍ ŘÍZENÍ</h1><a id="tlacitko" href="#recenze">Zobraz recenze</a></div>
         <div id="clanekText">
 <?php
 	function read_file_docx($filename){  
@@ -76,6 +76,12 @@
     }
 ?>
         </div>
+		<div id="recenze">
+		Nejake recenze
+		<?php
+		//nějaký php
+		?>
+		</div>
     </div>
 </body>
 </html>
