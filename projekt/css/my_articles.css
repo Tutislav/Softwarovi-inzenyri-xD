@@ -21,3 +21,15 @@ a .clanekRef
     border-right:2px solid black;
     padding:2px;
 }
+
+.clanekRecenze
+{
+    overflow:hidden;
+    text-align:center;
+    padding:2px;
+}
+
+a
+{
+    text-decoration:none;
+}
