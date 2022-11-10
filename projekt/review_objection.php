@@ -1,6 +1,16 @@
 <?php
-	//Session--------
-    	require("backend/common.php");
+    $role_restriction = "autor";
+    require("backend/common.php");
+    $review_id = $_GET["id"];
+    require("backend/connect.php");
+    $sql = "SELECT jmeno, prijmeni, titulek FROM uzivatel JOIN recenze ON uzivatel.id_uzivatele=recenze.id_recenzenta JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku WHERE id_recenze=1;";
+    $result = $conn->query($sql);
+    $conn->close();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $reviewer_name = $row["jmeno"] . " " . $row["prijmeni"];
+        $article_title = $row["titulek"];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -20,12 +30,13 @@
             <div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
         </div>
         <div class="objection">
-		    <h2>Opononentní formulář</h2>
-            <form action="" method="POST">
-                <p id="reviewer"><i class="fa fa-user"></i>Recenzent: </p>
-                <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: </p><br>
+		    <h2>Oponentní formulář</h2>
+            <form action="backend/review_objection.php" method="POST">
+                <p id="reviewer"><i class="fa fa-user"></i>Recenzent: <?= $reviewer_name ?></p>
+                <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
 		<label for="text" class="fa fa-commenting"></label><textarea rows="5" placeholder="Námitky" id="text" name="text" required></textarea><br>
                 <input type="submit" value="Odeslat">
+                <input type="hidden" name="review_id" value="<?= $review_id ?>">
             </form>
         </div>
     </div>
