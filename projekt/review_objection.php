@@ -22,7 +22,7 @@
         <div class="objection">
 		    <h2>Opononentní formulář</h2>
             <form action="" method="POST">
-                <p id="reviewer"><i class="fa fa-user"></i>Recenzent: </p><br>
+                <p id="reviewer"><i class="fa fa-user"></i>Recenzent: </p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: </p><br>
 		<label for="text" class="fa fa-commenting"></label><textarea rows="5" placeholder="Námitky" id="text" name="text" required></textarea><br>
                 <input type="submit" value="Odeslat">
