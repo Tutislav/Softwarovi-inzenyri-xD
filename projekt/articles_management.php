@@ -18,6 +18,13 @@
     <link href="casopis.css" rel="stylesheet">
     <link href="css/my_articles.css" rel="stylesheet">
 	
+    <script>
+ 	$(document).ready(function(){
+            $("#stav").change(function(){
+                $("#clankyFilter form").submit();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -48,13 +55,31 @@
                     <li class="helpdesk"><a href="">HELPDESK</a></li>
                 </ul>
         </div>
-
+	    
+	<div id="clankyFilter">
+		<form action="" method="POST">
+			<label for="stav">Stav:</label>
+			<select name="stav" id="stav">
+				<option value="Vše"<?= $stav_clanku == "Vše" ? " selected" : "" ?>>Vše</option>
+				<option value="Schváleno"<?= $stav_clanku == "Schváleno" ? " selected" : "" ?>>Schváleno</option>
+				<option value="Vráceno z důvodu tematické nevhodnosti"<?= $stav_clanku == "Vráceno z důvodu tematické nevhodnosti" ? " selected" : "" ?>>Vráceno z důvodu tematické nevhodnosti</option>
+				<option value="Předáno recenzentům"<?= $stav_clanku == "Předáno recenzentům" ? " selected" : "" ?>>Předáno recenzentům</option>
+				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnuto</option>
+			</select><br>
+		</form>
+	</div>
+	    
         <div id="myArticles">
 <?php
 	require("backend/connect.php");
 	require("backend/common.php");	
 	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel";
-			
+	
+	if(isset($_POST['stav_clanku'])) {
+		if($_POST['stav_clanku'] != 'vse')
+			$sql = $sql . " WHERE prispevek.stav='" . $_POST['stav_clanku'] . "'";
+	}
+		    
 	$result = $conn->query($sql);
 			
 	if ($result->num_rows > 0) {				
