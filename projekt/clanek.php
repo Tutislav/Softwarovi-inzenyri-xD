@@ -90,7 +90,7 @@
 				echo $row["jmeno"]." ".$row["prijmeni"]."<br>";
 				echo "Aktualnost: ".
 				for($i=0; $i<5;$i++){
-					if($row["h_aktualnost"]>$i){
+					if(/*$row["h_aktualnost"]*/4>$i){
 						echo "<span class='fa fa-star'></span>" ;
 					}
 					else echo "<span class='fa fa-star-o'></span>";
