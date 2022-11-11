@@ -88,7 +88,7 @@
 				while($row = $result->fetch_assoc()) {
 				echo "Aktualnost: ".
 				for($i; $i<5;$i++){
-					if($row["h_aktualnost"]<$i){
+					if($row["h_aktualnost"]>$i){
 						echo "<span class='fa fa-star checked'></span>" ;
 					}
 					else echo "<span class='fa fa-star'></span>";
