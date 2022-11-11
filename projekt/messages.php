@@ -48,9 +48,9 @@
                 $conn->close();
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $sender_name = $row["jmeno"] + $row["prijmeni"];
+                        $sender_name = $row["jmeno"] + " " + $row["prijmeni"];
                         $message_text = $row["vzkaz_text"];
-                        echo("<p>'$sender_name' - '$message_text'</p>");
+                        echo("<p>" . $sender_name ." - " . $message_text . "</p>");
                     }
                 }
                 else {
