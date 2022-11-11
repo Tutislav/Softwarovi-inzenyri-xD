@@ -85,11 +85,12 @@
 			require("backend/connect.php"); //možná smazat druhej require?
 			$sql = "SELECT h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze";
 			$result = $conn->query($sql);
-			$conn->close();
 			if ($result->num_rows > 0) {
-				$row = $result->fetch_assoc();
-				echo $row["h_aktualnost"] . <br> . $row["h_originalita"] . <br> . $row["h_odborna_uroven"] . <br> . $row["h_jazykova_uroven"];
+				while($row = $result->fetch_assoc()) {
+					echo $row["h_aktualnost"] . <br> . $row["h_originalita"] . <br> . $row["h_odborna_uroven"] . <br> . $row["h_jazykova_uroven"];
+				}
 			}
+			$conn->close();
 		?>
 		</div>
     </div>
