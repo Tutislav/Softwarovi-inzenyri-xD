@@ -86,7 +86,7 @@
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					echo "Aktualnost: ".$row["h_aktualnost"] . "<br>" ."Originalita: ".$row["h_originalita"] . "<br>" ."Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" ."Jazyková úroveň: ". $row["h_jazykova_uroven"];
+				echo "Aktualnost: ".for($i; $i<5$i++){if($row["h_aktualnost"]<$i)echo "<span class='fa fa-star checked'></span>" else echo "<span class='fa fa-star'></span>"}. "<br>" ."Originalita: ".$row["h_originalita"] . "<br>" ."Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" ."Jazyková úroveň: ". $row["h_jazykova_uroven"];
 				}
 			}
 			$conn->close();
