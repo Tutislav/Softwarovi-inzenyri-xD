@@ -6,6 +6,12 @@
         session_destroy();
         header("Location: /");
     }
+    if (isset($_POST["stav_clanku"])) {
+        $stav_clanku = $_POST["stav_clanku"];
+    }
+    else {
+        $stav_clanku = "Vše";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
