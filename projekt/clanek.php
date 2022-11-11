@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Článek</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="casopis.css" rel="stylesheet">
 	<link href="clanek.css" rel="stylesheet">
 	
@@ -88,12 +89,12 @@
 				while($row = $result->fetch_assoc()) {
 				echo $row["jmeno"]." ".$row["prijmeni"]."<br>";
 				echo "Aktualnost: ".
-				/*for($i=0; $i<5;$i++){
+				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
-						echo "<span class='fa fa-star checked'></span>" ;
+						echo "<span class='fa fa-star'></span>" ;
 					}
-					else echo "<span class='fa fa-star'></span>";
-					}.*/$row["h_aktualnost"]. "<br>" .
+					else echo "<span class='fa fa-star-o'></span>";
+					}.$row["h_aktualnost"]. "<br>" .
 				"Originalita: ".$row["h_originalita"] . "<br>" .
 				"Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" .
 				"Jazyková úroveň: ". $row["h_jazykova_uroven"]."<br><br>";
