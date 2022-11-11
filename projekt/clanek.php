@@ -86,6 +86,7 @@
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
+				echo $row["jmeno"]." ".$row["prijmeni"]."<br>";
 				echo "Aktualnost: ".
 				/*for($i; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
