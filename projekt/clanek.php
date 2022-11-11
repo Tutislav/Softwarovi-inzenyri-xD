@@ -40,7 +40,6 @@
         </div>
 		<div id="odkaz_recenze">
 			<h1>RECENZNÍ ŘÍZENÍ</h1>
-			Stav
 			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</a>
 		</div>
         <div id="clanekText">
@@ -83,7 +82,14 @@
 		<div id="recenze">
 		Nejake recenze
 		<?php
-		//nějaký php
+			require("backend/connect.php"); //možná smazat druhej require?
+			$sql = "SELECT h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze";
+			$result = $conn->query($sql);
+			$conn->close();
+			if ($result->num_rows > 0) {
+				$row = $result->fetch_assoc();
+				echo $row["h_aktualnost"] . <br> . $row["h_originalita"] . <br> . $row["h_odborna_uroven"] . <br> . $row["h_jazykova_uroven"];
+			}
 		?>
 		</div>
     </div>
