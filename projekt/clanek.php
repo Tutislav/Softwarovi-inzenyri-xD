@@ -1,5 +1,6 @@
 <?php
     require("backend/common.php");
+    require("backend/connect.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -65,7 +66,7 @@
 		return $striped_content;  
 	}  
 	$id = $_GET["id"];
-    require("backend/connect.php");
+
     $sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
     $conn->close();
@@ -81,7 +82,7 @@
         </div>
 		<div id="recenze">
 		<?php
-			require("backend/connect.php"); //možná smazat druhej require?
+			
 			$sql = "SELECT jmeno, prijmeni, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze NATURAL JOIN uzivatel WHERE id_prispevku=".$id." AND id_recenzenta=id_uzivatele";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
