@@ -43,3 +43,16 @@ a
 {
     text-decoration:none;
 }
+
+#clanekFilter
+{
+    border-bottom: 2px solid black;
+    box-shadow: 0px 3px 2px -2px black;
+    padding: 20px 0px 50px 10%;
+    margin-bottom: 50px;
+}
+
+#stav
+{
+    width:30%;   
+}
