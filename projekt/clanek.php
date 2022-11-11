@@ -82,7 +82,7 @@
 		<div id="recenze">
 		<?php
 			require("backend/connect.php"); //možná smazat druhej require?
-			$sql = "SELECT h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze WHERE id_prispevku=".$id;
+			$sql = "SELECT h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze NATURAL JOIN prispevek WHERE id_prispevku=".$id;
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
