@@ -38,7 +38,11 @@
                     <li class="helpdesk"><a href="">HELPDESK</a></li>
                 </ul>
         </div>
-		<div id="odkaz_recenze"><h1>RECENZNÍ ŘÍZENÍ</h1><a id="tlacitko" href="#recenze">Zobraz recenze</a></div>
+		<div id="odkaz_recenze">
+			<h1>RECENZNÍ ŘÍZENÍ</h1>
+			Stav
+			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</a>
+		</div>
         <div id="clanekText">
 <?php
 	function read_file_docx($filename){  
