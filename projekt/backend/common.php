@@ -22,6 +22,9 @@
             case "autor":
                 $menu_login = "<li><a href='/add_article.php'>PŘIDAT ČLÁNEK</a></li><li><a href='/my_articles.php'>MOJE ČLÁNKY</a></li>";
                 break;
+            case "redaktor":
+                $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
+                break;
         }
         if (isset($role_restriction) && $role_restriction != $_SESSION["role"]) {
             $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
