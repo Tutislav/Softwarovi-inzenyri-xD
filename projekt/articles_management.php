@@ -65,7 +65,7 @@
 	<div id="clankyFilter">
 		<form action="" method="POST">
 			<label for="stav">Stav:</label>
-			<select name="stav" id="stav">
+			<select name="stav_clanku" id="stav">
 				<option value="Vše"<?= $stav_clanku == "Vše" ? " selected" : "" ?>>Vše</option>
 				<option value="Schváleno"<?= $stav_clanku == "Schváleno" ? " selected" : "" ?>>Schváleno</option>
 				<option value="Vráceno z důvodu tematické nevhodnosti"<?= $stav_clanku == "Vráceno z důvodu tematické nevhodnosti" ? " selected" : "" ?>>Vráceno z důvodu tematické nevhodnosti</option>
