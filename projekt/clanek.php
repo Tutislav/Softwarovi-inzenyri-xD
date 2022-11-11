@@ -87,7 +87,7 @@
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					echo $row["h_aktualnost"] . <br> . $row["h_originalita"] . <br> . $row["h_odborna_uroven"] . <br> . $row["h_jazykova_uroven"];
+					echo $row["h_aktualnost"] . "<br>" . $row["h_originalita"] . "<br>" . $row["h_odborna_uroven"] . "<br>" . $row["h_jazykova_uroven"];
 				}
 			}
 			$conn->close();
