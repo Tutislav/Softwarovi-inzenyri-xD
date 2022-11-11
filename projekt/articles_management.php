@@ -82,7 +82,7 @@
 	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel";
 	
 	if(isset($_POST['stav_clanku'])) {
-		if($_POST['stav_clanku'] != 'vse')
+		if($_POST['stav_clanku'] != 'Vše')
 			$sql = $sql . " WHERE prispevek.stav='" . $_POST['stav_clanku'] . "'";
 	}
 		    
