@@ -80,14 +80,13 @@
 ?>
         </div>
 		<div id="recenze">
-		Nejake recenze
 		<?php
 			require("backend/connect.php"); //možná smazat druhej require?
 			$sql = "SELECT h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
-					echo $row["h_aktualnost"] . "<br>" . $row["h_originalita"] . "<br>" . $row["h_odborna_uroven"] . "<br>" . $row["h_jazykova_uroven"];
+					echo "Aktualnost: ".$row["h_aktualnost"] . "<br>" ."Originalita: ".$row["h_originalita"] . "<br>" ."Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" ."Jazyková úroveň: ". $row["h_jazykova_uroven"];
 				}
 			}
 			$conn->close();
