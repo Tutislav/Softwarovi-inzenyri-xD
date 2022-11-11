@@ -53,6 +53,9 @@
                         echo("<p>'$sender_name' - '$message_text'</p>");
                     }
                 }
+                else {
+                    echo("Žádné vzkazy");
+                }
             ?>
         </div>
     </div>
