@@ -88,13 +88,14 @@
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 				echo $row["jmeno"]." ".$row["prijmeni"]."<br>";
-				echo "Aktualnost: ".
+				echo "Aktualnost: ";
 				for($i=0; $i<5;$i++){
-					if(/*$row["h_aktualnost"]*/4>$i){
+					if($row["h_aktualnost"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
 					}
 					else echo "<span class='fa fa-star-o'></span>";
-					}.$row["h_aktualnost"]. "<br>" .
+					}
+				echo $row["h_aktualnost"]. "<br>" .
 				"Originalita: ".$row["h_originalita"] . "<br>" .
 				"Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" .
 				"Jazyková úroveň: ". $row["h_jazykova_uroven"]."<br><br>";
