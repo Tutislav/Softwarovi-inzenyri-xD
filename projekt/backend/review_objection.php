@@ -5,7 +5,7 @@
     $user_id = $_SESSION["user_id"];
     if (!isset($_POST["review_id"]) || !isset($_POST["text"])) {
         $_SESSION["message"] = "Zprávu nelze odeslat.";
-        header("Location: /review_objection.php");
+        header("Location: /");
         die();
     }
     $review_id = $_POST["review_id"];
@@ -28,11 +28,11 @@
         }
         else {
             $_SESSION["message"] = "Zprávu nelze odeslat.";
-            header("Location: /review_objection.php");
+            header("Location: /review_objection.php?id=" . $review_id);
         }
     }
     else {
         $_SESSION["message"] = "Recenze neexistuje.";
-        header("Location: /review_objection.php");
+        header("Location: /review_objection.php?id=" . $review_id);
     }
 ?>
