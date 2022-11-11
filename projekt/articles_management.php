@@ -93,9 +93,10 @@
 		while($row = $result->fetch_assoc()) {
 			echo "<div class='articleRow'>
 					<a href='clanek.php?id=" .$row["id_prispevku"]."'><div class='clanekRef'>".$row["titulek"]. "</div></a>
-					<div class='clanekStav'>" . $row["stav"] . "</div>
-					<a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'><div class='clanekRecenze'>Recenze</div></a>
-				</div>";
+					<div class='clanekStav'>" . $row["stav"] . "</div>";
+				if($row["stav"] == "Schváleno")
+					"<a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'><div class='clanekRecenze'>Recenze</div></a>";
+			echo	"</div>";
 		}
 	} else {
 		echo "0 results";
