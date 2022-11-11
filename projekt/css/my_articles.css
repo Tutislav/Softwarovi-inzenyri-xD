@@ -11,6 +11,8 @@ a .clanekRef
     width:60%;
     border-right:2px solid black;
     padding:2px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow:ellipsis;
 }
 
@@ -22,6 +24,8 @@ a .clanekRef
     text-align:center;
     border-right:2px solid black;
     padding:2px;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow:ellipsis;
 }
 
@@ -30,6 +34,9 @@ a .clanekRef
     overflow:hidden;
     text-align:center;
     padding:2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
 }
 
 a
