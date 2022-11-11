@@ -12,14 +12,14 @@
     $text = $_POST["text"];
     
     require("connect.php");
-    $sql = "SELECT id_prispevku, id_recenzenta FROM recenze WHERE id_recenze='$review_id';";
+    $sql = "SELECT id_prispevku, id_zadavatele FROM recenze NATURAL JOIN ukol WHERE id_recenze='$review_id';";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $article_id = $row["id_prispevku"];
-        $reviewer_id = $row["id_recenzenta"];
+        $redactor_id = $row["id_zadavatele"];
 
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$reviewer_id', '$review_id', '$text');";
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$review_id', '$text');";
         $result = $conn->query($sql);
         $conn->close();
         if ($result) {
