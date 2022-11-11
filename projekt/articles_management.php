@@ -13,10 +13,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje články</title>
+    <title>Správa článků</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="casopis.css" rel="stylesheet">
-	<link href="css/my_articles.css" rel="stylesheet">
+    <link href="css/articles_management.css" rel="stylesheet">
 	
 </head>
 <body>
