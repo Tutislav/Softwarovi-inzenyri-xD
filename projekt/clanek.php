@@ -88,12 +88,12 @@
 				while($row = $result->fetch_assoc()) {
 				echo $row["jmeno"]." ".$row["prijmeni"]."<br>";
 				echo "Aktualnost: ".
-				for($i=0; $i<5;$i++){
+				/*for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
 						echo "<span class='fa fa-star checked'></span>" ;
 					}
 					else echo "<span class='fa fa-star'></span>";
-					}.$row["h_aktualnost"]. "<br>" .
+					}.*/$row["h_aktualnost"]. "<br>" .
 				"Originalita: ".$row["h_originalita"] . "<br>" .
 				"Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" .
 				"Jazyková úroveň: ". $row["h_jazykova_uroven"]."<br><br>";
