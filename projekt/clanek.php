@@ -95,31 +95,28 @@
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
-				echo "<br>";
-				echo "Originalita: ";
+				echo "<br>Originalita: ";
 				for($i=0; $i<5;$i++){
 					if($row["h_originalita"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
-				echo "<br>";
-				echo "Odborna úroveň: ";
+				echo "<br>Odborna úroveň: ";
 				for($i=0; $i<5;$i++){
 					if($row["h_odborna_uroven"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
-				echo "<br>";
-				echo "Jazyková úroveň: ";
+				echo "<br>Jazyková úroveň: ";
 				for($i=0; $i<5;$i++){
 					if($row["h_jazykova_uroven"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
-				echo "<br>";
+				echo "<br><br>";
 				}
 			}
 			$conn->close();
