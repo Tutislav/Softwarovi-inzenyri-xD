@@ -3,11 +3,12 @@
     require("backend/common.php");
     $review_id = $_GET["id"];
     require("backend/connect.php");
-    $sql = "SELECT jmeno, prijmeni, titulek FROM uzivatel JOIN recenze ON uzivatel.id_uzivatele=recenze.id_recenzenta JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku WHERE id_recenze='$review_id';";
+    $sql = "SELECT prispevek.id_uzivatele, jmeno, prijmeni, titulek FROM uzivatel JOIN recenze ON uzivatel.id_uzivatele=recenze.id_recenzenta JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku WHERE id_recenze='$review_id';";
     $result = $conn->query($sql);
     $conn->close();
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        check_restriction($row["id_uzivatele"]);
         $reviewer_name = $row["jmeno"] . " " . $row["prijmeni"];
         $article_title = $row["titulek"];
     }

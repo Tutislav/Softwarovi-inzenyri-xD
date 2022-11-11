@@ -72,7 +72,7 @@
     $conn->close();
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        check_restriction($row);
+        if ($row["stav"] != "Schváleno") check_restriction($row["id_uzivatele"], true);
         $filename = $row["soubor_cesta"];
         $content = read_file_docx($filename);
         if($content)
