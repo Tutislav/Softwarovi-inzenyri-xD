@@ -18,7 +18,7 @@ a:hover {
 	color: red;
 }
 
-input, textarea, select {
+input, textarea, select, button {
 	background-color: #dddddd;
 	border-radius: 8px;
 	padding: 8px 15px;
