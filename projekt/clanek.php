@@ -95,7 +95,7 @@
 					}*/$row["h_aktualnost"]. "<br>" .
 				"Originalita: ".$row["h_originalita"] . "<br>" .
 				"Odborná úroveň: ". $row["h_odborna_uroven"] . "<br>" .
-				"Jazyková úroveň: ". $row["h_jazykova_uroven"];
+				"Jazyková úroveň: ". $row["h_jazykova_uroven"]."<br><br>";
 				}
 			}
 			$conn->close();
