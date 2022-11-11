@@ -33,6 +33,7 @@
             $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
             header("Location: /");
         }
+        $menu_login .= "<li><a href='/messages.php'>VZKAZY</a></li>";
     }
     //Messages--------
     if (isset($_SESSION["message"])) {
