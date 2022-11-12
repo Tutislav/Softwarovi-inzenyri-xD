@@ -95,10 +95,12 @@
 				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
+				//aktualnost
 				echo "<div class='radky_recenzi' style='display: block'>";
-				//hvezdicky aktualnost
-				echo "Aktualnost: ";
-				echo "<div class='hvezdicky' style='padding: 0 10px'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+						echo "Aktualnost: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -106,11 +108,13 @@
 					else echo "<span class='fa fa-star-o'></span>";
 					}
 					echo "</div>";
+				echo "</div>";
+				//originalita
+				echo "<div class='radky_recenzi' style='display: block'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+						echo "Originalita: ";
 					echo "</div>";
-					echo "<div class='radky_recenzi' style='display: block'>";
-				//hvezdicky originalita
-				echo "Originalita: ";
-				echo "<div class='hvezdicky' style='padding: 0 10px'>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_originalita"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -118,30 +122,34 @@
 					else echo "<span class='fa fa-star-o'></span>";
 					}
 					echo "</div>";
-					echo "</div>";
-				//hvezdicky odborna uroven
-				echo "<div class='radky_recenzi' style='display: block'>";
-				echo "Odborna úroveň: ";
-				echo "<div class='hvezdicky' style='padding: 0 10px'>";
-				for($i=0; $i<5;$i++){
-					if($row["h_odborna_uroven"]>$i){
-						echo "<span class='fa fa-star'></span>" ;
-					}
-					else echo "<span class='fa fa-star-o'></span>";
-					}
-					echo "</div>";
-					echo "</div>";
-				//hvezdicky jazykova uroven
-				echo "<div class='radky_recenzi' style='display: block'>";
-				echo "Jazyková úroveň: ";
-				echo "<div class='hvezdicky' style='padding: 0 10px'>";
-				for($i=0; $i<5;$i++){
-					if($row["h_jazykova_uroven"]>$i){
-						echo "<span class='fa fa-star'></span>" ;
-					}
-					else echo "<span class='fa fa-star-o'></span>";
-					}
 				echo "</div>";
+				//odborna uroven
+				echo "<div class='radky_recenzi' style='display: block'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+						echo "Odborna úroveň: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
+					for($i=0; $i<5;$i++){
+						if($row["h_odborna_uroven"]>$i){
+							echo "<span class='fa fa-star'></span>" ;
+						}
+						else echo "<span class='fa fa-star-o'></span>";
+					}
+					echo "</div>";
+				echo "</div>";
+				//jazykova uroven
+				echo "<div class='radky_recenzi' style='display: block'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+						echo "Jazyková úroveň: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
+					for($i=0; $i<5;$i++){
+						if($row["h_jazykova_uroven"]>$i){
+							echo "<span class='fa fa-star'></span>" ;
+						}
+						else echo "<span class='fa fa-star-o'></span>";
+						}
+					echo "</div>";
 				echo "</div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
