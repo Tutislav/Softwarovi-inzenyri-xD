@@ -50,7 +50,7 @@
             </tr>
             <?php
                 require("backend/connect.php");
-                $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, id_prispevku, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele NATURAL JOIN recenze WHERE id_prijemce='$user_id';";
+                $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, id_prispevku, id_recenze, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele NATURAL JOIN recenze WHERE id_prijemce='$user_id';";
                 $result = $conn->query($sql);
                 $conn->close();
                 if ($result->num_rows > 0) {
@@ -59,7 +59,7 @@
                         $sender_name = $row["jmeno"] . " " . $row["prijmeni"];
                         $message_text = $row["vzkaz_text"];
                         if (!empty($row["id_prispevku"])) {
-                            $review = "<button onclick='location.href=clanek.php?id=" . $row["id_prispevku"] . "#recenze'>Recenze</button>";
+                            $review = "<button onclick='location.href=\"/clanek.php?id=" . $row["id_prispevku"] . "#recenze_" . $row["id_recenze"] . "\"'>Recenze</button>";
                         }
                         else {
                             $review = "";
