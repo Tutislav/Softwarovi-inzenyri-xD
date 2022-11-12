@@ -94,7 +94,7 @@
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
 				//sloupec názvů
-				echo "<div id='kontejner'>";
+				echo "<div id='kontejner' style='display:flex'>";
 				echo "<div id='sloupec_nazvy'>";
 				echo "Aktualnost: ";
 				echo "<br>Originalita: ";
@@ -110,6 +110,7 @@
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
+					echo "<br>";
 				//hvezdicky originalita
 				for($i=0; $i<5;$i++){
 					if($row["h_originalita"]>$i){
@@ -117,6 +118,7 @@
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
+					echo "<br>";
 				//hvezdicky odborna uroven
 				for($i=0; $i<5;$i++){
 					if($row["h_odborna_uroven"]>$i){
@@ -124,6 +126,7 @@
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
+					echo "<br>";
 				//hvezdicky jazykova uroven
 				for($i=0; $i<5;$i++){
 					if($row["h_jazykova_uroven"]>$i){
