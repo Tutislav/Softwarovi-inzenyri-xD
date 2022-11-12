@@ -97,10 +97,10 @@
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
 				//aktualnost
 				echo "<div class='radky_recenzi' style='display: flex'>";
-					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:50%'>";
 						echo "Aktualnost: ";
 					echo "</div>";
-					echo "<div class='hvezdicky' style='padding: 0 100px'>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -111,10 +111,10 @@
 				echo "</div>";
 				//originalita
 				echo "<div class='radky_recenzi' style='display: flex'>";
-					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:50%'>";
 						echo "Originalita: ";
 					echo "</div>";
-					echo "<div class='hvezdicky' style='padding: 0 100px'>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_originalita"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -125,10 +125,10 @@
 				echo "</div>";
 				//odborna uroven
 				echo "<div class='radky_recenzi' style='display: flex'>";
-					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:50%'>";
 						echo "Odborna úroveň: ";
 					echo "</div>";
-					echo "<div class='hvezdicky' style='padding: 0 100px'>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
 					for($i=0; $i<5;$i++){
 						if($row["h_odborna_uroven"]>$i){
 							echo "<span class='fa fa-star'></span>" ;
@@ -139,10 +139,10 @@
 				echo "</div>";
 				//jazykova uroven
 				echo "<div class='radky_recenzi' style='display: flex'>";
-					echo "<div class='recenze_typ' style='font-size:21.5px'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:50%'>";
 						echo "Jazyková úroveň: ";
 					echo "</div>";
-					echo "<div class='hvezdicky' style='padding: 0 100px'>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
 					for($i=0; $i<5;$i++){
 						if($row["h_jazykova_uroven"]>$i){
 							echo "<span class='fa fa-star'></span>" ;
