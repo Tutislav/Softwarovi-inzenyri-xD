@@ -112,7 +112,7 @@ li {
 
 li a {
 	display: block;
-	padding: 0px 8px 0px 8px;
+	padding: 4px 8px;
 	color: black;
 	text-decoration: none;
 }
