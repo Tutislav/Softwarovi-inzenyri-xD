@@ -16,6 +16,7 @@
 	<script>
 		$(document).ready(function(){
 			$("#kontakt").appendTo("#autor");
+			if (location.hash) $(location.hash).addClass("highlight");
 		});
 	</script>
 	
@@ -83,10 +84,11 @@
 		<div id="recenze">
 		<?php
 			require("backend/connect.php"); //možná smazat druhej require?
-			$sql = "SELECT jmeno, prijmeni, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze NATURAL JOIN uzivatel WHERE id_prispevku=".$id." AND id_recenzenta=id_uzivatele";
+			$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven FROM recenze NATURAL JOIN uzivatel WHERE id_prispevku=".$id." AND id_recenzenta=id_uzivatele";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
+				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				echo $row["jmeno"]." ".$row["prijmeni"]."<br>";
 				echo "Aktualnost: ";
 				for($i=0; $i<5;$i++){
@@ -116,7 +118,7 @@
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
-				echo "<br><br>";
+				echo "</div><br><br>";
 				}
 			}
 			$conn->close();
