@@ -153,6 +153,7 @@
 				echo "</div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
+				//semka někde text recenze s divama pro jQuery
 				}
 			}
 			$conn->close();
