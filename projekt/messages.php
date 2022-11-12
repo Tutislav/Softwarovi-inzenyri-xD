@@ -59,7 +59,7 @@
                         $sender_name = $row["jmeno"] . " " . $row["prijmeni"];
                         $message_text = $row["vzkaz_text"];
                         if (!empty($row["id_prispevku"])) {
-                            $review = "<button onlick='location.href=clanek.php?id=" . $row["id_prispevku"] . "#recenze'>Recenze</button>";
+                            $review = "<button onclick='location.href=clanek.php?id=" . $row["id_prispevku"] . "#recenze'>Recenze</button>";
                         }
                         else {
                             $review = "";
