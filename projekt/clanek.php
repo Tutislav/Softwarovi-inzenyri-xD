@@ -91,7 +91,7 @@
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
-				echo $row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]." ".$row["stav"]."<br>";
+				echo $row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<br>";
 				echo "Aktualnost: ";
 				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
