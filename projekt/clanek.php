@@ -102,7 +102,7 @@
 				echo "<br>Jazyková úroveň: ";
 				echo "</div>";
 				
-				echo "<div id='sloupec_hvezdicky'>";
+				echo "<div id='sloupec_hvezdicky' style='font-size:21.5; padding: 0 10px'>";
 				//hvezdicky aktualnost
 				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
