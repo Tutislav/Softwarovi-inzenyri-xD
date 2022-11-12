@@ -16,7 +16,7 @@
 	<script>
 		$(document).ready(function(){
 			$("#kontakt").appendTo("#autor");
-			if (location.hash) $(location.hash).addClass("highlight");
+			if (location.hash) $(location.hash).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);;
 		});
 	</script>
 	
