@@ -96,7 +96,7 @@
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
 				//aktualnost
-				echo "<div class='radky_recenzi' style='display: block'>";
+				echo "<div class='radky_recenzi' style='display: flex'>";
 					echo "<div class='recenze_typ' style='font-size:21.5px'>";
 						echo "Aktualnost: ";
 					echo "</div>";
@@ -110,7 +110,7 @@
 					echo "</div>";
 				echo "</div>";
 				//originalita
-				echo "<div class='radky_recenzi' style='display: block'>";
+				echo "<div class='radky_recenzi' style='display: flex'>";
 					echo "<div class='recenze_typ' style='font-size:21.5px'>";
 						echo "Originalita: ";
 					echo "</div>";
@@ -124,7 +124,7 @@
 					echo "</div>";
 				echo "</div>";
 				//odborna uroven
-				echo "<div class='radky_recenzi' style='display: block'>";
+				echo "<div class='radky_recenzi' style='display: flex'>";
 					echo "<div class='recenze_typ' style='font-size:21.5px'>";
 						echo "Odborna úroveň: ";
 					echo "</div>";
@@ -138,7 +138,7 @@
 					echo "</div>";
 				echo "</div>";
 				//jazykova uroven
-				echo "<div class='radky_recenzi' style='display: block'>";
+				echo "<div class='radky_recenzi' style='display: flex'>";
 					echo "<div class='recenze_typ' style='font-size:21.5px'>";
 						echo "Jazyková úroveň: ";
 					echo "</div>";
