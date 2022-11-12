@@ -94,9 +94,11 @@
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
 				
-				echo "<div id='radky1' style='display: block'>";
+				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
+				echo "<div class='radky_recenzi' style='display: block'>";
 				//hvezdicky aktualnost
 				echo "Aktualnost: ";
+				echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -104,9 +106,11 @@
 					else echo "<span class='fa fa-star-o'></span>";
 					}
 					echo "</div>";
-					echo "<div id='radky2' style='display: block'>";
+					echo "</div>";
+					echo "<div class='radky_recenzi' style='display: block'>";
 				//hvezdicky originalita
 				echo "Originalita: ";
+				echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_originalita"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -114,9 +118,11 @@
 					else echo "<span class='fa fa-star-o'></span>";
 					}
 					echo "</div>";
+					echo "</div>";
 				//hvezdicky odborna uroven
-				echo "<div id='radky3' style='display: block'>";
+				echo "<div class='radky_recenzi' style='display: block'>";
 				echo "Odborna úroveň: ";
+				echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_odborna_uroven"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
@@ -124,15 +130,18 @@
 					else echo "<span class='fa fa-star-o'></span>";
 					}
 					echo "</div>";
+					echo "</div>";
 				//hvezdicky jazykova uroven
-				echo "<div id='radky4' style='display: block'>";
+				echo "<div class='radky_recenzi' style='display: block'>";
 				echo "Jazyková úroveň: ";
+				echo "<div class='hvezdicky' style='padding: 0 10px'>";
 				for($i=0; $i<5;$i++){
 					if($row["h_jazykova_uroven"]>$i){
 						echo "<span class='fa fa-star'></span>" ;
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
+				echo "</div>";
 				echo "</div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
