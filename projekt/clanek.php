@@ -88,10 +88,11 @@
 			require("backend/connect.php"); //možná smazat druhej require?
 			$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
 			$result = $conn->query($sql);
+			$counter_recenze =1;
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
-				echo $row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<br>";
+				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<br>";
 				echo "Aktualnost: ";
 				for($i=0; $i<5;$i++){
 					if($row["h_aktualnost"]>$i){
@@ -121,6 +122,7 @@
 					else echo "<span class='fa fa-star-o'></span>";
 					}
 				echo "</div><br><br>";
+				$counter_recenze++;
 				}
 			}
 			$conn->close();
