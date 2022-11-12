@@ -95,7 +95,7 @@
 				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
 				//sloupec názvů
 				echo "<div id='kontejner' style='display:flex'>";
-				echo "<div id='sloupec_nazvy' style='font-size:21.5; padding: 0 10px'>";
+				echo "<div id='sloupec_nazvy' style='font-size:21.5px; padding: 0 10px'>";
 				echo "Aktualnost: ";
 				echo "<br>Originalita: ";
 				echo "<br>Odborna úroveň: ";
