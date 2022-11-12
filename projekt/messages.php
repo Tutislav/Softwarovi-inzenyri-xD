@@ -55,10 +55,10 @@
                 $conn->close();
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $date = date("d.m.y h:i", strtotime($row["datum_odeslani"]));
+                        $date = date("d.m.y H:i", strtotime($row["datum_odeslani"]));
                         $sender_name = $row["jmeno"] . " " . $row["prijmeni"];
                         $message_text = $row["vzkaz_text"];
-                        if (!empty($row["id_recenze"])) {
+                        if (!empty($row["id_prispevku"])) {
                             $review = "<button onlick='location.href=clanek.php?id=" . $row["id_prispevku"] . "#recenze'>Recenze</button>";
                         }
                         else {
