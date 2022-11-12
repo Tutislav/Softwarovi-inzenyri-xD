@@ -94,6 +94,7 @@
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
 				//sloupec názvů
+				echo "<div id='kontejner'>";
 				echo "<div id='sloupec_nazvy'>";
 				echo "Aktualnost: ";
 				echo "<br>Originalita: ";
@@ -130,6 +131,7 @@
 					}
 					else echo "<span class='fa fa-star-o'></span>";
 					}
+				echo "</div>";
 				echo "</div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
