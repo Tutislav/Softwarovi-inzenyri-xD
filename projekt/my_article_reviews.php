@@ -33,7 +33,7 @@
 		    	$row=$id_uzivatele->fetch_assoc();
 		    
 			$result = $conn->query($sql);	
-		        if($_SESSION["user_id"] == $row["id_uzivatele"])
+		        if($_SESSION["user_id"] == $row["id_uzivatele"] || $_SEESION["role"] == "redaktor")
 		        {
 			$counter_recenze =1;
 			if ($result->num_rows > 0) {
