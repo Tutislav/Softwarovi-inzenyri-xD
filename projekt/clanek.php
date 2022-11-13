@@ -153,7 +153,7 @@
 				echo "</div>";
 				echo "<div class=text_recenze>";
 					echo $row["recenze_text"]."<br>";
-					echo "<button>Zobraz celou recenzi</button><br>";
+					echo "<button>Oponentní formulář</button><br>";
 				echo "</div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
