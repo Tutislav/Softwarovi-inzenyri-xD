@@ -21,7 +21,7 @@
 			$(".toggle_recenze").click(function()
 			{
 				$(".text_recenze").slideToggle("slow");
-			}
+			});
 		});
 	</script>
 	
