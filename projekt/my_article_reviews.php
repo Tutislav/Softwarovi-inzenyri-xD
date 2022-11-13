@@ -95,7 +95,7 @@
 					echo "</div>";
 				echo "</div>";
 				echo "<div class='recenzeText'><p>" . $row["recenze_text"] . "</p></div>";
-				echo "<div class='reviews'><a href='review_objection.php?id=" . $row["id_recenze"] . "'>Námitky</a></div>";
+				echo "<div class='reviews'><a href='review_objection.php?id=" . $row["id_recenze"] . "'><button>Námitky</button></a></div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
 				}
