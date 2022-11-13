@@ -45,9 +45,17 @@
                     <li class="helpdesk"><a href="">HELPDESK</a></li>
                 </ul>
         </div>
+		<?php
+		require("backend/connect.php");
+		$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
+		$result2 = $conn->query($sql);
+		?>
 		<div id="odkaz_recenze">
 			<h1>RECENZNÍ ŘÍZENÍ</h1>
 			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</a>
+			<?php
+			echo "Stav článku: ".$row["stav"];
+			?>
 		</div>
         <div id="clanekText">
 <?php
@@ -72,10 +80,8 @@
 		return $striped_content;  
 	}  
 	$id = $_GET["id"];
-    require("backend/connect.php");
     $sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
-    $conn->close();
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if ($row["stav"] != "Schváleno") check_restriction($row["id_uzivatele"], true);
@@ -90,12 +96,9 @@
 		<?php
 		//pokud je člověk autor zobraz toho
 			echo "<h2>Recenze</h2>";
-			require("backend/connect.php"); //možná smazat druhej require?
-			$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
-			$result = $conn->query($sql);
 			$counter_recenze =1;
-			if ($result->num_rows > 0) {
-				while($row = $result->fetch_assoc()) {
+			if ($result2->num_rows > 0) {
+				while($row = $result2->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				echo "<br>Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button class='toggle_recenze'>Zobraz celou recenzi</button><br>"; //tlačítko zde je pro zobrazení textu recenze pomocí jQuery
 				
@@ -158,7 +161,7 @@
 				echo "</div>";
 				echo "<div class='text_recenze' style='display: none'>";
 					echo $row["recenze_text"]."<br>";
-					echo "<button>Oponentní formulář</button><br>";
+					echo "<button onclick=>Oponentní formulář</button><br>";
 				echo "</div>";
 				echo "</div><br><hr>";
 				$counter_recenze++;
