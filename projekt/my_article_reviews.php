@@ -27,10 +27,11 @@
 			echo "<h2>Recenze</h2>";
 			require("backend/connect.php");
 			$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$_GET['id']." AND zpristupnena=1;";
-		    	$sqlUser = "SELECT id_uzivatele FROM uzivatel NATURAL JOIN pripevek WHERE uzivatel.id_uzivatele = prispevek.id_uzivatele;"
+		    	$sqlUser = "SELECT id_uzivatele FROM prispevek NATURAL JOIN uzivatel WHERE id_prispevku=".$_GET["id"]; 
 			$id_uzivatele = $conn->query($sqlUser);
-			$result = $conn->query($sql);
-		        if($_SESSION["user_id"] == $id_uzivatele)
+		    	$row=$result->fetch_assoc();
+			$result = $conn->query($sql);	
+		        if($_SESSION["user_id"] == $row["id_uzivatele"])
 		        {
 			$counter_recenze =1;
 			if ($result->num_rows > 0) {
