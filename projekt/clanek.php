@@ -97,11 +97,11 @@
         </div>
 		<?php
 		//pokud je člověk autor zobraz toho
-		echo "<div id='recenze'>";
 		$sql3="SELECT id_uzivatele FROM prispevek NATURAL JOIN uzivatel WHERE id_prispevku=".$id; 
 		$result = $conn->query($sql3);
 		$row=$result->fetch_assoc();
 		if($_SESSION["user_id"]==$row["id_uzivatele"]){
+			echo "<div id='recenze'>";
 			$result = $conn->query($sql2);
 			echo "<h2>Recenze</h2>";
 			$counter_recenze =1;
@@ -176,8 +176,8 @@
 				$counter_recenze++;
 				}
 			}
-		}
 		echo "</div>";
+		}
 			$conn->close();
 		?>
     </div>
