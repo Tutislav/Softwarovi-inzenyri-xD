@@ -33,7 +33,7 @@
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				$reviewDateTime = strtotime($row["datum_splneni"]);
 				$reviewDate = date("d.m.Y", $reviewDateTime);
-				echo "Recenze ".$counter_recenze."	Recenzent: ".$row["jmeno"]." ".$row["prijmeni"]." 	" .$reviewDate. "<br>";
+				echo "Recenze ".$counter_recenze."\t Recenzent: ".$row["jmeno"]." ".$row["prijmeni"]."\t" .$reviewDate. "<br>";
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
 				//aktualnost
