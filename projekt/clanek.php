@@ -59,7 +59,7 @@
 		if($_SESSION["user_id"]==$autor){
 		echo "<div id='odkaz_recenze'>";
 		echo "<h1>RECENZNÍ ŘÍZENÍ</h1>";
-		echo "<button id='tlacitko' onclick='document.location=#recenze'>Zobraz recenze</button>";
+		echo "<button id='tlacitko' onclick='document.location=\"#recenze\"'>Zobraz recenze</button>";
 		echo "Stav článku: ".$stav;
 		echo "</div>";
 		}
