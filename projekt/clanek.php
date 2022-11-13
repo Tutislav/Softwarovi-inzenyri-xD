@@ -151,7 +151,7 @@
 						}
 					echo "</div>";
 				echo "</div>";
-				echo "<div class=text_recenze>";
+				echo "<div class='text_recenze' style='display: none'>";
 					echo $row["recenze_text"]."<br>";
 					echo "<button>Oponentní formulář</button><br>";
 				echo "</div>";
