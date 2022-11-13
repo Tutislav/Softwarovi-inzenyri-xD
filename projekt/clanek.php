@@ -48,15 +48,15 @@
 		<?php
 		require("backend/connect.php");
 		$id = $_GET["id"];
-		$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
-		$result2 = $conn->query($sql);
+		$sql2 = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
+		$result = $conn->query($sql2);
 		?>
 		<div id="odkaz_recenze">
 			<h1>RECENZNÍ ŘÍZENÍ</h1>
 			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</button>
 			<?php
-			if ($result2->num_rows > 0) {
-				$row = $result2->fetch_assoc();
+			if ($result->num_rows > 0) {
+				$row = $result->fetch_assoc();
 			echo "Stav článku: ".$row["stav"];
 			}
 			?>
@@ -98,10 +98,11 @@
 		<div id="recenze">
 		<?php
 		//pokud je člověk autor zobraz toho
+			$result = $conn->query($sql2);
 			echo "<h2>Recenze</h2>";
 			$counter_recenze =1;
-			if ($result2->num_rows > 0) {
-				while($row = $result2->fetch_assoc()) {
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				echo "<br>Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button class='toggle_recenze'>Zobraz celou recenzi</button><br>"; //tlačítko zde je pro zobrazení textu recenze pomocí jQuery
 				
