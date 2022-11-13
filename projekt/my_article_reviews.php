@@ -31,8 +31,8 @@
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
-				$ReviewDate = strtotime($row["datum_splneni"]);
-				//$ReviewDate = date("d.m.Y", $ReviewDateTime);
+				$reviewDateTime = strtotime($row["datum_splneni"]);
+				$reviewDate = date("d.m.Y", $reviewDateTime);
 				echo "Recenze ".$counter_recenze."	Recenzent: ".$row["jmeno"]." ".$row["prijmeni"]." 	" .$reviewDate. "<br>";
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
