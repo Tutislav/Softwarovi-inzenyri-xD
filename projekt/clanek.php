@@ -18,7 +18,7 @@
 			$("#kontakt").appendTo("#autor");
 			if (location.hash) $(location.hash).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);;
 			$("#toggle_recenze").click(function(){
-			$("#text_recenze").slideToggle("slow");
+			$(".text_recenze").slideToggle("slow");
 		});
 	</script>
 	
