@@ -97,7 +97,7 @@
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
-				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button class='toggle_recenze'>Zobraz celou recenzi</button><br>"; //tlačítko zde je pro zobrazení textu recenze pomocí jQuery
+				echo "<br>Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button class='toggle_recenze'>Zobraz celou recenzi</button><br>"; //tlačítko zde je pro zobrazení textu recenze pomocí jQuery
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
 				//aktualnost
@@ -160,7 +160,7 @@
 					echo $row["recenze_text"]."<br>";
 					echo "<button>Oponentní formulář</button><br>";
 				echo "</div>";
-				echo "</div><br><hr><br>";
+				echo "</div><br><hr>";
 				$counter_recenze++;
 				}
 			}
