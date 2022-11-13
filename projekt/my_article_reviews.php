@@ -20,9 +20,87 @@
             <span id="message"><?= $message ?></span>
             <div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
         </div>
-        <div class="reviews">
-            <a href="review_objection.php">Námitky</a>
-        </div>
+	    <div id="recenze">
+		<?php
+		//pokud je člověk autor zobraz toho
+			echo "<h2>Recenze</h2>";
+			require("backend/connect.php");
+			$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
+			$result = $conn->query($sql);
+			$counter_recenze =1;
+			if ($result->num_rows > 0) {
+				while($row = $result->fetch_assoc()) {
+				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
+				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
+				
+				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
+				//aktualnost
+				echo "<div class='radky_recenzi' style='display: flex'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:200px'>";
+						echo "Aktualnost: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
+				for($i=0; $i<5;$i++){
+					if($row["h_aktualnost"]>$i){
+						echo "<span class='fa fa-star'></span>" ;
+					}
+					else echo "<span class='fa fa-star-o'></span>";
+					}
+					echo "</div>";
+				echo "</div>";
+				//originalita
+				echo "<div class='radky_recenzi' style='display: flex'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:200px'>";
+						echo "Originalita: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
+				for($i=0; $i<5;$i++){
+					if($row["h_originalita"]>$i){
+						echo "<span class='fa fa-star'></span>" ;
+					}
+					else echo "<span class='fa fa-star-o'></span>";
+					}
+					echo "</div>";
+				echo "</div>";
+				//odborna uroven
+				echo "<div class='radky_recenzi' style='display: flex'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:200px'>";
+						echo "Odborna úroveň: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
+					for($i=0; $i<5;$i++){
+						if($row["h_odborna_uroven"]>$i){
+							echo "<span class='fa fa-star'></span>" ;
+						}
+						else echo "<span class='fa fa-star-o'></span>";
+					}
+					echo "</div>";
+				echo "</div>";
+				//jazykova uroven
+				echo "<div class='radky_recenzi' style='display: flex'>";
+					echo "<div class='recenze_typ' style='font-size:21.5px; width:200px'>";
+						echo "Jazyková úroveň: ";
+					echo "</div>";
+					echo "<div class='hvezdicky' style='padding: 0 10px'>";
+					for($i=0; $i<5;$i++){
+						if($row["h_jazykova_uroven"]>$i){
+							echo "<span class='fa fa-star'></span>" ;
+						}
+						else echo "<span class='fa fa-star-o'></span>";
+						}
+					echo "</div>";
+				echo "</div>";
+				echo "<div class='recenzeText'><p>" . $row["recenze_text"] . "</p></div>"
+				echo "<div class='reviews'><a href='review_objection.php?id=" . $row["id_recenze"] . "'>Námitky</a></div>"
+				echo "</div><br><br>";
+				$counter_recenze++;
+				}
+			}
+			$conn->close();
+		?>
+		</div>
+        
+           
     </div>
 </body>
 </html>
