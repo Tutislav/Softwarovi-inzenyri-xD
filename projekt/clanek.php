@@ -165,7 +165,7 @@
 				echo "</div>";
 				echo "<div class='text_recenze' style='display: none'>";
 					echo $row["recenze_text"]."<br>";
-					echo "<button onclick='document.location=review_objection.php/id='>Oponentní formulář</button><br>";
+					echo "<button onclick='document.location=review_objection.php/".echo "id=".$row["id_recenze"]."'".">Oponentní formulář</button><br>";
 				echo "</div>";
 				echo "</div><br><hr>";
 				$counter_recenze++;
