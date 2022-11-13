@@ -1,6 +1,7 @@
 <?php
 	//Session start--------
-	session_start();
+    session_start();
+    require("backend/common.php");
     //Logout--------
     if (isset($_GET["logout"])) {
         session_destroy();
@@ -56,7 +57,7 @@
                     <li><a href="/">ÚVOD</a></li>
                     <li><a href="clanky.php">ČLÁNKY</a></li>
                     <li><a href="">ARCHIV</a></li>
-		                <?= $menu_login ?>
+		    <?= $menu_login ?>
                     <li class="kontakt"><a href="">KONTAKT</a></li>
                     <li class="helpdesk"><a href="">HELPDESK</a></li>
                 </ul>
