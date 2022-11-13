@@ -56,7 +56,7 @@
 			$autor=$row["id_uzivatele"];
 			$stav=$row["stav"];
 		}
-		if($_SESSION["user_id"]==$autor){
+		if($_SESSION["user_id"]==$autor || $_SESSION["role"]=="redaktor"){
 		echo "<div id='odkaz_recenze'>";
 		echo "<h1>RECENZNÍ ŘÍZENÍ</h1>";
 		echo "<button id='tlacitko' onclick='document.location=\"#recenze\"'>Zobraz recenze</button>";
