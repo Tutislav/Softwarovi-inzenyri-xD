@@ -54,8 +54,8 @@
 			<h1>RECENZNÍ ŘÍZENÍ</h1>
 			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</button>
 			<?php
-			if ($result->num_rows > 0) {
-				$row = $result->fetch_assoc();
+			if ($result2->num_rows > 0) {
+				$row = $result2->fetch_assoc();
 			echo "Stav článku: ".$row["stav"];
 			}
 			?>
