@@ -167,7 +167,7 @@
 					echo $row["recenze_text"]."<br>";
 					echo "<button onclick=>Oponentní formulář</button><br>";
 				echo "</div>";
-				echo "</div><br>";
+				echo "</div><br><hr>";
 				$counter_recenze++;
 				}
 			}
