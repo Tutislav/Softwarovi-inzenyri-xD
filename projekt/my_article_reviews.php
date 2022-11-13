@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Přihlášení - IT World</title>
     <link href="casopis.css" rel="stylesheet">
+    <link href="css/my_article_reviews.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -33,7 +34,8 @@
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
 				$reviewDateTime = strtotime($row["datum_splneni"]);
 				$reviewDate = date("d.m.Y", $reviewDateTime);
-				echo "Recenze ".$counter_recenze."\t Recenzent: ".$row["jmeno"]." ".$row["prijmeni"]."\t" .$reviewDate. "<br>";
+				echo "<h3>RECENZE</h3>";
+				echo "<p>Recenze ".$counter_recenze."</p><p>Recenzent: ".$row["jmeno"]." ".$row["prijmeni"]."</p><p>" .$reviewDate. "</p><br>";
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
 				//aktualnost
