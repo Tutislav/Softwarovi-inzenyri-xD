@@ -95,9 +95,9 @@
     }
 ?>
         </div>
-		<div id="recenze">
 		<?php
 		//pokud je člověk autor zobraz toho
+		echo "<div id='recenze'>";
 		$sql3="SELECT id_uzivatele FROM prispevek NATURAL JOIN uzivatel WHERE id_prispevku=".$id; 
 		$result = $conn->query($sql3);
 		$row=$result->fetch_assoc();
@@ -177,9 +177,9 @@
 				}
 			}
 		}
+		echo "</div>";
 			$conn->close();
 		?>
-		</div>
     </div>
 </body>
 </html>
