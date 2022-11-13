@@ -47,6 +47,7 @@
         </div>
 		<?php
 		require("backend/connect.php");
+		$id = $_GET["id"];
 		$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
 		$result2 = $conn->query($sql);
 		?>
@@ -82,7 +83,6 @@
 		$striped_content = html_entity_decode($striped_content);
 		return $striped_content;  
 	}  
-	$id = $_GET["id"];
     $sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
