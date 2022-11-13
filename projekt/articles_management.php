@@ -79,7 +79,6 @@
         <div id="myArticles">
 <?php
 	require("backend/connect.php");
-	require("backend/common.php");	
 	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel";
 	
 	if(isset($_POST['stav_clanku'])) {
