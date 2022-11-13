@@ -56,14 +56,14 @@
 			$autor=$row["id_uzivatele"];
 			$stav=$row["stav"];
 		}
+		if($_SESSION["user_id"]==$autor){
+		echo "<div id='odkaz_recenze'>";
+		echo "<h1>RECENZNÍ ŘÍZENÍ</h1>";
+		echo "<button id='tlacitko' onclick='document.location=#recenze'>Zobraz recenze</button>";
+		echo "Stav článku: ".$stav;
+		echo "</div>";
+		}
 		?>
-		<div id="odkaz_recenze">
-			<h1>RECENZNÍ ŘÍZENÍ</h1>
-			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</button>
-			<?php
-			echo "Stav článku: ".$stav;
-			?>
-		</div>
         <div id="clanekText">
 <?php
 	function read_file_docx($filename){  
