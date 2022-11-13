@@ -1,7 +1,7 @@
 p
 {
     display:inline;
-    margin:20px 50px 20px 0;
+    margin:20px 15% 20px 0;
 }
 
 .recenzeText
@@ -24,6 +24,7 @@ button
 
 #recenze_1, #recenze_2
 {
+    margin:auto;
     width:70%;
     border:2px solid black;
 }
