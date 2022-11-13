@@ -1,0 +1,29 @@
+p
+{
+    display:inline;
+    margin:20px 50px 20px 0;
+}
+
+.recenzeText
+{
+    margin:10px 0;
+    padding:10px 0;
+    border-top:2px solid gray;
+    border-bottom:2px solid gray;
+}
+
+a
+{
+    text-decoration:none;
+}
+
+button
+{
+    margin-bottom:10px;
+}
+
+#recenze_1, #recenze_2
+{
+    width:70%;
+    border:2px solid black;
+}
