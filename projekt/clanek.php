@@ -52,7 +52,7 @@
 		?>
 		<div id="odkaz_recenze">
 			<h1>RECENZNÍ ŘÍZENÍ</h1>
-			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</a>
+			<button id="tlacitko" onclick="document.location='#recenze'">Zobraz recenze</button>
 			<?php
 			echo "Stav článku: ".$row["stav"];
 			?>
