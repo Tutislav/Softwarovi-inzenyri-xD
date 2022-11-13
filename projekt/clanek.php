@@ -100,10 +100,6 @@
         </div>
 		<?php
 		//pokud je člověk autor zobraz toho
-		if($_SESSION["user_id"]==$autor){
-		$sql3="SELECT id_uzivatele FROM prispevek NATURAL JOIN uzivatel WHERE id_prispevku=".$id; 
-		$result = $conn->query($sql3);
-		$row=$result->fetch_assoc();
 		if($_SESSION["user_id"]==$autor || $_SESSION["role"]=="redaktor"){
 			echo "<div id='recenze'>";
 			$result = $conn->query($sql2);
