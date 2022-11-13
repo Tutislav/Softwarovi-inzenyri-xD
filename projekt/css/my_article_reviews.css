@@ -4,10 +4,23 @@ p
     margin:20px 15% 20px 0;
 }
 
+.hlava_recenze
+{
+    padding:10px 0 10px 10px;   
+    margin-bottom:10px;
+    border-bottom:2px solid gray;
+    font-weight:bold;
+}
+
+.radky_recenzi
+{
+    padding-left:10px;
+}
+
 .recenzeText
 {
     margin:10px 0;
-    padding:10px 0;
+    padding:10px 10px;
     border-top:2px solid gray;
     border-bottom:2px solid gray;
 }
