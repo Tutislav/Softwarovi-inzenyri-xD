@@ -92,7 +92,7 @@
 			if ($result->num_rows > 0) {
 				while($row = $result->fetch_assoc()) {
 				echo "<div id='recenze_" . $row["id_recenze"] . "'>";
-				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>";
+				echo "Toto je recenze cislo: ".$counter_recenze." ".$row["jmeno"]." ".$row["prijmeni"]." ".$row["datum_splneni"]."<button>Zobraz celou recenzi</button><br>"; //tlačítko zde je pro zobrazení textu recenze pomocí jQuery
 				
 				//přidat jednu classu pro divy a nastylovat tam!!!!!!!!!!!!!!!
 				//aktualnost
@@ -151,9 +151,12 @@
 						}
 					echo "</div>";
 				echo "</div>";
+				echo "<div class=text_recenze>";
+					echo $row["recenze_text"]."<br>";
+					echo "<button>Zobraz celou recenzi</button><br>";
+				echo "</div>";
 				echo "</div><br><br>";
 				$counter_recenze++;
-				//semka někde text recenze s divama pro jQuery
 				}
 			}
 			$conn->close();
