@@ -1,4 +1,6 @@
 <?php
+	//Session--------
+	$role_restriction = "autor";
 	require("backend/common.php");
 ?>
 <!DOCTYPE html>
