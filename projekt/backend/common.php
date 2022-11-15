@@ -5,6 +5,7 @@
     if (isset($_GET["logout"])) {
         session_destroy();
         header("Location: " . $_GET["logout"]);
+        die();
     }
     //Roles, login and register--------
     if (!isset($_SESSION["email"])) {
@@ -13,6 +14,7 @@
         if (isset($role_restriction)) {
             $_SESSION["message"] = "Nejprve se musíte přihlásit.";
             header("Location: /login.php");
+            die();
         }
     }
     else {
@@ -32,6 +34,7 @@
         if ($restricted) {
             $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
             header("Location: /");
+            die();
         }
         $menu_login .= "<li><a href='/messages.php'>VZKAZY</a></li>";
     }
@@ -47,6 +50,7 @@
             if ($user_id != $_SESSION["user_id"]) {
                 $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
                 header("Location: /");
+                die();
             }
         }
     }
