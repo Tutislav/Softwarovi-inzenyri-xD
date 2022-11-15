@@ -1,3 +1,6 @@
+<?php
+    require("backend/common.php");
+?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -7,12 +10,19 @@
     <title>IT World</title>
     <link href="casopis.css" rel="stylesheet">
     <link href="index.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#message").fadeIn().fadeOut(10000);
+        });
+    </script>
 </head>
 <body>
     <div class="container">
         <div id="login_register">
-            <span id="login"><a href="login.php">PŘIHLÁŠENÍ</a></span>
-            <span id="register"><a href="register.php">REGISTRACE</a></span>
+            <span id="message"><?= $message ?></span>
+            <span id="login"><?= $login_span ?></span>
+            <span id="register"><?= $register_span ?></span>
         </div>
         <div id="heading">
             <h1>IT WORLD</h1>
@@ -20,8 +30,9 @@
         <div id="navigation">
             <ul> 
                 <li><a href="/">ÚVOD</a></li>
-                <li><a href="">ČLÁNKY</a></li>
+                <li><a href="clanky.php">ČLÁNKY</a></li>
                 <li><a href="">ARCHIV</a></li>
+                <?= $menu_login ?>
                 <li class="kontakt"><a href="">KONTAKT</a></li>
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
             </ul>
