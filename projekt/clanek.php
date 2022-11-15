@@ -7,24 +7,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Článek</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="casopis.css" rel="stylesheet">
-	<link href="clanek.css" rel="stylesheet">
-	
-	<script>
-		$(document).ready(function(){
+    <title>Článek - IT World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="casopis.css">
+    <link rel="stylesheet" href="clanek.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#message").fadeIn().fadeOut(10000);
 			$("#kontakt").appendTo("#autor");
-			if (location.hash) $(location.hash).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);;
-			
-			$(".toggle_recenze").click(function()
-			{
+			if (location.hash) $(location.hash).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
+			$(".toggle_recenze").click(function(){
 				$(this).parent().children(".text_recenze").slideToggle("slow");
 			});
 		});
 	</script>
-	
 </head>
 <body>
     <div class="container">
@@ -37,13 +34,14 @@
             <h1>IT WORLD</h1>
         </div>
         <div id="navigation">
-                <ul> 
-                    <li><a href="../">ÚVOD</a></li>
-                    <li><a href="clanky.php">ČLÁNKY</a></li>
-                    <li><a href="">ARCHIV</a></li>
-                    <li class="kontakt"><a href="">KONTAKT</a></li>
-                    <li class="helpdesk"><a href="">HELPDESK</a></li>
-                </ul>
+            <ul> 
+                <li><a href="/">ÚVOD</a></li>
+                <li><a href="clanky.php">ČLÁNKY</a></li>
+                <li><a href="">ARCHIV</a></li>
+                <?= $menu_login ?>
+                <li class="kontakt"><a href="">KONTAKT</a></li>
+                <li class="helpdesk"><a href="">HELPDESK</a></li>
+            </ul>
         </div>
 		<?php
 		require("backend/connect.php");
