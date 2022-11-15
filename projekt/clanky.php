@@ -14,12 +14,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT World - Články</title>
-    <link href="../casopis.css" rel="stylesheet">
-	<link href="clanek.css" rel="stylesheet">
+    <title>Články - IT World</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            $("#message").fadeIn().fadeOut(10000);
             $("#tema").change(function(){
                 $("#clankyFilter form").submit();
             });
@@ -39,9 +41,9 @@
         <div id="navigation">
             <ul> 
                 <li><a href="/">ÚVOD</a></li>
-                <li><a href="">ČLÁNKY</a></li>
+                <li><a href="clanky.php">ČLÁNKY</a></li>
                 <li><a href="">ARCHIV</a></li>
-		<?= $menu_login ?>
+                <?= $menu_login ?>
                 <li class="kontakt"><a href="">KONTAKT</a></li>
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
             </ul>
