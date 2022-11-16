@@ -64,7 +64,7 @@
 
         ?>
 
-        <form action="redaktor_review.php" method="get">
+        <form action="/backend/redaktor_review.php" method="get">
             <select name="stav" id="stav">
                 <option value="Schváleno"<?= $stav_clanku == "Schváleno" ? " selected" : "" ?>>Schváleno</option>
 				<option value="Vráceno z důvodu tematické nevhodnosti"<?= $stav_clanku == "Vráceno z důvodu tematické nevhodnosti" ? " selected" : "" ?>>Vráceno z důvodu tematické nevhodnosti</option>
@@ -81,20 +81,4 @@
 </body>
 </html>
 
-<?php 
-
-        $redactor_id = $_SESSION["user_id"];
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id', '$_GET[text]');";
-        $result = $conn->query($sql);
-        $conn->close();
-        if ($result) {
-            $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
-            header("Location: /articles_management.php" );
-        }
-        else {
-            $_SESSION["message"] = "Zprávu nelze odeslat.";
-            header("Location: /articles_management.php" );
-        }
-
-?>
 
