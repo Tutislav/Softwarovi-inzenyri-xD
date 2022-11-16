@@ -50,7 +50,7 @@
         
         require("backend/connect.php");
 
-        $sql = "SELECT titulek FROM prispevek where id_prispevku='$_GET[id]'";
+        $sql = "SELECT titulek, id_uzivatele FROM prispevek  NATURAL JOIN uzivatel where id_prispevku='$_GET[id]' ";
 
         $result = $conn->query($sql);
 
@@ -58,6 +58,7 @@
             // Výpis článků
             while($row = $result->fetch_assoc()) {
                 echo "  Název článku: " .$row['titulek'];
+                $user_id = $row['id_uzivatel'];
             }
         }
 
@@ -81,7 +82,9 @@
 </html>
 
 <?php 
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$text');";
+
+        $redactor_id = $_SESSION["user_id"];
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id',  '$text');";
         $result = $conn->query($sql);
         $conn->close();
         if ($result) {
