@@ -2,7 +2,11 @@ form {
     display: inline-block;
 }
 
-form button {
+form button[type=submit] {
     margin: 0px 4px;
     padding: 2px;
+}
+
+.fa {
+    font-size: 1.25rem !important;
 }
