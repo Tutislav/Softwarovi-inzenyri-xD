@@ -5,9 +5,8 @@
     border:2px solid black;
 }
 
-a .clanekRef
+.clanekRef
 {
-    float:left;
     width:60%;
     border-right:2px solid black;
     padding:2px;
@@ -18,7 +17,6 @@ a .clanekRef
 
 .clanekStav
 {
-    float:left;
     overflow:hidden;
     width:20%;
     text-align:center;
