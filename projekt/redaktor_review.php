@@ -49,7 +49,7 @@
         
         require("backend/connect.php");
 
-        $sql = "SELECT titulek FROM prispevek where id_prispevku=$_GET['id']";
+        $sql = "SELECT titulek FROM prispevek where id_prispevku='$_GET[id]'";
 
         $result = $conn->query($sql);
 
