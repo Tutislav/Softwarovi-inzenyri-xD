@@ -3,7 +3,7 @@ body {
 	font-family: sans-serif;
 }
 
-h2 {
+.login h2, .registration h2{
 	padding: 30px 10px;
 	border-bottom: 2px solid black;
 	box-shadow: 0px 3px 2px -2px black;
