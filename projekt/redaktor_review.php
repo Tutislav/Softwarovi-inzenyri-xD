@@ -64,13 +64,13 @@
         ?>
 
         <form action="redaktor_review.php" method="get">
-            <select name="reason" id="reason">
+            <select name="stav" id="stav">
                 <option value="Schváleno"<?= $stav_clanku == "Schváleno" ? " selected" : "" ?>>Schváleno</option>
 				<option value="Vráceno z důvodu tematické nevhodnosti"<?= $stav_clanku == "Vráceno z důvodu tematické nevhodnosti" ? " selected" : "" ?>>Vráceno z důvodu tematické nevhodnosti</option>
 				<option value="Předáno recenzentům"<?= $stav_clanku == "Předáno recenzentům" ? " selected" : "" ?>>Předáno recenzentům</option>
 				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnuto</option>
             </select><br>
-            <textarea id="textarea" rows="4" cols="50"></textarea><br>
+            <textarea id="text" rows="4" cols="50"></textarea><br>
             <input type="submit">
         </form>
 	    
@@ -81,9 +81,7 @@
 </html>
 
 <?php 
-
-/*
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$review_id', '$text');";
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$text');";
         $result = $conn->query($sql);
         $conn->close();
         if ($result) {
@@ -98,7 +96,7 @@
         else {
             $_SESSION["message"] = "Recenze neexistuje.";
             header("Location: /review_objection.php?id=" . $review_id);
-        }*/
+        }
 
 ?>
 
