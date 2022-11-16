@@ -46,7 +46,7 @@
        <br>
        <br>
 
-       <table>
+       <table border="1">
         <tr>
             <td>Název čísla</td>
             <td>Rok</td>
