@@ -59,7 +59,7 @@
         if ($result->num_rows > 0) {				
             // Výpis článků
             while($row = $result->fetch_assoc()) {
-                echo "Název článku: " .$row['titulek'];
+                echo "  Název článku: " .$row['titulek'];
             }
         } 
 
