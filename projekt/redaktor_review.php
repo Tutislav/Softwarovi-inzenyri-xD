@@ -43,7 +43,7 @@
         
         <?php
         
-        echo $_GET['id'];
+        echo "Název článku: " . $_GET['id'];
 
         ?>
 
