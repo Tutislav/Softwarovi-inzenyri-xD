@@ -49,8 +49,8 @@
         <?php
         
         require("backend/connect.php");
-
-        $sql = "SELECT titulek, id_uzivatele FROM prispevek  NATURAL JOIN uzivatel where id_prispevku='$_GET[id]' ";
+        $id = $_GET['id'];
+        $sql = "SELECT titulek, id_uzivatele FROM prispevek  NATURAL JOIN uzivatel where id_prispevku='$id' ";
 
         $result = $conn->query($sql);
 
@@ -72,6 +72,7 @@
 				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnuto</option>
             </select><br>
             <input type="hidden" value="<?= $user_id ?>" id="user_id" name="user_id">
+            <input type="hidden" value="<?= $id ?>" id="id" name="id">
             <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
             <input type="submit">
         </form>
