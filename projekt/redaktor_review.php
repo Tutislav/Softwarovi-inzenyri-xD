@@ -89,11 +89,11 @@
         $conn->close();
         if ($result) {
             $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
-            header("Location: /redaktor_review.php?id=" . $article_id);
+            header("Location: /redaktor_review.php?id=" );
         }
         else {
             $_SESSION["message"] = "Zprávu nelze odeslat.";
-            header("Location: /redaktor_review.php?id=" . $review_id);
+            header("Location: /redaktor_review.php?id=" );
         }
 
 ?>
