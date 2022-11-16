@@ -47,11 +47,11 @@
                 <th>Odesílatel</th>
                 <th>Zpráva</th>
                 <th>Recenze</th>
-                <th></th>
+                <th>Akce</th>
             </tr>
             <?php
                 require("backend/connect.php");
-                $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, id_prispevku, id_recenze, id_vzkazu, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele NATURAL JOIN recenze WHERE id_prijemce='$user_id';";
+                $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, recenze.id_prispevku, recenze.id_recenze, id_vzkazu, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele LEFT JOIN recenze ON vzkazy.id_recenze=recenze.id_recenze WHERE id_prijemce='$user_id';";
                 $result = $conn->query($sql);
                 $conn->close();
                 if ($result->num_rows > 0) {
