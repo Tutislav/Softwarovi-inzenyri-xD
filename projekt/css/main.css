@@ -48,6 +48,15 @@ button:hover, input[type=submit]:hover {
 	background-color: darkred;
 }
 
+table {
+	border-collapse: collapse;
+}
+
+table, td, th {
+	border: 1px solid black;
+	padding: 4px;
+}
+
 .container {
 	padding-left: 20%;
 	padding-right: 20%;
