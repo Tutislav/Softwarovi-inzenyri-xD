@@ -73,7 +73,7 @@
                         }
                         $delete = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='delete' id='delete' title='Smazat'><i class='fa fa-trash'></i></button></form>";
                         echo("<tr>");
-                        echo("<td>" . $date . "</td><td>" . $sender_name ."</td><td>" . $message_text . "</td><td>" . $review . "</td><td>" . $read . $trash . "</td>");
+                        echo("<td>" . $date . "</td><td>" . $sender_name ."</td><td>" . $message_text . "</td><td>" . $review . "</td><td>" . $read . $delete . "</td>");
                         echo("</tr>");
                     }
                 }
