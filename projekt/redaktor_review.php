@@ -58,7 +58,7 @@
             // Výpis článků
             while($row = $result->fetch_assoc()) {
                 echo "  Název článku: " .$row['titulek'];
-                $user_id = $row['id_uzivatel'];
+                $user_id = $row['id_uzivatele'];
             }
         }
 
