@@ -84,10 +84,10 @@
 <?php 
 
         $redactor_id = $_SESSION["user_id"];
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id',  '$text');";
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id', '$_GET[text]');";
         $result = $conn->query($sql);
         $conn->close();
-        if ($result) {
+       /* if ($result) {
             $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
             header("Location: /clanek.php?id=" . $article_id);
         }
@@ -99,7 +99,7 @@
         else {
             $_SESSION["message"] = "Recenze neexistuje.";
             header("Location: /review_objection.php?id=" . $review_id);
-        }
+        }*/
 
 ?>
 
