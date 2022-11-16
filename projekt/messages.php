@@ -41,17 +41,17 @@
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
             </ul>
         </div>
-        <table>
+        <table class="border_sides">
             <tr>
                 <th>Datum</th>
                 <th>Odesílatel</th>
                 <th>Zpráva</th>
                 <th>Recenze</th>
-                <th>Přečteno</th>
+                <th></th>
             </tr>
             <?php
                 require("backend/connect.php");
-                $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, id_prispevku, id_recenze, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele NATURAL JOIN recenze WHERE id_prijemce='$user_id';";
+                $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, id_prispevku, id_recenze, id_vzkazu, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele NATURAL JOIN recenze WHERE id_prijemce='$user_id';";
                 $result = $conn->query($sql);
                 $conn->close();
                 if ($result->num_rows > 0) {
@@ -66,13 +66,14 @@
                             $review = "";
                         }
                         if ($row["precteno"]) {
-                            $read = "<input type='checkbox' name='read' id='read' checked>";
+                            $read = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='read' id='read' title='Přečteno'><i class='fa fa-check-circle'></i></button></form>";
                         }
                         else {
-                            $read = "<input type='checkbox' name='read' id='read'>";
+                            $read = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='read' id='read' title='Přečteno'><i class='fa fa-check-circle-o'></i></button></form>";
                         }
+                        $delete = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='delete' id='delete' title='Smazat'><i class='fa fa-trash'></i></button></form>";
                         echo("<tr>");
-                        echo("<td>" . $date . "</td><td>" . $sender_name ."</td><td>" . $message_text . "</td><td>" . $review . "</td><td>" . $read . "</td>");
+                        echo("<td>" . $date . "</td><td>" . $sender_name ."</td><td>" . $message_text . "</td><td>" . $review . "</td><td>" . $read . $trash . "</td>");
                         echo("</tr>");
                     }
                 }
