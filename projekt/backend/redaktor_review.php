@@ -1,6 +1,6 @@
 <?php 
-        require("backend/common.php");
-        require("backend/connect.php");
+        require("common.php");
+        require("connect.php");
         $redactor_id = $_SESSION["user_id"];
         $user_id = $_POST['user_id'];
         $text = $_POST['text'];
