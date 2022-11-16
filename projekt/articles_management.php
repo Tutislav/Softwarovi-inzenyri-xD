@@ -77,7 +77,7 @@
 			
 	if ($result->num_rows > 0) {				
 		
-		echo "<tr><th style="width:50%">Titulek</th><th style="width:20">Stav</th><th style="width:15%"></th><th style="width:15%"></th></tr>";
+		echo '<tr><th style="width:50%">Titulek</th><th style="width:20">Stav</th><th style="width:15%"></th><th style="width:15%"></th></tr>';
 		
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>
