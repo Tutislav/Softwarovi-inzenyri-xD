@@ -63,6 +63,7 @@
 	</div>
 	    
         <div id="myArticles">
+		<table>
 <?php
 	require("backend/connect.php");
 	$sql = "SELECT id_prispevku, titulek, stav FROM prispevek NATURAL JOIN uzivatel";
@@ -77,19 +78,20 @@
 	if ($result->num_rows > 0) {				
 		// Výpis článků
 		while($row = $result->fetch_assoc()) {
-			echo "<div class='articleRow'>
-					<a class='clanekRef' href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a>
-					<span class='info'><span class='clanekStav'>" . $row["stav"] . "</span>";
+			echo "<tr>
+					<td><a class='clanekRef' href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>
+					<span class='info'><td class='clanekStav'>" . $row["stav"] . "</td>";
 			if($row["stav"] == "Schváleno"){
-				echo "<a class='clanekStav' href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a>";
+				echo "<td><a class='clanekStav' href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
 			}
-			echo "<a class='clanekRecenze' href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
-			echo	"</span></div>";
+			echo "<td><a class='clanekRecenze' href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
+			echo	"</td></tr>";
 		}
 	} else {
 		echo "0 results";
 	}
 ?>
+		</table>
         </div>
     </div>
 </body>
