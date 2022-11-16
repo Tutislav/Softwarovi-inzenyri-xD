@@ -52,7 +52,16 @@
         $sql = "SELECT titulek FROM prispevek where id_prispevku = $_GET['id']";
 
         $result = $conn->query($sql);
-        echo "Název článku: " $result;
+
+        if ($result->num_rows > 0) {				
+            // Výpis článků
+            while($row = $result->fetch_assoc()) {
+                echo "Název článku: " $row['titulek'];
+            }
+        } 
+
+
+        
 
         ?>
 
