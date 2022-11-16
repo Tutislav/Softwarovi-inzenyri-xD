@@ -72,7 +72,7 @@
 				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnuto</option>
             </select><br>
             <input type="hidden" value="<?= $user_id ?>" id="user_id" name="user_id">
-            <textarea id="text" rows="4" cols="50"></textarea><br>
+            <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
             <input type="submit">
         </form>
 	    
