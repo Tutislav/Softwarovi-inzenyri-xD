@@ -49,9 +49,9 @@
         
         require("backend/connect.php");
 
-        $sql = "SELECT titulek FROM prispevek where id_prispevku = $_GET['id']";
+        /*$sql = "SELECT titulek FROM prispevek where id_prispevku = $_GET['id']";
 
-        $result = $conn->query($sql);
+        $result = $conn->query($sql);*/
 
        /* if ($result->num_rows > 0) {				
             // Výpis článků
