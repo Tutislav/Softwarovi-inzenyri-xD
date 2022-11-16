@@ -89,9 +89,11 @@
         $conn->close();
         if ($result) {
             $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
+            header("Location: /articles_management.php" );
         }
         else {
             $_SESSION["message"] = "Zprávu nelze odeslat.";
+            header("Location: /articles_management.php" );
         }
 
 ?>
