@@ -1,0 +1,8 @@
+form {
+    display: inline-block;
+}
+
+form button {
+    margin: 0px 4px;
+    padding: 2px;
+}
