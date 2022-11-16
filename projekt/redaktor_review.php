@@ -41,7 +41,11 @@
             </ul>
         </div>
         
-       
+        <?php
+        
+        echo "$_get['id']";
+
+        ?>
 
         <form action="redaktor_review.php" method="get">
             <select name="reason" id="reason">
