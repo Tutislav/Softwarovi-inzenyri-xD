@@ -32,7 +32,7 @@
             <ul> 
                 <li><a href="/">ÚVOD</a></li>
                 <li><a href="clanky.php">ČLÁNKY</a></li>
-                <li><a href="">ARCHIV</a></li>
+                <li><a href="archiv.php">ARCHIV</a></li>
                 <?= $menu_login ?>
                 <li class="kontakt"><a href="">KONTAKT</a></li>
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
