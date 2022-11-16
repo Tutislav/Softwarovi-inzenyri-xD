@@ -18,7 +18,7 @@
             header("Location: /articles_management.php" );
         }
 
-        $sql = "UPDATE prispevek SET stav = '$stav' where id_prispevku = '$id'";
+        $sql = "UPDATE prispevek SET stav = '$stav' where id_prispevku = $id";
         $result = $conn->query($sql);
         $conn->close();
 
