@@ -64,7 +64,9 @@ table, td, th {
 }
 
 .border_sides {
-	border: 0px 2px 2px 2px solid black;
+	border-width: 0px 2px 2px 2px;
+	border-style: solid;
+	border-color: black;
 }
 
 #login_register {
