@@ -1,4 +1,8 @@
+<?php 
 
+
+
+?>
 <!DOCTYPE html>
 <html lang="cs">
 <head>
@@ -43,7 +47,12 @@
         
         <?php
         
-        echo "Název článku: " . $_GET['id'];
+        require("backend/connect.php");
+
+        $sql = "SELECT titulek FROM prispevek where id_prispevku = $_GET['id']";
+
+        $result = $conn->query($sql);
+        echo "Název článku: " $result;
 
         ?>
 
