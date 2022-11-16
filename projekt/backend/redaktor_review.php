@@ -8,7 +8,6 @@
         $id = $_POST['id'];
         $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id', '$text');";
         $result = $conn->query($sql);
-        $conn->close();
         $sql = "UPDATE prispevek SET stav='$stav' WHERE id_prispevku = '$id'";
         $result = $conn->query($sql);
         $conn->close();
