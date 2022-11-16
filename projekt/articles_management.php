@@ -79,12 +79,12 @@
 		// Výpis článků
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>
-					<td><a class='clanekRef' href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>
-					<span class='info'><td class='clanekStav'>" . $row["stav"] . "</td>";
+					<td class='clanekRef'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>
+					<td class='clanekStav'>" . $row["stav"] . "</td>";
 			if($row["stav"] == "Schváleno"){
-				echo "<td><a class='clanekStav' href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
-			} else echo "<td></td>";
-			echo "<td><a class='clanekRecenze' href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
+				echo "<td class='clanekRecenze'><a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
+			} else echo "<td class='clanekRecenze'></td>";
+			echo "<td class='clanekRecenze'><a href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
 			echo	"</td></tr>";
 		}
 	} else {
