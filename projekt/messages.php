@@ -69,7 +69,7 @@
                             $read = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='read' id='read' title='Přečteno'><i class='fa fa-check-circle'></i></button></form>";
                         }
                         else {
-                            $read = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='read' id='read' title='Přečteno'><i class='fa fa-check-circle-o'></i></button></form>";
+                            $read = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='read' id='read' title='Přečteno'><i class='fa fa-circle-o'></i></button></form>";
                         }
                         $delete = "<form action='backend/messages.php' method='post'><input type='hidden' name='message_id' id='message_id' value='" . $row["id_vzkazu"] . "'><button type='submit' name='delete' id='delete' title='Smazat'><i class='fa fa-trash'></i></button></form>";
                         echo("<tr>");
