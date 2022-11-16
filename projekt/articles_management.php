@@ -81,7 +81,7 @@
 					<a class='clanekRef' href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a>
 					<span class='clanekStav'>" . $row["stav"] . "</span>";
 			if($row["stav"] == "Schváleno"){
-				echo "<a class='clanekRecenze' href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a>";
+				echo "<a class='clanekStav' href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a>";
 			}
 			echo "<a class='clanekRecenze' href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
 			echo	"</div>";
