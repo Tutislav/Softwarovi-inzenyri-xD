@@ -84,6 +84,7 @@
 			if($row["stav"] == "Schváleno"){
 				echo "<td><a class='clanekStav' href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
 			}
+			else echo "<td></td>"
 			echo "<td><a class='clanekRecenze' href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
 			echo	"</td></tr>";
 		}
