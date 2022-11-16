@@ -76,7 +76,9 @@
 	$result = $conn->query($sql);
 			
 	if ($result->num_rows > 0) {				
-		// Výpis článků
+		
+		echo "<tr><th style="width:50%">Titulek</th><th style="width:20">Stav</th><th style="width:15%"></th><th style="width:15%"></th></tr>";
+		
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>
 					<td class='clanekRef'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>
