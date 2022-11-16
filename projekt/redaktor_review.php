@@ -43,7 +43,7 @@
         
         <?php
         
-        echo "$_get['id']";
+        echo "$_GET['id']";
 
         ?>
 
