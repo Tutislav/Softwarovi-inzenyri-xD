@@ -2,7 +2,9 @@
         require("backend/common.php");
         require("backend/connect.php");
         $redactor_id = $_SESSION["user_id"];
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$_POST[user_id]', '$_POST[text]');";
+        $user_id = $_POST['user_id'];
+        $text = $_POST['text'];
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id', '$text');";
         $result = $conn->query($sql);
         $conn->close();
         if ($result) {
