@@ -89,16 +89,11 @@
         $conn->close();
         if ($result) {
             $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
-            header("Location: /clanek.php?id=" . $article_id);
+            header("Location: /redaktor_review.php?id=" . $article_id);
         }
         else {
             $_SESSION["message"] = "Zprávu nelze odeslat.";
-            header("Location: /review_objection.php?id=" . $review_id);
-        }
-
-        else {
-            $_SESSION["message"] = "Recenze neexistuje.";
-            header("Location: /review_objection.php?id=" . $review_id);
+            header("Location: /redaktor_review.php?id=" . $review_id);
         }
 
 ?>
