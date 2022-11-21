@@ -1,4 +1,5 @@
 <?php
+    $role_restriction = "redaktor";
     require("backend/common.php");
 ?>
 <!DOCTYPE html>

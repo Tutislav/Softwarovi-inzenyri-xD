@@ -1,4 +1,5 @@
 <?php
+    $role_restriction = "redaktor";
     require("backend/common.php");
     if (isset($_POST["stav_clanku"])) {
         $stav_clanku = $_POST["stav_clanku"];
