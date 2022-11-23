@@ -40,7 +40,7 @@
                         <th id="name">Jméno</th>
                         <th id="email">Email</th>
                         <th id="role">Role</th>
-                        <th id="manage"><th>
+                        <th id="manage"></th>
                     </tr>
                 </table>
             </div>
