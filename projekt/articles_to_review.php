@@ -48,7 +48,7 @@
 	$result = $conn->query($sqlRecenzent);
 	$recenzent;
 		if ($result->num_rows > 0) {
-			$row=$result->fetch_assoc();
+			echo $result->fetch_assoc();
 			$recenzent=$row["id_uzivatele"];
 		}
 	  
