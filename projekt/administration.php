@@ -26,8 +26,9 @@
         </div>
         <div id="navigationMenu">
             <ul> 
-                <li id="main"><a href="/">Hlavní menu</a></li>
+                <li id="main"><a href="../">Hlavní menu</a></li>
                 <li><a href="/">Správa uživatelů</a></li>
+                <li><a href="/">Správa příspěvků</a></li>
             </ul>
         </div>
         <div id="content">
