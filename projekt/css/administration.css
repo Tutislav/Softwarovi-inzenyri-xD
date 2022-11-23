@@ -95,9 +95,14 @@ table
 	width:100%;
 }
 
-tr
+#tableheader
 {
 	background-color: #e3ebf4;
+}
+
+tr:hover:not(#tableheader)
+{
+	background-color: #edf2f8;	
 }
 
 th
