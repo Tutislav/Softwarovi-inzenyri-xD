@@ -45,7 +45,8 @@
 <?php
 	require("backend/connect.php");
 	$sqlRecenzent="SELECT id_uzivatele FROM uzivatel WHERE email =".$_SESSION["email"]; 
-		$result = $conn->query($sqlRecenzent);
+	$result = $conn->query($sqlRecenzent);
+	$recenzent;
 		if ($result->num_rows > 0) {
 			$row=$result->fetch_assoc();
 			$recenzent=$row["id_uzivatele"];
