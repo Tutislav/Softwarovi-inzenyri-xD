@@ -7,6 +7,9 @@
         header("Location: " . $_GET["logout"]);
         die();
     }
+    //Scripts
+    $scripts = "<script>";
+    $scripts .= '$(document).ready(function(){$("#message").fadeIn().fadeOut(10000);});';
     //Roles, login and register--------
     if (!isset($_SESSION["email"])) {
         $login_span = "<a href='/login.php'>PŘIHLÁŠENÍ</a>";
@@ -30,6 +33,20 @@
             case "redaktor":
                 $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
                 break;
+            case "admin":
+                $scripts .= '$(document).ready(function(){$("#change_user_id").change(function(){$("#login form").submit();});});';
+                $change_users = "";
+                require("connect.php");
+                $sql = "SELECT * FROM uzivatel";
+                $result = $conn->query($sql);
+                $conn->close();
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $change_users .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["email"] . "</option>";
+                    }
+                }
+                $login_span = "<form action='backend/administration.php' method='post'><select name='change_user_id' id='change_user_id'>" . $change_users . "</select></form> " . $login_span;
+                break;
         }
         if ($restricted) {
             $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
@@ -38,6 +55,7 @@
         }
         $menu_login .= "<li><a href='/messages.php'>VZKAZY</a></li>";
     }
+    $scripts .= "</script>";
     //Messages--------
     if (isset($_SESSION["message"])) {
         $message = $_SESSION["message"];
