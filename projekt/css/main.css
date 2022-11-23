@@ -18,7 +18,7 @@ a:hover {
 	color: red;
 }
 
-input, textarea, select, button {
+input:not([type=submit]), textarea, select {
 	background-color: #dddddd;
 	border-radius: 8px;
 	padding: 8px 15px;
@@ -32,8 +32,9 @@ textarea {
 	vertical-align: top;
 }
 
-button, input[type=submit] {
+button, input[type=submit], .btn {
 	background-color: #bb0000;
+	border-radius: 8px;
 	color: white;
 	margin: auto;
 	padding: 8px 35px;
@@ -42,9 +43,10 @@ button, input[type=submit] {
 	text-align: center;
 	font-size: 1.5rem;
 	transition: background-color 0.5s;
+	box-shadow: 1px 1px 3px black;
 }
 
-button:hover, input[type=submit]:hover {
+button:hover, input[type=submit]:hover, .btn:hover {
 	background-color: darkred;
 }
 
@@ -58,8 +60,8 @@ table, td, th {
 	padding: 4px;
 }
 
-table button {
-	padding: 4px 10px;
+table button, table input[type=submit], table .btn {
+	padding: 4px;
 	font-size: 1.25rem;
 }
 
@@ -101,6 +103,10 @@ table button {
 #login {
 	border-right: 2px solid white;
 	padding-right: 10px;
+}
+
+#login form {
+	display: inline-block;
 }
 
 #register {
