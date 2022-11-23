@@ -34,19 +34,22 @@
                 $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
                 break;
             case "admin":
-                $scripts .= '$(document).ready(function(){$("#change_user_id").change(function(){$("#login form").submit();});});';
-                $change_users = "";
-                require("connect.php");
-                $sql = "SELECT * FROM uzivatel";
-                $result = $conn->query($sql);
-                $conn->close();
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        $change_users .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["email"] . "</option>";
-                    }
-                }
-                $login_span = "<form action='backend/administration.php' method='post'><select name='change_user_id' id='change_user_id'>" . $change_users . "</select></form> " . $login_span;
+                $_SESSION["admin_mode"] = true;
                 break;
+        }
+        if (isset($_SESSION["admin_mode"]) && $_SESSION["admin_mode"]) {
+            $scripts .= '$(document).ready(function(){$("#change_user_id").change(function(){$("#login form").submit();});});';
+            $change_users = "";
+            require("connect.php");
+            $sql = "SELECT * FROM uzivatel";
+            $result = $conn->query($sql);
+            $conn->close();
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    $change_users .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["email"] . "</option>";
+                }
+            }
+            $login_span = "<form action='backend/administration.php' method='post'><select name='change_user_id' id='change_user_id'>" . $change_users . "</select></form> " . $login_span;
         }
         if ($restricted) {
             $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
