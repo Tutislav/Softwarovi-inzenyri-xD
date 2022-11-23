@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="/css/administration.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
+    <script>
+        $(document).ready(function(){
+            $(".manage").click(function(){
+                $("#user_" + $(this).parent().children(":first").val()).slideToggle("slow");
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -56,6 +63,8 @@
                                         	<td>Správa</td>
                                       	</tr>";
 			       }
+                   echo "<tr id=user_'" .  $row["id_uzivatele"] . "' style='display: none;'>";
+                   echo "</tr>";
 			}
                     ?>
                 </table>
