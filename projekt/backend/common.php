@@ -33,6 +33,9 @@
             case "redaktor":
                 $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
                 break;
+            čase "recenzent":
+                $menu_login = "<li><a href='/articles_to_review.php'>ČLÁNKY K RECENZI</a></li>";
+                break;
             case "admin":
                 $menu_login = "<li><a href='/administration.php'>ADMINISTRACE</a></li>";
                 $_SESSION["admin_mode"] = true;
