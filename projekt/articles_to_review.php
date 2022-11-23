@@ -66,7 +66,7 @@
             		echo "</tr>";
 		}
 	} else {
-		echo "0 results";
+		echo "0 results ". $recenzent . " - " . $_SESSION["email"];
 	}
 ?>
             </table>
