@@ -54,7 +54,7 @@
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>";
 			echo "<td class='clanekTitle'>" .$row["titulek"]. "</td>";
-			echo "<td class='clanekRef'>Odkaz</td>";
+			echo "<td class='clanekRef'><button onclick='location.href=\"/review_form.php?id=" . $row["id_ukolu"] . "\"'>Recenzní formulář</button></td>";
            		echo "<td class='clanekDate'>".$row["datum_zadani"]."</td>";
 			echo "<td class='clanekDate'>".$row["datum_splneni"]."</td>";
             		echo "</tr>";
