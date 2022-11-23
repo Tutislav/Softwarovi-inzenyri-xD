@@ -15,7 +15,7 @@
             $_SESSION["last_name"] = $row["prijmeni"];
             $_SESSION["email"] = $row["email"];
             $_SESSION["role"] = $row["role"];
-            header("Location: /");
+            header("Location: " . $_POST["page"]);
         }
     }
 ?>

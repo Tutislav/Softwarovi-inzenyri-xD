@@ -54,7 +54,7 @@
                     $change_users .= "<option value='" . $row["id_uzivatele"] . "'" . $selected . ">" . $row["email"] . "</option>";
                 }
             }
-            $login_span = "<form action='backend/administration.php' method='post'><select name='change_user_id' id='change_user_id'>" . $change_users . "</select></form> " . $login_span;
+            $login_span = "<form action='backend/administration.php' method='post'><select name='change_user_id' id='change_user_id'>" . $change_users . "</select><input type='hidden' name='page' value='" . $_SERVER["REQUEST_URI"] . "'></form> " . $login_span;
         }
         if ($restricted) {
             $_SESSION["message"] = "Na tuto stránku nemáte přístup.";
