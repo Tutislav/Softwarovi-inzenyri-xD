@@ -67,7 +67,7 @@
                    echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='lastname' id='lastname' value='" . $row["prijmeni"] . "'></td>";
                    echo "<td></td>";
                    echo "<td></td>";
-                   echo "<button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
+                   echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form></td>";
                    echo "</tr>";
                 }
 			}
