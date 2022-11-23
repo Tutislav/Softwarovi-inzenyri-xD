@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="/css/clanek.css">
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <?= $scripts ?>
     <script>
         $(document).ready(function(){
-            $("#message").fadeIn().fadeOut(10000);
             $("#tema").change(function(){
                 $("#clankyFilter form").submit();
             });

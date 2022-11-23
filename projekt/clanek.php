@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<?= $scripts ?>
     <script>
         $(document).ready(function(){
-            $("#message").fadeIn().fadeOut(10000);
 			$("#kontakt").appendTo("#autor");
 			if (location.hash) $(location.hash).fadeOut(500).fadeIn(500).fadeOut(500).fadeIn(500);
 			$(".toggle_recenze").click(function(){

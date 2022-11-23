@@ -14,9 +14,9 @@
     <link rel="stylesheet" href="https://itworld.vorpal.tk/css/my_articles.css">
     <link rel="stylesheet" href="https://itworld.vorpal.tk/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <?= $scripts ?>
     <script>
         $(document).ready(function(){
-            $("#message").fadeIn().fadeOut(10000);
             $("#stav").change(function(){
                 $("#clankyFilter form").submit();
             });
