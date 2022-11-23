@@ -1,7 +1,7 @@
 <?php
     require("common.php");
 
-    if (isset($_POST["change_user"])) {
+    if (isset($_POST["change_user_id"])) {
         $change_user_id = $_POST["change_user_id"];
         
         require("connect.php");
