@@ -48,18 +48,18 @@
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 			$result = $conn->query($sql);
 			
-			/*if ($result->num_rows > 0) {				
+			if ($result->num_rows > 0) {				
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
-					echo "<tr>"
-                                        echo "<th>". $row["id_uzivatele"] . "</th>"
-                                        //<th>". $row["jmeno"] . " " . $row["prijmeni"] . "</th>
-                                        //<th>". $row["email"] . "</th>
-                                        //<th>". $row["role"] . "</th>
-                                        echo "<th>Správa</th>"
-                                      	echo "</tr>"
-			            	}
-			            }*/
+					echo "<tr>
+                                        	<th>". $row["id_uzivatele"] . "</th>
+                                        	<th>". $row["jmeno"] . " " . $row["prijmeni"] . "</th>
+                                       		<th>". $row["email"] . "</th>
+                                        	<th>". $row["role"] . "</th>
+                                        	<th>Správa</th>
+                                      	</tr>";
+			       }
+			}
                     ?>
                 </table>
             </div>
