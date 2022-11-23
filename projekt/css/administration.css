@@ -20,7 +20,7 @@ a:hover {
 	height:100%;
 	border: 2px solid #e3ebf4;
 	border-collapse:collapse;
-	background-color: #e3ebf4;
+	background-image: linear-gradient(#e3ebf4, #f9fbfd);
 	overflow:scroll;
 }
 
