@@ -52,11 +52,11 @@
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
 					echo "<tr>
-                                        	<th>". $row["id_uzivatele"] . "</th>
-                                        	<th>". $row["jmeno"] . " " . $row["prijmeni"] . "</th>
-                                       		<th>". $row["email"] . "</th>
-                                        	<th>". $row["role"] . "</th>
-                                        	<th>Správa</th>
+                                        	<td>". $row["id_uzivatele"] . "</td>
+                                        	<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
+                                       		<td>". $row["email"] . "</td>
+                                        	<td>". $row["role"] . "</td>
+                                        	<td>Správa</td>
                                       	</tr>";
 			       }
 			}
