@@ -52,10 +52,11 @@
 		// Výpis článků
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>";
-			echo "<td class='clanekRef'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>";
-			echo "<td class='clanekStav'>" . $row["stav"] . "</td>";
-            echo "<td class='clanekRecenze'><a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
-            echo "</tr>";
+			echo "<td class='clanekTitle'>" .$row["titulek"]. "</td>";
+			echo "<td class='clanekRef'>Odkaz</td>";
+           		echo "<td class='clanekDate'>".$row["datum_zadani"]."</td>";
+			echo "<td class='clanekDate'>".$row["datum_splneni"]."</td>";
+            		echo "</tr>";
 		}
 	} else {
 		echo "0 results";
