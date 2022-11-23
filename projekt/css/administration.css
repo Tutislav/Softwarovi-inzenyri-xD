@@ -95,6 +95,11 @@ table
 	width:100%;
 }
 
+tr
+{
+	background-color: white;	
+}
+
 #tableheader
 {
 	background-color: #e3ebf4;
