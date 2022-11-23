@@ -32,7 +32,9 @@
             </ul>
         </div>
         <div id="content">
-            <p>awvda</p>
+            <div id="innercontent">
+                <p>awvda</p>
+            </div>
         </div>
     </div>
 </body>
