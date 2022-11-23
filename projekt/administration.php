@@ -23,9 +23,9 @@
         </div>
         <div id="navigationMenu">
             <ul> 
-                <li id="main"><a href="../"><i class="fa fa-chevron-left"></i>Hlavní menu</a></li>
-		<li><a href="/"><i class="fa fa-user-circle-o"></i>Správa uživatelů</a></li>
-                <li><a href="/"><i class="fa fa-newspaper-o"></i>Správa článků</a></li>
+                <li id="main"><a href="/"><i class="fa fa-chevron-left"></i>Hlavní menu</a></li>
+		<li><a href="/administration.php"><i class="fa fa-user-circle-o"></i>Správa uživatelů</a></li>
+                <li><a href="/dministration.php"><i class="fa fa-newspaper-o"></i>Správa článků</a></li>
             </ul>
         </div>
         <div id="content">
