@@ -88,3 +88,45 @@ li{
 h2 {
 	margin:5% 0px 2% 4%;
 }
+
+table
+{
+	margin-top:50px;
+	width:100%;
+}
+
+tr
+{
+	background-color: #e3ebf4;
+}
+
+th
+{
+	padding:15px 0px;
+	background-color: #e3ebf4;
+}
+
+td
+{
+	padding:15px 0px;	
+}
+
+#id{
+	width:10%;
+}
+
+#name {
+	width:20%;
+}
+
+#email {
+	width: 30%;
+}
+
+#role {
+	width:15%;
+}
+
+#manage {
+	width:25%;
+}
