@@ -1,4 +1,5 @@
 <?php
+    $role_restriction = "administrator";
     require("backend/common.php");
 ?>
 <!DOCTYPE html>
