@@ -48,7 +48,7 @@
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 			$result = $conn->query($sql);
 			
-			if ($result->num_rows > 0) {				
+			/*if ($result->num_rows > 0) {				
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
 					echo "<tr>"
@@ -59,7 +59,7 @@
                                         echo "<th>Správa</th>"
                                       	echo "</tr>"
 			            	}
-			            }
+			            }*/
                     ?>
                 </table>
             </div>
