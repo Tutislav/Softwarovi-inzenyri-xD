@@ -34,7 +34,15 @@
         <div id="content">
             <h2>Správa uživatelů</h2>
             <div id="innercontent">
-                <p>awvda</p>
+                <table>
+                    <tr>
+                        <th id="id">ID</th>
+                        <th id="name">Jméno</th>
+                        <th id="email">Email</th>
+                        <th id="role">Role</th>
+                        <th id="manage"><th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
