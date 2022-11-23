@@ -23,6 +23,10 @@ a:hover {
 	overflow:auto;
 	
 }
+#innercontent {
+	border: 2px solid black;
+	
+}
 
 #login_register {
 	background-color: darkred;
