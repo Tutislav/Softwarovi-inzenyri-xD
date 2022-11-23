@@ -33,7 +33,7 @@
             case "redaktor":
                 $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
                 break;
-            čase "recenzent":
+            case "recenzent":
                 $menu_login = "<li><a href='/articles_to_review.php'>ČLÁNKY K RECENZI</a></li>";
                 break;
             case "admin":
