@@ -45,7 +45,7 @@
 <?php
 	require("backend/connect.php");
 	
-	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = " . $_SESSION["email"] . " AND ukol.splneno = 0";
+	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = '" . $_SESSION["email"] . "' AND ukol.splneno = 0";
 			
 	$result = $conn->query($sql);
 			
