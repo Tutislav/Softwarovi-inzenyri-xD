@@ -45,7 +45,7 @@
 <?php
 	require("backend/connect.php");
 	
-	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = '" . $_SESSION["email"] . "' AND ukol.splneno = 0";
+	$sql = "SELECT titulek, datum_zadani, datum_splneni, id_prispevku FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = '" . $_SESSION["email"] . "' AND ukol.splneno = 0";
 			
 	$result = $conn->query($sql);
 			
@@ -53,7 +53,7 @@
 		// Výpis článků
 		while($row = $result->fetch_assoc()) {
 			echo "<tr>";
-			echo "<td class='clanekTitle'>" .$row["titulek"]. "</td>";
+			echo "<td class='clanekTitle'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>";
 			echo "<td class='clanekRef'><button onclick='location.href=\"/review_form.php?id=" . $row["id_ukolu"] . "\"'>Recenzní formulář</button></td>";
            		echo "<td class='clanekDate'>".$row["datum_zadani"]."</td>";
 			echo "<td class='clanekDate'>".$row["datum_splneni"]."</td>";
