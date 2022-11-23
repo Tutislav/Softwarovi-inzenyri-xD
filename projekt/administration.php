@@ -62,9 +62,9 @@
                                         	<td>". $row["role"] . "</td>
                                         	<td>Správa</td>
                                       	</tr>";
-			       }
                    echo "<tr id=user_'" .  $row["id_uzivatele"] . "' style='display: none;'>";
                    echo "</tr>";
+                }
 			}
                     ?>
                 </table>
