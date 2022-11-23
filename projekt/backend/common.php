@@ -50,7 +50,8 @@
             $conn->close();
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    $change_users .= "<option value='" . $row["id_uzivatele"] . "'" . $row["id_uzivatele"] == $_SESSION["user_id"] ? " selected" : "" . ">" . $row["email"] . "</option>";
+                    $selected = $row["id_uzivatele"] == $_SESSION["user_id"] ? " selected" : "";
+                    $change_users .= "<option value='" . $row["id_uzivatele"] . "'" . $selected . ">" . $row["email"] . "</option>";
                 }
             }
             $login_span = "<form action='backend/administration.php' method='post'><select name='change_user_id' id='change_user_id'>" . $change_users . "</select></form> " . $login_span;
