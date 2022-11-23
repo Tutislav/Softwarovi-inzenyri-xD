@@ -32,6 +32,7 @@
             </ul>
         </div>
         <div id="content">
+            <h2>Správa uživatelů</h2>
             <div id="innercontent">
                 <p>awvda</p>
             </div>
