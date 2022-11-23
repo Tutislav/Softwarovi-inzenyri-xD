@@ -35,7 +35,7 @@
             <h2>Správa uživatelů</h2>
             <div id="innercontent">
                 <table>
-                    <tr>
+                    <tr id="tableheader">
                         <th id="id">ID</th>
                         <th id="name">Jméno</th>
                         <th id="email">Email</th>
