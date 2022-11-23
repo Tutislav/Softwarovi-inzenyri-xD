@@ -45,7 +45,7 @@
                     <?php
                         require("backend/connect.php");
 			
-			            $sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel;
+			            $sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 			            $result = $conn->query($sql);
 			
 			            if ($result->num_rows > 0) {				
