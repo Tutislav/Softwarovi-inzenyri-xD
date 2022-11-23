@@ -44,15 +44,8 @@
                 </tr>
 <?php
 	require("backend/connect.php");
-	$sqlRecenzent="SELECT id_uzivatele FROM uzivatel WHERE email =".$_SESSION["email"]; 
-	$result = $conn->query($sqlRecenzent);
-	$recenzent;
-		if ($result->num_rows > 0) {
-			echo $result->fetch_assoc();
-			$recenzent=$row["id_uzivatele"];
-		}
-	  
-	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku WHERE ukol.id_uzivatele = " . $recenzent;
+	
+	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = " . $_SESSION["email"] . " AND ukol.splneno = 0";
 			
 	$result = $conn->query($sql);
 			
