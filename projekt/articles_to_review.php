@@ -44,7 +44,14 @@
                 </tr>
 <?php
 	require("backend/connect.php");
-	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol NATURAL JOIN prispevek";
+	$sqlRecenzent="SELECT id_uzivatele FROM uzivatel WHERE email =".$_SESSION["email"]; 
+		$result = $conn->query($sqlRecenzent);
+		if ($result->num_rows > 0) {
+			$row=$result->fetch_assoc();
+			$recenzent=$row["id_uzivatele"];
+		}
+	  
+	$sql = "SELECT titulek, datum_zadani, datum_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku WHERE ukol.id_uzivatele = " . $recenzent;
 			
 	$result = $conn->query($sql);
 			
