@@ -16,7 +16,7 @@
     <script>
         $(document).ready(function(){
             $(".manage").click(function(){
-                $("#user_" + $(this).parent().children(":first").val()).slideToggle("slow");
+                $("#user_" + $(this).parent().children().first().html()).slideToggle("slow");
             });
         });
     </script>
@@ -60,9 +60,10 @@
                                         	<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
                                        		<td>". $row["email"] . "</td>
                                         	<td>". $row["role"] . "</td>
-                                        	<td>Správa</td>
+                                        	<td class='manage'>Správa</td>
                                       	</tr>";
-                   echo "<tr id=user_'" .  $row["id_uzivatele"] . "' style='display: none;'>";
+                   echo "<tr id='user_" .  $row["id_uzivatele"] . "' style='display: none;'>";
+                   echo "<td><form action='backend/messages.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat'><i class='fa fa-trash'></i></button></form></td>";
                    echo "</tr>";
                 }
 			}
