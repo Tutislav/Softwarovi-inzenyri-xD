@@ -16,7 +16,7 @@
     <script>
         $(document).ready(function(){
             $(".manage").click(function(){
-                $("#user_" + $(this).parent().children().first().html()).slideToggle("slow");
+                $("#user_" + $(this).parent().parent().children().first().html()).slideToggle("slow");
             });
         });
     </script>
