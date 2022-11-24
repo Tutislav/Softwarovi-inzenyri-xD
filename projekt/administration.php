@@ -15,8 +15,9 @@
     <?= $scripts ?>
     <script>
         $(document).ready(function(){
-            $(".manage").click(function(){
-                $("#user_" + $(this).parent().parent().children().first().html()).slideToggle("slow");
+            $(".manage,.close").click(function(){
+                $("#user_" + $(this).parent().parent().children().first().html()).slideToggle();
+                $("#user_" + $(this).parent().parent().children().first().html() + "_manage").slideToggle();
             });
         });
     </script>
@@ -55,15 +56,15 @@
 			if ($result->num_rows > 0) {				
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
-					echo "<tr>
+					echo "<tr id='user_" .  $row["id_uzivatele"] . "'>
                                         	<td>". $row["id_uzivatele"] . "</td>
                                         	<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
                                        		<td>". $row["email"] . "</td>
                                         	<td>". $row["role"] . "</td>
                                         	<td><button class='manage'><i class='fa fa-wrench'>Spravovat</button></td>
                                       	</tr>";
-                   echo "<tr id='user_" .  $row["id_uzivatele"] . "' style='display: none;'>";
-                   echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat' onsubmit='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i></button></form></td>";
+                   echo "<tr id='user_" .  $row["id_uzivatele"] . "_manage' style='display: none;'>";
+                   echo "<td>" . $row["id_uzivatele"] . "</td>";
                    echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='lastname' id='lastname' value='" . $row["prijmeni"] . "'></td>";
                    echo "<td><input type='email' name='email' id='email' value='" . $row["email"] . "'></td>";
                    $roles = "";
@@ -72,8 +73,10 @@
                        $roles .= "<option value='" . $role . "'" . $selected . ">" . $role . "</option>";
                    }
                    echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
-                   echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form></td>";
-                   echo "</tr>";
+                   echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
+                   echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i></button></form>";
+                   echo "<button class='close'><i class='fa fa-close'></button>";
+                   echo "</td></tr>";
                 }
 			}
                     ?>
