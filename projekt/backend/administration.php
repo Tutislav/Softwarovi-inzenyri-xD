@@ -1,5 +1,4 @@
 <?php
-    $role_restriction = "admin";
     require("common.php");
 
     require("connect.php");
