@@ -80,4 +80,18 @@
             }
         }
     }
+    //Get array of roles
+    function get_roles() {
+        require("connect.php");
+        $sql = "DESCRIBE uzivatel role;";
+        $result = $conn->query($sql);
+        $conn->close();
+        $row = $result->fetch_assoc();
+        $roles = explode("'", $row["Type"]);
+        $roles_array = [];
+        for ($i=1; $i<count($roles); $i += 2) {
+            array_push($roles_array, $roles[$i]);
+        }
+        return $roles_array;
+    }
 ?>

@@ -51,7 +51,11 @@
 			
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 			$result = $conn->query($sql);
-			
+			$roles = "";
+            $roles_array = get_roles();
+            foreach($roles_array as $role) {
+                $role .= "<option value='" . $role . "'>" . $role . "</option>";
+            }
 			if ($result->num_rows > 0) {				
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
@@ -65,8 +69,8 @@
                    echo "<tr id='user_" .  $row["id_uzivatele"] . "' style='display: none;'>";
                    echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat'><i class='fa fa-trash'></i></button></form></td>";
                    echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='lastname' id='lastname' value='" . $row["prijmeni"] . "'></td>";
-                   echo "<td></td>";
-                   echo "<td></td>";
+                   echo "<td><input type='email' name='email' id='email' value='" . $row["email"] . "'></td>";
+                   echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
                    echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form></td>";
                    echo "</tr>";
                 }
