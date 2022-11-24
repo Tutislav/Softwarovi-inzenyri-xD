@@ -65,7 +65,7 @@
                                       	</tr>";
                    echo "<tr id='user_" .  $row["id_uzivatele"] . "_manage' style='display: none;'>";
                    echo "<td>" . $row["id_uzivatele"] . "</td>";
-                   echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='lastname' id='lastname' value='" . $row["prijmeni"] . "'></td>";
+                   echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='last_name' id='last_name' value='" . $row["prijmeni"] . "'></td>";
                    echo "<td><input type='email' name='email' id='email' value='" . $row["email"] . "'></td>";
                    $roles = "";
                    foreach($roles_array as $role) {
