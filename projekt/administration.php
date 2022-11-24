@@ -16,8 +16,8 @@
     <script>
         $(document).ready(function(){
             $(".manage,.close").click(function(){
-                $("#user_" + $(this).parent().parent().children().first().html()).slideToggle();
-                $("#user_" + $(this).parent().parent().children().first().html() + "_manage").slideToggle();
+                $("#user_" + $(this).parent().parent().children().first().html()).toggle();
+                $("#user_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
             });
         });
     </script>
