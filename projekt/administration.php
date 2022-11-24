@@ -74,8 +74,8 @@
                    }
                    echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
                    echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
-                   echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i></button></form>";
-                   echo "<button class='close'><i class='fa fa-close'></button>";
+                   echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
+                   echo "<button class='close'><i class='fa fa-close'>Zavřít</button>";
                    echo "</td></tr>";
                 }
 			}
