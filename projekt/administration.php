@@ -51,11 +51,7 @@
 			
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 			$result = $conn->query($sql);
-			$roles = "";
             $roles_array = get_roles();
-            foreach($roles_array as $role) {
-                $role .= "<option value='" . $role . "'>" . $role . "</option>";
-            }
 			if ($result->num_rows > 0) {				
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
@@ -64,12 +60,17 @@
                                         	<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
                                        		<td>". $row["email"] . "</td>
                                         	<td>". $row["role"] . "</td>
-                                        	<td class='manage'>Správa</td>
+                                        	<td><button class='manage'><i class='fa fa-wrench'>Spravovat</button></td>
                                       	</tr>";
                    echo "<tr id='user_" .  $row["id_uzivatele"] . "' style='display: none;'>";
-                   echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat'><i class='fa fa-trash'></i></button></form></td>";
+                   echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' title='Smazat' onsubmit='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i></button></form></td>";
                    echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='lastname' id='lastname' value='" . $row["prijmeni"] . "'></td>";
                    echo "<td><input type='email' name='email' id='email' value='" . $row["email"] . "'></td>";
+                   $roles = "";
+                   foreach($roles_array as $role) {
+                       $selected = $row["role"] == $role ? " selected" : "";
+                       $roles .= "<option value='" . $role . "'" . $selected . ">" . $role . "</option>";
+                   }
                    echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
                    echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form></td>";
                    echo "</tr>";
