@@ -13,6 +13,33 @@ a:hover {
 	color:red;
 }
 
+input:not([type=submit]), textarea, select {
+	background-color: #dddddd;
+	border-radius: 8px;
+	padding: 8px 15px;
+	margin: 8px 15px;
+	font-size: 1rem;
+	box-shadow: 1px 1px 3px black;
+}
+
+table button, table input[type=submit], table .btn {
+	background-color: #bb0000;
+	border-radius: 8px;
+	color: white;
+	margin: auto;
+	padding: 4px;
+	width: fit-content;
+	display: block;
+	text-align: center;
+	font-size: 1.25rem;
+	transition: background-color 0.5s;
+	box-shadow: 1px 1px 3px black;
+}
+
+table button:hover, table input[type=submit]:hover, table .btn:hover {
+	background-color: darkred;
+}
+
 #content {
 	position:absolute;
 	left:20%;
@@ -58,6 +85,10 @@ a:hover {
 #login {
 	border-right: 2px solid white;
 	padding-right: 10px;
+}
+
+table form, #login form {
+	display: inline-block;
 }
 
 #register {
@@ -153,15 +184,15 @@ td
 	width: 30%;
 }
 
-#role, #theme, #state {
+th#role, th#theme, th#state {
 	width:15%;
 }
 
-#manage {
+th#manage {
 	width:20%;
 }
 
-#title {
+th#title {
 	width:45%;
 }
 
