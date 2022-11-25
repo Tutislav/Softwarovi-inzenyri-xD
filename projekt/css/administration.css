@@ -53,6 +53,7 @@ table button:hover, table input[type=submit]:hover, table .btn:hover {
 
 #innercontent {
 	width:94%;
+	height:90%;
 	margin-left:3%;
 	border: 2px solid #d3dfed;
 	background-color: white;
