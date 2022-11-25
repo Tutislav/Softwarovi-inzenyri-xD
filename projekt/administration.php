@@ -49,23 +49,14 @@
             </ul>
         </div>
         <div id="content">
-            <h2>Správa uživatelů</h2>
-            <div id="innercontent">
-                <table>
-                    <tr id="tableheader">
-                        <th id="id">ID</th>
-                        <th id="name">Jméno</th>
-                        <th id="email">Email</th>
-                        <th id="role">Role</th>
-                        <th id="manage"></th>
-                    </tr>
                     <?php
                         require("backend/connect.php");
+	
 			if(isset($_POST["contentChange"]))		
 				$content = $_POST["contentChange"];
 			else
 				$content = 0;
-			echo "Val= " . $content;
+
 			switch($content){
 				case 1:
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
@@ -75,6 +66,16 @@
 			if ($result->num_rows > 0) {				
 			     // Výpis uživatelů
 				while($row = $result->fetch_assoc()) {
+					echo "<h2>Správa uživatelů</h2>
+            				      <div id='innercontent'>
+					      <table>               
+                    				<tr id='tableheader'>
+                        				<th id='id'>ID</th>
+                        				<th id='name'>Jméno</th>
+                        				<th id='email'>Email</th>
+                        				<th id='role'>Role</th>
+                       					<th id='manage'></th>
+                   				</tr>";
 					echo "<tr id='user_" .  $row["id_uzivatele"] . "'>
                                         	<td>". $row["id_uzivatele"] . "</td>
                                         	<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
@@ -95,7 +96,7 @@
                    			echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
                    			echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
                    			echo "<button class='close'><i class='fa fa-close'>Zavřít</button>";
-                   			echo "</td></tr>";
+                   			echo "</td></tr></table></div>";
                 		}
 			}
 				break;
@@ -105,8 +106,6 @@
 			}
 	
                     ?>
-                </table>
-            </div>
         </div>
     </div>
 </body>
