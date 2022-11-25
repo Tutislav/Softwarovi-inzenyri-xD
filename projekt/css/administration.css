@@ -17,6 +17,7 @@ input:not([type=submit]), textarea, select {
 	background-color: #dddddd;
 	border-radius: 8px;
 	padding: 8px 15px;
+	width: 70%;
 	margin: 0px 4px;
 	font-size: 1rem;
 	box-shadow: 1px 1px 3px black;
@@ -181,7 +182,7 @@ th#name {
 	width:30%;
 }
 
-#email {
+th#email {
 	width: 30%;
 }
 
@@ -197,3 +198,10 @@ th#title {
 	width:45%;
 }
 
+input#name, input#last_name {
+	width: 30%;
+}
+
+edit_form {
+	width: 100%;
+}
