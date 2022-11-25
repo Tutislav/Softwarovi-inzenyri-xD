@@ -35,12 +35,14 @@
 		<li>
 		    <form action="/administration.php" method="POST">
 			<input type="hidden" id="contentChange" value="1">
+			<i class="fa fa-user-circle-o"></i>
 			<input type="submit" value="Správa uživatelů">			
 		    </form>
 		</li>
                 <li>
 		    <form action="/administration.php" method="POST">
 			<input type="hidden" id="contentChange" value="2">
+			<i class="fa fa-newspaper-o"></i>
 			<input type="submit" value="Správa článků">			
 		    </form>
 		</li>
