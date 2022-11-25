@@ -65,7 +65,7 @@
 				$content = $_POST["contentChange"].value();
 			else
 				$content = 0;
-			
+			echo "Val= " . $content;
 			switch($content){
 				case 1:
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
