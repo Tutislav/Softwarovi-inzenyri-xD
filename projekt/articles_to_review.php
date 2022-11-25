@@ -37,15 +37,15 @@
         <div id="myArticles">
             <table class="border_sides">
                 <tr>
-                    <th>Titulek</th>
+                    <th>Článek</th>
                     <th>Odkaz</th>
                     <th>Datum zadání</th>
-                    <th>Datum splnění</th>
+                    <th>Termín splnění</th>
                 </tr>
 <?php
 	require("backend/connect.php");
 	
-	$sql = "SELECT titulek, datum_zadani, datum_splneni, prispevek.id_prispevku FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = '" . $_SESSION["email"] . "' AND ukol.splneno = 0";
+	$sql = "SELECT titulek, datum_zadani, termin_splneni, prispevek.id_prispevku FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE uzivatel.email = '" . $_SESSION["email"] . "' AND ukol.splneno = 0";
 			
 	$result = $conn->query($sql);
 			
