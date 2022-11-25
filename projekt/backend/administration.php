@@ -18,19 +18,35 @@
         }
     }
     elseif (isset($_POST["edit"])) {
-        $user_id = $_POST["user_id"];
-        $name = $_POST["name"];
-        $last_name = $_POST["last_name"];
-        $email = $_POST["email"];
-        $role = $_POST["role"];
+        if(isset($_POST["user_id"])){
+            $user_id = $_POST["user_id"];
+            $name = $_POST["name"];
+            $last_name = $_POST["last_name"];
+            $email = $_POST["email"];
+            $role = $_POST["role"];
 
-        $sql = "UPDATE uzivatel SET jmeno='$name', prijmeni='$last_name', email='$email', role='$role' WHERE id_uzivatele='$user_id';";
-        $result = $conn->query($sql);
-        if ($result) {
-            $_SESSION["message"] = "Uživatel byl změněn.";
-        }
-        else {
-            $_SESSION["message"] = "Uživatele nelze upravit.";
+            $sql = "UPDATE uzivatel SET jmeno='$name', prijmeni='$last_name', email='$email', role='$role' WHERE id_uzivatele='$user_id';";
+            $result = $conn->query($sql);
+            if ($result) {
+                $_SESSION["message"] = "Uživatel byl změněn.";
+            }
+            else {
+                $_SESSION["message"] = "Uživatele nelze upravit.";
+            }
+        } elseif(isset($_POST["aticle_id"])){
+            $aticle_id = $_POST["aticle_id"];
+            $title = $_POST["title"];
+            $theme = $_POST["theme"];
+            $state = $_POST["state"];
+
+            $sql = "UPDATE prispevek SET titulek='$title', tematicke_cislo='$theme', stav='$state' WHERE id_prispevku='$article_id';";
+            $result = $conn->query($sql);
+            if ($result) {
+                $_SESSION["message"] = "Článek byl změněn.";
+            }
+            else {
+                $_SESSION["message"] = "Článek nelze upravit.";
+            }    
         }
         header("Location: /administration.php");
     }
