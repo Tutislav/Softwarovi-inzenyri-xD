@@ -94,6 +94,12 @@ li{
 	background:none;
 }
 
+#navigationMenu input[type=submit]:hover
+{
+	color:red;
+	cursor:pointer;
+}
+
 #main {
 	padding: 20px 0px 20px 20px;
 	border-bottom: 4px solid #e3ebf4;
