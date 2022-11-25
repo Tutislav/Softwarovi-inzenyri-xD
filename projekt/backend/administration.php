@@ -35,15 +35,28 @@
         header("Location: /administration.php");
     }
     elseif (isset($_POST["delete"])) {
-        $user_id = $_POST["user_id"];
+        if(isset($_POST["user_id"])){
+            $user_id = $_POST["user_id"];
 
-        $sql = "DELETE FROM uzivatel WHERE id_uzivatele='$user_id';";
-        $result = $conn->query($sql);
-        if ($result) {
-            $_SESSION["message"] = "Uživatel byl smazán.";
-        }
-        else {
-            $_SESSION["message"] = "Uživatele nelze smazat.";
+            $sql = "DELETE FROM uzivatel WHERE id_uzivatele='$user_id';";
+            $result = $conn->query($sql);
+            if ($result) {
+                $_SESSION["message"] = "Uživatel byl smazán.";
+            }
+            else {
+                $_SESSION["message"] = "Uživatele nelze smazat.";
+            }   
+        } else if(isset($_POST["article_id"])) {
+            $article_id = $_POST["article_id"];
+
+            $sql = "DELETE FROM prispevek WHERE id_prispevku='$article_id';";
+            $result = $conn->query($sql);
+            if ($result) {
+                $_SESSION["message"] = "Článek byl smazán.";
+            }
+            else {
+                $_SESSION["message"] = "Článek nelze smazat.";
+            }  
         }
         header("Location: /administration.php");
     }
