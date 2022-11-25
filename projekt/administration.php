@@ -100,10 +100,37 @@
                    			echo "</td></tr>";
                 		}
 			}
-				echo "</table></div>";
+					echo "</table></div>";
 				break;
-				case 2:
 					
+				case 2:
+					$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek";
+					$result = $conn->query($sql);
+			
+					echo "<h2>Správa uživatelů</h2>
+            		      			<div id='innercontent'>
+				 		 <table>               
+                    					<tr id='tableheader'>
+                        					<th id='id'>ID</th>
+                        					<th id='title'>Titulek</th>
+                        					<th id='theme'>Tema</th>
+                        					<th id='state'>Stav</th>
+                       						<th id='manage'></th>
+                   					</tr>";
+					
+					if ($result->num_rows > 0) {				
+			     			// Výpis článků
+						while($row = $result->fetch_assoc()) {
+							echo "<tr id='user_" .  $row["id_uzivatele"] . "'>
+                                        			<td>". $row["id_prispevku"] . "</td>
+                                        			<td>". $row["titulek"] . "</td>
+                                       				<td>". $row["tematicke_cislo"] . "</td>
+                                        			<td>". $row["stav"] . "</td>
+                                        			<td><button class='manage'><i class='fa fa-wrench'>Spravovat</button></td>
+                                      			      </tr>";
+						}
+					}
+					echo "</table></div>";
 				break;
 			}
 	
