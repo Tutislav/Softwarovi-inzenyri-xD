@@ -56,7 +56,7 @@
 			echo "<td class='clanekTitle'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>";
 			echo "<td class='clanekRef'><button onclick='location.href=\"/review_form.php?id=" . $row["id_ukolu"] . "\"'>Recenzní formulář</button></td>";
            		echo "<td class='clanekDate'>".$row["datum_zadani"]."</td>";
-			echo "<td class='clanekDate'>".$row["datum_splneni"]."</td>";
+			echo "<td class='clanekDate'>".$row["termin_splneni"]."</td>";
             		echo "</tr>";
 		}
 	} else {
