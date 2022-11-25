@@ -106,7 +106,8 @@
 				case 2:
 					$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek";
 					$result = $conn->query($sql);
-			
+					$themes_array = get_themes();
+					
 					echo "<h2>Správa článků</h2>
             		      			<div id='innercontent'>
 				 		 <table>               
@@ -121,14 +122,34 @@
 					if ($result->num_rows > 0) {				
 			     			// Výpis článků
 						while($row = $result->fetch_assoc()) {
-							echo "<tr id='article_" .  $row["id_prispevku"] . "'>
+							echo "<tr id='user_" .  $row["id_prispevku"] . "'>
                                         			<td>". $row["id_prispevku"] . "</td>
                                         			<td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
                                        				<td>". $row["tematicke_cislo"] . "</td>
                                         			<td>". $row["stav"] . "</td>
                                         			<td><button class='manage'><i class='fa fa-wrench'>Spravovat</button></td>
                                       			      </tr>";
+							echo "<tr id='user_" .  $row["id_prispevku"] . "_manage' style='display: none;'>";
+							
+			   				echo "<td>" . $row["id_prispevku"] . "</td>";
+							
+                   					echo "<td><form action='backend/administration.php' method='post'><input type='hidden' name='article_id' id='article_id' value='" . $row["id_prispevku"] . "'><input type='text' name='title' id='title' value='" . $row["titulek"] . "'></td>";
+                  				
+                   					$themes = "";
+                   					foreach($themes_array as $theme) {
+                       						$selected = $row["tematicke_cislo"] == $theme ? " selected" : "";
+                       						$themes .= "<option value='" . $theme . "'" . $selected . ">" . $theme . "</option>";
+                   					}
+                   					echo "<td><select name='theme' id='theme'>" . $themes . "</select></td>";
+							
+							echo "<td><input type='text' name='state' id='state' value='" . $row["stav"] . "'></td>";
+							
+                   					echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
+                   					echo "<form action='backend/administration.php' method='post'><input type='hidden' name='article_id' id='article_id' value='" . $row["id_prispevku"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tento článek?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
+                   					echo "<button class='close'><i class='fa fa-close'>Zavřít</button>";
+                   					echo "</td></tr>";
 						}
+						
 					}
 					echo "</table></div>";
 				break;
