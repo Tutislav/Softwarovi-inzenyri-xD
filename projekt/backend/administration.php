@@ -33,8 +33,8 @@
             else {
                 $_SESSION["message"] = "Uživatele nelze upravit.";
             }
-        } elseif(isset($_POST["aticle_id"])){
-            $aticle_id = $_POST["aticle_id"];
+        } elseif(isset($_POST["article_id"])){
+            $article_id = $_POST["article_id"];
             $title = $_POST["title"];
             $theme = $_POST["theme"];
             $state = $_POST["state"];
