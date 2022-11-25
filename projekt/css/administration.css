@@ -17,7 +17,7 @@ input:not([type=submit]), textarea, select {
 	background-color: #dddddd;
 	border-radius: 8px;
 	padding: 8px 15px;
-	margin: 8px 15px;
+	margin: 0px 4px;
 	font-size: 1rem;
 	box-shadow: 1px 1px 3px black;
 }
@@ -87,7 +87,7 @@ table button:hover, table input[type=submit]:hover, table .btn:hover {
 	padding-right: 10px;
 }
 
-table form, #login form {
+table form, #login form, table button {
 	display: inline-block;
 }
 
@@ -172,11 +172,11 @@ td
 	text-align:center;
 }
 
-#id{
+th#id{
 	width:5%;
 }
 
-#name {
+th#name {
 	width:30%;
 }
 
