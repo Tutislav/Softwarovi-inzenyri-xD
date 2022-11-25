@@ -62,7 +62,7 @@
                     <?php
                         require("backend/connect.php");
 			if(isset($_POST["contentChange"]))		
-				$content = $_POST["contentChange"].value();
+				$content = $_POST["contentChange"];
 			else
 				$content = 0;
 			echo "Val= " . $content;
