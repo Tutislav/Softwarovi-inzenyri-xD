@@ -94,4 +94,18 @@
         }
         return $roles_array;
     }
+
+    function get_themes() {
+        require("connect.php");
+        $sql = "DESCRIBE prispevek tematicke_cislo;";
+        $result = $conn->query($sql);
+        $conn->close();
+        $row = $result->fetch_assoc();
+        $themes = explode("'", $row["Type"]);
+        $themes_array = [];
+        for ($i=1; $i<count($themes); $i += 2) {
+            array_push($themes_array, $themes[$i]);
+        }
+        return $themes_array;
+    }
 ?>
