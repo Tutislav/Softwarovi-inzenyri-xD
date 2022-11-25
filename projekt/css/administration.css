@@ -154,11 +154,15 @@ td
 	width: 30%;
 }
 
-#role {
+#role, #theme, #state {
 	width:15%;
 }
 
 #manage {
 	width:20%;
+}
+
+#title {
+	width:45%;
 }
 
