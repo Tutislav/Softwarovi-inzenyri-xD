@@ -202,6 +202,6 @@ input#name, input#last_name {
 	width: 30%;
 }
 
-edit_form {
+#edit_form {
 	width: 100%;
 }
