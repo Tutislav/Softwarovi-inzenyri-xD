@@ -86,6 +86,14 @@ li{
 	padding: 20px 0px 0px 20px;
 }
 
+#navigationMenu input[type=submit]
+{
+	font-size:20px;
+	font-weight:bold;
+	border:none;
+	background:none;
+}
+
 #main {
 	padding: 20px 0px 20px 20px;
 	border-bottom: 4px solid #e3ebf4;
