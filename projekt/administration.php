@@ -61,7 +61,13 @@
                     </tr>
                     <?php
                         require("backend/connect.php");
+			if(isset($_POST["contentChange"]))		
+				$content = $_POST["contentChange"].value();
+			else
+				$content = 0;
 			
+			switch($content){
+				case 1:
 			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 			$result = $conn->query($sql);
             		$roles_array = get_roles();
@@ -91,6 +97,11 @@
                    			echo "<button class='close'><i class='fa fa-close'>Zavřít</button>";
                    			echo "</td></tr>";
                 		}
+			}
+				break;
+				case 2:
+					
+				break;
 			}
 	
                     ?>
