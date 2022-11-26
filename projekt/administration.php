@@ -68,7 +68,7 @@
 				case 1:
 					
 					if($search != "")
-						$sql = "SELECT CAST(id_uzivatele AS varchar(10)), jmeno, prijmeni, email, role FROM uzivatel WHERE id_uzivatele LIKE '" . $search . "%'";
+						$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel WHERE CAST(id_uzivatele AS varchar(10)) LIKE '" . $search . "%' OR concat(jmeno, ' ', prijmeni) LIKE '%" . $search . "%'";
 					else
 						$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 					   
