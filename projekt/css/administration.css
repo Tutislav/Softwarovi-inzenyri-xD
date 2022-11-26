@@ -16,7 +16,7 @@ a:hover {
 input:not([type=submit]), textarea, select {
 	background-color: #dddddd;
 	border-radius: 8px;
-	padding: 8px 15px;
+	padding: 6px 15px;
 	width: 70%;
 	margin: 0px 4px;
 	font-size: 1rem;
