@@ -19,9 +19,6 @@
                 $("#user_" + $(this).parent().parent().children().first().html()).toggle();
                 $("#user_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
             });
-	    $("#search").change(function(){
-                $("#searchForm").submit();
-            });
         });
     </script>
 </head>
