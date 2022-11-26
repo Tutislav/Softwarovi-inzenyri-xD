@@ -1,6 +1,12 @@
 <?php
     $role_restriction = "admin";
     require("backend/common.php");
+    if (isset($_POST["search"])) {
+        $search = $_POST["search"];
+    }
+    else {
+	$search = "";    
+    }
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -18,6 +24,9 @@
             $(".manage,.close").click(function(){
                 $("#user_" + $(this).parent().parent().children().first().html()).toggle();
                 $("#user_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
+            });
+	    $("#search").change(function(){
+                $("#searchForm").submit();
             });
         });
     </script>
@@ -59,13 +68,22 @@
 
 			switch($content){
 				case 1:
-			$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
-			$result = $conn->query($sql);
-            		$roles_array = get_roles();
+					if(isset($_POST["search"]) {
+						$search = $_POST["search"];
+						$sql = "SELECT CAST(id_uzivatele AS varchar(10)), jmeno, prijmeni, email, role FROM uzivatel WHERE id_uzivatele LIKE '" . $search . "%' OR concat(jmeno, ' ', prijmeni) LIKE '%" . $search . "%' OR email LIKE '%" . $search . "%' OR role LIKE '%" . $search . "%'";
+					} else
+						$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
+					   
+					$result = $conn->query($sql);
+            				$roles_array = get_roles();
 			
-			echo "<h2>Správa uživatelů</h2>
-            		      <div id='innercontent'>
-				  <table>               
+					echo "<h2>Správa uživatelů</h2>
+					<form action='administration.php' method='POST' id='searchForm' name='searchForm'>
+						<i class='fa fa-search'></i>	
+						<input type='text' name='search' id='search' placeholder='ID/Jméno/Email/Role' value=$search>
+					</form>
+            		     		<div id='innercontent'>
+				  	<table>               
                     			<tr id='tableheader'>
                         			<th id='id'>ID</th>
                         			<th id='name'>Jméno</th>
@@ -74,32 +92,32 @@
                        				<th id='manage'></th>
                    			</tr>";
 					
-			if ($result->num_rows > 0) {				
-			     // Výpis uživatelů
-				while($row = $result->fetch_assoc()) {
-					echo "<tr id='user_" .  $row["id_uzivatele"] . "'>
-                                        	<td>". $row["id_uzivatele"] . "</td>
-                                        	<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
-                                       		<td>". $row["email"] . "</td>
-                                        	<td>". $row["role"] . "</td>
-                                        	<td><button class='manage'><i class='fa fa-wrench'>Spravovat</button></td>
-                                      	</tr>";
-                  			echo "<tr id='user_" .  $row["id_uzivatele"] . "_manage' style='display: none;'>";
-			   		echo "<td>" . $row["id_uzivatele"] . "</td>";
-                   			echo "<td><form id='edit_form' action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='last_name' id='last_name' value='" . $row["prijmeni"] . "'></td>";
-                  			echo "<td><input type='email' name='email' id='email' value='" . $row["email"] . "'></td>";
-                   			$roles = "";
-                   			foreach($roles_array as $role) {
-                       				$selected = $row["role"] == $role ? " selected" : "";
-                       				$roles .= "<option value='" . $role . "'" . $selected . ">" . $role . "</option>";
-                   			}
-                   			echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
-                   			echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
-                   			echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
-                   			echo "<button class='close'><i class='fa fa-close'>Zavřít</button>";
-                   			echo "</td></tr>";
-                		}
-			}
+					if ($result->num_rows > 0) {				
+			     			// Výpis uživatelů
+						while($row = $result->fetch_assoc()) {
+							echo "<tr id='user_" .  $row["id_uzivatele"] . "'>
+                                        			<td>". $row["id_uzivatele"] . "</td>
+                                        			<td>". $row["jmeno"] . " " . $row["prijmeni"] . "</td>
+                                       				<td>". $row["email"] . "</td>
+                                        			<td>". $row["role"] . "</td>
+                                        			<td><button class='manage'><i class='fa fa-wrench'>Spravovat</button></td>
+                                      			</tr>";
+                  					echo "<tr id='user_" .  $row["id_uzivatele"] . "_manage' style='display: none;'>";
+			   				echo "<td>" . $row["id_uzivatele"] . "</td>";
+                   					echo "<td><form id='edit_form' action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><input type='text' name='name' id='name' value='" . $row["jmeno"] . "'><input type='text' name='last_name' id='last_name' value='" . $row["prijmeni"] . "'></td>";
+                  					echo "<td><input type='email' name='email' id='email' value='" . $row["email"] . "'></td>";
+                   					$roles = "";
+                   					foreach($roles_array as $role) {
+                       						$selected = $row["role"] == $role ? " selected" : "";
+                       						$roles .= "<option value='" . $role . "'" . $selected . ">" . $role . "</option>";
+                   					}
+                   					echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
+                   					echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
+                   					echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
+                   					echo "<button class='close'><i class='fa fa-close'>Zavřít</button>";
+                   					echo "</td></tr>";
+                				}
+					}
 					echo "</table></div>";
 				break;
 					
