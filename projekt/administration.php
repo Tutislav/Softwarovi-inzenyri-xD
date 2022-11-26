@@ -120,13 +120,22 @@
 					echo "</table></div>";
 				break;
 					
-				case 2:
-					$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek";
+				case 2:					
+					if($search != "")
+						$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek WHERE CAST(id_prispevku AS varchar(10)) LIKE '" . $search . "%' OR titulek LIKE '%" . $search . "%' OR tematicke_cislo LIKE '%" . $search . "%' OR stav LIKE '%" . $search . "%'";
+					else
+						$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek";
+					
 					$result = $conn->query($sql);
 					$themes_array = get_themes();
 					
 					echo "<h2>Správa článků</h2>
             		      			<div id='innercontent'>
+						<form action='administration.php' method='POST' id='searchForm' name='searchForm'>
+							<input type='hidden' name='contentChange' value='2'>
+							<i class='fa fa-search'></i>	
+							<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
+						</form>
 				 		 <table>               
                     					<tr id='tableheader'>
                         					<th id='id'>ID</th>
