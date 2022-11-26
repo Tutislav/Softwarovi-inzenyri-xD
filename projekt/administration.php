@@ -42,7 +42,7 @@
 		
 	    $("#search").keyup(delay(function(e){
                 $("#searchForm").submit();
-            }, 1000));
+            }, 500));
         });
     </script>
 </head>
