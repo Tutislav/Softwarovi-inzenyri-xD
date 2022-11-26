@@ -67,8 +67,10 @@
 			switch($content){
 				case 1:
 					
-					$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
-				
+					if($search != "")
+						$sql = "SELECT CAST(id_uzivatele AS varchar(10)), jmeno, prijmeni, email, role FROM uzivatel WHERE id_uzivatele LIKE '" . $search . "%'";
+					else
+						$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
 					   
 					$result = $conn->query($sql);
             				$roles_array = get_roles();
