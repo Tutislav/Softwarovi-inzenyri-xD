@@ -59,12 +59,9 @@
 
 			switch($content){
 				case 1:
-					if(isset($_POST["search"]) {
-						$search = $_POST["search"];
-						$sql = "SELECT CAST(id_uzivatele AS varchar(10)), jmeno, prijmeni, email, role FROM uzivatel WHERE id_uzivatele LIKE '" . $search . "%' OR concat(jmeno, ' ', prijmeni) LIKE '%" . $search . "%' OR email LIKE '%" . $search . "%' OR role LIKE '%" . $search . "%'";
-					} else {
-						$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
-					}
+					
+					$sql = "SELECT id_uzivatele, jmeno, prijmeni, email, role FROM uzivatel";
+				
 					   
 					$result = $conn->query($sql);
             				$roles_array = get_roles();
