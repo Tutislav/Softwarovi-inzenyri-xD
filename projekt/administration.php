@@ -80,7 +80,7 @@
 					<form action='administration.php' method='POST' id='searchForm' name='searchForm'>
 						<input type='hidden' name='contentChange' value='1'>
 						<i class='fa fa-search'></i>	
-						<input type='text' name='search' id='search' placeholder='ID/Jméno/Email/Role' value=$search>
+						<input type='text' name='search' id='search' placeholder='ID/Jméno/Email/Role' value=$search autofocus>
 					</form>
 				  	<table>               
                     			<tr id='tableheader'>
@@ -134,7 +134,7 @@
 						<form action='administration.php' method='POST' id='searchForm' name='searchForm'>
 							<input type='hidden' name='contentChange' value='2'>
 							<i class='fa fa-search'></i>	
-							<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
+							<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search autofocus>
 						</form>
 				 		 <table>               
                     					<tr id='tableheader'>
