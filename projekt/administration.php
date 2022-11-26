@@ -23,11 +23,24 @@
     	    var len = input.val().length;
             input[0].focus();
     	    input[0].setSelectionRange(len, len);
+		
+	    function delay(callback, ms) {
+  		var timer = 0;
+  		return function() {
+   			var context = this, args = arguments;
+   			clearTimeout(timer);
+    			timer = setTimeout(function () {
+      				callback.apply(context, args);
+    			}, ms || 0);
+  	        };
+	    }
+		
             $(".manage,.close").click(function(){
                 $("#user_" + $(this).parent().parent().children().first().html()).toggle();
                 $("#user_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
             });
-	    $("#search").keyup(setTimeout(function(){
+		
+	    $("#search").keyup(delay(function(e){
                 $("#searchForm").submit();
             }, 1000));
         });
