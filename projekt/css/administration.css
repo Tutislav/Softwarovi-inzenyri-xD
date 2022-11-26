@@ -60,6 +60,15 @@ table button:hover, table input[type=submit]:hover, table .btn:hover {
 	background-color: white;
 }
 
+#searchForm {
+	margin:2%;
+	float:left;
+	width:100%;
+}
+#search {
+	width:50%;
+}
+
 #login_register {
 	background-color: darkred;
 	color: white;
