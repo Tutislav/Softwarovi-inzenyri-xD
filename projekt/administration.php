@@ -29,7 +29,7 @@
             });
 	    $("#search").keyup(setTimeout(function(){
                 $("#searchForm").submit();
-            }, 1000);
+            }, 1000));
         });
     </script>
 </head>
