@@ -73,10 +73,7 @@
             				$roles_array = get_roles();
 			
 					echo "<h2>Správa uživatelů</h2>
-					<form action='administration.php' method='POST' id='searchForm' name='searchForm'>
-						<i class='fa fa-search'></i>	
-						<input type='text' name='search' id='search' placeholder='ID/Jméno/Email/Role' value=''>
-					</form>
+					
             		     		<div id='innercontent'>
 				  	<table>               
                     			<tr id='tableheader'>
