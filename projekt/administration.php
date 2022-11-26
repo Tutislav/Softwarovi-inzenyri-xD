@@ -1,6 +1,10 @@
 <?php
     $role_restriction = "admin";
     require("backend/common.php");
+    if(isset($_POST["search"]))
+	    $search = $_POST["search"];
+    else
+	    $search = "";
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -73,7 +77,7 @@
 					<form action='administration.php' method='POST' id='searchForm' name='searchForm'>
 						<input type='hidden' name='contentChange' value='1'>
 						<i class='fa fa-search'></i>	
-						<input type='text' name='search' id='search' placeholder='ID/Jméno/Email/Role' value=''>
+						<input type='text' name='search' id='search' placeholder='ID/Jméno/Email/Role' value=$search>
 					</form>
             		     		<div id='innercontent'>
 				  	<table>               
