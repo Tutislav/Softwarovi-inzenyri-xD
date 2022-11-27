@@ -79,11 +79,53 @@
 		zip_close($zip);  
 		$content = str_replace('</w:r></w:p></w:tc><w:tc>', " ", $content);   		
 		$content = str_replace('</w:r></w:p>', "\r\n", $content);  	
-		$content = str_replace('<w:br/>', "\r\n", $content);  
-		$striped_content = strip_tags($content);
+		$content = str_replace('<w:br/>', "\r\n", $content);
+		$lines = explode(PHP_EOL, $content);
+		$content = "";		
+		$autorStage = 0;
+		foreach($lines as $line)
+		{
+			if(strpos($line, 'Abstrakt') && $autorStage == 1){
+				$content .= "</div>";
+				$autorStage = 2;
+			}
+			
+			if(strpos($line, 'ontaktní údaje')){
+				$content .= "<div id='kontakt'>";
+			}
+			
+			if(strpos($line, 'Heading1')){
+				$content .= "<h1>";
+				$content .= $line;
+				$content .= "</h1>";
+				if($autorStage == 0)
+				{
+					$content .= "<div id='autor'>";
+					$autorStage = 1;
+				}
+			}
+			elseif(strpos($line, 'Heading2')){
+				$content .= "<h2>";
+				$content .= $line;
+				$content .= "</h2>";
+				
+			}
+			elseif(strpos($line, 'Heading3')){
+				$content .= "<h3>";
+				$content .= $line;
+				$content .= "</h3>";
+				
+			}
+			else
+				$content .= $line;
+			
+		}
+		$content .= "</div>";
+		$striped_content = strip_tags($content, "<h1><h2><h3><div>");
 		$striped_content = html_entity_decode($striped_content);
 		return $striped_content;  
-	}  
+	}
+		
     $sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
