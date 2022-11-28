@@ -132,10 +132,18 @@
         $row = $result->fetch_assoc();
         if ($row["stav"] != "Schváleno") check_restriction($row["id_uzivatele"], true);
         $filename = $row["soubor_cesta"];
-        $content = read_file_docx($filename);
-        if($content)
-            print nl2br($content);
-    }
+	    
+        $path = pathinfo($filename);
+		if($path["extension"] == "doc" || $path["extension"] == "docx")
+		{
+			$content = read_file_docx($filename);
+			if($content)
+				print nl2br($content);
+		}
+		elseif($path["extension"] == "pdf")
+		{
+			echo "<iframe src='" . $filename . "'>";			
+		}
 ?>
         </div>
 		<?php
