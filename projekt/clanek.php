@@ -144,6 +144,7 @@
 		{
 			echo "<iframe src='" . $filename . "'>";			
 		}
+    }
 ?>
         </div>
 		<?php
