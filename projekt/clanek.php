@@ -90,7 +90,7 @@
 				$autorStage = 2;
 			}
 			
-			if(strpos($line, 'Kontaktní údaje')){
+			if(strpos($line, 'ontaktní údaje')){ // Neopravovat na 'Kontaktní údaje' - strpos nenajde
 				$content .= "<div id='kontakt'>";
 			}
 			
