@@ -15,13 +15,13 @@
 	if(!empty($title) && !empty($authors) && !empty($file) && !empty($theme))
 	{		
 		//File--------
-		$date = date("y-m-d-h-i-s");
+		$date = date("Y-m-d-H-i-s");
 		$file_array = explode(".", $file);
 		$file_name = $file_array[0];
 		$file_ext = $file_array[1];
 		$file_name = $file_name."_".$date.".".$file_ext;
 
-		$file_loc = "../clanky/".$file_name;
+		$file_loc = "clanky/".$file_name;
 		$file_name_temp = $_FILES["file"]["tmp_name"];
 		if(move_uploaded_file($file_name_temp, $file_loc)) 
 		{ 
