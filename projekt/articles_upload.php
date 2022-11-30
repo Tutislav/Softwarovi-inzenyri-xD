@@ -41,7 +41,7 @@
 		</tr>
 		<?php
 			//Database connect--------
-			require("backend\connect.php");
+			require("backend/connect.php");
 
 			//database select--------
 			$select = "select id_prispevku, titulek from prispevek where stav='Schváleno'";
