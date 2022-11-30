@@ -48,7 +48,15 @@
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
-				echo "haha";
+				foreach($result as $item)
+				{
+					echo "<td>";
+						echo $item["titulek"];
+					echo "</td>";
+					echo "<td>";
+						echo "<input type='checkbox'>";
+					echo "</td>";
+				}
 			}
 			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
 			
