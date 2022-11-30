@@ -48,7 +48,7 @@
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
-				echo "<form action='/backend/articles_upload.php'>";
+				echo "<form action='/backend/articles_upload.php' method='post'>";
 					foreach($result as $item)
 					{
 						echo "<tr>";
@@ -60,13 +60,13 @@
 							echo "</td>";
 						echo "</tr>";
 					}
+	echo "</table>";
 					echo "<input type='submit' name='submit' value='Zveřejnit' />";
 				echo "</form>";
 			}
 			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
 			
 		?>
-	</table>
     </div>
 </body>
 </html>
