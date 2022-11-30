@@ -34,9 +34,9 @@
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
             </ul>
         </div>
-    </div>
-    <div class="review_form">
-    nejaky neco    
+        <div class="review_form">
+        nejaky neco    
+        </div>
     </div>
 </body>
 </html>
