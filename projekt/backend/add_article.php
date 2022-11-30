@@ -10,6 +10,7 @@
 	$authors = $_POST["authors"];
 	$theme = $_POST["theme"];
 	$file = $_FILES["file"]["name"];
+	$article_id = $_POST["article_id"];
 
 	//Empty check--------
 	if(!empty($title) && !empty($authors) && !empty($file) && !empty($theme))
@@ -25,19 +26,25 @@
 		$file_name_temp = $_FILES["file"]["tmp_name"];
 		if(move_uploaded_file($file_name_temp, $file_loc)) 
 		{ 
-			//Insert database prispevek--------
-			$insert = "insert into prispevek (id_uzivatele, tematicke_cislo, spoluautori, stav, titulek)
-					values ($_SESSION[user_id], '$theme', '$authors', 'Nehodnoceno', '$title')";
-			$result = mysqli_query($conn, $insert);
+			if (isset($_POST["add"])) {
+				//Insert database prispevek--------
+				$insert = "insert into prispevek (id_uzivatele, tematicke_cislo, spoluautori, stav, titulek)
+						values ($_SESSION[user_id], '$theme', '$authors', 'Nehodnoceno', '$title')";
+				$result = mysqli_query($conn, $insert);
+			}
+			else $result = 1;
 			if($result)
 			{
 				//Insert database soubor--------
-				
-				$select = "select id_prispevku from prispevek order by id_prispevku desc limit 1";
-				$result = mysqli_query($conn, $select);
+				if (isset($_POST["add"])) {
+					$select = "select id_prispevku from prispevek order by id_prispevku desc limit 1";
+					$result = mysqli_query($conn, $select);
+				}
+				else $result = 1;
 				if($result)
 				{
-					$last_article_id = mysqli_fetch_assoc($result)["id_prispevku"];
+					if (isset($_POST["add"])) $last_article_id = mysqli_fetch_assoc($result)["id_prispevku"];
+					else $last_article_id = $article_id;
 					$insert = "insert into soubor (id_prispevku, soubor_cesta)
 							values ($last_article_id, '$file_loc')";
 					$result = mysqli_query($conn, $insert);
