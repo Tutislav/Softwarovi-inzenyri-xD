@@ -22,7 +22,8 @@
 		$file_ext = $file_array[1];
 		$file_name = $file_name."_".$date.".".$file_ext;
 
-		$file_loc = "clanky/".$file_name;
+		$file_loc = "../clanky/".$file_name;
+		$file_path = "clanky/".$file_name;
 		$file_name_temp = $_FILES["file"]["tmp_name"];
 		if(move_uploaded_file($file_name_temp, $file_loc)) 
 		{ 
@@ -46,7 +47,7 @@
 					if (isset($_POST["add"])) $last_article_id = mysqli_fetch_assoc($result)["id_prispevku"];
 					else $last_article_id = $article_id;
 					$insert = "insert into soubor (id_prispevku, soubor_cesta)
-							values ($last_article_id, '$file_loc')";
+							values ($last_article_id, '$file_path')";
 					$result = mysqli_query($conn, $insert);
 					if($result)
 					{
