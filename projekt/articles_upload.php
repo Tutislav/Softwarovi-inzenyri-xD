@@ -51,8 +51,8 @@
 				foreach($result as $item)
 				{
 					echo "<tr>";
-						echo "<td>";
-							echo $item["titulek"];
+						echo "<td class='clanekTitle'>";
+							echo "<a href='../clanek.php?id=".$item["id_prispevku"]."'>".$item["titulek"]."</a></td>";
 						echo "</td>";
 						echo "<td>";
 							echo "<input type='checkbox'>";
