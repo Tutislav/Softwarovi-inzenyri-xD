@@ -142,7 +142,7 @@
 		}
 		elseif($path["extension"] == "pdf")
 		{
-			echo "<iframe src='" . $filename . "'>";			
+			echo "<iframe src='" . $filename . "'></iframe>";			
 		}
     }
 ?>
