@@ -50,12 +50,14 @@
 			{
 				foreach($result as $item)
 				{
-					echo "<td>";
-						echo $item["titulek"];
-					echo "</td>";
-					echo "<td>";
-						echo "<input type='checkbox'>";
-					echo "</td>";
+					echo "<tr>";
+						echo "<td>";
+							echo $item["titulek"];
+						echo "</td>";
+						echo "<td>";
+							echo "<input type='checkbox'>";
+						echo "</td>";
+					echo "</tr>";
 				}
 			}
 			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
