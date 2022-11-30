@@ -1,5 +1,5 @@
 <?php
-    require("backend/common.php");
+    	require("backend/common.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -35,8 +35,24 @@
             </ul>
         </div>
 	<table class="border_sides">
-		<th>Článek</th>
-		<th>Zveřejnit</th>
+		<tr>
+			<th>Článek</th>
+			<th>Zveřejnit</th>
+		</tr>
+		<?php
+			//Database connect--------
+			require("backend\connect.php");
+
+			//database select--------
+			$select = "select id_prispevku, titulek from prispevek where stav='Schváleno'";
+			$result = mysqli_query($conn, $select);
+			if($result)
+			{
+				echo "haha";
+			}
+			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
+			
+		?>
 	</table>
 	<button onclick="location.href='/backend/articles_upload.php'">Zveřejnit</button>
 	
