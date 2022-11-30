@@ -56,11 +56,11 @@
 								echo "<a href='../clanek.php?id=".$item["id_prispevku"]."'>".$item["titulek"]."</a></td>";
 							echo "</td>";
 							echo "<td>";
-								echo "<input type='checkbox' name='article_checked' value='".$item["id_prispevku"]."'>";
+								echo "<input type='checkbox' name='article_checked' value='".$item["id_prispevku"]."' />";
 							echo "</td>";
 						echo "</tr>";
 					}
-					<input type="submit" name="submit" value="Zveřejnit" />
+					echo "<input type='submit' name='submit' value='Zveřejnit' />";
 				echo "</form>";
 			}
 			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
