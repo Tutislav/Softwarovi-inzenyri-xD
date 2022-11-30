@@ -20,6 +20,7 @@
 		$file_array = explode(".", $file);
 		$file_name = $file_array[0];
 		$file_ext = $file_array[1];
+		$file_name = strtr($file_name, [" "=>"_", ":"=>"_"]);
 		$file_name = $file_name."_".$date.".".$file_ext;
 
 		$file_loc = "../clanky/".$file_name;
