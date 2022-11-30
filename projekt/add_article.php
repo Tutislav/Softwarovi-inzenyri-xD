@@ -5,11 +5,12 @@
 	if (isset($_GET["id"])) {
 		$id = $_GET["id"];
 		require("backend/connect.php");
-		$sql = "SELECT id_uzivatele, titulek, spoluautori, tematicke_cislo FROM uzivatel NATURAL JOIN prispevek WHERE id_prispevku='$id';";
+		$sql = "SELECT id_uzivatele, id_prispevku, titulek, spoluautori, tematicke_cislo FROM uzivatel NATURAL JOIN prispevek WHERE id_prispevku='$id';";
 		$result = $conn->query($sql);
 		$conn->close();
 		if ($result->num_rows > 0) {
 			$row = $result->fetch_assoc();
+			$article_id = $row["id_prispevku"];
 			check_restriction($row["id_uzivatele"]);
 			$title = $row["titulek"];
 			$authors = $row["spoluautori"];
@@ -23,7 +24,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Přidat článek - IT World</title>
+    <title><?= isset($title) ? "Upravit článek" : "Přidat článek" ?> - IT World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
@@ -37,7 +38,7 @@
         		<div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
         	</div>
         	<div class="add_article">
-			<h2>Přidávání článků</h2>
+			<h2><?= isset($title) ? "Úprava článků" : "Přidávání článků" ?></h2>
             		<form action="backend/add_article.php" method="post" enctype="multipart/form-data">
 				<label class="fa fa-font" for="title"></label><input type="text" id="title" name="title" placeholder="Titulek" value="<?= isset($title) ? $title : "" ?>" required><br>
 				<label class="fa fa-address-card-o" for="authors"></label><textarea id="authors" name="authors" placeholder="Autoři" value="<?= isset($authors) ? $authors : "" ?>" required></textarea><br>
@@ -49,8 +50,9 @@
 					<option value="gaming"<?= isset($theme) && $theme == "gaming" ? " selected" : "" ?>>Gaming</option>
 					<option value="ai"<?= isset($theme) && $theme == "ai" ? " selected" : "" ?>>AI</option>
 				</select>
+				<input type="hidden" name="article_id" value="<?= isset($article_id) ? $article_id : "" ?>">
 				<br>
-                		<input type="submit" value="<?= isset($title) ? "Upravit článek" : "Přidat článek" ?>">
+                		<input type="submit" name="<?= isset($title) ? "edit" : "add" ?>" value="<?= isset($title) ? "Upravit článek" : "Přidat článek" ?>">
             		</form>
         	</div>
     	</div>
