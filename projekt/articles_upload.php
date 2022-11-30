@@ -48,24 +48,25 @@
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
-				foreach($result as $item)
-				{
-					echo "<tr>";
-						echo "<td class='clanekTitle'>";
-							echo "<a href='../clanek.php?id=".$item["id_prispevku"]."'>".$item["titulek"]."</a></td>";
-						echo "</td>";
-						echo "<td>";
-							echo "<input type='checkbox'>";
-						echo "</td>";
-					echo "</tr>";
-				}
+				echo "<form action='/backend/articles_upload.php'>";
+					foreach($result as $item)
+					{
+						echo "<tr>";
+							echo "<td class='clanekTitle'>";
+								echo "<a href='../clanek.php?id=".$item["id_prispevku"]."'>".$item["titulek"]."</a></td>";
+							echo "</td>";
+							echo "<td>";
+								echo "<input type='checkbox' name='article_checked' value='".$item["id_prispevku"]."'>";
+							echo "</td>";
+						echo "</tr>";
+					}
+					<input type="submit" name="submit" value="Zveřejnit" />
+				echo "</form>";
 			}
 			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
 			
 		?>
 	</table>
-	<button onclick="location.href='/backend/articles_upload.php'">Zveřejnit</button>
-	
     </div>
 </body>
 </html>
