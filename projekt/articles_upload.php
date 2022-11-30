@@ -34,6 +34,12 @@
                 <li class="helpdesk"><a href="">HELPDESK</a></li>
             </ul>
         </div>
+	<table class="border_sides">
+		<th>Článek</th>
+		<th>Zveřejnit</th>
+		
+	</table>
+	
     </div>
 </body>
 </html>
