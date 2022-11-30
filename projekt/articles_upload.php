@@ -52,10 +52,10 @@
 					foreach($result as $item)
 					{
 						echo "<tr>";
-							echo "<td class='clanekTitle'>";
+							echo "<td>";
 								echo "<a href='../clanek.php?id=".$item["id_prispevku"]."'>".$item["titulek"]."</a></td>";
 							echo "</td>";
-							echo "<td>";
+							echo "<td class="checkbox">";
 								echo "<input type='checkbox' name='article_checked' value='".$item["id_prispevku"]."' />";
 							echo "</td>";
 						echo "</tr>";
