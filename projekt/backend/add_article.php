@@ -33,7 +33,11 @@
 						values ($_SESSION[user_id], '$theme', '$authors', 'Nehodnoceno', '$title')";
 				$result = mysqli_query($conn, $insert);
 			}
-			else $result = 1;
+			else {
+				//Update database prispevek
+				$update = "UPDATE prispevek SET titulek='$title', tematicke_cislo='$theme', spoluautori='$authors' WHERE id_prispevku='$article_id';";
+				$result = mysqli_query($conn, $update);
+			}
 			if($result)
 			{
 				//Insert database soubor--------
