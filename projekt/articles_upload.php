@@ -38,7 +38,7 @@
 		<th>Článek</th>
 		<th>Zveřejnit</th>
 	</table>
-	<button onclick="location.href='/backend/articles_upload.php'">Zveřejnit<button>
+	<button onclick="location.href='/backend/articles_upload.php'">Zveřejnit</button>
 	
     </div>
 </body>
