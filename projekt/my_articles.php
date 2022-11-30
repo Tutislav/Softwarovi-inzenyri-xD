@@ -39,7 +39,7 @@
                 <tr>
                     <th>Titulek</th>
                     <th>Stav</th>
-                    <th>Recenze</th>
+                    <th>Akce</th>
                 </tr>
 <?php
 	require("backend/connect.php");
@@ -53,7 +53,14 @@
 			echo "<tr>";
 			echo "<td class='clanekRef'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>";
 			echo "<td class='clanekStav'>" . $row["stav"] . "</td>";
-            echo "<td class='clanekRecenze'><a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
+            if ($row["stav"] == "Čeká na doplnění")
+            {
+                $actions = "<button onclick='location.href=\"/edit_article.php?id=" . $row["id_prispevku"] . "\"'>Upravit</button>";
+            }
+            else {
+                $actions = "<button onclick='location.href=\"/my_article_reviews.php?id=" . $row["id_prispevku"] . "\"'>Recenze</button>";
+            }
+            echo "<td class='clanekRecenze'>" . $actions . "</td>";
             echo "</tr>";
 		}
 	} else {
