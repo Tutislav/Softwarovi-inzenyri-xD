@@ -55,7 +55,7 @@
 			echo "<td class='clanekStav'>" . $row["stav"] . "</td>";
             if ($row["stav"] == "Čeká na doplnění")
             {
-                $actions = "<button onclick='location.href=\"/edit_article.php?id=" . $row["id_prispevku"] . "\"'>Upravit</button>";
+                $actions = "<button onclick='location.href=\"/add_article.php?id=" . $row["id_prispevku"] . "\"'>Upravit</button>";
             }
             else {
                 $actions = "<button onclick='location.href=\"/my_article_reviews.php?id=" . $row["id_prispevku"] . "\"'>Recenze</button>";

@@ -2,6 +2,20 @@
 	//Session--------
 	$role_restriction = "autor";
 	require("backend/common.php");
+	if (isset($_GET["id"])) {
+		$id = $_GET["id"];
+		require("backend/connect.php");
+		$sql = "SELECT id_uzivatele, titulek, spoluautori, tematicke_cislo FROM uzivatel NATURAL JOIN prispevek WHERE id_prispevku='$id';";
+		$result = $conn->query($sql);
+		$conn->close();
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+			check_restriction($row["id_uzivatele"]);
+			$title = $row["titulek"];
+			$authors = $row["spoluautori"];
+			$theme = $row["tematicke_cislo"];
+		}
+	}
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -25,18 +39,18 @@
         	<div class="add_article">
 			<h2>Přidávání článků</h2>
             		<form action="backend/add_article.php" method="post" enctype="multipart/form-data">
-				<label class="fa fa-font" for="title"></label><input type="text" id="title" name="title" placeholder="Titulek" required><br>
-				<label class="fa fa-address-card-o" for="authors"></label><textarea id="authors" name="authors" placeholder="Autoři" required></textarea><br>
+				<label class="fa fa-font" for="title"></label><input type="text" id="title" name="title" placeholder="Titulek" value="<?= isset($title) ? $title : "" ?>" required><br>
+				<label class="fa fa-address-card-o" for="authors"></label><textarea id="authors" name="authors" placeholder="Autoři" value="<?= isset($authors) ? $authors : "" ?>" required></textarea><br>
                 		<label class="fa fa-file-word-o" for="file"></label><input type="file" id="file" name="file" onchange="file_check()" required><br>
 				<label for="theme">Téma:</label>
 				<select id="theme" name="theme">
-					<option value="hardware">Hardware</option>
-					<option value="software">Software</option>
-					<option value="gaming">Gaming</option>
-					<option value="ai">AI</option>
+					<option value="hardware"<?= isset($theme) && $theme == "hardware" ? " selected" : "" ?>>Hardware</option>
+					<option value="software"<?= isset($theme) && $theme == "software" ? " selected" : "" ?>>Software</option>
+					<option value="gaming"<?= isset($theme) && $theme == "gaming" ? " selected" : "" ?>>Gaming</option>
+					<option value="ai"<?= isset($theme) && $theme == "ai" ? " selected" : "" ?>>AI</option>
 				</select>
 				<br>
-                		<input type="submit" value="Přidat článek">
+                		<input type="submit" value="<?= isset($title) ? "Upravit článek" : "Přidat článek" ?>">
             		</form>
         	</div>
     	</div>
