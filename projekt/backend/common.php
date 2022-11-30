@@ -33,6 +33,9 @@
             case "redaktor":
                 $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
                 break;
+	    case "sefredaktor":
+                $menu_login = "<li><a href='/articles_upload.php'>ZVEŘEJŃOVÁNÍ ČLÁNKŮ</a></li>";
+            break;
             case "recenzent":
                 $menu_login = "<li><a href='/articles_to_review.php'>ČLÁNKY K RECENZI</a></li>";
                 break;
