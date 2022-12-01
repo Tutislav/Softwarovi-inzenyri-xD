@@ -127,9 +127,11 @@
                        						$selected = $row["role"] == $role ? " selected" : "";
                        						$roles .= "<option value='" . $role . "'" . $selected . ">" . $role . "</option>";
                    					}
-                   					echo "<td><select name='role' id='role'>" . $roles . "</select></td>";
+                   					echo "<td><select name='role' id='role'" . $row["id_uzivatele"] != $_SESSION["id"] ? "" : " disabled" . ">" . $roles . "</select></td>";
                    					echo "<td><button type='submit' name='edit' id='edit'><i class='fa fa-floppy-o'></i>Uložit</button></form>";
-                   					echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
+									if ($row["id_uzivatele"] != $_SESSION["id"]) {
+                   						echo "<form action='backend/administration.php' method='post'><input type='hidden' name='user_id' id='user_id' value='" . $row["id_uzivatele"] . "'><button type='submit' name='delete' id='delete' onclick='return confirm(\"Opravdu chcete smazat tohoto uživatele?\")'><i class='fa fa-trash'></i>Smazat</button></form>";
+									}
                    					echo "<button class='close'><i class='fa fa-close'></i>Zavřít</button>";
                    					echo "</td></tr>";
                 				}
