@@ -42,7 +42,9 @@
         if ($result->num_rows > 0) {	
             while($row = $result->fetch_assoc())
             {
-            echo $row["titulek"]." ".$row["datum_zadani"]." ".$row["termin_splneni"];
+            echo "<div class='article_title'>";
+            echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
+            echo "</div>";
             }
         }else echo "nic nemam";
         ?>
