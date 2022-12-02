@@ -48,12 +48,14 @@
                 echo "<div style='display:inline-block;width:500px;height:500px;border: 1px solid black'>";
                     echo "Recenze";
                 echo "</div>";
-                echo "<div style = 'display:inline-block;width:300px;height:300px;border: 1px solid black'>";
-                    echo "informace o autorovi";
+                echo "<div style='inline-block;width:300px;height:500px;border: 1px solid black'>";
+                    echo "<div style = 'display:block;width:300px;height:300px;border: 1px solid black'>";
+                        echo "informace o autorovi";
+                    echo "</div>";
+                    echo "<div style = 'display:block;width:300px;height:200px;border: 1px solid black'>";
+                        echo "button";
+                    echo "</div>"; 
                 echo "</div>";
-                echo "<div style = 'display:inline-block;width:300px;height:200px;border: 1px solid black'>";
-                    echo "button";
-                echo "</div>"; 
             }
         }else echo "nic nemam";
         ?>
