@@ -77,11 +77,11 @@
 
         <form action="/backend/redaktor_review.php" method="post">
             <select name="stav" id="stav">
-                <option value="Schváleno"<?= $stav_clanku == "Schváleno" ? " selected" : "" ?>>Schváleno</option>
-				<option value="Vráceno z důvodu tematické nevhodnosti"<?= $stav_clanku == "Vráceno z důvodu tematické nevhodnosti" ? " selected" : "" ?>>Vráceno z důvodu tematické nevhodnosti</option>
-				<option value="Předáno recenzentům"<?= $stav_clanku == "Předáno recenzentům" ? " selected" : "" ?>>Předáno recenzentům</option>
-				<option value="Čeká na doplnění"<?= $stav_clanku == "Čeká na doplnění" ? " selected" : "" ?>>Čeká na doplnění</option>
-				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnuto</option>
+                <option value="Schváleno"<?= $stav_clanku == "Schváleno" ? " selected" : "" ?>>Schválit</option>
+				<option value="Vráceno z důvodu tematické nevhodnosti"<?= $stav_clanku == "Vráceno z důvodu tematické nevhodnosti" ? " selected" : "" ?>>Vrátit z důvodu tematické nevhodnosti</option>
+				<option value="Předáno recenzentům"<?= $stav_clanku == "Předáno recenzentům" ? " selected" : "" ?>>Předat recenzentům</option>
+				<option value="Čeká na doplnění"<?= $stav_clanku == "Čeká na doplnění" ? " selected" : "" ?>>Požádat o doplnění</option>
+				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnout</option>
             </select><br>
             <span id="reviewers_select" style="display: none;">
                 <label for="reviewer1">1.recenzent</label>
