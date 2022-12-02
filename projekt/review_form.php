@@ -42,7 +42,7 @@
         if ($result->num_rows > 0) {	
             while($row=$result->fetch_assoc())
             {
-            echo $row["titulek"]." ".$row["datum_zadani"]." ".$row["termin_splneni"];
+            echo "Aspon neco vypiš už".$row["titulek"]." ".$row["datum_zadani"]." ".$row["termin_splneni"];
             }
         }else echo "nic nemam";
         ?>
