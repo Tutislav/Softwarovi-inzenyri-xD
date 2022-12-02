@@ -49,7 +49,7 @@
                     echo "Recenze";
                 echo "</div>";
                 echo "<div style = 'display:inline-block'>";
-                    echo "informace o autorovi<br>";
+                    echo "informace o autorovi";
                     echo "button";
                 echo "</div>"; 
             }
