@@ -51,8 +51,6 @@
                 echo "</div>";
                 echo "<div>";
                     echo "informace o autorovi";
-                echo "</div>";
-                echo "<div>";
                     echo "button";
                 echo "</div>";
             echo "</div>";   
