@@ -46,14 +46,14 @@
             echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
             echo "</div>";
             echo "<div style='padding:25px'>";
-                echo "<div style='float:left;width:500px;height:500px'>";
+                echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     echo "Recenze";
                 echo "</div>";
-                echo "<div style='float:left;width:300px'>";
+                echo "<div style='float:left;width:300px;border: 1px solid black'>";
                     echo "<div style='height:300px'>";
                         echo "informace o autorovi";
                     echo "</div>";
-                    echo "<div style='height:200px'>";
+                    echo "<div style='height:200px;border: 1px solid black'>";
                         echo "button";
                     echo "</div>"; 
                 echo "</div>";
