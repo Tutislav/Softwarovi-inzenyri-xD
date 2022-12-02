@@ -50,7 +50,7 @@
                     echo "Recenze";
                 echo "</div>";
                 echo "<div>";
-                    echo "informace o autorovi";
+                    echo "informace o autorovi<br>";
                     echo "button";
                 echo "</div>";
             echo "</div>";   
