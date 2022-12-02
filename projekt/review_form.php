@@ -39,9 +39,10 @@
         sql=SELECT titulek, datum_zadani, termin_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE ukol.splneno = 0 AND uzivatel.email='" . $_SESSION["email"] . "';
         $result=conn->query($sql);
         if ($result->num_rows > 0) {	
-            $row=$result->fetch_assoc();
+            while($row=$result->fetch_assoc()){
             echo $row["titulek"]." ".$row["datum_zadani"]." ".$row["termin_splneni"];
-        }
+            }
+        }else echo "nic nemam";
         ?>
         </div>
     </div>
