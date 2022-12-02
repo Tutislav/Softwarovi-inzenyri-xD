@@ -18,7 +18,8 @@
     <script>
         $(document).ready(function(){
             $("#stav").change(function(){
-                $("#clankyFilter form").submit();
+                if ($("#stav").val() == "Předáno recenzentům") $("#reviewers_select").slideDown();
+                else $("#reviewers_select").slideUp();
             });
         });
     </script>
@@ -63,6 +64,15 @@
             }
         }
 
+        $sql = "SELECT id_uzivatele, email FROM uzivatel WHERE role='recenzent';";
+        $result = $conn->query($sql);
+        $conn->close();
+        $reviewers = "";
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $reviewers .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["email"] . "</option>";
+            }
+        }
         ?>
 
         <form action="/backend/redaktor_review.php" method="post">
@@ -73,6 +83,12 @@
 				<option value="Čeká na doplnění"<?= $stav_clanku == "Čeká na doplnění" ? " selected" : "" ?>>Čeká na doplnění</option>
 				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnuto</option>
             </select><br>
+            <span id="reviewers_select" style="display: none;">
+                <label for="reviewer1">1.recenzent</label>
+                <select name="reviewer1" id="reviewer1"><?= $reviewers ?></select><br>
+                <label for="reviewer2">2.recenzent</label>
+                <select name="reviewer2" id="reviewer2"><?= $reviewers ?></select><br>
+            </span>
             <input type="hidden" value="<?= $user_id ?>" id="user_id" name="user_id">
             <input type="hidden" value="<?= $id ?>" id="id" name="id">
             <textarea id="text" name="text" rows="4" cols="50"></textarea><br>
