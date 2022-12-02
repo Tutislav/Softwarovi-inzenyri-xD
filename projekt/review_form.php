@@ -48,6 +48,7 @@
             echo "<div style='padding:25px'>";
                 echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     echo "Recenze";
+                //vytvořit a potom dodělat formulář pro posílání do databáze nebo něco takovýho
                 echo "</div>";
                 echo "<div style='float:left;width:300px;border: 1px solid black'>";
                     echo "<div style='height:300px'>";
