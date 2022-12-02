@@ -44,8 +44,7 @@
             {
             echo "<div class='article_title'>";
             echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
-            echo "</div>";
-                
+            echo "</div>";                
             echo "<div style='display: block'>";
                 echo "<div>";
                     echo "Recenze";
@@ -56,8 +55,7 @@
                 echo "<div>";
                     echo "button";
                 echo "</div>";
-            echo "</div>";
-                
+            echo "</div>";   
             }
         }else echo "nic nemam";
         ?>
