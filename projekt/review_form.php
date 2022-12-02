@@ -46,7 +46,7 @@
             echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
             echo "</div>";
                 
-            echo "<div style='display: block'">;
+            echo "<div style='display: block'>";
                 echo "<div>";
                     echo "Recenze";
                 echo "</div>";
