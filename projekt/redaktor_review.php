@@ -88,6 +88,7 @@
                 <select name="reviewer1" id="reviewer1"><?= $reviewers ?></select><br>
                 <label for="reviewer2">2.recenzent</label>
                 <select name="reviewer2" id="reviewer2"><?= $reviewers ?></select><br>
+                <label for="deadline">Termín splnění:</label><input type="datetime-local" name="deadline" id="deadline"><br>
             </span>
             <input type="hidden" value="<?= $user_id ?>" id="user_id" name="user_id">
             <input type="hidden" value="<?= $id ?>" id="id" name="id">
