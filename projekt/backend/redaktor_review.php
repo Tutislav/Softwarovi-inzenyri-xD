@@ -20,6 +20,17 @@
 
         $sql = "UPDATE prispevek SET stav='$stav' WHERE id_prispevku = '$id'";
         $result = $conn->query($sql);
+
+        $reviewer1 = $_POST["reviewer1"];
+        $reviewer2 = $_POST["reviewer2"];
+        $deadline = $_POST["deadline"];
+        $task_text = "Zrecenzujte prosím tento článek: <a href=\"/clanek.php?id='$id'\">Článek</a>";
+        if (!empty($deadline)) {
+            $sql = "INSERT INTO ukol (id_uzivatele, id_zadavatele, id_prispevku, termin_splneni, ukol_text) VALUES ('$reviewer1', '$redactor_id', '$id', '$deadline', '$task_text');";
+            $result = $conn->query($sql);
+            $sql = "INSERT INTO ukol (id_uzivatele, id_zadavatele, id_prispevku, termin_splneni, ukol_text) VALUES ('$reviewer2', '$redactor_id', '$id', '$deadline', '$task_text');";
+            $result = $conn->query($sql);
+        }
         $conn->close();
 
 ?>
