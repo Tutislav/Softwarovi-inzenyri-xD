@@ -1,4 +1,5 @@
 <?php
+    $role_restriction = "redaktor";
     require("backend/common.php");
     if (isset($_GET["id"])) {
         $article_id = $_GET["id"];
@@ -8,7 +9,6 @@
         $conn->close();
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
-            check_restriction($row["id_uzivatele"]);
             $author_name = $row["jmeno"] . " " . $row["prijmeni"];
             $article_title = $row["titulek"];
         }
