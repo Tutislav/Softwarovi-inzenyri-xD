@@ -42,8 +42,8 @@
             <form action="backend/" method="POST">
                 <p id="author"><i class="fa fa-user"></i>Autor: <?= $reviewer_name ?></p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
-		<i class="fa fa-file-word-o"><i>Původní článek: <br>        
-		<i class="fa fa-file-word-o"><i>Upravený článek: <br>       
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: </p><br>   
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: </p><br>        
                 <input type="submit" id="approve_submit" value="Schválit změnu">
                 <input type="submit" id="disapprove_submit" value="Zamítnout změnu">
                 <input type="hidden" name="article_id" value="<?= $article_id ?>">
