@@ -89,7 +89,7 @@
 			if($row["stav"] == "Schváleno"){
 				echo "<td class='clanekRecenze'><a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
 			} elseif($row["stav"] == "Upraveno autorem"){
-				echo "<td class='clanekRecenze'><a href='article_edit.php?id=" .$row["id_prispevku"]."'>Úprava</a></td>";
+				echo "<td class='clanekRecenze'><a href='article_edit_approve.php?id=" .$row["id_prispevku"]."'>Úprava</a></td>";
 			} else echo "<td class='clanekRecenze'></td>";
 			echo "<td class='clanekRecenze'><a href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
 			echo	"</td></tr>";
