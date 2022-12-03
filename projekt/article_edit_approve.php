@@ -40,7 +40,7 @@
         <div class="approve">
 		    <h2>Schválení změn</h2>
             <form action="backend/" method="POST">
-                <p id="author"><i class="fa fa-user"></i>Autor: <?= $reviewer_name ?></p>
+                <p id="author"><i class="fa fa-user"></i>Autor: <?= $author_name ?></p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
 		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: </p><br>   
 		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: </p><br>        
