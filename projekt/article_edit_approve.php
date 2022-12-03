@@ -1,5 +1,4 @@
 <?php
-    $role_restriction = "redaktor";
     require("backend/common.php");
     if (isset($_GET["id"])) {
         $article_id = $_GET["id"];
