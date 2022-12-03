@@ -8,15 +8,6 @@
         $id = $_POST['id'];
         $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$redactor_id', '$user_id', '$text');";
         $result = $conn->query($sql);
-       
-        if ($result) {
-            $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
-            header("Location: /articles_management.php" );
-        }
-        else {
-            $_SESSION["message"] = "Zprávu nelze odeslat.";
-            header("Location: /articles_management.php" );
-        }
 
         $sql = "UPDATE prispevek SET stav='$stav' WHERE id_prispevku = '$id'";
         $result = $conn->query($sql);
@@ -33,5 +24,14 @@
             $result = $conn->query($sql);
         }
         $conn->close();
+       
+        if ($result) {
+            $_SESSION["message"] = "Zpráva byla úspěšně odeslána.";
+            header("Location: /articles_management.php" );
+        }
+        else {
+            $_SESSION["message"] = "Zprávu nelze odeslat.";
+            header("Location: /articles_management.php" );
+        }
 
 ?>
