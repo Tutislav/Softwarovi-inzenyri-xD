@@ -36,7 +36,7 @@
 			}
 			else {
 				//Update database prispevek
-				$update = "UPDATE prispevek SET titulek='$title', tematicke_cislo='$theme', spoluautori='$authors' WHERE id_prispevku='$article_id';";
+				$update = "UPDATE prispevek SET titulek='$title', tematicke_cislo='$theme', spoluautori='$authors', stav='Upraveno autorem' WHERE id_prispevku='$article_id';";
 				$result = mysqli_query($conn, $update);
 			}
 			if($result)
