@@ -53,13 +53,13 @@
                     echo "Recenze";
 					//zde příjde 4 táhel a textové pole
 					echo "<label for='aktualnost'>Aktualnost: </label>";
-					echo "<input type='range' id='aktualnost' name='aktualnost' min='0' max='5'>";
+					echo "<input type='range' id='aktualnost' name='aktualnost' min='1' max='5'>";
 					echo "<label for='originalita'>Originalita: </label>";
-					echo "<input type='range' id='originalita' name='originalita' min='0' max='5'>";
+					echo "<input type='range' id='originalita' name='originalita' min='1' max='5'>";
 					echo "<label for='odborna_u'>Odborná úroveň: </label>";
-					echo "<input type='range' id='odborna_u' name='odborna_u' min='0' max='5'>";
+					echo "<input type='range' id='odborna_u' name='odborna_u' min='1' max='5'>";
 					echo "<label for='jazykova_u'>Jazyková úroveň: </label>";
-					echo "<input type='range' id='jazykova_u' name='jazykova_u' min='0' max='5'>";
+					echo "<input type='range' id='jazykova_u' name='jazykova_u' min='1' max='5'>";
 					echo "<input type='submit'>";
                 echo "</div>";
                 echo "<div style='float:left;width:300px;border: 1px solid black'>";
