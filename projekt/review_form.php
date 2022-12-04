@@ -68,7 +68,7 @@
 						//nějaký info o autorovi z databáze
                     echo "</div>";
                     echo "<div style='height:200px;border: 1px solid black'>";
-                        echo "<input type='submit'>";
+                        echo "<input type='submit' value='Odeslat Recenzi'>";
                     echo "</div>"; 
                 echo "</div>";
 			echo "</form>"; //konec formuláře
