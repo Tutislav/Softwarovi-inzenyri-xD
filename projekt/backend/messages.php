@@ -33,6 +33,18 @@
             $_SESSION["message"] = "Zprávu nelze smazat.";
         }
     }
+    elseif (isset($_POST["send"])) {
+        $recipient_id = $_POST["recipient_id"];
+        $text = $_POST["text"];
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$recipient_id', 'NULL', '$text');";
+        $result = $conn->query($sql);
+        if ($result) {
+            $_SESSION["message"] = "Zpráva byla odeslána.";
+        }
+        else {
+            $_SESSION["message"] = "Zprávu nelze odeslat.";
+        }
+    }
     $conn->close();
     header("Location: /messages.php");
 ?>

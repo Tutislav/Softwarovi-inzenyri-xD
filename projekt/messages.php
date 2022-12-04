@@ -3,6 +3,16 @@
     require("backend/common.php");
     $user_id = $_SESSION["user_id"];
     check_restriction($user_id);
+
+    require("backend/connect.php");
+    $sql = "SELECT id_uzivatele, jmeno, prijmeni, role FROM uzivatel;";
+    $result = $conn->query($sql);
+    $recipients = "";
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $recipients .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["jmeno"] . " " . $row["prijmeni"] . " - " . $row["role"] . "</option>";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -16,6 +26,18 @@
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
+    <script>
+        $(document).ready(function(){
+            $("#new").click(function(){
+                $("#message_form").slideDown();
+                $(this).slideUp();
+            });
+            $("#close").click(function(){
+                $("#message_form").slideUp();
+                $("#new").slideDown();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -39,6 +61,21 @@
         </div>
         <table class="border_sides">
             <tr>
+                <td colspan="5">
+                    <span id="message_form" style="display: none;">
+                        <form action="backend/messages.php" method="post">
+                            <label for="recipient_id" class="fa fa-user"></label>
+                            <select name="recipient_id" id="recipient_id" required><?= $recipients ?></select><br>
+                            <label for="text" class="fa fa-commenting"></label>
+                            <textarea name="text" id="text" cols="4" rows="10" required></textarea><br>
+                            <button type="submit" name="send" id="send"><i class="fa fa-paper-plane">Odeslat</button>
+                            <button id="close"><i class="fa fa-close"></i>Zavřít</button>
+                        </form>
+                    </span>
+                    <button id="new"></button>
+                </td>
+            </tr>
+            <tr>
                 <th>Datum</th>
                 <th>Odesílatel</th>
                 <th>Zpráva</th>
@@ -46,7 +83,6 @@
                 <th>Akce</th>
             </tr>
             <?php
-                require("backend/connect.php");
                 $sql = "SELECT datum_odeslani, jmeno, prijmeni, vzkaz_text, recenze.id_prispevku, recenze.id_recenze, id_vzkazu, precteno FROM uzivatel JOIN vzkazy ON uzivatel.id_uzivatele=vzkazy.id_odesilatele LEFT JOIN recenze ON vzkazy.id_recenze=recenze.id_recenze WHERE id_prijemce='$user_id';";
                 $result = $conn->query($sql);
                 $conn->close();

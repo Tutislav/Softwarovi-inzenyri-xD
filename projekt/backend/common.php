@@ -44,13 +44,12 @@
                 $_SESSION["admin_mode"] = true;
                 break;
         }
+        require("connect.php");
         if (isset($_SESSION["admin_mode"]) && $_SESSION["admin_mode"]) {
             $scripts .= '$(document).ready(function(){$("#change_user_id").change(function(){$("#login form").submit();});});';
             $change_users = "";
-            require("connect.php");
             $sql = "SELECT * FROM uzivatel";
             $result = $conn->query($sql);
-            $conn->close();
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
                     $selected = $row["id_uzivatele"] == $_SESSION["user_id"] ? " selected" : "";
@@ -64,7 +63,16 @@
             header("Location: /");
             die();
         }
-        $menu_login .= "<li><a href='/messages.php'>VZKAZY</a></li>";
+        $unread_messages = "";
+        $sql = "SELECT COUNT(*) FROM vzkazy WHERE id_prijemce='$user_id' AND precteno=0;";
+        $result = $conn->query($sql);
+        $conn->close();
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $unread_messages_count = $row["COUNT(*)"];
+            $unread_messages = "[" . $unread_messages_count . "]";
+        }
+        $menu_login .= "<li><a href='/messages.php'>VZKAZY " . $unread_messages . "</a></li>";
     }
     $scripts .= "</script>";
     //Messages--------
