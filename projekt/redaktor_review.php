@@ -64,7 +64,7 @@
             }
         }
 
-        $sql = "SELECT id_uzivatele, email FROM uzivatel WHERE role='recenzent';";
+        $sql = "SELECT id_uzivatele, jmeno, prijmeni FROM uzivatel WHERE role='recenzent';";
         $result = $conn->query($sql);
         $conn->close();
         $reviewers = "";
