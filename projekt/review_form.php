@@ -60,7 +60,7 @@
                         echo "<input type='submit'>";
                     echo "</div>"; 
                 echo "</div>";
-			echo "</form>" //konec formuláře
+			echo "</form>"; //konec formuláře
             echo "</div>";
             }
         }else echo "nic nemam";
