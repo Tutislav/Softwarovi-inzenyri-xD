@@ -30,6 +30,6 @@
         else {
             $msg = "Nepovedl se Insert.";
         }
-		$_SESSION["message"]=$msg;
+		echo $msg;
 		$conn->close();
 ?>
