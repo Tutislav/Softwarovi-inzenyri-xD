@@ -32,7 +32,7 @@
     elseif (isset($_POST["send"])) {
         $recipient_id = $_POST["recipient_id"];
         $text = $_POST["text"];
-        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$recipient_id', 'NULL', '$text');";
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, vzkaz_text) VALUES ('$user_id', '$recipient_id', '$text');";
         $result = $conn->query($sql);
         if ($result) {
             $_SESSION["message"] = "Zpráva byla odeslána.";
