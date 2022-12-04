@@ -2,15 +2,10 @@
     require("common.php");
 
     $user_id = $_SESSION["user_id"];
-    if (!isset($_POST["message_id"])) {
-        $_SESSION["message"] = "Chyba.";
-        header("Location: /messages.php");
-        die();
-    }
-    $message_id = $_POST["message_id"];
 
     require("connect.php");
     if (isset($_POST["read"])) {
+        $message_id = $_POST["message_id"];
         $sql = "SELECT precteno FROM vzkazy WHERE id_vzkazu='$message_id'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
@@ -24,6 +19,7 @@
         }
     }
     elseif (isset($_POST["delete"])) {
+        $message_id = $_POST["message_id"];
         $sql = "DELETE FROM vzkazy WHERE id_vzkazu='$message_id'";
         $result = $conn->query($sql);
         if ($result) {
