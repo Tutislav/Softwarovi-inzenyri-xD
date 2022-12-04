@@ -81,7 +81,7 @@
 			echo "</form>"; //konec formuláře
             echo "</div>";
             //} toto patří k "toto není potřeba" (while cyklus)
-        }else echo "nic nemam";
+        }else echo "Máte zrecenzováno :)<br>(nebo tu nemáte co hledat)";
         ?>
         </div>
     </div>

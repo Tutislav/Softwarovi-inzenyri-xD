@@ -22,6 +22,7 @@
         else {
             $msg .= "Nepovedl se update.";
         }
+		$msg.=" ";
 		$sql="INSERT INTO recenze (`id_prispevku`, `id_recenzenta`, `id_ukolu`, `h_aktualnost`, `h_originalita`, `h_odborna_uroven`, `h_jazykova_uroven`, `recenze_text`, `zpristupnena`) VALUES ('".$id_prispevku."', '".$_SESSION["user_id"]."', '".$id_ukolu."',".$aktualnost.",".$originalita.",".$odborna_u.",".$jazykova_u.",'".$review."',0)";//INSERT recenze
 		//INSERT INTO `recenze`(`id_prispevku`, `id_recenzenta`, `id_ukolu`, `h_aktualnost`, `h_originalita`, `h_odborna_uroven`, `h_jazykova_uroven`, `recenze_text`, `zpristupnena`) VALUES ('12','24','6',5,5,5,5,'test test test','0');
 		$result = $conn->query($sql);
@@ -31,8 +32,9 @@
         else {
             $msg .= "Nepovedl se Insert.";
         }
-		echo $msg;
-		echo $id_prispevku." ".$_SESSION["user_id"]." ".$id_ukolu." ".$aktualnost." ".$originalita." ".$odborna_u." ".$jazykova_u." ".$review;
-		echo $sql;
+		$_SESSION["message"] = $msg;
+		header("Location: /articles_to_review.php" );
+		//echo $id_prispevku." ".$_SESSION["user_id"]." ".$id_ukolu." ".$aktualnost." ".$originalita." ".$odborna_u." ".$jazykova_u." ".$review;
+		//echo $sql;
 		$conn->close();
 ?>
