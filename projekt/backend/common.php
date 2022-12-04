@@ -64,15 +64,15 @@
             die();
         }
         $unread_messages = "";
-        $sql = "SELECT COUNT(*) FROM vzkazy WHERE id_prijemce='$user_id' AND precteno=0;";
+        $sql = "SELECT COUNT(*) FROM vzkazy WHERE id_prijemce=" . $_SESSION["user_id"] . " AND precteno=0;";
         $result = $conn->query($sql);
         $conn->close();
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $unread_messages_count = $row["COUNT(*)"];
-            $unread_messages = "[" . $unread_messages_count . "]";
+            if ($unread_messages_count > 0) $unread_messages = " <b>[" . $unread_messages_count . "]</b>";
         }
-        $menu_login .= "<li><a href='/messages.php'>VZKAZY " . $unread_messages . "</a></li>";
+        $menu_login .= "<li><a href='/messages.php'>VZKAZY" . $unread_messages . "</a></li>";
     }
     $scripts .= "</script>";
     //Messages--------
