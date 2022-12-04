@@ -67,12 +67,12 @@
                             <label for="recipient_id" class="fa fa-user"></label>
                             <select name="recipient_id" id="recipient_id" required><?= $recipients ?></select><br>
                             <label for="text" class="fa fa-commenting"></label>
-                            <textarea name="text" id="text" cols="4" rows="10" required></textarea><br>
+                            <textarea name="text" id="text" placeholder="Zpráva" required></textarea><br>
                             <button type="submit" name="send" id="send"><i class="fa fa-paper-plane"></i>Odeslat</button>
                             <button id="close"><i class="fa fa-close"></i>Zavřít</button>
                         </form>
                     </span>
-                    <button id="new">Nová zpráva</button>
+                    <button id="new"><i class="fa fa-plus">Nová zpráva</button>
                 </td>
             </tr>
             <tr>
