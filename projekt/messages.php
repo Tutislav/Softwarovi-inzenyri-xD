@@ -68,11 +68,11 @@
                             <select name="recipient_id" id="recipient_id" required><?= $recipients ?></select><br>
                             <label for="text" class="fa fa-commenting"></label>
                             <textarea name="text" id="text" cols="4" rows="10" required></textarea><br>
-                            <button type="submit" name="send" id="send"><i class="fa fa-paper-plane">Odeslat</button>
+                            <button type="submit" name="send" id="send"><i class="fa fa-paper-plane"></i>Odeslat</button>
                             <button id="close"><i class="fa fa-close"></i>Zavřít</button>
                         </form>
                     </span>
-                    <button id="new"></button>
+                    <button id="new">Nová zpráva</button>
                 </td>
             </tr>
             <tr>
