@@ -38,6 +38,7 @@
         <?php
         require("backend/connect.php");
 		$id_ukolu=$_GET["id"];
+		$id_prispevku=$_GET["pid"];
         $sql = "SELECT titulek, datum_zadani, termin_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE ukol.splneno = 0 AND uzivatel.email='" . $_SESSION["email"] . "' AND ukol.id_ukolu='".$id_ukolu."'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {	
@@ -52,6 +53,8 @@
                 echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     //Recenze
 					//zde příjde 4 táhel a textové pole a hidden inputy pro idčka a takový blbosti
+					echo "<input type='hidden' id='id_ukolu' name='id_ukolu' value='".$id_ukolu."'>";
+					echo "<input type='hidden' id='id_prispevku' name='id_prispevku' value='".$id_prispevku."'>";
 					echo "<label for='aktualnost' style='display:block'>Aktualnost: </label>";
 					echo "<input type='range' id='aktualnost' name='aktualnost' min='1' max='5' required><br>";
 					echo "<label for='originalita' style='display:block'>Originalita: </label>";
