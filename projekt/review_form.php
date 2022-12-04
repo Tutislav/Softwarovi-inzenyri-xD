@@ -55,13 +55,13 @@
 					//zde příjde 4 táhel a textové pole a hidden inputy pro idčka a takový blbosti
 					echo "<input type='hidden' id='id_ukolu' name='id_ukolu' value='".$id_ukolu."'>";
 					echo "<input type='hidden' id='id_prispevku' name='id_prispevku' value='".$id_prispevku."'>";
-					echo "<label for='aktualnost' style='display:block'>Aktualnost: </label>";
+					echo "<label for='aktualnost' style='display:block'>Aktualnost: (1-5)</label>";
 					echo "<input type='range' id='aktualnost' name='aktualnost' min='1' max='5' required><br>";
-					echo "<label for='originalita' style='display:block'>Originalita: </label>";
+					echo "<label for='originalita' style='display:block'>Originalita: (1-5)</label>";
 					echo "<input type='range' id='originalita' name='originalita' min='1' max='5' required><br>";
-					echo "<label for='odborna_u' style='display:block'>Odborná úroveň: </label>";
+					echo "<label for='odborna_u' style='display:block'>Odborná úroveň: (1-5)</label>";
 					echo "<input type='range' id='odborna_u' name='odborna_u' min='1' max='5' required><br>";
-					echo "<label for='jazykova_u' style='display:block'>Jazyková úroveň: </label>";
+					echo "<label for='jazykova_u' style='display:block'>Jazyková úroveň: (1-5)</label>";
 					echo "<input type='range' id='jazykova_u' name='jazykova_u' min='1' max='5' required><br>";
 					echo "<textarea id='review' name='review' rows='4' cols='50' placeholder='Zde napište svoji recenzi článku.' required></textarea>";
                 echo "</div>";
