@@ -1,4 +1,5 @@
 <?php 
+//action stránka pro recenze
         require("common.php");
         require("connect.php");
 		$sql="INSERT INTO"
