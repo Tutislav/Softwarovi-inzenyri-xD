@@ -46,18 +46,21 @@
             echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
             echo "</div>";
             echo "<div style='padding:25px'>";
+			echo "<form action='' method='get'>"; //začátek formuláře
                 echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     echo "Recenze";
-                //vytvořit a potom dodělat formulář pro posílání do databáze nebo něco takovýho
+					//zde příjde 5 táhel a textové pole
                 echo "</div>";
                 echo "<div style='float:left;width:300px;border: 1px solid black'>";
                     echo "<div style='height:300px'>";
                         echo "informace o autorovi";
+						//nějaký info o autorovi z databáze
                     echo "</div>";
                     echo "<div style='height:200px;border: 1px solid black'>";
-                        echo "button";
+                        echo "<input type='submit'>";
                     echo "</div>"; 
                 echo "</div>";
+			echo "</form>" //konec formuláře
             echo "</div>";
             }
         }else echo "nic nemam";
