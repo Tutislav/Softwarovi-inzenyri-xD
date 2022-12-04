@@ -40,8 +40,9 @@
         $sql = "SELECT titulek, datum_zadani, termin_splneni FROM ukol JOIN prispevek ON prispevek.id_prispevku = ukol.id_prispevku JOIN uzivatel ON ukol.id_uzivatele = uzivatel.id_uzivatele WHERE ukol.splneno = 0 AND uzivatel.email='" . $_SESSION["email"] . "'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {	
-            while($row = $result->fetch_assoc())
-            {
+		$row = $result->fetch_assoc();
+            //while($row = $result->fetch_assoc())
+            //{
             echo "<div class='article_title'>";
             echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
             echo "</div>";
@@ -62,7 +63,7 @@
                 echo "</div>";
 			echo "</form>"; //konec formuláře
             echo "</div>";
-            }
+            //}
         }else echo "nic nemam";
         ?>
         </div>
