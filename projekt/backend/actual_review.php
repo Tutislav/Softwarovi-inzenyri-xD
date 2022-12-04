@@ -22,7 +22,7 @@
         else {
             $msg .= "Nepovedl se update.";
         }
-		$sql="INSERT INTO recenze (`id_prispevku`, `id_recenzenta`, `id_ukolu`, `h_aktualnost`, `h_originalita`, `h_odborna_uroven`, `h_jazykova_uroven`, `recenze_text`, `zpristupnena`) VALUES ('".$id_prispevku."', '".$_SESSION["user_id"]."', '".$id_ukolu."','".$aktualnost."','".$originalita."','".$odborna_u."','".$jazykova_u."',0)";//INSERT recenze
+		$sql="INSERT INTO recenze (`id_prispevku`, `id_recenzenta`, `id_ukolu`, `h_aktualnost`, `h_originalita`, `h_odborna_uroven`, `h_jazykova_uroven`, `recenze_text`, `zpristupnena`) VALUES ('".$id_prispevku."', '".$_SESSION["user_id"]."', '".$id_ukolu."',".$aktualnost.",".$originalita.",".$odborna_u.",".$jazykova_u.",0)";//INSERT recenze
 		//INSERT INTO `recenze`(`id_prispevku`, `id_recenzenta`, `id_ukolu`, `h_aktualnost`, `h_originalita`, `h_odborna_uroven`, `h_jazykova_uroven`, `recenze_text`, `zpristupnena`) VALUES ('12','24','6',5,5,5,5,'test test test','0');
 		$result = $conn->query($sql);
 		 if ($result) {
