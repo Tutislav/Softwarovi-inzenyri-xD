@@ -70,7 +70,7 @@
         $reviewers = "";
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                $reviewers .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["email"] . "</option>";
+                $reviewers .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["jmeno"] . " " . $row["prijmeni"] . "</option>";
             }
         }
         ?>
