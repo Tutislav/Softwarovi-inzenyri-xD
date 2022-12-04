@@ -48,7 +48,7 @@
             echo $row["titulek"]."<br>Článek byl zadán: ".$row["datum_zadani"]."<br> Recenze by měla být hotova do: ".$row["termin_splneni"];
             echo "</div>";
             echo "<div style='padding:25px'>";
-			echo "<form action='' method='get'>"; //začátek formuláře
+			echo "<form action='backend/actual_review.php' method='get'>"; //začátek formuláře
                 echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     //Recenze
 					//zde příjde 4 táhel a textové pole
