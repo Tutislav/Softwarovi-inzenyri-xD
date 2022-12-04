@@ -72,7 +72,7 @@
                             <button id="close"><i class="fa fa-close"></i>Zavřít</button>
                         </form>
                     </span>
-                    <button id="new"><i class="fa fa-plus">Nová zpráva</button>
+                    <button id="new"><i class="fa fa-plus"></i>Nová zpráva</button>
                 </td>
             </tr>
             <tr>
