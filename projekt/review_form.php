@@ -52,13 +52,13 @@
                 echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     //Recenze
 					//zde příjde 4 táhel a textové pole
-					echo "<label for='aktualnost'>Aktualnost: </label>";
+					echo "<label for='aktualnost' style='display:block'>Aktualnost: </label>";
 					echo "<input type='range' id='aktualnost' name='aktualnost' min='1' max='5' required><br>";
-					echo "<label for='originalita'>Originalita: </label>";
+					echo "<label for='originalita' style='display:block'>Originalita: </label>";
 					echo "<input type='range' id='originalita' name='originalita' min='1' max='5' required><br>";
-					echo "<label for='odborna_u'>Odborná úroveň: </label>";
+					echo "<label for='odborna_u' style='display:block'>Odborná úroveň: </label>";
 					echo "<input type='range' id='odborna_u' name='odborna_u' min='1' max='5' required><br>";
-					echo "<label for='jazykova_u'>Jazyková úroveň: </label>";
+					echo "<label for='jazykova_u' style='display:block'>Jazyková úroveň: </label>";
 					echo "<input type='range' id='jazykova_u' name='jazykova_u' min='1' max='5' required><br>";
 					echo "<textarea id='review' name='review' rows='4' cols='50' required>Zde napište svoji recenzi článku.</textarea>";
                 echo "</div>";
