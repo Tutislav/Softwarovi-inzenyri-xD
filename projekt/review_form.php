@@ -51,7 +51,7 @@
 			echo "<form action='backend/actual_review.php' method='get'>"; //začátek formuláře
                 echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
                     //Recenze
-					//zde příjde 4 táhel a textové pole
+					//zde příjde 4 táhel a textové pole a hidden inputy pro idčka a takový blbosti
 					echo "<label for='aktualnost' style='display:block'>Aktualnost: </label>";
 					echo "<input type='range' id='aktualnost' name='aktualnost' min='1' max='5' required><br>";
 					echo "<label for='originalita' style='display:block'>Originalita: </label>";
