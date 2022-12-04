@@ -60,7 +60,7 @@
 					echo "<input type='range' id='odborna_u' name='odborna_u' min='1' max='5' required><br>";
 					echo "<label for='jazykova_u' style='display:block'>Jazyková úroveň: </label>";
 					echo "<input type='range' id='jazykova_u' name='jazykova_u' min='1' max='5' required><br>";
-					echo "<textarea id='review' name='review' rows='4' cols='50' required>Zde napište svoji recenzi článku.</textarea>";
+					echo "<textarea id='review' name='review' rows='4' cols='50' placeholder='Zde napište svoji recenzi článku.' required></textarea>";
                 echo "</div>";
                 echo "<div style='float:left;width:300px;border: 1px solid black'>";
                     echo "<div style='height:300px'>";
