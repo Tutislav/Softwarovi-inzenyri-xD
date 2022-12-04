@@ -32,6 +32,6 @@
             $msg = "Nepovedl se Insert.";
         }
 		echo $msg;
-		echo $id_prispevku." ".$_SESSION["user_id"]." ".$id_ukolu." ".$aktualnost." ".$originalita." ".$odborna_u." ".$jazykova_u;
+		echo $id_prispevku." ".$_SESSION["user_id"]." ".$id_ukolu." ".$aktualnost." ".$originalita." ".$odborna_u." ".$jazykova_u." ".$review;
 		$conn->close();
 ?>
