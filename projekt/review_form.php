@@ -49,8 +49,8 @@
             echo "</div>";
             echo "<div style='padding:25px'>";
 			echo "<form action='' method='get'>"; //začátek formuláře
-                echo "<div style='float:left;width:500px;height:500px;border: 1px solid black'>";
-                    echo "Recenze";
+                echo "<div style='float:left;width:600px;height:500px;border: 1px solid black'>";
+                    //Recenze
 					//zde příjde 4 táhel a textové pole
 					echo "<label for='aktualnost'>Aktualnost: </label>";
 					echo "<input type='range' id='aktualnost' name='aktualnost' min='1' max='5'>";
