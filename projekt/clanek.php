@@ -125,7 +125,7 @@
 		$striped_content = html_entity_decode($striped_content);
 		return $striped_content;  
 	}
-	
+	if(isset($_GET["sid"]))
     		$sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
