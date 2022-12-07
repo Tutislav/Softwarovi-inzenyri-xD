@@ -134,7 +134,8 @@
         $row = $result->fetch_assoc();
         if ($row["stav"] != "Schváleno") check_restriction($row["id_uzivatele"], true);
         $filename = $row["soubor_cesta"];
-	    
+	
+	echo "<a href='clanek.php?id=" . $id . "&sid='>Předchozí verze</a>";
         $path = pathinfo($filename);
 		if($path["extension"] == "doc" || $path["extension"] == "docx")
 		{
