@@ -4,6 +4,20 @@ form {
 
 form button[type=submit] {
     margin: 0px 4px;
+    display: inline-block;
+}
+
+#message_form {
+    display: block;
+    text-align: center;
+}
+
+#message_form form {
+    width: 500px;
+}
+
+#recipient_id {
+    width: 380px;
 }
 
 .fa {

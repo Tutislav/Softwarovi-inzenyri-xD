@@ -5,7 +5,7 @@
     check_restriction($user_id);
 
     require("backend/connect.php");
-    $sql = "SELECT id_uzivatele, jmeno, prijmeni, role FROM uzivatel;";
+    $sql = "SELECT id_uzivatele, jmeno, prijmeni, role FROM uzivatel WHERE id_uzivatele!='$user_id';";
     $result = $conn->query($sql);
     $recipients = "";
     if ($result->num_rows > 0) {
