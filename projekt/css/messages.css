@@ -2,7 +2,7 @@ form {
     display: inline-block;
 }
 
-form button[type=submit] {
+form button[type=submit], #close {
     margin: 0px 4px;
     display: inline-block;
 }
