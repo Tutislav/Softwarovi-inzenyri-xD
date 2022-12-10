@@ -25,7 +25,15 @@
 		<?php
 			echo "<h2>Recenze</h2>";
 			require("backend/connect.php");
-			$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$_GET['id']." AND zpristupnena=1;";
+			if($_SESSION["role"] == "redaktor")
+			{
+				$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$_GET['id'];
+			}
+			elseif($_SESSION["user_id"] == $row["id_uzivatele"])
+			{
+				$sql = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$_GET['id']." AND zpristupnena=1;";
+			}
+			
 		    	
 		    	$sqlUser = "SELECT id_uzivatele FROM prispevek NATURAL JOIN uzivatel WHERE id_prispevku=".$_GET["id"]; 
 			$id_uzivatele = $conn->query($sqlUser);
