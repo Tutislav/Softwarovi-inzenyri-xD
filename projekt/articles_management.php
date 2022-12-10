@@ -86,7 +86,7 @@
 			echo "<tr>
 					<td class='clanekRef'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>
 					<td class='clanekStav'>" . $row["stav"] . "</td>";
-			if($row["stav"] == "Schváleno"){
+			if($row["stav"] == "Schváleno" || $row["stav"] == "Zrecenzováno"  || $row["stav"] == "Předáno recenzentům"){
 				echo "<td class='clanekRecenze'><a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
 			} elseif($row["stav"] == "Upraveno autorem"){
 				echo "<td class='clanekRecenze'><a href='article_edit_approve.php?id=" .$row["id_prispevku"]."'>Úprava</a></td>";
