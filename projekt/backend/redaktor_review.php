@@ -23,6 +23,13 @@
             $sql = "INSERT INTO ukol (id_uzivatele, id_zadavatele, id_prispevku, termin_splneni, ukol_text) VALUES ('$reviewer2', '$redactor_id', '$id', '$deadline', '$task_text');";
             $result = $conn->query($sql);
         }
+        if($stav == "Zrecenzováno")
+        {
+            $sql = "UPDATE recenze SET zpristupnena=1 WHERE id_prispevku = '$id'";
+            $result = $conn->query($sql);
+        }
+
+
         $conn->close();
        
         if ($result) {

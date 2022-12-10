@@ -82,6 +82,7 @@
 				<option value="Předáno recenzentům"<?= $stav_clanku == "Předáno recenzentům" ? " selected" : "" ?>>Předat recenzentům</option>
 				<option value="Čeká na doplnění"<?= $stav_clanku == "Čeká na doplnění" ? " selected" : "" ?>>Požádat o doplnění</option>
 				<option value="Zamítnuto"<?= $stav_clanku == "Zamítnuto" ? " selected" : "" ?>>Zamítnout</option>
+                <option value="Zrecenzováno"<?= $stav_clanku == "Zracenzováno" ? " selected" : "" ?>>Zpřístupnit recenze</option>
             </select><br>
             <span id="reviewers_select" style="display: none;">
                 <label for="reviewer1">1.recenzent</label>
