@@ -40,8 +40,8 @@
                 <li><a href="clanky.php">ČLÁNKY</a></li>
                 <li><a href="archiv.php">ARCHIV</a></li>
                 <?= $menu_login ?>
-                <li class="kontakt"><a href="">KONTAKT</a></li>
-                <li class="helpdesk"><a href="">HELPDESK</a></li>
+                <li class="kontakt"><a href="contact.php">KONTAKT</a></li>
+                <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
 

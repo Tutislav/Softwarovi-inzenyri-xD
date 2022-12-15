@@ -35,7 +35,21 @@
     <div class="container">
         <div id="login_register">
             <span id="message"><?= $message ?></span>
-            <div class="home"><a href="/"><i class="fa fa-home"></i></a></div>
+            <span id="login"><?= $login_span ?></span>
+            <span id="register"><?= $register_span ?></span>
+        </div>
+        <div id="heading">
+            <h1>IT WORLD</h1>
+        </div>
+        <div id="navigation">
+            <ul> 
+                <li><a href="/">ÚVOD</a></li>
+                <li><a href="clanky.php">ČLÁNKY</a></li>
+                <li><a href="archiv.php">ARCHIV</a></li>
+                <?= $menu_login ?>
+                <li class="kontakt"><a href="contact.php">KONTAKT</a></li>
+                <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
+            </ul>
         </div>
         <div class="approve">
 		    <h2>Schválení změn</h2>
