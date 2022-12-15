@@ -148,7 +148,7 @@
 			     			// Výpis recenzí
 						while($row = $result->fetch_assoc()) {
 							echo "<tr id='review" .  $row["id_recenze"] . "'>
-                                        			<td>". $row["id_prispevku"] . "</td>
+                                        			<td>". $row["id_recenze"] . "</td>
                                         			// <td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
                                        				<td>". $row["h_aktualnost"] . "</td>
 								<td>". $row["h_originalita"] . "</td>
