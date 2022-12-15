@@ -82,7 +82,34 @@
 			else
 				$content = 0;
 
+			switch($content){
+				case 1:
+					
+					if($search != "")
+						$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek WHERE CAST(id_prispevku AS varchar(10)) LIKE '" . $search . "%' OR titulek LIKE '%" . $search . "%' OR tematicke_cislo LIKE '%" . $search . "%' OR stav LIKE '%" . $search . "%'";
+					else
+						$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek";
+          
+					$result = $conn->query($sql);
 			
+					echo "<h2>Články</h2>					
+            		     		<div id='innercontent'>
+					<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
+						<input type='hidden' name='contentChange' value='1'>
+						<i class='fa fa-search'></i>	
+						<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
+					</form>
+				  	<table>               
+                    			<tr id='tableheader'>
+                        					<th id='id'>ID</th>
+                        					<th id='title'>Titulek</th>
+                        					<th id='theme'>Téma</th>
+                        					<th id='state'>Stav</th>
+                   					</tr>";
+
+				break;
+				
+			}
 	
                     ?>            
         </div>
