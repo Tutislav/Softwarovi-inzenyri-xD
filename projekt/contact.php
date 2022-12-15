@@ -23,7 +23,7 @@
                 $("#question_form").slideUp();
                 $("#new").slideDown();
             });
-            $("#show").click(function(){
+            $(".show").click(function(){
                 $("#question_" + $(this).parent().parent().children().first().html() + "_detail").toggle();
                 $("[id$='_detail']").not(this).hide();
             });
