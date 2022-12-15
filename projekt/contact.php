@@ -25,7 +25,7 @@
             });
             $(".show").click(function(){
                 $("#question_" + $(this).parent().parent().children().first().html() + "_detail").toggle();
-                $("[id$='_detail']").not(this).hide();
+                $("[id$='_detail']").not($("#question_" + $(this).parent().parent().children().first().html())).hide();
             });
         });
     </script>
