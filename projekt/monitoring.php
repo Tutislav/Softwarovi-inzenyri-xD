@@ -172,7 +172,7 @@
 						<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
 							<input type='hidden' name='contentChange' value='3'>
 							<i class='fa fa-search'></i>	
-							<input type='text' name='search' id='search' placeholder='ID/Úkol text' value=$search>
+							<input type='text' name='search' id='search' placeholder='ID/Datum/Úkol text' value=$search>
 						</form>
 				 		 <table>               
                     					<tr id='tableheader'>
