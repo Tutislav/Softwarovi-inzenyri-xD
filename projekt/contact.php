@@ -23,6 +23,10 @@
                 $("#question_form").slideUp();
                 $("#new").slideDown();
             });
+            $("#show").click(function(){
+                $("#question_" + $(this).parent().parent().children().first().html() + "_detail").toggle();
+                $("[id$='_detail']").not(this).hide();
+            });
         });
     </script>
 </head>
@@ -66,7 +70,8 @@
                 <th>Akce</th>
             </tr>
             <?php
-                $sql = "SELECT datum_odeslani, dotaz_titulek, dotaz_text, dotaz_odpoved FROM dotaz;";
+                require("backend/connect.php");
+                $sql = "SELECT id_dotazu, datum_odeslani, dotaz_titulek, dotaz_text, dotaz_odpoved FROM dotaz;";
                 $result = $conn->query($sql);
                 $conn->close();
                 if ($result->num_rows > 0) {
@@ -76,8 +81,11 @@
                         $show = "<button class='show'>Zobrazit</button>";
                         $question_text = $row["dotaz_text"];
                         $question_reply = $row["dotaz_odpoved"];
-                        echo("<tr>");
+                        echo("<tr id='question_" . $row["id_dotazu"] . "'>");
                         echo("<td>" . $date . "</td><td>" . $question_title ."</td><td>" . $show . "</td>");
+                        echo("</tr>");
+                        echo("<tr id='question_" . $row["id_dotazu"] . "_detail' style='display: none;'>");
+                        echo("<td colspan='3'>" . $question_text . "<br><b>Odpověď redaktora:</b> " . $question_reply . "</td>");
                         echo("</tr>");
                     }
                 }
