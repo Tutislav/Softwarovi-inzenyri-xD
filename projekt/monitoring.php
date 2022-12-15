@@ -120,32 +120,7 @@
 					echo "</table></div>";
 				break;
 					
-				case 2:					
-					if($search != "")
-						$sql = "SELECT * FROM recenze WHERE CAST(id_recenze AS varchar(10)) LIKE '" . $search . "%' OR recenze_text LIKE '%" . $search . "%'";
-					else
-						$sql = "SELECT * FROM recenze";
-					
-					$result = $conn->query($sql);
-					
-					echo "<h2>Recenze</h2>
-            		      			<div id='innercontent'>
-						<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
-							<input type='hidden' name='contentChange' value='2'>
-							<i class='fa fa-search'></i>	
-							<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
-						</form>
-				 		 <table>               
-                    					<tr id='tableheader'>
-                        					<th id='id_review'>ID</th>
-                        					<th id='review_score'>Aktuálnost</th>
-                        					<th id='review_score'>Originalita</th>
-                        					<th id='review_score'>Odborná úroveň</th>
-                       						<th id='review_score'>Jazyková úroveň</th>
-                                  <th id='review_text'>Text recenze</th>
-                   					</tr>";
-					echo "</table></div>";
-				break;
+				
 			}
 	
                     ?>
