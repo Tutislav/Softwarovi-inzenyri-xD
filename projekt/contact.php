@@ -56,6 +56,8 @@
                 <td colspan="5">
                     <span id="question_form" style="display: none;">
                         <form action="backend/contact.php" method="post">
+                            <label class="fa fa-font" for="title"></label>
+                            <input type="text" name="title" id="title" placeholder="Titulek" required><br>
                             <label for="text" class="fa fa-commenting"></label>
                             <textarea name="text" id="text" placeholder="Dotaz" required></textarea><br>
                             <button type="submit" name="send" id="send"><i class="fa fa-paper-plane"></i>Odeslat</button>
