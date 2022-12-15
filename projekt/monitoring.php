@@ -133,7 +133,7 @@
 						<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
 							<input type='hidden' name='contentChange' value='2'>
 							<i class='fa fa-search'></i>	
-							<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
+							<input type='text' name='search' id='search' placeholder='ID/Text recenze' value=$search>
 						</form>
 				 		 <table>               
                     					<tr id='tableheader'>
@@ -142,7 +142,7 @@
                         					<th id='review_score'>Originalita</th>
                         					<th id='review_score'>Odborná úroveň</th>
                        						<th id='review_score'>Jazyková úroveň</th>
-                                  <th id='review_text'>Text recenze</th>
+                                  				<th id='review_text'>Text recenze</th>
                    					</tr>";
 					echo "</table></div>";
 				break;
