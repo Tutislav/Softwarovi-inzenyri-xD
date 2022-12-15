@@ -60,7 +60,7 @@
                 <li>
 		    <form action="/monitoring.php" method="POST">
 			<input type="hidden" name="contentChange" value="2">
-			<i class="fa fa-address_card"></i>
+			<i class="fa fa-address-card"></i>
 			<input type="submit" value="Recenze">			
 		    </form>
 		</li>
@@ -74,7 +74,80 @@
             </ul>
         </div>
         <div id="content">
-                    
+        <?php
+                        require("backend/connect.php");
+	
+			if(isset($_POST["contentChange"]))		
+				$content = $_POST["contentChange"];
+			else
+				$content = 0;
+
+			switch($content){
+				case 1:
+					
+					if($search != "")
+						$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek WHERE CAST(id_prispevku AS varchar(10)) LIKE '" . $search . "%' OR titulek LIKE '%" . $search . "%' OR tematicke_cislo LIKE '%" . $search . "%' OR stav LIKE '%" . $search . "%'";
+					else
+						$sql = "SELECT id_prispevku, titulek, tematicke_cislo, stav FROM prispevek";
+          
+					$result = $conn->query($sql);
+			
+					echo "<h2>Články</h2>					
+            		     		<div id='innercontent'>
+					<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
+						<input type='hidden' name='contentChange' value='1'>
+						<i class='fa fa-search'></i>	
+						<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
+					</form>
+				  	<table>               
+                    			<tr id='tableheader'>
+                        					<th id='id'>ID</th>
+                        					<th id='title'>Titulek</th>
+                        					<th id='theme'>Téma</th>
+                        					<th id='state'>Stav</th>
+                   					</tr>";
+					
+					if ($result->num_rows > 0) {				
+			     			// Výpis článků
+						while($row = $result->fetch_assoc()) {
+							echo "<tr id='user_" .  $row["id_prispevku"] . "'>
+                                        			<td>". $row["id_prispevku"] . "</td>
+                                        			<td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
+                                       				<td>". $row["tematicke_cislo"] . "</td>
+                                        			<td>". $row["stav"] . "</td>
+                                      </tr>";
+					echo "</table></div>";
+				break;
+				case 2:					
+					if($search != "")
+						$sql = "SELECT * FROM recenze WHERE CAST(id_recenze AS varchar(10)) LIKE '" . $search . "%' OR recenze_text LIKE '%" . $search . "%'";
+					else
+						$sql = "SELECT * FROM recenze";
+					
+					$result = $conn->query($sql);
+					
+					echo "<h2>Recenze</h2>
+            		      			<div id='innercontent'>
+						<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
+							<input type='hidden' name='contentChange' value='2'>
+							<i class='fa fa-search'></i>	
+							<input type='text' name='search' id='search' placeholder='ID/Titulek/Téma/Stav' value=$search>
+						</form>
+				 		 <table>               
+                    					<tr id='tableheader'>
+                        					<th id='id_review'>ID</th>
+                        					<th id='review_score'>Aktuálnost</th>
+                        					<th id='review_score'>Originalita</th>
+                        					<th id='review_score'>Odborná úroveň</th>
+                       						<th id='review_score'>Jazyková úroveň</th>
+                                  <th id='review_text'>Text recenze</th>
+                   					</tr>";
+					echo "</table></div>";
+				break;	
+				
+			}
+	
+                    ?>            
         </div>
     </div>
 </body>
