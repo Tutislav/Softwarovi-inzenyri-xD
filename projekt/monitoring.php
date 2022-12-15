@@ -159,6 +159,45 @@
 					}
 					echo "</table></div>";
 				break;
+				case 3:					
+					if($search != "")
+						$sql = "SELECT * FROM ukol WHERE CAST(id_ukolu AS varchar(10)) LIKE '" . $search . "%' OR ukol_text LIKE '%" . $search . "%'";
+					else
+						$sql = "SELECT * FROM ukol";
+					
+					$result = $conn->query($sql);
+					
+					echo "<h2>Ůkoly</h2>
+            		      			<div id='innercontent'>
+						<form action='monitoring.php' method='POST' id='searchForm' name='searchForm'>
+							<input type='hidden' name='contentChange' value='3'>
+							<i class='fa fa-search'></i>	
+							<input type='text' name='search' id='search' placeholder='ID/Úkol text' value=$search>
+						</form>
+				 		 <table>               
+                    					<tr id='tableheader'>
+                        					<th id='id_task'>ID</th>
+                        					<th id='task_date'>Datum zadání</th>
+                        					<th id='task_date'>Termín splnění</th>
+                        					<th id='task_date'>Datum splnění</th>
+                       						<th id='task_text'>Úkol text</th>
+                                  				<th id='task_completed'>Splněno</th>
+                   					</tr>";
+					if ($result->num_rows > 0) {				
+			     			// Výpis recenzí
+						while($row = $result->fetch_assoc()) {
+							echo "<tr id='review" .  $row["id_recenze"] . "'>
+                                        			<td>". $row["id_ukolu"] . "</td>
+                                       				<td>". $row["datum_zadani"] . "</td>
+								<td>". $row["termin_splneni"] . "</td>
+								<td>". $row["datum_splneni"] . "</td>
+								<td>". $row["ukol_text"] . "</td>
+                                        			<td>". $row["splneno"] . "</td>
+                                      		</tr>";
+						}
+					}
+					echo "</table></div>";
+				break;
 				
 			}
 	
