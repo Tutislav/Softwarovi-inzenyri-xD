@@ -161,7 +161,7 @@
 				break;
 				case 3:					
 					if($search != "")
-						$sql = "SELECT * FROM ukol WHERE CAST(id_ukolu AS varchar(10)) LIKE '" . $search . "%' OR ukol_text LIKE '%" . $search . "%' OR datum_zadani LIKE '%" . %search . "%' OR termin_splneni LIKE '%" . %search . "%' OR datum_splneni LIKE '%" . %search . "%'";
+						$sql = "SELECT * FROM ukol WHERE CAST(id_ukolu AS varchar(10)) LIKE '" . $search . "%' OR ukol_text LIKE '%" . $search . "%' OR datum_zadani LIKE '%" . $search . "%' OR termin_splneni LIKE '%" . $search . "%' OR datum_splneni LIKE '%" . $search . "%'";
 					else
 						$sql = "SELECT * FROM ukol";
 					
