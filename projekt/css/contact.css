@@ -1,0 +1,21 @@
+form {
+    display: inline-block;
+}
+
+form button[type=submit], #close {
+    margin: 0px 4px;
+    display: inline-block;
+}
+
+#question_form {
+    display: block;
+    text-align: center;
+}
+
+#question_form form {
+    width: 500px;
+}
+
+.fa {
+    font-size: 1.25rem !important;
+}
