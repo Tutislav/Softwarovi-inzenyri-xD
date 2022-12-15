@@ -82,6 +82,7 @@
                         $question_text = $row["dotaz_text"];
                         $question_reply = $row["dotaz_odpoved"];
                         echo("<tr id='question_" . $row["id_dotazu"] . "'>");
+                        echo("<td style='display: none;'>" . $row["id_dotazu"] . "</td>");
                         echo("<td>" . $date . "</td><td>" . $question_title ."</td><td>" . $show . "</td>");
                         echo("</tr>");
                         echo("<tr id='question_" . $row["id_dotazu"] . "_detail' style='display: none;'>");
