@@ -24,8 +24,9 @@
                 $("#new").slideDown();
             });
             $(".show").click(function(){
-                $("#question_" + $(this).parent().parent().children().first().html() + "_detail").toggle();
-                $("[id$='_detail']").not($("#question_" + $(this).parent().parent().children().first().html())).hide();
+                var question_detail = $("#question_" + $(this).parent().parent().children().first().html() + "_detail");
+                question_detail.toggle();
+                $("[id$='_detail']").not(question_detail).hide();
             });
         });
     </script>
