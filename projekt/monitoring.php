@@ -110,7 +110,7 @@
 					if ($result->num_rows > 0) {				
 			     			// Výpis článků
 						while($row = $result->fetch_assoc()) {
-							echo "<tr id='user_" .  $row["id_prispevku"] . "'>
+							echo "<tr id='article_" .  $row["id_prispevku"] . "'>
                                         			<td>". $row["id_prispevku"] . "</td>
                                         			<td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
                                        				<td>". $row["tematicke_cislo"] . "</td>
@@ -144,6 +144,20 @@
                        						<th id='review_score'>Jazyková úroveň</th>
                                   				<th id='review_text'>Text recenze</th>
                    					</tr>";
+					if ($result->num_rows > 0) {				
+			     			// Výpis recenzí
+						while($row = $result->fetch_assoc()) {
+							echo "<tr id='review" .  $row["id_recenze"] . "'>
+                                        			<td>". $row["id_prispevku"] . "</td>
+                                        			// <td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
+                                       				<td>". $row["h_aktualnost"] . "</td>
+								<td>". $row["h_originalita"] . "</td>
+								<td>". $row["h_odborna_uroven"] . "</td>
+								<td>". $row["h_jazykova_uroven"] . "</td>
+                                        			<td>". $row["recenze_text"] . "</td>
+                                      		</tr>";
+						}
+					}
 					echo "</table></div>";
 				break;
 				
