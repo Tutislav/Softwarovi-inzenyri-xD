@@ -33,9 +33,9 @@
             case "redaktor":
                 $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
                 break;
-	    case "sefredaktor":
-                $menu_login = "<li><a href='/articles_upload.php'>ZVEŘEJŃOVÁNÍ ČLÁNKŮ</a></li>";
-            break;
+            case "sefredaktor":
+                $menu_login = "<li><a href='/monitoring.php'>MONITOROVÁNÍ</a></li><li><a href='/articles_upload.php'>ZVEŘEJŃOVÁNÍ ČLÁNKŮ</a></li>";
+                break;
             case "recenzent":
                 $menu_login = "<li><a href='/articles_to_review.php'>ČLÁNKY K RECENZI</a></li>";
                 break;
@@ -79,6 +79,17 @@
     if (isset($_SESSION["message"])) {
         $message = $_SESSION["message"];
         unset($_SESSION["message"]);
+    }
+    if (isset($_SESSION["justlogged"])) {
+        switch ($role) {
+            case "sefredaktor":
+                header("Location: /monitoring.php");
+                break;
+            case "admin":
+                header("Location: /administration.php");
+                break;
+        }
+        unset($_SESSION["justlogged"]);
     }
     //User restriction
     function check_restriction(int $user_id, bool $redactor_access = false) {

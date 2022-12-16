@@ -29,6 +29,7 @@
 					$_SESSION["last_name"] = $item["prijmeni"];
 					$_SESSION["email"] = $item["email"];
 					$_SESSION["role"] = $item["role"];
+					$_SESSION["justlogged"] = true;
 					header("Location: ../index.php");
 					break;
 				}
