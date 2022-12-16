@@ -23,10 +23,13 @@
                 $("#question_form").slideUp();
                 $("#new").slideDown();
             });
-            $(".show").click(function(){
+            $(".show,.reply").click(function(){
                 var question_detail = $("#question_" + $(this).parent().parent().children().first().html() + "_detail");
                 question_detail.toggle();
                 $("[id$='_detail']").not(question_detail).hide();
+            });
+            $(".reply").click(function(){
+                $("#question_" + $(this).parent().parent().children().first().html() + "_detail .reply_form").toggle();
             });
         });
     </script>
@@ -74,7 +77,7 @@
             </tr>
             <?php
                 require("backend/connect.php");
-                $sql = "SELECT id_dotazu, datum_odeslani, dotaz_titulek, dotaz_text, dotaz_odpoved FROM dotaz;";
+                $sql = "SELECT id_dotazu, datum_odeslani, dotaz_titulek, dotaz_text, dotaz_odpoved, odpovezeno FROM dotaz;";
                 $result = $conn->query($sql);
                 $conn->close();
                 if ($result->num_rows > 0) {
@@ -82,14 +85,32 @@
                         $date = date("d.m.y H:i", strtotime($row["datum_odeslani"]));
                         $question_title = $row["dotaz_titulek"];
                         $show = "<button class='show'>Zobrazit</button>";
+                        if (!$row["odpovezeno"] && $_SESSION["role"] == "redaktor") {
+                            $reply = "<button class='reply' title='Odpovědět'><i class='fa fa-reply'></i></button>";
+                        }
+                        else {
+                            $reply = "";
+                        }
                         $question_text = $row["dotaz_text"];
-                        $question_reply = $row["dotaz_odpoved"];
+                        if (!$row["odpovezeno"] && $_SESSION["role"] == "redaktor") {
+                            $question_reply = "<b>Bez odpovědi</b><br><span id='reply_form' style='display: none;'>
+                                <b>Odpověď redaktora:</b><br>
+                                <form action='backend/contact.php' method='post'>
+                                    <label for='text' class='fa fa-commenting'></label>
+                                    <textarea name='text' id='text' placeholder='Odpověď' required></textarea><br>
+                                    <input type='hidden' name='question_id' id='question_id' value='" . $row["id_dotazu"] . "'>
+                                    <button type='submit' name='reply' id='reply'><i class='fa fa-reply'></i>Odeslat</button>
+                                </form></span>";
+                        }
+                        else {
+                            $question_reply = "<b>Odpověď redaktora:</b> " . $row["dotaz_odpoved"];
+                        }
                         echo("<tr id='question_" . $row["id_dotazu"] . "'>");
                         echo("<td style='display: none;'>" . $row["id_dotazu"] . "</td>");
-                        echo("<td>" . $date . "</td><td>" . $question_title ."</td><td>" . $show . "</td>");
+                        echo("<td>" . $date . "</td><td>" . $question_title ."</td><td>" . $show . $reply . "</td>");
                         echo("</tr>");
                         echo("<tr id='question_" . $row["id_dotazu"] . "_detail' style='display: none;'>");
-                        echo("<td colspan='3'>" . $question_text . "<br><b>Odpověď redaktora:</b> " . $question_reply . "</td>");
+                        echo("<td colspan='3'>" . $question_text . "<br>" . $question_reply . "</td>");
                         echo("</tr>");
                     }
                 }
