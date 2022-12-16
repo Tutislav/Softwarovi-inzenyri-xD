@@ -178,3 +178,7 @@ li a {
 .home .fa {
 	font-size: 1.9rem !important;
 }
+
+form .fa {
+    font-size: 1.25rem !important;
+}
