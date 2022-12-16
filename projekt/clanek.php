@@ -67,9 +67,9 @@
 			while ($row = $result->fetch_assoc()) {
 				$file_id = $row["id_souboru"];
 				$date = date("d.m.y H:i", strtotime($row["datum_nahrani"]));
-				$link = "<a href='clanek.php?id=" . $id . "&sid=" . $file_id . "'>Verze " . $version_id . " (" . $date . ")</a>";
+				$link = "<a href='clanek.php?id=" . $id . "&sid=" . $file_id . "' title='" . $date . "'>Verze " . $version_id . "</a>";
 				if ((isset($_GET["sid"]) && $_GET["sid"] == $file_id) || (!isset($_GET["sid"]) && $version_id == $result->num_rows)) $link = "<b>" . $link . "</b>";
-				echo $link;
+				echo $link . " ";
 				++$version_id;
 			}
 		}
