@@ -23,12 +23,15 @@
                 $("#question_form").slideUp();
                 $("#new").slideDown();
             });
-            $(".show,.reply").click(function(){
+            $(".show").click(function(){
                 var question_detail = $("#question_" + $(this).parent().parent().children().first().html() + "_detail");
                 question_detail.toggle();
                 $("[id$='_detail']").not(question_detail).hide();
             });
             $(".reply").click(function(){
+                var question_detail = $("#question_" + $(this).parent().parent().children().first().html() + "_detail");
+                 if (question_detail.is(":hidden")) question_detail.toggle();
+                $("[id$='_detail']").not(question_detail).hide();
                 $("#question_" + $(this).parent().parent().children().first().html() + "_detail .reply_form").toggle();
             });
         });
@@ -93,7 +96,7 @@
                         }
                         $question_text = $row["dotaz_text"];
                         if (!$row["odpovezeno"] && $_SESSION["role"] == "redaktor") {
-                            $question_reply = "<b>Bez odpovědi</b><br><span class='reply_form' style='display: none;'>
+                            $question_reply = "<b>Bez odpovědi</b><br><br><span class='reply_form' style='display: none;'>
                                 <b>Odpověď redaktora:</b><br>
                                 <form action='backend/contact.php' method='post'>
                                     <label for='text' class='fa fa-commenting'></label>
@@ -101,6 +104,9 @@
                                     <input type='hidden' name='question_id' id='question_id' value='" . $row["id_dotazu"] . "'>
                                     <button type='submit' name='reply' id='reply'><i class='fa fa-reply'></i>Odeslat</button>
                                 </form></span>";
+                        }
+                        elseif (!$row["odpovezeno"]) {
+                            $question_reply = "<b>Bez odpovědi</b>";
                         }
                         else {
                             $question_reply = "<b>Odpověď redaktora:</b> " . $row["dotaz_odpoved"];
@@ -110,7 +116,7 @@
                         echo("<td>" . $date . "</td><td>" . $question_title ."</td><td>" . $show . $reply . "</td>");
                         echo("</tr>");
                         echo("<tr id='question_" . $row["id_dotazu"] . "_detail' style='display: none;'>");
-                        echo("<td colspan='3'>" . $question_text . "<br>" . $question_reply . "</td>");
+                        echo("<td colspan='3'>" . $question_text . "<br><br>" . $question_reply . "</td>");
                         echo("</tr>");
                     }
                 }

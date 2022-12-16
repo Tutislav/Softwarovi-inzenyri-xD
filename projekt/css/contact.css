@@ -2,17 +2,17 @@ form {
     display: inline-block;
 }
 
-form button[type=submit], #close {
+form button[type=submit], #close, .reply {
     margin: 0px 4px;
     display: inline-block;
 }
 
-#question_form {
+#question_form, .reply_form {
     display: block;
     text-align: center;
 }
 
-#question_form form {
+#question_form form, .reply_form form {
     width: 500px;
 }
 
