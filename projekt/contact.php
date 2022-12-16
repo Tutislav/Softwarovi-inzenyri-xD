@@ -96,7 +96,7 @@
                         }
                         $question_text = $row["dotaz_text"];
                         if (!$row["odpovezeno"] && $_SESSION["role"] == "redaktor") {
-                            $question_reply = "<b>Bez odpovědi</b><br><br><span class='reply_form' style='display: none;'>
+                            $question_reply = "<b>Bez odpovědi</b><span class='reply_form' style='display: none;'><br><br>
                                 <b>Odpověď redaktora:</b><br>
                                 <form action='backend/contact.php' method='post'>
                                     <label for='text' class='fa fa-commenting'></label>
