@@ -87,11 +87,11 @@
 					<td class='clanekRef'><a href='clanek.php?id=" .$row["id_prispevku"]."'>".$row["titulek"]. "</a></td>
 					<td class='clanekStav'>" . $row["stav"] . "</td>";
 			if($row["stav"] == "Schváleno" || $row["stav"] == "Zrecenzováno"  || $row["stav"] == "Předáno recenzentům"){
-				echo "<td class='clanekRecenze'><a href='my_article_reviews.php?id=" .$row["id_prispevku"]."'>Recenze</a></td>";
+				echo "<td class='clanekRecenze'><button onclick='location.href=\"/my_article_reviews.php?id=" . $row["id_prispevku"] . "\"'>Recenze</button></td>";
 			} elseif($row["stav"] == "Upraveno autorem"){
-				echo "<td class='clanekRecenze'><a href='article_edit_approve.php?id=" .$row["id_prispevku"]."'>Úprava</a></td>";
+				echo "<td class='clanekRecenze'><button onclick='location.href=\"/article_edit_approve.php?id=" . $row["id_prispevku"] . "\"'>Úprava</button></td>";
 			} else echo "<td class='clanekRecenze'></td>";
-			echo "<td class='clanekRecenze'><a href='redaktor_review.php?id=".$row["id_prispevku"]."'>Spravovat</a>";
+			echo "<td class='clanekRecenze'><button onclick='location.href=\"/redaktor_review.php?id=" . $row["id_prispevku"] . "\"'><i class='fa fa-wrench'></i>Spravovat</button>";
 			echo	"</td></tr>";
 		}
 	} else {
