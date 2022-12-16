@@ -58,7 +58,21 @@
 		echo "<div id='odkaz_recenze'>";
 		echo "<h1>RECENZNÍ ŘÍZENÍ</h1>";
 		echo "<button id='tlacitko' onclick='document.location=\"#recenze\"'>Zobraz recenze</button>";
-		echo "Stav článku: ".$stav;
+		echo "Stav článku: ".$stav . "<br>";
+		echo "Verze: ";
+		$sql = "SELECT id_souboru, datum_nahrani FROM soubor NATURAL JOIN prispevek WHERE id_prispevku='$id';";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			$version_id = 1;
+			while ($row = $result->fetch_assoc()) {
+				$file_id = $row["id_souboru"];
+				$date = date("d.m.y H:i", strtotime($row["datum_nahrani"]));
+				$link = "<a href='clanek.php?id=" . $id . "&sid=" . $file_id . "'>Verze " . $version_id . " (" . $date . ")</a>";
+				if ((isset($_GET["sid"]) && $_GET["sid"] == $file_id) || (!isset($_GET["sid"]) && $version_id == $result->num_rows)) $link = "<b>" . $link . "</b>";
+				echo $link;
+				++$version_id;
+			}
+		}
 		echo "</div>";
 		}
 		?>
