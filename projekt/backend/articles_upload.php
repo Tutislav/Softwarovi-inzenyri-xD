@@ -5,7 +5,7 @@
 	//Connect database--------
 	require("connect.php");
 
-	if(!empty($_POST["checked_article"]))
+	if(!empty($_POST["article_checked"]))
 	{
 		$_SESSION["message"] = "Podařilo se zveřejnit článek.";
 		header("Location: ../index.php");
