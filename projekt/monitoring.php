@@ -40,7 +40,7 @@
 		
 	    $(".details").click(function(){
                 $("#detail_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
-		//$("#icon_" + $(this).parent().parent().children().first().html()).classList.toggle("fa-chevron-up");
+		$("#icon_" + $(this).parent().parent().children().first().html()).classList.toggle("fa-chevron-up");
             });
         });
     </script>
@@ -162,7 +162,7 @@
                                         			<td>". $row["recenze_text"] . "</td>
 								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>
                                       			      </tr>";
-							echo "<tr id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'><td colspan="100%"><div>";
+							echo "<tr id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'><td colspan='100%'><div>";
                    					echo "<button class='close'><i class='fa fa-close'></i>Skrýt</button>";
                    					echo "</div></td></tr>";
 						}
