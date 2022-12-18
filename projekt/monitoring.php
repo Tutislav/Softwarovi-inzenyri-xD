@@ -161,9 +161,9 @@
                                         			<td>". $row["recenze_text"] . "</td>
 								<td><button class='details'><i class='fa fa-chevron-down'></i>Detaily</button></td>
                                       			      </tr>";
-							echo "<div id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'>";
+							echo "<tr><div id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'>";
                    					echo "<button class='close'><i class='fa fa-close'></i>Skrýt</button>";
-                   					echo "</div>";
+                   					echo "</div></tr>";
 						}
 					}
 					echo "</table></div>";
