@@ -38,7 +38,7 @@
                 $("#searchForm").submit();
             }, 300));
 		
-	    $(".details,.close").click(function(){
+	    $(".details").click(function(){
                 $("#detail_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
             });
         });
@@ -159,7 +159,7 @@
 								<td>". $row["h_odborna_uroven"] . "</td>
 								<td>". $row["h_jazykova_uroven"] . "</td>
                                         			<td>". $row["recenze_text"] . "</td>
-								<td><button class='details'><i class='fa fa-chevron-down'></i>Detaily</button></td>
+								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>
                                       			      </tr>";
 							echo "<tr id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'><td><div>";
                    					echo "<button class='close'><i class='fa fa-close'></i>Skrýt</button>";
