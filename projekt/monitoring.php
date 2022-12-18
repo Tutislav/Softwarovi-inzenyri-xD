@@ -109,7 +109,6 @@
                         					<th id='title'>Titulek</th>
                         					<th id='theme'>Téma</th>
                         					<th id='state'>Stav</th>
-								<th id='details'></th>
                    					</tr>";
 					
 					if ($result->num_rows > 0) {				
@@ -120,7 +119,6 @@
                                         			<td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
                                        				<td>". $row["tematicke_cislo"] . "</td>
                                         			<td>". $row["stav"] . "</td>
-								<td><button class='details'><i class='fa fa-chevron-down'></i>Detaily</button></td>
                                       		</tr>";
 						}
 					}
@@ -149,6 +147,7 @@
                         					<th id='review_score'>Odborná úroveň</th>
                        						<th id='review_score'>Jazyková úroveň</th>
                                   				<th id='review_text'>Text recenze</th>
+								<th id='details'></th>
                    					</tr>";
 					if ($result->num_rows > 0) {				
 			     			// Výpis recenzí
@@ -160,6 +159,7 @@
 								<td>". $row["h_odborna_uroven"] . "</td>
 								<td>". $row["h_jazykova_uroven"] . "</td>
                                         			<td>". $row["recenze_text"] . "</td>
+								<td><button class='details'><i class='fa fa-chevron-down'></i>Detaily</button></td>
                                       			      </tr>";
 							echo "<div id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'>";
                    					echo "<button class='close'><i class='fa fa-close'></i>Skrýt</button>";
