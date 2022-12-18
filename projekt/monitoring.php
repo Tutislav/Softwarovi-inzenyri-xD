@@ -127,9 +127,9 @@
 				break;
 				case 2:					
 					if($search != "")
-						$sql = "SELECT * FROM recenze WHERE CAST(id_recenze AS varchar(10)) LIKE '" . $search . "%' OR recenze_text LIKE '%" . $search . "%'";
+						$sql = "SELECT * FROM recenze JOIN (SELECT concat(jmeno, ' ', prijmeni) AS recenzent_jmeno, id_uzivatele FROM uzivatel) uzivatel ON recenze.id_recenzenta = uzivatel.id_uzivatele JOIN (SELECT id_prispevku, id_uzivatele, titulek FROM prispevek) prispevek ON recenze.id_prispevku = prispevek.id_prispevku JOIN (SELECT concat(jmeno, ' ', prijmeni) AS autor_jmeno, id_uzivatele FROM uzivatel) uzivatel2 ON uzivatel2.id_uzivatele = prispevek.id_uzivatele WHERE CAST(id_recenze AS varchar(10)) LIKE '" . $search . "%' OR recenze_text LIKE '%" . $search . "%' OR titulek LIKE '%" . $search . "%' OR recenzent_jmeno LIKE '%" . $search . "%' OR autor_jmeno LIKE '%" . $search . "%'";
 					else
-						$sql = "SELECT * FROM recenze";
+						$sql = "SELECT * FROM recenze JOIN (SELECT concat(jmeno, ' ', prijmeni) AS recenzent_jmeno, id_uzivatele FROM uzivatel) uzivatel ON recenze.id_recenzenta = uzivatel.id_uzivatele JOIN (SELECT id_prispevku, id_uzivatele, titulek FROM prispevek) prispevek ON recenze.id_prispevku = prispevek.id_prispevku JOIN (SELECT concat(jmeno, ' ', prijmeni) AS autor_jmeno, id_uzivatele FROM uzivatel) uzivatel2 ON uzivatel2.id_uzivatele = prispevek.id_uzivatele";
 					
 					$result = $conn->query($sql);
 					
