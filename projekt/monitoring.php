@@ -163,7 +163,9 @@
 								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>
                                       			      </tr>";
 							echo "<tr id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'><td colspan='100%'><div>";
-                   					echo "<button class='close'><i class='fa fa-close'></i>Skrýt</button>";
+                   					echo "<p id='reviewer'><i class='fa fa-user'></i>Recenzent: $row['recenzent_jmeno']</p>";
+               						echo "<p id='article_title'><i class='fa fa-newspaper-o'></i>Článek: $row['titulek']</p>";
+							echo "<p id='author'><i class='fa fa-user'></i>Autor: $row['autor_jmeno']</p>";
                    					echo "</div></td></tr>";
 						}
 					}
