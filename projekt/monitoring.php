@@ -40,7 +40,7 @@
 		
 	    $(".details").click(function(){
                 $("#detail_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
-		$(this).find("i").toggleClass("fa-chevron-up");
+		$(this).find("i").toggleClass("fa-chevron-up fa-chevron-down");
             });
         });
     </script>
