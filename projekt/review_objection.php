@@ -57,7 +57,7 @@
             <form action="backend/review_objection.php" method="POST">
                 <p id="reviewer"><i class="fa fa-user"></i>Recenzent: <?= $reviewer_name ?></p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
-		<label for="text" class="fa fa-commenting"></label><textarea rows="5" placeholder="Námitky" id="text" name="text" required></textarea><br>
+		        <label for="text" class="fa fa-commenting"></label><textarea rows="5" placeholder="Námitky" id="text" name="text" required></textarea><br>
                 <input type="submit" value="Odeslat">
                 <input type="hidden" name="review_id" value="<?= $review_id ?>">
             </form>
