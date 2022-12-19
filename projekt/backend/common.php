@@ -31,7 +31,7 @@
                 $menu_login = "<li><a href='/add_article.php'>PŘIDAT ČLÁNEK</a></li><li><a href='/my_articles.php'>MOJE ČLÁNKY</a></li>";
                 break;
             case "redaktor":
-                $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li>";
+                $menu_login = "<li><a href='/articles_management.php'>SPRÁVA ČLÁNKŮ</a></li><li><a href='/tasks_view.php'>EVIDENCE ÚKOLŮ</li>";
                 break;
             case "sefredaktor":
                 $menu_login = "<li><a href='/monitoring.php'>MONITOROVÁNÍ</a></li><li><a href='/articles_upload.php'>ZVEŘEJŃOVÁNÍ ČLÁNKŮ</a></li>";
