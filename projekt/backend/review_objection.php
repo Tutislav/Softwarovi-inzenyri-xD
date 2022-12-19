@@ -8,7 +8,7 @@
         header("Location: /");
         die();
     }
-    $review_id = $_POST["review_id"];
+    $review_id = $_POST["review_id"]; //id_recenze v databázi
     $text = $_POST["text"];
     
     require("connect.php");
@@ -20,6 +20,9 @@
         $redactor_id = $row["id_zadavatele"];
 
         $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$review_id', '$text');";
+        $result = $conn->query($sql);
+        $conn->close();
+        $sql = "UPDATE recenze SET stav = 'vráceno' WHERE id_recenze = '$review_id'";
         $result = $conn->query($sql);
         $conn->close();
         if ($result) {
