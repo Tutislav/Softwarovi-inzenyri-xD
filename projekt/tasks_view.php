@@ -49,7 +49,7 @@
 			require("backend/connect.php");
 
 			//Select from database--------
-			$select = "select datum_zadani, termin_splneni, ukol_text, splneno from ukol";
+			$select = "select ukol.datum_zadani, ukol.termin_splneni, uzivatel.jmeno, uzivatel.prijmeni, ukol.ukol_text, ukol.splneno from ukol inner join uzivatel on ukol.id_uzivatele = uzivatel.id_uzivatele";
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
@@ -62,6 +62,9 @@ echo "hello";
 						echo "</td>";
 						echo "<td>";
 							echo $item["termin_splneni"];
+						echo "</td>";
+						echo "<td>";
+							echo $item["jmeno"] . " " . $item["prijmeni"];
 						echo "</td>";
 						echo "<td>";
 							echo $item["ukol_text"];
