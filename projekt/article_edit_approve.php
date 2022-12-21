@@ -6,6 +6,8 @@
         require("backend/connect.php");
         $sql = "SELECT prispevek.id_uzivatele, jmeno, prijmeni, titulek FROM uzivatel JOIN prispevek ON uzivatel.id_uzivatele=prispevek.id_uzivatele WHERE id_prispevku='$article_id';";
         $result = $conn->query($sql);
+	$sql2 = "SELECT id_souboru FROM soubor WHERE id_prispevku='$article_id';";
+        $result2 = $conn->query($sql2);
         $conn->close();
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
@@ -51,13 +53,23 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
+	<?php
+	if($result2->num_rows > 0) {
+            $row=$result2->fetch_assoc();
+		$puvodni=$row[id_souboru];
+        }
+	  if($result2->num_rows > 0) {
+            $row=$result2->fetch_assoc();
+		$upraveny=$row[id_souboru];
+        }
+	?>
         <div class="approve">
 		    <h2>Schválení změn</h2>
             <form action="backend/" method="POST">
                 <p id="author"><i class="fa fa-user"></i>Autor: <?= $author_name ?></p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
-		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: </p><br>   
-		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: </p><br>        
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: <?php echo $puvodni?>></p><br>   
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: <?php echo $puvodni?></p><br>        
                 <input type="submit" id="approve_submit" value="Schválit změnu">
                 <input type="submit" id="disapprove_submit" value="Zamítnout změnu">
                 <input type="hidden" name="article_id" value="<?= $article_id ?>">
