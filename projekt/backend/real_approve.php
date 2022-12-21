@@ -1,7 +1,7 @@
 <?php
 	require("connect.php");
 	//funguje
-	$stav=-1;
+	$sql="";
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["souborupraveny_id"]."WHERE id_prispevku='$article_id';";
 		
