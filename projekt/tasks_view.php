@@ -72,7 +72,7 @@ echo "hello";
 						echo "<td>";
 							$finished = $item["splneno"];
 							if($finished) { echo $item["datum_splneni"]; }
-							else { echo "nesplneno"; }
+							else { echo "<span class='fa fa-times'></span>"; }
 						echo "</td>";
 					echo "</tr>";
 				}	
