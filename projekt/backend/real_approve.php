@@ -10,7 +10,7 @@
 	}
 	echo $sql;
 	//****
-        /*$sql = "UPDATE prispevek SET zobrazeny_soubor='$skutecny_soubor' WHERE id_prispevku='$article_id';";
+        $sql = "UPDATE prispevek SET zobrazeny_soubor='$skutecny_soubor' WHERE id_prispevku='$article_id';";
         $result = $conn->query($sql);
         $conn->close();
 	if ($result) {
@@ -20,5 +20,5 @@
         else {
             $_SESSION["message"] = "neuspěch";
             header("Location: /articles_management.php");
-        }*/
+        }
 ?>
