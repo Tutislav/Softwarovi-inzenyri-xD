@@ -1,5 +1,3 @@
 <?php
-	$text = $_POST["approve_submit"];
-	$text = $_POST["disapprove_submit"];
-	echo $text;
+	$text = $_POST["approve_submit"]||$_POST["disapprove_submit"];
 ?>
