@@ -2,11 +2,11 @@
 	//funguje
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$skutecny_soubor=$_POST["souborupraveny_id"];
-		echo "halo2";
+		echo $skutecny_soubor;
 		
 	} elseif (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
 		$skutecny_soubor=$_POST["soubor_id"];	
-		echo "halo";
+		echo $skutecny_soubor;
 	}
 	//****
 	require("backend/connect.php");
