@@ -1,5 +1,17 @@
 <?php
-    	require("backend/common.php");
+    $role_restriction = "redaktor";
+    require("backend/common.php");
+    $user_id = $_SESSION["user_id"];
+
+    require("backend/connect.php");
+    $sql = "SELECT id_uzivatele, jmeno, prijmeni, role FROM uzivatel WHERE id_uzivatele!='$user_id';";
+    $result = $conn->query($sql);
+    $recipients = "";
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $recipients .= "<option value='" . $row["id_uzivatele"] . "'>" . $row["jmeno"] . " " . $row["prijmeni"] . " - " . $row["role"] . "</option>";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -7,12 +19,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT World</title>
+    <title>Evidence úkolů - IT World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
+    <script>
+        $(document).ready(function(){
+            $("#new").click(function(){
+                $("#task_form").slideDown();
+                $(this).slideUp();
+            });
+            $("#close").click(function(){
+                $("#task_form").slideUp();
+                $("#new").slideDown();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -35,11 +59,23 @@
             </ul>
         </div>
 	<table class="border_sides">
-		<tr>
-			<td colspan="5">
-				<button><span class="fa fa-plus"></span>Nový úkol</button>
-			</td>
-		</tr>
+            <tr>
+                <td colspan="5">
+                    <span id="task_form" style="display: none;">
+                        <form action="backend/tasks.php" method="post">
+                            <label for="recipient_id" class="fa fa-user"></label>
+                            <select name="recipient_id" id="recipient_id" required><?= $recipients ?></select><br>
+                            <label for="text" class="fa fa-commenting"></label>
+                            <textarea name="text" id="text" placeholder="Úkol" required></textarea><br>
+							<label for="deadline">Termín splnění:</label>
+							<input type="datetime-local" name="deadline" id="deadline"><br>
+                            <button type="submit" name="send" id="send"><i class="fa fa-paper-plane"></i>Odeslat</button>
+                            <button id="close"><i class="fa fa-close"></i>Zavřít</button>
+                        </form>
+                    </span>
+                    <button id="new"><i class="fa fa-plus"></i>Nový úkol</button>
+                </td>
+            </tr>
 		<tr>
 			<th>Datum zadání</th>
 			<th>Termín splnění</th>
@@ -48,9 +84,6 @@
 			<th>Splněno</th>
 		</tr>
 		<?php
-			//Connect to database--------
-			require("backend/connect.php");
-
 			//Select from database--------
 			$select = "select ukol.datum_zadani, ukol.termin_splneni, ukol.datum_splneni, uzivatel.jmeno, uzivatel.prijmeni, ukol.ukol_text, ukol.splneno from ukol inner join uzivatel on ukol.id_uzivatele = uzivatel.id_uzivatele";
 			$result = mysqli_query($conn, $select);
