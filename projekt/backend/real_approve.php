@@ -1,10 +1,13 @@
 <?php
 	//funguje
+$stav=0;
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$stav=1;
+		echo $stav;
 		
 	} else if (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
 		$stav=2;
+		echo $stav;
 	}
 	//****
 	if($stav==1)
