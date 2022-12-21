@@ -4,7 +4,7 @@
 	$upraveny=$_POST["souborupraveny_id"];
 	echo $puvodni;
 	echo $upraveny;
-	$skutecny_soubor;
+	$skutecny_soubor="";
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$skutecny_soubor=$upraveny;
 		echo "halo2";
