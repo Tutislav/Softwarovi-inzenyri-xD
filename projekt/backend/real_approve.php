@@ -3,14 +3,11 @@
 	//funguje
 	$sql="";
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
-		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["souborupraveny_id"]." WHERE id_prispevku=".$_POST["article_id"].";";
+		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["souborupraveny_id"].", stav='Schváleno' WHERE id_prispevku=".$_POST["article_id"].";";
 		
 	} else if (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
-		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["soubor_id"]." WHERE id_prispevku=".$_POST["article_id"].";";
+		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["soubor_id"].", stav='Čeká na doplnění' WHERE id_prispevku=".$_POST["article_id"].";";
 	}
-	echo $sql;
-	//****
-        $sql = "UPDATE prispevek SET zobrazeny_soubor='$skutecny_soubor' WHERE id_prispevku='$article_id';";
         $result = $conn->query($sql);
         $conn->close();
 	if ($result) {
