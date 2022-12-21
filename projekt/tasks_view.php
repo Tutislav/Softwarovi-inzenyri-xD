@@ -34,9 +34,8 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
-	<div class="border-sides">
 	<button><span class="fa fa-plus"></span>Nový úkol</button>
-	<table>
+	<table class="border-sides">
 		
 		<tr>
 			<th>Datum zadání</th>
@@ -80,7 +79,6 @@
 			else { echo "Nastal problém při vypisování z databáze."; }
 		?>
 	</table>
-	</div>
     </div>
 </body>
 </html>
