@@ -7,7 +7,7 @@
 		
 	} else if (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
 		$stav=2;
-	}
+	} else echo "je to spatný";
 	echo $stav;
 	//****
         /*$sql = "UPDATE prispevek SET zobrazeny_soubor='$skutecny_soubor' WHERE id_prispevku='$article_id';";
