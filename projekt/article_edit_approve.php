@@ -56,11 +56,11 @@
 	<?php
 	if($result2->num_rows > 0) {
             $row=$result2->fetch_assoc();
-		$puvodni=$row[id_souboru];
+		$puvodni=$row["id_souboru"];
         }
 	  if($result2->num_rows > 0) {
             $row=$result2->fetch_assoc();
-		$upraveny=$row[id_souboru];
+		$upraveny=$row["id_souboru"];
         }
 	?>
         <div class="approve">
@@ -69,7 +69,7 @@
                 <p id="author"><i class="fa fa-user"></i>Autor: <?= $author_name ?></p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
 		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: <?php echo $puvodni;?>></p><br>   
-		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: <?php echo $puvodni?;></p><br>        
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: <?php echo $upraveny;?></p><br>        
                 <input type="submit" id="approve_submit" value="Schválit změnu">
                 <input type="submit" id="disapprove_submit" value="Zamítnout změnu">
                 <input type="hidden" name="article_id" value="<?= $article_id ?>">
