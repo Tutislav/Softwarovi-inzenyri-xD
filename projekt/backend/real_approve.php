@@ -1,4 +1,5 @@
 <?php
+	require("backend/connect.php");
 	//funguje
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$stav=1;
@@ -9,7 +10,6 @@
 		echo $stav;
 	}
 	//****
-	require("backend/connect.php");
         /*$sql = "UPDATE prispevek SET zobrazeny_soubor='$skutecny_soubor' WHERE id_prispevku='$article_id';";
         $result = $conn->query($sql);
         $conn->close();
