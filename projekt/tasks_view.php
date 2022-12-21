@@ -1,5 +1,5 @@
 <?php
-    require("backend/common.php");
+    	require("backend/common.php");
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -44,7 +44,33 @@
 			<th>Splněno</th>
 		</tr>
 		<?php
-			
+			//Connect to database--------
+			require("connect.php");
+
+			//Select from database--------
+			$select = "select datum_zadani, termin_splneni, ukol_text, splneno from ukol";
+			$result = mysqli_query($conn, $select);
+			if($result)
+			{
+				foreach($result as $item)
+				{
+					echo "<tr>";
+						echo "<td>";
+							echo $item["datum_zadani"];
+						echo "</td>";
+						echo "<td>";
+							echo $item["termin_splneni"];
+						echo "</td>";
+						echo "<td>";
+							echo $item["ukol_text"];
+						echo "</td>";
+						echo "<td>";
+							echo $item["splneno"];
+						echo "</td>";
+					echo "</tr>";
+				}	
+			}
+			else { die("Nastal problém při vypisování z databáze."); }
 		?>
 	</table>
 </body>
