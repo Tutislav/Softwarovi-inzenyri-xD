@@ -69,6 +69,7 @@
                             <textarea name="text" id="text" placeholder="Úkol" required></textarea><br>
 							<label for="deadline" class="fa fa-calendar" title="Termín splnění"></label>
 							<input type="datetime-local" name="deadline" id="deadline"><br>
+                            <input type="hidden" name="url" id="url" value="<?= $_SERVER["REQUEST_URI"] ?>">
                             <button type="submit" name="add" id="add"><i class="fa fa-plus"></i>Přidat</button>
                             <button id="close"><i class="fa fa-close"></i>Zavřít</button>
                         </form>
