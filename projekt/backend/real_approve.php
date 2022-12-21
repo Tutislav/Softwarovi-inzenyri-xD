@@ -1,6 +1,5 @@
 <?php
 	//funguje
-$stav=0;
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$stav=1;
 		echo $stav;
@@ -10,12 +9,7 @@ $stav=0;
 		echo $stav;
 	}
 	//****
-	if($stav==1)
-		$sql = "UPDATE prispevek SET zobrazeny_soubor='$_POST["souborupraveny_id"]' WHERE id_prispevku='$article_id';";
-	if($stav==2)
-		$sql = "UPDATE prispevek SET zobrazeny_soubor='$_POST["soubor_id"]' WHERE id_prispevku='$article_id';";
 	require("backend/connect.php");
-	echo $sql;
         /*$sql = "UPDATE prispevek SET zobrazeny_soubor='$skutecny_soubor' WHERE id_prispevku='$article_id';";
         $result = $conn->query($sql);
         $conn->close();
