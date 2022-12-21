@@ -44,6 +44,7 @@
 			<th>Splněno</th>
 		</tr>
 		<?php
+			echo "hello";
 			//Connect to database--------
 			require("connect.php");
 
