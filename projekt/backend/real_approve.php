@@ -1,6 +1,7 @@
 <?php
 	require("backend/connect.php");
 	//funguje
+	$stav=-1;
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$stav=1;
 		
