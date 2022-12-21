@@ -52,6 +52,7 @@
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
+echo "hello";
 				foreach($result as $item)
 				{
 					echo "<tr>";
