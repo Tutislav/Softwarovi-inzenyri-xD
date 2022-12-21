@@ -35,19 +35,21 @@ textarea {
 button, input[type=submit], .btn {
 	background-color: #bb0000;
 	border-radius: 8px;
+	border: 1px solid black;
 	color: white;
 	margin: auto;
-	padding: 8px 35px;
+	padding: 4px;
 	width: fit-content;
 	display: block;
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	transition: background-color 0.5s;
 	box-shadow: 1px 1px 3px black;
 }
 
 button:hover, input[type=submit]:hover, .btn:hover {
 	background-color: darkred;
+	color: white;
 }
 
 table {
