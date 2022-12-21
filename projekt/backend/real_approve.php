@@ -3,10 +3,10 @@
 	//funguje
 	$sql="";
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
-		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["souborupraveny_id"]."WHERE id_prispevku='$article_id';";
+		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["souborupraveny_id"]."WHERE id_prispevku=".$_POST["article_id"].";";
 		
 	} else if (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
-		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["soubor_id"]."WHERE id_prispevku='$article_id';";
+		$sql = "UPDATE prispevek SET zobrazeny_soubor=".$_POST["soubor_id"]."WHERE id_prispevku=".$_POST["article_id"].";";
 	}
 	echo $sql;
 	//****
