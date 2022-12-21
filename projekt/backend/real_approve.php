@@ -3,7 +3,7 @@
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
 		$sql = "UPDATE prispevek SET zobrazeny_soubor='$_POST["souborupraveny_id"]' WHERE id_prispevku='$article_id';";
 		
-	} elseif (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
+	} else if (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
 		//$skutecny_soubor=$_POST["soubor_id"];	
 		$sql = "UPDATE prispevek SET zobrazeny_soubor='$_POST["soubor_id"]' WHERE id_prispevku='$article_id';";
 	}
