@@ -46,7 +46,7 @@
 		<?php
 			echo "hello";
 			//Connect to database--------
-			require("connect.php");
+			require("backend/connect.php");
 
 			//Select from database--------
 			$select = "select datum_zadani, termin_splneni, ukol_text, splneno from ukol";
@@ -72,7 +72,7 @@ echo "hello";
 					echo "</tr>";
 				}	
 			}
-			else { die("Nastal problém při vypisování z databáze."); }
+			else { echo "Nastal problém při vypisování z databáze."; }
 		?>
 	</table>
 </body>
