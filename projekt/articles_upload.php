@@ -56,7 +56,7 @@
 								echo "<a href='../clanek.php?id=".$item["id_prispevku"]."'>".$item["titulek"]."</a></td>";
 							echo "</td>";
 							echo "<td style='text-align:center'>";
-								echo "<input type='checkbox' name='article_checked' value='".$item["id_prispevku"]."' />";
+								echo "<input type='checkbox' name='article_checked[".$item["id_prispevku"]."]' value='".$item["id_prispevku"]."' />";
 							echo "</td>";
 						echo "</tr>";
 					}
