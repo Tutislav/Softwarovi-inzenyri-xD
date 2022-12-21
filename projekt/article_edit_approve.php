@@ -68,8 +68,8 @@
             <form action="backend/" method="POST">
                 <p id="author"><i class="fa fa-user"></i>Autor: <?= $author_name ?></p>
                 <p id="article_title"><i class="fa fa-newspaper-o"></i>Článek: <?= $article_title ?></p><br>
-		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: <?php echo <a href="https://itworld-dev.vorpal.tk/clanek.php?id=\"$article_id\"&sid=\"$puvodni\"";?></p><br>   
-		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: <?php echo <a href="https://itworld-dev.vorpal.tk/clanek.php?id=\"$article_id\"&sid=\"$upraveny\"";?></p><br>        
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Původní Článek: <?php echo <a href="https://itworld-dev.vorpal.tk/clanek.php?id=\"$article_id\"&sid=\"$puvodni\"";?></a></p><br>   
+		<p id="article_file"><i class="fa fa-file-word-o"></i>Upravený Článek: <?php echo <a href="https://itworld-dev.vorpal.tk/clanek.php?id=\"$article_id\"&sid=\"$upraveny\"";?></a></p><br>        
                 <input type="submit" id="approve_submit" value="Schválit změnu">
                 <input type="submit" id="disapprove_submit" value="Zamítnout změnu">
                 <input type="hidden" name="article_id" value="<?= $article_id ?>">
