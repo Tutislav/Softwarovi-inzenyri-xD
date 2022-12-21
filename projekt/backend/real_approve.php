@@ -1,16 +1,11 @@
 <?php
 	//funguje
-	$puvodni=$_POST["soubor_id"];
-	$upraveny=$_POST["souborupraveny_id"];
-	echo $puvodni;
-	echo $upraveny;
-	$skutecny_soubor="";
 	if (strcmp($_POST["approve_submit"],"Schválit změnu")==0) {
-		$skutecny_soubor=$upraveny;
+		$skutecny_soubor=$_POST["souborupraveny_id"];
 		echo "halo2";
 		
 	} elseif (strcmp($_POST["disapprove_submit"],"Zamítnout změnu")==0) {
-		$skutecny_soubor=$puvodni;	
+		$skutecny_soubor=$_POST["soubor_id"];	
 		echo "halo";
 	}
 	//****
