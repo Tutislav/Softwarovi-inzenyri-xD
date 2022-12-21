@@ -44,7 +44,6 @@
 			<th>Splněno</th>
 		</tr>
 		<?php
-			echo "hello";
 			//Connect to database--------
 			require("backend/connect.php");
 
@@ -53,7 +52,6 @@
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
-echo "hello";
 				foreach($result as $item)
 				{
 					echo "<tr>";
