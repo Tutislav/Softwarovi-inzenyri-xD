@@ -46,7 +46,7 @@
 		<?php
 		require("backend/connect.php");
 		$id = $_GET["id"];
-		$sql2 = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
+		$sql2 = "SELECT jmeno, prijmeni, id_recenze, h_aktualnost, h_originalita, h_odborna_uroven, h_jazykova_uroven, zpristupnena, prispevek.stav, recenze_text, datum_splneni FROM recenze JOIN uzivatel ON recenze.id_recenzenta=uzivatel.id_uzivatele JOIN prispevek ON recenze.id_prispevku=prispevek.id_prispevku JOIN ukol ON recenze.id_ukolu=ukol.id_ukolu WHERE recenze.id_prispevku=".$id." AND zpristupnena=1; ";
 		$sql3="SELECT id_uzivatele, stav FROM prispevek NATURAL JOIN uzivatel WHERE id_prispevku=".$id; 
 		$result = $conn->query($sql3);
 		if ($result->num_rows > 0) {
@@ -60,15 +60,16 @@
 		echo "<button id='tlacitko' onclick='document.location=\"#recenze\"'>Zobraz recenze</button>";
 		echo "Stav článku: ".$stav . "<br>";
 		echo "Verze: ";
-		$sql = "SELECT id_souboru, datum_nahrani FROM soubor NATURAL JOIN prispevek WHERE id_prispevku='$id';";
+		$sql = "SELECT id_souboru, datum_nahrani, zobrazeny_soubor FROM soubor NATURAL JOIN prispevek WHERE id_prispevku='$id';";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			$version_id = 1;
 			while ($row = $result->fetch_assoc()) {
 				$file_id = $row["id_souboru"];
 				$date = date("d.m.y H:i", strtotime($row["datum_nahrani"]));
+				$file_shown = $row["zobrazeny_soubor"];
 				$link = "<a href='clanek.php?id=" . $id . "&sid=" . $file_id . "' title='" . $date . "'>Verze " . $version_id . "</a>";
-				if ((isset($_GET["sid"]) && $_GET["sid"] == $file_id) || (!isset($_GET["sid"]) && $version_id == $result->num_rows)) $link = "<b>" . $link . "</b>";
+				if ((isset($_GET["sid"]) && $_GET["sid"] == $file_id) || (!isset($_GET["sid"]) && $file_shown == $file_id)) $link = "<b>" . $link . "</b>";
 				echo $link . " ";
 				++$version_id;
 			}
@@ -140,7 +141,7 @@
 		return $striped_content;  
 	}
 	if(!isset($_GET["sid"]))
-    		$sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " ORDER BY datum_nahrani DESC";
+    		$sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " AND id_souboru=zobrazeny_soubor";
 	else
 		$sql = "SELECT id_uzivatele, soubor_cesta, datum_nahrani, stav FROM uzivatel NATURAL JOIN prispevek NATURAL JOIN soubor WHERE id_prispevku=" . $id . " AND id_souboru=" . $_GET["sid"];
     $result = $conn->query($sql);
@@ -149,7 +150,6 @@
         if ($row["stav"] != "Schváleno") check_restriction($row["id_uzivatele"], true);
         $filename = $row["soubor_cesta"];
 	
-	echo "<a href='clanek.php?id=" . $id . "&sid='>Předchozí verze</a>";
         $path = pathinfo($filename);
 		if($path["extension"] == "doc" || $path["extension"] == "docx")
 		{
