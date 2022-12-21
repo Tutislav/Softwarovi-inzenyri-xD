@@ -110,7 +110,7 @@
                     }
                 }
                 else {
-                    echo("<tr><td colspan='3'>Žádné vzkazy</td></tr>");
+                    echo("<tr><td colspan='5'>Žádné vzkazy</td></tr>");
                 }
             ?>
         </table>
