@@ -1,37 +1,24 @@
 <?php
-	//Session--------
-	session_start();
+    require __DIR__ . '/vendor/autoload.php';
+    require("common.php");
 
-	//Connect database--------
-	require("connect.php");
+    require("connect.php");
 
-	if(!empty($_POST["article_checked"]))
-	{
-		$articles_array = array();
-		$array_index = 0;
-		foreach($_POST["article_checked"] as $article_id)
-		{
-			$select = "select soubor_cesta from soubor where id_prispevku=$article_id";
-			$result = mysqli_query($conn, $select);
-			$articles_array[array_index] = $result["soubor_cesta"];
-			array_index++;
-		}
-		$_SESSION["message"] = "Podařilo se zveřejnit článek.";
-		header("Location: ../index.php");
-		$fileArray= array("name1.pdf","name2.pdf","name3.pdf","name4.pdf");
-
-		$datadir = "save_path/";
-		$outputName = $datadir."merged.pdf";
-
-		$cmd = "gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=$outputName ";
-		//Add each pdf file to the end of the command
-		foreach($fileArray as $file) { $cmd .= $file." "; }
-		$result = shell_exec($cmd);
-	}
-	else
-	{
-		$_SESSION["message"] = "Nepodařilo se zveřejnit článek.";
-		header("Location: ../index.php");
-	}
-	
+    if(!empty($_POST["article_checked"])) {
+        foreach ($_POST["article_checked"] as $article_id) {
+            $sql = "SELECT soubor_cesta FROM prispevek NATURAL JOIN soubor WHERE id_prispevku='$id AND id_souboru=zobrazeny_soubor;";
+            $result = $conn->query($sql);
+            $file_name = $row["soubor_cesta"];
+            $file_array = explode(".", $file_name);
+            if ($file_array[1] == "docx" || $file_array[1] == "doc") {
+                $file_name_pdf = $file_array[0] . ".pdf";
+                Gears\Pdf::convert("../" . $file_name, "../" . $file_name_pdf);
+            }
+        }
+        $_SESSION["message"] = "Podařilo se zveřejnit článek.";
+        $conn->close();
+    }
+    else {
+        $_SESSION["message"] = "Nepodařilo se zveřejnit článek.";
+    }
 ?>
