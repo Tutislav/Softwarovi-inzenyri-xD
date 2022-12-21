@@ -35,7 +35,7 @@
             </ul>
         </div>
     </div>
-	<table>
+	<table class="border-sides">
 		<tr>
 			<th>Datum zadání</th>
 			<th>Termín splnění</th>
