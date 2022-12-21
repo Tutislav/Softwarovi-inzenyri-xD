@@ -35,7 +35,7 @@
             </ul>
         </div>
 	<button><span class="fa fa-plus"></span>Nový úkol</button>
-	<table class="border-sides">
+	<table class="border_sides">
 		
 		<tr>
 			<th>Datum zadání</th>
