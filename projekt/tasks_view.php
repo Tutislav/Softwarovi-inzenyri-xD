@@ -37,8 +37,15 @@
     </div>
 	<table>
 		<tr>
-			
+			<th>Datum zadání</th>
+			<th>Termín splnění</th>
+			<th>Uživatel</th>
+			<th>Úkol</th>
+			<th>Splněno</th>
 		</tr>
+		<?php
+			
+		?>
 	</table>
 </body>
 </html>
