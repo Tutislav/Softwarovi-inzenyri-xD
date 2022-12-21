@@ -34,7 +34,7 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
-	<button><span class="fa fa-plus">Nový úkol</span></button>
+	<button><span class="fa fa-plus"></span>Nový úkol</button>
 	<table class="border_sides">
 		<tr>
 			<th>Datum zadání</th>
