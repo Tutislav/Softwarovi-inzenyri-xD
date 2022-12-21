@@ -1,0 +1,21 @@
+form {
+    display: inline-block;
+}
+
+form button[type=submit], #close {
+    margin: 0px 4px;
+    display: inline-block;
+}
+
+#task_form {
+    display: block;
+    text-align: center;
+}
+
+#task_form form {
+    width: 500px;
+}
+
+#recipient_id {
+    width: 380px;
+}

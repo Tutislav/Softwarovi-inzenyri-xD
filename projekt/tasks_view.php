@@ -63,13 +63,13 @@
                 <td colspan="5">
                     <span id="task_form" style="display: none;">
                         <form action="backend/tasks.php" method="post">
-                            <label for="recipient_id" class="fa fa-user"></label>
+                            <label for="recipient_id" class="fa fa-user" title="Uživatel"></label>
                             <select name="recipient_id" id="recipient_id" required><?= $recipients ?></select><br>
-                            <label for="text" class="fa fa-commenting"></label>
+                            <label for="text" class="fa fa-commenting" title="Úkol"></label>
                             <textarea name="text" id="text" placeholder="Úkol" required></textarea><br>
-							<label for="deadline">Termín splnění:</label>
+							<label for="deadline" class="fa fa-calendar" title="Termín splnění"></label>
 							<input type="datetime-local" name="deadline" id="deadline"><br>
-                            <button type="submit" name="send" id="send"><i class="fa fa-paper-plane"></i>Odeslat</button>
+                            <button type="submit" name="add" id="add"><i class="fa fa-plus"></i>Přidat</button>
                             <button id="close"><i class="fa fa-close"></i>Zavřít</button>
                         </form>
                     </span>
