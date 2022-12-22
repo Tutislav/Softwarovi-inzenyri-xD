@@ -15,7 +15,7 @@
     <?= $scripts ?>
 	<script>
 	$( document ).ready(function() {
-    $(".content").toggle( display );
+    $(".content").toggle();
 	});
 	</script>
 	<style>
