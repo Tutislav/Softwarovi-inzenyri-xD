@@ -35,12 +35,12 @@
             </ul>
         </div>
         <div class="realhelpdesk" style="border: 2px solid black">
-            <div class="menu" style="background-color:aliceblue; display:inline-block; float:left">
+            <div class="menu" style="background-color:aliceblue; float:left;width:33%">
                 Prihlaseni<br>
                 pridavadni clanku<br>
                 pridavani recenzi<br>
             </div>
-            <div class="content" style="display:inline-block;border-left:1px solid black">
+            <div class="content" style="border-left:1px solid black;float:left;width:66%">
                 nejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomocnejaka pomoc
             </div>
         </div>
