@@ -16,7 +16,7 @@
 	<style>
 	.content{
 		padding:15px 15px 15px 0;
-		width:64%;
+		width:66%;
 		float:left;
 		display:none;
 	}
@@ -43,7 +43,7 @@
             </ul>
         </div>
         <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
-            <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px 0 15px 15px">
+            <div class="menu" style="background-color:aliceblue; float:left;width:33%;padding:15px 0 15px 15px">
                 <p>Prihlaseni</p>
 				<p>Zobrazení článku</p>
                 <p>Přidávání článku</p>
@@ -55,7 +55,7 @@
 				<p>Komunikace s recenzenty</p>
 				<p>Schvalování drobných změn</p>
             </div>
-			<div class="defaulthelptext" style="float:left;width:64%;padding:15px">
+			<div class="defaulthelptext" style="float:left;width:66%;padding:15px 15px 15px 0">
 			Vyberte si z menu o čem chcete něco vědět
 			</div>
             <div class="content loginhelp">
