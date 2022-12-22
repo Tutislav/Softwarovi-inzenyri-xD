@@ -36,9 +36,9 @@
         </div>
         <div class="realhelpdesk" style="border: 2px solid black;float:left">
             <div class="menu" style="background-color:aliceblue; float:left;width:33%">
-                Prihlaseni<br>
-                pridavadni clanku<br>
-                pridavani recenzi<br>
+                <p>Prihlaseni</p>
+                <p>Pridavadni clanku</p>
+                <p>Pridavani recenzi</p>
             </div>
             <div class="content loginhelp" style="border-left:1px solid black;float:left;width:66%">
 Přihlášení uživatelů
