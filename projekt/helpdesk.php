@@ -34,6 +34,13 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
+        <div class="helpdesk">
+            <div class="menu">
+            </div>
+            <div class="content">
+            </div>
+            Toto je helpdesk
+        </div>
     </div>
 </body>
 </html>
