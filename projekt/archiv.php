@@ -7,20 +7,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Správa článků - IT World</title>
+    <title>Archiv - IT World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://itworld.vorpal.tk/css/main.css">
-    <link rel="stylesheet" href="https://itworld.vorpal.tk/css/my_articles.css">
     <link rel="stylesheet" href="https://itworld.vorpal.tk/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
-    <script>
-        $(document).ready(function(){
-            $("#stav").change(function(){
-                $("#clankyFilter form").submit();
-            });
-        });
-    </script>
 </head>
 <body>
     <div class="container">
@@ -42,30 +34,35 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
-
-       <br>
-       <br>
-
-       <table border="1">
-        <tr>
-            <td>Název čísla</td>
-            <td>Rok</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.vspj.cz/soubory/download/id/8862">Číslo 1</td>
-            <td>2022</td>
-        </tr>
-        <tr>
-            <td><a href="https://www.vspj.cz/soubory/download/id/9077">Číslo 2</td>
-            <td>2022</td>
-        </tr>
-
-        
-       </table>
-
-
-
-
+        <table class="border_sides">
+            <tr>
+                <th>Měsíc</th>
+                <th>Rok</th>
+                <th>Téma</th>
+                <th>Akce</th>
+            </tr>
+            <?php
+                require("backend/connect.php");
+                $sql = "SELECT datum_vydani, tematicke_cislo, soubor_cesta FROM archiv;";
+                $result = $conn->query($sql);
+                $conn->close();
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        $month = date("F", strtotime($row["datum_vydani"]));
+                        $year = date("Y", strtotime($row["datum_vydani"]));
+                        $thema = $row["tematicke_cislo"];
+                        $file_path = $row["soubor_cesta"];
+                        $show = "<button onclick='location.href=\"" . $file_path . "\">Zobrazit</button>";
+                        echo("<tr>");
+                        echo("<td>" . $month . "</td><td>" . $year ."</td><td>" . $thema . "</td><td>" . $show . "</td>");
+                        echo("</tr>");
+                    }
+                }
+                else {
+                    echo("<tr><td colspan='4'>Žádná vydání</td></tr>");
+                }
+            ?>
+        </table>
     </div>
 </body>
 </html>
