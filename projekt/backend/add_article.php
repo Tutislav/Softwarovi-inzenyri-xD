@@ -56,6 +56,11 @@
 					$result = mysqli_query($conn, $insert);
 					if($result)
 					{
+						if (isset($_POST["add"])) {
+							$file_id = mysqli_insert_id($conn);
+							$update = "UPDATE prispevek SET zobrazeny_soubor='$file_id' WHERE id_prispevku='$article_id';";
+							$result = mysqli_query($conn, $update);
+						}
 						$_SESSION["message"] = "Přidání příspěvku bylo úspěšné.";
 						header("Location: ../index.php");
 					}
