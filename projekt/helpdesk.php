@@ -48,7 +48,7 @@
 				<p>Schvalování drobných změn</p>
                 <p>Přidávání recenzí</p>
             </div>
-            <div class="content loginhelp" style="border-left:1px solid black;float:left;width:66%">
+            <div class="content loginhelp" style="float:left;width:66%">
 Přihlášení uživatelů
 Jedná se o formulář, který slouží k přihlašování zaregistrovaných uživatelů. Obsahuje dvě textové pole: emailová adresa a heslo; a tlačítko pro přihlášení. Po odeslání formuláře se kontroluje, zda se údaje shodují se zápisy v databázi, jestliže ano, pak je uživatel úspěšně přihlášen, v opačném případě je uživatel přesměrován zpátky na úvodní stránku systému s určitou zprávou.
 
