@@ -1,5 +1,11 @@
 <?php
-    	require("backend/common.php");
+    require("backend/common.php");
+    if (isset($_POST["tematicke_cislo"])) {
+        $tematicke_cislo = $_POST["tematicke_cislo"];
+    }
+    else {
+        $tematicke_cislo = "hardware";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="cs">
@@ -7,12 +13,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT World</title>
+    <title>Zveřejňování článků - IT World</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
+    <script>
+        $(document).ready(function(){
+            $("#tema").change(function(){
+                $(".border_sides form").submit();
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -36,6 +49,19 @@
         </div>
 	<table class="border_sides">
 		<tr>
+			<td colspan="2">
+				<form action="" method="POST">
+					<label for="tema">Téma:</label>
+					<select name="tematicke_cislo" id="tema">
+						<option value="hardware"<?= $tematicke_cislo == "hardware" ? " selected" : "" ?>>Hardware</option>
+						<option value="software"<?= $tematicke_cislo == "software" ? " selected" : "" ?>>Software</option>
+						<option value="gaming"<?= $tematicke_cislo == "gaming" ? " selected" : "" ?>>Gaming</option>
+						<option value="ai"<?= $tematicke_cislo == "ai" ? " selected" : "" ?>>Ai</option>
+					</select>
+				</form>
+			</td>
+		</tr>
+		<tr>
 			<th>Článek</th>
 			<th>Zveřejnit</th>
 		</tr>
@@ -44,7 +70,7 @@
 			require("backend/connect.php");
 
 			//database select--------
-			$select = "select id_prispevku, titulek from prispevek where stav='Schváleno'";
+			$select = "select id_prispevku, titulek from prispevek where stav='Schváleno' AND tematicke_cislo='$tematicke_cislo'";
 			$result = mysqli_query($conn, $select);
 			if($result)
 			{
@@ -62,6 +88,7 @@
 					}
 	echo "</table>";
 					echo "<input type='submit' name='submit' value='Zveřejnit' />";
+				echo "<input type='hidden' name='theme' id='theme' value='" . $tematicke_cislo . "'>";
 				echo "</form>";
 			}
 			else { echo "0 results ". $recenzent . " - " . $_SESSION["email"]; }
