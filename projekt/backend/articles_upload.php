@@ -24,23 +24,23 @@
                     }
                     else array_push($files, $file_name);
                 }
-                $pdfmerge = new Jurosh\PDFMerge\PDFMerger();
-                foreach ($files as $file) {
-                    $pdfmerge->addPDF("../" . $file, "all");
-                }
-                $release_file_name = "clanky/vydani_" . date("Y-m-d-H-i-s") . ".pdf";
-                $pdfmerge->merge('file', "../" . $release_file_name);
-                $sql = "INSERT INTO archiv (tematicke_cislo, soubor_cesta) VALUES ('$theme', '$release_file_name');";
-                $result = $conn->query($sql);
-                if ($result) {
-                    $_SESSION["message"] = "Podařilo se zveřejnit články.";
-                    header("Location: /archiv.php");
-                }
-                else {
-                    $_SESSION["message"] = "Nepodařilo se zveřejnit články.";
-                    header("Location: /articles_upload.php");
-                }
             }
+        }
+        $pdfmerge = new Jurosh\PDFMerge\PDFMerger();
+        foreach ($files as $file) {
+            $pdfmerge->addPDF("../" . $file, "all");
+        }
+        $release_file_name = "clanky/vydani_" . date("Y-m-d-H-i-s") . ".pdf";
+        $pdfmerge->merge('file', "../" . $release_file_name);
+        $sql = "INSERT INTO archiv (tematicke_cislo, soubor_cesta) VALUES ('$theme', '$release_file_name');";
+        $result = $conn->query($sql);
+        if ($result) {
+            $_SESSION["message"] = "Podařilo se zveřejnit články.";
+            header("Location: /archiv.php");
+        }
+        else {
+            $_SESSION["message"] = "Nepodařilo se zveřejnit články.";
+            header("Location: /articles_upload.php");
         }
         $conn->close();
     }
