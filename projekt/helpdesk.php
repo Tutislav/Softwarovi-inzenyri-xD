@@ -18,7 +18,53 @@
     $(".content").toggle();
 	$( ".bloginhelp" ).click(function() {
 			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
 			$(".loginhelp").show();
+		});
+	$( ".bshowhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".showhelp").show();
+		});
+	$( ".baddhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".addhelp").show();
+		});
+	$( ".bshowreviewhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".showreviewhelp").show();
+		});
+	$( ".bformhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".formhelp").show();
+		});
+	$( ".breviewinghelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".reviewinghelp").show();
+		});
+	$( ".bstatehelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".statehelp").show();
+		});
+	$( ".breviewallowhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".reviewallowhelp").show();
+		});
+	$( ".bcomhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".comhelp").show();
+		});
+	$( ".bsmallchangeapprovehelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".defaulthelptext").hide();
+			$(".smallchangeapprovehelp").show();
 		});
 	});
 	</script>
