@@ -13,12 +13,16 @@
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
+	<script>
+	$( document ).ready(function() {
+    $(".content").toggle( display );
+	});
+	</script>
 	<style>
 	.content{
 		padding:15px 15px 15px 0;
 		width:66%;
 		float:left;
-		display:none;
 	}
 	</style>
 </head>
@@ -42,18 +46,24 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
+		<script>
+$( ".loginhelp" ).click(function() {
+  $( ".content" ).toggle();
+  $(".loginhelp").show();
+});
+</script>
         <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
             <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px 0 15px 15px">
-                <p>Prihlaseni</p>
-				<p>Zobrazení článku</p>
-                <p>Přidávání článku</p>
-				<p>Zobrazení recenzí</p>
-				<p>Oponentní formulář</p>
-				<p>Recenzování</p>
-				<p>Informování autora o stavu článku</p>
-				<p>Zpřístupnění recenzí</p>
-				<p>Komunikace s recenzenty</p>
-				<p>Schvalování drobných změn</p>
+                <p class="all loginhelp">Prihlaseni</p>
+				<p class="all showhelp">>Zobrazení článku</p>
+                <p class="all addhelp">Přidávání článku</p>
+				<p class="all showreviewhelp">Zobrazení recenzí</p>
+				<p class="all formhelp">Oponentní formulář</p>
+				<p class="all reviewinghelp">Recenzování</p>
+				<p class="all statehelp">Informování autora o stavu článku</p>
+				<p class="all reviewallowhelp">Zpřístupnění recenzí</p>
+				<p class="all comhelp">Komunikace s recenzenty</p>
+				<p class="all smallchangeapprovehelp">Schvalování drobných změn</p>
             </div>
 			<div class="defaulthelptext" style="float:left;width:66%;padding:15px 15px 15px 0">
 			Vyberte si z menu o čem chcete něco vědět
