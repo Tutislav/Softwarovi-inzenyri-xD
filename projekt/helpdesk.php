@@ -34,7 +34,7 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
-        <div class="realhelpdesk" style="border: 2px solid black">
+        <div class="realhelpdesk" style="border: 2px solid black;float:left">
             <div class="menu" style="background-color:aliceblue; float:left;width:33%">
                 Prihlaseni<br>
                 pridavadni clanku<br>
