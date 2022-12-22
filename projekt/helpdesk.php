@@ -43,7 +43,7 @@
             </ul>
         </div>
         <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
-            <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px">
+            <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px 0 15px 0">
                 <p>Prihlaseni</p>
 				<p>Zobrazení článku</p>
                 <p>Přidávání článku</p>
