@@ -164,9 +164,19 @@
                                         			<td>". $row["recenze_text"] . "</td>
 								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>";
 								if($row["stav"] == "Vráceno"){
-									echo "<td class='clanekRecenze'><button onclick='location.href=\"/article_edit_approve.php?id=" . $row["id_prispevku"] . "\"'>Úprava</button></td>";
+									echo "<td class='clanekRecenze'><button onclick='location.href=\"/review_approve.php?id=" . $row["id_recenze"] . "\"'>Úprava</button></td>";
 								}	
                                       			     echo "</tr>";
+							echo "<tr id='detail_" .  $row["id_recenze"] . "_edit' style='display: none;'><td colspan='100%'><div>";
+									echo "<p>";
+										echo "<form method='POST' action='review_approve.php'>";
+										echo "<button type='submit' id='upravit' name='Upravit'>Upravit recenzi</button>";
+										echo "<button type='submit' id='potvrdit' name='Potvrdit'>Potvrdit recenzi</button>";
+										echo "<input type='hidden' name='review_id' value='$row[id_recenze]'>";
+										echo "</form>";
+									echo "</p>";
+									echo "</div></td></tr>";
+
 							echo "<tr id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'><td colspan='100%'><div>";
                    					echo "<p id='reviewer'><i class='fa fa-user'></i>Recenzent: " . $row["recenzent_jmeno"] . "</p>";
                						echo "<p id='article_title'><i class='fa fa-newspaper-o'></i>Článek: <a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></p>";
