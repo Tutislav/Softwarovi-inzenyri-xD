@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="/css/<?= basename(__FILE__, ".php") ?>.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <?= $scripts ?>
+	<style>
+	.content{
+		padding:15px;
+	}
+	</style>
 </head>
 <body>
     <div class="container">
