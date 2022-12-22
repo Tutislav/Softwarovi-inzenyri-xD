@@ -175,7 +175,7 @@
                                       			     echo "</tr>";
 							echo "<tr id='detail_" .  $row["id_recenze"] . "_edit' style='display: none;'><td colspan='100%'><div>";
 									echo "<p>";
-										echo "<form method='POST' action='review_approve.php'>";
+										echo "<form method='POST' action='backend/review_approve.php'>";
 										echo "<button type='submit' id='upravit' name='Upravit'>Upravit recenzi</button>";
 										echo "<button type='submit' id='potvrdit' name='Potvrdit'>Potvrdit recenzi</button>";
 										echo "<input type='hidden' name='review_id' value='$row[id_recenze]'>";
