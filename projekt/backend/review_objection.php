@@ -21,7 +21,9 @@
 
         $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$review_id', '$text');";
         $result = $conn->query($sql);
-        $sql = "UPDATE recenze SET stav = 'vráceno' WHERE id_recenze = '$review_id'";
+        $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$redactor_id', '$review_id', '$text');";
+        $result = $conn->query($sql);
+        $sql = "UPDATE recenze SET stav = 'Vráceno' WHERE id_recenze = '$review_id'";
         $result = $conn->query($sql);
         $conn->close();
         if ($result) {

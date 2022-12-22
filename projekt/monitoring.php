@@ -110,6 +110,7 @@
                         					<th id='title'>Titulek</th>
                         					<th id='theme'>Téma</th>
                         					<th id='state'>Stav</th>
+											<th id='action'>Úprava</th>
                    					</tr>";
 					
 					if ($result->num_rows > 0) {				
@@ -119,8 +120,11 @@
                                         			<td>". $row["id_prispevku"] . "</td>
                                         			<td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
                                        				<td>". $row["tematicke_cislo"] . "</td>
-                                        			<td>". $row["stav"] . "</td>
-                                      		</tr>";
+                                        			<td>". $row["stav"] . "</td>";
+								if($row["stav"] == "Upraveno autorem"){
+									echo "<td class='clanekRecenze'><button onclick='location.href=\"/article_edit_approve.php?id=" . $row["id_prispevku"] . "\"'>Úprava</button></td>";
+								}		
+                            echo	"</tr>";
 						}
 					}
 					echo "</table></div>";
