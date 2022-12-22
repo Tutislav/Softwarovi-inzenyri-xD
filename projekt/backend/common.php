@@ -1,4 +1,5 @@
 <?php
+    setlocale(LC_ALL, "cs-CZ");
     //Session start--------
     session_start();
     //Logout--------
