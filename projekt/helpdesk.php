@@ -55,7 +55,7 @@ $( ".loginhelp" ).click(function() {
         <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
             <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px 0 15px 15px">
                 <p class="all loginhelp">Prihlaseni</p>
-				<p class="all showhelp">>Zobrazení článku</p>
+				<p class="all showhelp">Zobrazení článku</p>
                 <p class="all addhelp">Přidávání článku</p>
 				<p class="all showreviewhelp">Zobrazení recenzí</p>
 				<p class="all formhelp">Oponentní formulář</p>
