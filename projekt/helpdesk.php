@@ -47,23 +47,23 @@
             </ul>
         </div>
 		<script>
-$( ".loginhelp" ).click(function() {
-  $( ".content" ).toggle();
+$( ".bloginhelp" ).click(function() {
+  $( ".content" ).hide();
   $(".loginhelp").show();
 });
 </script>
         <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
             <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px 0 15px 15px">
-                <p class="all loginhelp">Prihlaseni</p>
-				<p class="all showhelp">Zobrazení článku</p>
-                <p class="all addhelp">Přidávání článku</p>
-				<p class="all showreviewhelp">Zobrazení recenzí</p>
-				<p class="all formhelp">Oponentní formulář</p>
-				<p class="all reviewinghelp">Recenzování</p>
-				<p class="all statehelp">Informování autora o stavu článku</p>
-				<p class="all reviewallowhelp">Zpřístupnění recenzí</p>
-				<p class="all comhelp">Komunikace s recenzenty</p>
-				<p class="all smallchangeapprovehelp">Schvalování drobných změn</p>
+                <p class="all bloginhelp">Prihlaseni</p>
+				<p class="all bshowhelp">Zobrazení článku</p>
+                <p class="all baddhelp">Přidávání článku</p>
+				<p class="all bshowreviewhelp">Zobrazení recenzí</p>
+				<p class="all bformhelp">Oponentní formulář</p>
+				<p class="all breviewinghelp">Recenzování</p>
+				<p class="all bstatehelp">Informování autora o stavu článku</p>
+				<p class="all breviewallowhelp">Zpřístupnění recenzí</p>
+				<p class="all bcomhelp">Komunikace s recenzenty</p>
+				<p class="all bsmallchangeapprovehelp">Schvalování drobných změn</p>
             </div>
 			<div class="defaulthelptext" style="float:left;width:66%;padding:15px 15px 15px 0">
 			Vyberte si z menu o čem chcete něco vědět
