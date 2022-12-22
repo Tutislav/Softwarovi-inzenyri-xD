@@ -52,7 +52,7 @@
                         $year = date("Y", strtotime($row["datum_vydani"]));
                         $thema = $row["tematicke_cislo"];
                         $file_path = $row["soubor_cesta"];
-                        $show = "<button onclick='location.href=\"" . $file_path . "\">Zobrazit</button>";
+                        $show = "<button onclick='location.href=\"" . $file_path . "\"'>Zobrazit</button>";
                         echo("<tr>");
                         echo("<td>" . $month . "</td><td>" . $year ."</td><td>" . $thema . "</td><td>" . $show . "</td>");
                         echo("</tr>");
