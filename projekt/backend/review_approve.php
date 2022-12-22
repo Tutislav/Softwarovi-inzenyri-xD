@@ -23,7 +23,9 @@
                 $row = $result->fetch_assoc();
                 $reviewer_id = $row["id_recenzenta"];
             $sql = "INSERT INTO vzkazy (id_odesilatele, id_prijemce, id_recenze, vzkaz_text) VALUES ('$user_id', '$reviewer_id', '$review_id', '$text');";
+            $result = $conn->query($sql);
             }
+            
             $conn->close();
     
         }
