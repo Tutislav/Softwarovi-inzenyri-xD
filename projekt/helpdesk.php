@@ -41,7 +41,7 @@
                 <p>Přidávání článku</p>
 				<p>Zobrazení recenzí</p>
 				<p>Oponentní formulář</p>
-				<p>Revenzování</p>
+				<p>Recenzování</p>
 				<p>Informování autora o stavu článku</p>
 				<p>Zpřístupnění recenzí</p>
 				<p>Komunikace s recenzenty</p>
