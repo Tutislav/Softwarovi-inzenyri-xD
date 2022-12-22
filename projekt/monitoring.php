@@ -42,7 +42,13 @@
                 $("#detail_" + $(this).parent().parent().children().first().html() + "_manage").toggle();
 		$(this).find("i").toggleClass("fa-chevron-up fa-chevron-down");
             });
+			$(".edit").click(function(){
+                $("#detail_" + $(this).parent().parent().children().first().html() + "_edit").toggle();
+		$(this).find("i").toggleClass("fa-chevron-up fa-chevron-down");
+            });
         });
+
+		
     </script>
 </head>
 <body>
@@ -164,7 +170,7 @@
                                         			<td>". $row["recenze_text"] . "</td>
 								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>";
 								if($row["stav"] == "Vráceno"){
-									echo "<td class='clanekRecenze'><button onclick='location.href=\"/review_approve.php?id=" . $row["id_recenze"] . "\"'>Úprava</button></td>";
+									echo "<td><button class='edit'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>";
 								}	
                                       			     echo "</tr>";
 							echo "<tr id='detail_" .  $row["id_recenze"] . "_edit' style='display: none;'><td colspan='100%'><div>";

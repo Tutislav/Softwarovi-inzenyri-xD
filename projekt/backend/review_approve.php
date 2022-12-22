@@ -1,11 +1,11 @@
 <?php
-    $role_restriction = "autor";
+    $role_restriction = "sefredaktor";
     require("common.php");
 
     $user_id = $_SESSION["user_id"];
     if (!isset($_POST["review_id"]) || !isset($_POST["text"])) {
         $_SESSION["message"] = "Zprávu nelze odeslat.";
-        header("Location: /");
+        header("Location: /monitoring.php");
         die();
     }
     
@@ -35,5 +35,5 @@
     
         }
 
-        
+        header("Location: /monitoring.php");
 ?>
