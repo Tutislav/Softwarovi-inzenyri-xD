@@ -110,7 +110,6 @@
                         					<th id='title'>Titulek</th>
                         					<th id='theme'>Téma</th>
                         					<th id='state'>Stav</th>
-											<th id='action'>Úprava</th>
                    					</tr>";
 					
 					if ($result->num_rows > 0) {				
@@ -121,9 +120,7 @@
                                         			<td><a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></td>
                                        				<td>". $row["tematicke_cislo"] . "</td>
                                         			<td>". $row["stav"] . "</td>";
-								if($row["stav"] == "Upraveno autorem"){
-									echo "<td class='clanekRecenze'><button onclick='location.href=\"/article_edit_approve.php?id=" . $row["id_prispevku"] . "\"'>Úprava</button></td>";
-								}		
+									
                             echo	"</tr>";
 						}
 					}
@@ -152,7 +149,8 @@
                         					<th id='review_score'>Odborná úroveň</th>
                        						<th id='review_score'>Jazyková úroveň</th>
                                   				<th id='review_text'>Text recenze</th>
-								<th id='details'></th>
+								<th id='details'>Detail</th>
+								<th id='action'>Úprava</th>
                    					</tr>";
 					if ($result->num_rows > 0) {				
 			     			// Výpis recenzí
@@ -164,8 +162,11 @@
 								<td>". $row["h_odborna_uroven"] . "</td>
 								<td>". $row["h_jazykova_uroven"] . "</td>
                                         			<td>". $row["recenze_text"] . "</td>
-								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>
-                                      			      </tr>";
+								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>";
+								if($row["stav"] == "Upraveno autorem"){
+									echo "<td class='clanekRecenze'><button onclick='location.href=\"/article_edit_approve.php?id=" . $row["id_prispevku"] . "\"'>Úprava</button></td>";
+								}	
+                                      			     echo "</tr>";
 							echo "<tr id='detail_" .  $row["id_recenze"] . "_manage' style='display: none;'><td colspan='100%'><div>";
                    					echo "<p id='reviewer'><i class='fa fa-user'></i>Recenzent: " . $row["recenzent_jmeno"] . "</p>";
                						echo "<p id='article_title'><i class='fa fa-newspaper-o'></i>Článek: <a href='clanek.php?id=" .$row["id_prispevku"]."' target='_blank'>". $row["titulek"] . "</a></p>";
@@ -200,7 +201,7 @@
                                   				<th id='task_completed'>Splněno</th>
                    					</tr>";
 					if ($result->num_rows > 0) {				
-			     			// Výpis recenzí
+			     			// Výpis úkolů
 						while($row = $result->fetch_assoc()) {
 							echo "<tr id='review" .  $row["id_recenze"] . "'>
                                         			<td>". $row["id_ukolu"] . "</td>
