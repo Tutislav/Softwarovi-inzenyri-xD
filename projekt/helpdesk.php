@@ -42,7 +42,7 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
-        <div class="realhelpdesk" style="border: 2px solid black;float:left">
+        <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
             <div class="menu" style="background-color:aliceblue; float:left;width:33%">
                 <p>Prihlaseni</p>
 				<p>Zobrazení článku</p>
