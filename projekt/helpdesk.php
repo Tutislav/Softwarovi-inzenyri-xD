@@ -37,8 +37,16 @@
         <div class="realhelpdesk" style="border: 2px solid black;float:left">
             <div class="menu" style="background-color:aliceblue; float:left;width:33%">
                 <p>Prihlaseni</p>
-                <p>Pridavadni clanku</p>
-                <p>Pridavani recenzi</p>
+				<p>Zobrazení článku</p>
+                <p>Přidávání článku</p>
+				<p>Zobrazení recenzí</p>
+				<p>Oponentní formulář</p>
+				<p>Revenzování</p>
+				<p>Informování autora o stavu článku</p>
+				<p>Zpřístupnění recenzí</p>
+				<p>Komunikace s recenzenty</p>
+				<p>Schvalování drobných změn</p>
+                <p>Přidávání recenzí</p>
             </div>
             <div class="content loginhelp" style="border-left:1px solid black;float:left;width:66%">
 Přihlášení uživatelů
