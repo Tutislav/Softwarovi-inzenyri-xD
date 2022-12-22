@@ -35,7 +35,7 @@
             </ul>
         </div>
         <div class="realhelpdesk" style="border: 2px solid black">
-            <div class="menu" style="background-color:aliceblue; display:inline-block">
+            <div class="menu" style="background-color:aliceblue; display:inline-block; float:left">
                 Prihlaseni<br>
                 pridavadni clanku<br>
                 pridavani recenzi<br>
