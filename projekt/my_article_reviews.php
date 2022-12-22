@@ -59,7 +59,7 @@
 		    	
 		    
 				
-		        if($_SESSION["user_id"] == $row["id_uzivatele"] || $_SESSION["role"] == "redaktor")
+		        if($_SESSION["user_id"] == $row["id_uzivatele"] || $_SESSION["role"] == "redaktor" || $_SESSION["role"] == "recenzent")
 		        {
 			$counter_recenze =1;
 			if ($result->num_rows > 0) {
