@@ -163,7 +163,7 @@
 								<td>". $row["h_jazykova_uroven"] . "</td>
                                         			<td>". $row["recenze_text"] . "</td>
 								<td><button class='details'><i class='icon_" . $row["id_recenze"] . " fa fa-chevron-down'></i>Detaily</button></td>";
-								if($row["stav"] == "Upraveno autorem"){
+								if($row["stav"] == "Vráceno"){
 									echo "<td class='clanekRecenze'><button onclick='location.href=\"/article_edit_approve.php?id=" . $row["id_prispevku"] . "\"'>Úprava</button></td>";
 								}	
                                       			     echo "</tr>";
