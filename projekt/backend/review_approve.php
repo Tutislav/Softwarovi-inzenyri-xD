@@ -3,7 +3,7 @@
     require("common.php");
 
     $user_id = $_SESSION["user_id"];
-    if (!isset($_POST["review_id"]) || !isset($_POST["text"])) {
+    if (!isset($_POST["review_id"])) {
         $_SESSION["message"] = "Zprávu nelze odeslat.";
         header("Location: /monitoring.php");
         die();
