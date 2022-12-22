@@ -36,6 +36,9 @@
         </div>
         <div class="realhelpdesk">
             <div class="menu">
+                Prihlaseni<br>
+                pridavadni clanku<br>
+                pridavani recenzi<br>
             </div>
             <div class="content">
             </div>
