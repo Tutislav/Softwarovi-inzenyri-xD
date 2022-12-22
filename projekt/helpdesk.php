@@ -35,14 +35,13 @@
             </ul>
         </div>
         <div class="realhelpdesk">
-            <div class="menu" style="background-color:aliceblue; display:flex">
+            <div class="menu" style="background-color:aliceblue; display:inline-block">
                 Prihlaseni<br>
                 pridavadni clanku<br>
                 pridavani recenzi<br>
             </div>
-            <div class="content" style="display:flex">
+            <div class="content" style="display:inline-block;border-left:1px solid black">
             </div>
-            Toto je helpdesk
         </div>
     </div>
 </body>
