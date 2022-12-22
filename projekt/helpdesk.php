@@ -16,6 +16,10 @@
 	<script>
 	$( document ).ready(function() {
     $(".content").toggle();
+	$( ".bloginhelp" ).click(function() {
+			$( ".content" ).hide();
+			$(".loginhelp").show();
+		});
 	});
 	</script>
 	<style>
@@ -46,12 +50,6 @@
                 <li class="helpdesk"><a href="helpdesk.php">HELPDESK</a></li>
             </ul>
         </div>
-		<script>
-		$( ".bloginhelp" ).click(function() {
-			$( ".content" ).hide();
-			$(".loginhelp").show();
-		});
-		</script>
         <div class="realhelpdesk" style="border: 2px solid black;float:left;width:100%">
             <div class="menu" style="background-color:aliceblue; float:left;width:31%;padding:15px 0 15px 15px">
                 <p class="bloginhelp">Prihlaseni</p>
