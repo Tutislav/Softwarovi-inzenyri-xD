@@ -15,7 +15,7 @@
     <?= $scripts ?>
 	<style>
 	.content{
-		padding:15px;
+		padding:15px 15px 15px 0;
 		width:64%;
 		float:left;
 		display:none;
