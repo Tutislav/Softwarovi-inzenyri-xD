@@ -16,8 +16,10 @@ CREATE TABLE prispevek (
     tematicke_cislo ENUM ('hardware', 'software', 'gaming', 'ai') NOT NULL,
     spoluautori TEXT,
     stav VARCHAR(100) NOT NULL,
+    zobrazeny_soubor INT,
     PRIMARY KEY (id_prispevku),
-    FOREIGN KEY (id_uzivatele) REFERENCES uzivatel(id_uzivatele)
+    FOREIGN KEY (id_uzivatele) REFERENCES uzivatel(id_uzivatele),
+    FOREIGN KEY (zobrazeny_soubor) REFERENCES soubor(id_souboru)
 );
 
 CREATE TABLE soubor (
@@ -55,6 +57,7 @@ CREATE TABLE recenze (
     h_odborna_uroven BIT(6) NOT NULL,
     h_jazykova_uroven BIT(6) NOT NULL,
     recenze_text TEXT NOT NULL,
+    stav VARCHAR(100) NOT NULL,
     zpristupnena BOOLEAN NOT NULL DEFAULT 0,
     PRIMARY KEY (id_recenze),
     FOREIGN KEY (id_prispevku) REFERENCES prispevek(id_prispevku),
@@ -74,4 +77,22 @@ CREATE TABLE vzkazy (
     FOREIGN KEY (id_odesilatele) REFERENCES uzivatel(id_uzivatele),
     FOREIGN KEY (id_prijemce) REFERENCES uzivatel(id_uzivatele),
     FOREIGN KEY (id_recenze) REFERENCES recenze(id_recenze)
+);
+
+CREATE TABLE dotaz (
+    id_dotazu INT NOT NULL AUTO_INCREMENT,
+    datum_odeslani DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    dotaz_titulek VARCHAR(255) NOT NULL,
+    dotaz_text TEXT NOT NULL,
+    dotaz_odpoved TEXT,
+    odpovezeno BOOLEAN NOT NULL DEFAULT 0,
+    PRIMARY KEY (id_dotazu)
+);
+
+CREATE TABLE archiv (
+    id_vydani INT NOT NULL AUTO_INCREMENT,
+    datum_vydani DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    tematicke_cislo ENUM ('hardware', 'software', 'gaming', 'ai') NOT NULL,
+    soubor_cesta VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id_vydani)
 );
