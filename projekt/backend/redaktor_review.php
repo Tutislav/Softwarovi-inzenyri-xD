@@ -17,7 +17,7 @@
         $deadline = $_POST["deadline"];
         $deadline = date("Y-m-d H:i:s", strtotime($deadline));
         $task_text = "Zrecenzujte prosím tento článek: <a href=\"/clanek.php?id=" . $id . "\">Článek</a>";
-        if (!empty($deadline)) {
+        if (!empty($_POST["deadline"])) {
             $sql = "INSERT INTO ukol (id_uzivatele, id_zadavatele, id_prispevku, termin_splneni, ukol_text) VALUES ('$reviewer1', '$redactor_id', '$id', '$deadline', '$task_text');";
             $result = $conn->query($sql);
             $sql = "INSERT INTO ukol (id_uzivatele, id_zadavatele, id_prispevku, termin_splneni, ukol_text) VALUES ('$reviewer2', '$redactor_id', '$id', '$deadline', '$task_text');";
